@@ -34,6 +34,14 @@ python3 -m pip install -r requirements-dev.txt
 just check
 ```
 
+CI installs `requirements-ci.txt`, which pins every package by hash. After
+changing `requirements-dev.txt`, regenerate it:
+
+```sh
+uv pip compile requirements-dev.txt --universal --generate-hashes \
+  --python-version 3.14 -o requirements-ci.txt
+```
+
 `just check` checks Markdown formatting, validates schemas and fixtures,
 executes semantic and conversion checks, compiles the Python programs, and
 verifies deterministic package fixtures. `just format` formats Markdown with
