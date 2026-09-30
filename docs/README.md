@@ -28,6 +28,8 @@ compatibility work.
 
 - [Changelog](../CHANGELOG.md), including migration notes for incompatible
   changes
+- [Security assessment](security-assessment.md)
+- [Governance](../GOVERNANCE.md)
 
 ## Data and executable tools
 

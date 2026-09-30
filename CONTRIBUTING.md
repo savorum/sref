@@ -5,6 +5,14 @@ reading [the specification](spec.md),
 [the design rationale](docs/design-rationale.md), and
 [the change process](docs/change-process.md).
 
+## Report a defect
+
+Open an issue at <https://github.com/savorum/sref/issues>. Name the artifact
+that is wrong (a specification section, schema, registry entry, example,
+fixture, or tool), the release or commit, what you expected, and what you found.
+A document or archive that reproduces the problem helps. Report a vulnerability
+privately, as [`SECURITY.md`](SECURITY.md) describes.
+
 ## Contribution terms
 
 Contributions are licensed according to the artifact map in

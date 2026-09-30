@@ -2,9 +2,9 @@
 
 ## Supported versions
 
-The default branch is supported until release branches are published. Release
-metadata MUST identify any additional supported lines. Unlisted versions do not
-receive security maintenance.
+The latest release and the default branch are supported. Release metadata MUST
+identify any additional supported lines. Unlisted versions do not receive
+security maintenance.
 
 ## Security-sensitive areas
 
@@ -39,6 +39,9 @@ The project acknowledges a report within 7 days and assesses affected versions.
 It prepares fixtures that reproduce the issue without unnecessary risk and
 coordinates disclosure with the reporter. The disclosure timeline is 90 days
 from the report, or earlier when a fix is released.
+
+A confirmed vulnerability is published as a GitHub security advisory once a fix
+is available, naming the affected and fixed versions.
 
 Security fixes MUST add a regression fixture or bounded test unless publishing
 that artifact would create disproportionate risk.
