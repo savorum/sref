@@ -28,15 +28,17 @@ complete implementation threat model.
 
 ## Reporting
 
-Use the hosting platform's private vulnerability-reporting feature when it is
-available. Otherwise, contact a maintainer privately through the hosting
-platform and ask for a secure reporting channel. Do not include exploit details
-in a public issue.
+Report a vulnerability privately through
+[GitHub private vulnerability reporting](https://github.com/savorum/sref/security/advisories/new).
+Do not include exploit details in a public issue.
 
 A report SHOULD include the affected artifact, impact, reproduction steps,
-unsafe input when it can be shared safely, and any proposed mitigation. The
-project will acknowledge receipt, assess affected versions, prepare fixtures
-that reproduce the issue without unnecessary risk, and coordinate disclosure.
+unsafe input when it can be shared safely, and any proposed mitigation.
+
+The project acknowledges a report within 7 days and assesses affected versions.
+It prepares fixtures that reproduce the issue without unnecessary risk and
+coordinates disclosure with the reporter. The disclosure timeline is 90 days
+from the report, or earlier when a fix is released.
 
 Security fixes MUST add a regression fixture or bounded test unless publishing
 that artifact would create disproportionate risk.
