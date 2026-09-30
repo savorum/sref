@@ -1,0 +1,7 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "dependency-identity-required",
+  "title": "Empty Dependency",
+  "ingredient_sections": [{"id": "main", "ingredients": [{"id": "cream", "name": "pastry cream", "recipe": {}}]}],
+  "instruction_sections": [{"id": "method", "steps": [{"id": "mix", "text": "Mix."}]}]
+}

@@ -1,0 +1,53 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "compound-quantity-alternatives",
+  "title": "Compound Quantity Alternatives",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "oil",
+          "name": "oil",
+          "quantity": {
+            "kind": "alternatives",
+            "options": [
+              {
+                "kind": "sum",
+                "terms": [
+                  {
+                    "kind": "simple",
+                    "amount": {"value": "2"},
+                    "unit": "volume.tablespoon.us.customary"
+                  },
+                  {
+                    "kind": "simple",
+                    "amount": {"value": "2"},
+                    "unit": "volume.teaspoon.us.customary"
+                  }
+                ]
+              },
+              {
+                "kind": "simple",
+                "amount": {"value": "40"},
+                "unit": "volume.milliliter"
+              }
+            ]
+          },
+          "source_text": "2 tbsp + 2 tsp / 40 mL oil"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {"id": "add", "text": "Add the oil."}
+      ]
+    }
+  ]
+}

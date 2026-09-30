@@ -1,0 +1,7 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "nutrition-opaque-value-with-amount",
+  "title": "Opaque And Amount",
+  "nutrition": [{"basis": {"kind": "serving"}, "nutrients": [{"nutrient": "sugars", "text": "trace", "amount": {"value": "0"}, "unit": "g"}]}],
+  "instruction_sections": [{"id": "method", "steps": [{"id": "mix", "text": "Mix."}]}]
+}

@@ -1,0 +1,95 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "roast-chicken",
+  "title": "Dry-Brined Roast Chicken",
+  "description": "A dry-brined whole chicken roasted with lemon, garlic, and thyme.",
+  "language": "en-US",
+  "source_locale": "en-US",
+  "yields": [{
+    "text": "4–6 servings",
+    "quantity": {"kind": "simple", "amount": {"min": "4", "max": "6"}, "unit": "count.serving"}
+  }],
+  "times": {
+    "prep": {"value": "PT25M"},
+    "cook": {"value": "PT1H", "approximate": true},
+    "additional": {"value": "PT8H15M"},
+    "total": {"value": "PT9H40M", "approximate": true},
+    "assertions": [
+      {"id": "prep-time", "kind": "prep", "duration": {"value": "PT25M"}, "attention": "active"},
+      {"id": "brine-time", "kind": "brine", "label": "Dry-brine", "duration": {"value": "PT8H"}, "attention": "passive"},
+      {"id": "initial-roast-time", "kind": "cook", "duration": {"value": "PT20M"}, "attention": "active"},
+      {"id": "finish-roast-time", "kind": "cook", "duration": {"min": "PT35M", "max": "PT45M", "approximate": true, "source_text": "about 35–45 minutes"}, "attention": "active"},
+      {"id": "rest-time", "kind": "rest", "duration": {"value": "PT15M"}, "attention": "passive"}
+    ]
+  },
+  "ingredient_sections": [
+    {
+      "id": "chicken",
+      "title": "Chicken",
+      "ingredients": [
+        {
+          "id": "whole-chicken",
+          "name": "whole chicken",
+          "quantity": {"kind": "simple", "amount": {"value": "1"}, "unit": "count.item"},
+          "package_size": {"kind": "simple", "amount": {"min": "4", "max": "5"}, "unit": "mass.pound.avoirdupois"},
+          "note": "giblets removed and chicken patted dry",
+          "source_text": "1 whole chicken (4–5 lb), giblets removed and patted dry"
+        },
+        {
+          "id": "salt",
+          "name": "kosher salt",
+          "quantity": {"kind": "simple", "amount": {"value": "2"}, "unit": "volume.teaspoon.us.customary"},
+          "source_text": "2 tsp kosher salt"
+        },
+        {
+          "id": "butter",
+          "name": "unsalted butter",
+          "quantity": {"kind": "simple", "amount": {"value": "30"}, "unit": "mass.gram"},
+          "note": "softened",
+          "source_text": "30 g unsalted butter, softened"
+        }
+      ]
+    },
+    {
+      "id": "aromatics",
+      "title": "Aromatics",
+      "ingredients": [
+        {"id": "lemon", "name": "lemon", "quantity": {"kind": "simple", "amount": {"value": "1"}, "unit": "count.item"}, "note": "halved", "source_text": "1 lemon, halved"},
+        {"id": "garlic", "name": "garlic", "quantity": {"kind": "simple", "amount": {"value": "4"}, "unit": "count.clove"}, "note": "crushed", "source_text": "4 cloves garlic, crushed"},
+        {"id": "thyme", "name": "thyme", "quantity": {"kind": "simple", "amount": {"value": "6"}, "unit": "count.sprig"}, "source_text": "6 sprigs thyme"}
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "dry-brine",
+      "title": "Dry-brine",
+      "steps": [
+        {"id": "salt-chicken", "text": "Season the chicken evenly with salt and refrigerate uncovered for 8 hours.", "timing_refs": ["brine-time"], "ingredient_uses": [{"ingredient_ref": "whole-chicken"}, {"ingredient_ref": "salt"}]}
+      ]
+    },
+    {
+      "id": "roast",
+      "title": "Roast",
+      "steps": [
+        {"id": "prepare-chicken", "text": "Rub the chicken with butter and place the lemon, garlic, and thyme in the cavity.", "timing_refs": ["prep-time"], "ingredient_uses": [{"ingredient_ref": "whole-chicken"}, {"ingredient_ref": "butter"}, {"ingredient_ref": "lemon"}, {"ingredient_ref": "garlic"}, {"ingredient_ref": "thyme"}]},
+        {
+          "id": "initial-roast",
+          "text": "Roast at 425 °F for 20 minutes.",
+          "timing_refs": ["initial-roast-time"],
+          "temperatures": [{"amount": {"value": "425"}, "unit": "temperature.fahrenheit", "purpose": {"kind": "oven"}, "source_text": "425 °F"}]
+        },
+        {
+          "id": "finish-roast",
+          "text": "Reduce the oven to 375 °F and roast until the thickest part of the breast reaches 165 °F, about 35–45 minutes.",
+          "timing_refs": ["finish-roast-time"],
+          "temperatures": [
+            {"amount": {"value": "375"}, "unit": "temperature.fahrenheit", "purpose": {"kind": "oven"}, "source_text": "375 °F"},
+            {"amount": {"value": "165"}, "unit": "temperature.fahrenheit", "purpose": {"kind": "internal", "label": "breast"}, "source_text": "165 °F"}
+          ]
+        },
+        {"id": "rest", "text": "Rest for 15 minutes before carving.", "timing_refs": ["rest-time"]}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0",
+    "x-org.example.header": {
+      "enabled": true
+    }
+  },
+  "id": "extension-preservation",
+  "title": "Extension Preservation",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "salt",
+          "name": "salt",
+          "note": "to taste",
+          "source_text": "salt, to taste",
+          "normalization": {
+            "method": "extracted",
+            "review": "confirmed"
+          },
+          "x-org.example.ingredient": [
+            1,
+            "two",
+            {
+              "three": true
+            }
+          ]
+        }
+      ],
+      "x-org.example.section": null
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "season",
+          "text": "Season to taste.",
+          "ingredient_uses": [
+            {"ingredient_ref": "salt"}
+          ],
+          "x-org.example.step": {
+            "preserve": "exactly at this scope"
+          }
+        }
+      ]
+    }
+  ],
+  "extensions": {
+    "x-org.example.document": {
+      "version": 1,
+      "x-payload-local-name": "opaque to SREF",
+      "data": [
+        "alpha",
+        "beta"
+      ]
+    }
+  },
+  "x-org.example.top": false
+}

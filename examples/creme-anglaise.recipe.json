@@ -1,0 +1,61 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "creme-anglaise",
+  "title": "Crème Anglaise",
+  "description": "A smooth vanilla pouring custard cooked gently to a narrow temperature range.",
+  "language": "en-GB",
+  "source_locale": "en-GB",
+  "yields": [{
+    "text": "about 600 mL",
+    "quantity": {"kind": "simple", "amount": {"value": "600", "approximate": true}, "unit": "volume.milliliter"}
+  }],
+  "times": {
+    "assertions": [
+      {"id": "chill-time", "kind": "chill", "duration": {"text": "at least 2 hours"}, "attention": "passive"}
+    ]
+  },
+  "ingredient_sections": [
+    {
+      "id": "custard",
+      "ingredients": [
+        {
+          "id": "milk",
+          "name": "whole milk",
+          "quantity": {"kind": "simple", "amount": {"value": "500"}, "unit": "volume.milliliter"},
+          "temperature": {"amount": {"value": "4", "approximate": true}, "unit": "temperature.celsius", "note": "refrigerated starting temperature", "source_text": "chilled"},
+          "note": "chilled",
+          "source_text": "500 mL chilled whole milk"
+        },
+        {"id": "yolks", "name": "egg yolks", "quantity": {"kind": "simple", "amount": {"value": "6"}}, "source_text": "6 egg yolks"},
+        {"id": "sugar", "name": "caster sugar", "quantity": {"kind": "simple", "amount": {"value": "100"}, "unit": "mass.gram"}, "source_text": "100 g caster sugar"},
+        {"id": "vanilla", "name": "vanilla bean", "quantity": {"kind": "simple", "amount": {"value": "1"}}, "note": "split lengthwise", "source_text": "1 vanilla bean, split lengthwise"}
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "cook",
+      "steps": [
+        {
+          "id": "heat-milk",
+          "text": "Heat the milk with the vanilla until steaming, about 70 °C.",
+          "ingredient_uses": [{"ingredient_ref": "milk"}, {"ingredient_ref": "vanilla"}],
+          "temperatures": [{"amount": {"value": "70", "approximate": true}, "unit": "temperature.celsius", "note": "milk", "source_text": "about 70 °C"}]
+        },
+        {"id": "whisk-yolks", "text": "Whisk the yolks and sugar until smooth.", "ingredient_uses": [{"ingredient_ref": "yolks"}, {"ingredient_ref": "sugar"}]},
+        {"id": "temper-yolks", "text": "Whisk the hot milk into the yolks gradually, then return the mixture to the pan.", "ingredient_uses": [{"ingredient_ref": "milk"}, {"ingredient_ref": "yolks"}, {"ingredient_ref": "sugar"}, {"ingredient_ref": "vanilla"}]},
+        {
+          "id": "cook-custard",
+          "text": "Stir over low heat until the custard reaches 82–84 °C and coats the back of a spoon.",
+          "temperatures": [{"amount": {"min": "82", "max": "84"}, "unit": "temperature.celsius", "note": "custard", "source_text": "82–84 °C"}]
+        }
+      ]
+    },
+    {
+      "id": "chill",
+      "steps": [
+        {"id": "strain-and-chill", "text": "Strain into a clean container, cover the surface, and chill for at least 2 hours.", "timing_refs": ["chill-time"]}
+      ]
+    }
+  ]
+}

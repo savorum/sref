@@ -1,0 +1,14 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "opaque-temperature-preservation",
+  "title": "Slow Oven Bread",
+  "ingredient_sections": [{"id": "ingredients", "ingredients": [{"id": "flour", "name": "flour"}]}],
+  "instruction_sections": [{"id": "method", "steps": [
+    {"id": "bake", "text": "Bake in a moderate oven, then finish in a quick oven.", "temperatures": [
+      {"text": "moderate oven", "purpose": {"kind": "oven"}},
+      {"text": "quick oven", "purpose": {"kind": "oven"}},
+      {"text": "very slow oven"},
+      {"amount": {"value": "350"}, "unit": "temperature.fahrenheit", "purpose": {"kind": "oven"}, "source_text": "moderate oven (350 °F)"}
+    ]}
+  ]}]
+}

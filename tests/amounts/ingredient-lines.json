@@ -1,0 +1,4330 @@
+{
+  "cases": [
+    {
+      "id": "mixed-fraction-cup",
+      "source_locale": "en-US",
+      "source_text": "1 1/2 cups all-purpose flour",
+      "classification": "structured",
+      "expected": {
+        "id": "mixed-fraction-cup",
+        "name": "all-purpose flour",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "3/2"
+          },
+          "unit": "volume.cup.us.customary"
+        },
+        "source_text": "1 1/2 cups all-purpose flour"
+      }
+    },
+    {
+      "id": "bounded-volume-range",
+      "source_locale": "en-US",
+      "source_text": "2–3 tbsp olive oil",
+      "classification": "structured",
+      "expected": {
+        "id": "bounded-volume-range",
+        "name": "olive oil",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "min": "2",
+            "max": "3"
+          },
+          "unit": "volume.tablespoon.us.customary"
+        },
+        "source_text": "2–3 tbsp olive oil"
+      }
+    },
+    {
+      "id": "approximate-mass",
+      "source_locale": "en-GB",
+      "source_text": "about 200 g waxy potatoes",
+      "classification": "structured",
+      "expected": {
+        "id": "approximate-mass",
+        "name": "waxy potatoes",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "200",
+            "approximate": true
+          },
+          "unit": "mass.gram"
+        },
+        "source_text": "about 200 g waxy potatoes"
+      }
+    },
+    {
+      "id": "absent-to-taste",
+      "source_locale": "en",
+      "source_text": "fine salt, to taste",
+      "classification": "structured",
+      "expected": {
+        "id": "absent-to-taste",
+        "name": "fine salt",
+        "note": "to taste",
+        "source_text": "fine salt, to taste"
+      },
+      "must_not_infer": [
+        "zero-amount"
+      ]
+    },
+    {
+      "id": "australian-tablespoon",
+      "source_locale": "en-US",
+      "source_text": "1 Australian tablespoon golden syrup",
+      "classification": "structured",
+      "expected": {
+        "id": "australian-tablespoon",
+        "name": "golden syrup",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "volume.tablespoon.au"
+        },
+        "source_text": "1 Australian tablespoon golden syrup"
+      },
+      "must_not_infer": [
+        "us-tablespoon"
+      ]
+    },
+    {
+      "id": "counted-can-size",
+      "source_locale": "en-US",
+      "source_text": "2 (14 oz) cans diced tomatoes",
+      "classification": "structured",
+      "expected": {
+        "id": "counted-can-size",
+        "name": "diced tomatoes",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          },
+          "unit": "container.can"
+        },
+        "package_size": {
+          "kind": "simple",
+          "amount": {
+            "value": "14"
+          },
+          "unit": "mass.ounce.avoirdupois"
+        },
+        "source_text": "2 (14 oz) cans diced tomatoes"
+      },
+      "must_not_infer": [
+        "universal-can-size"
+      ]
+    },
+    {
+      "id": "egg-size-note",
+      "source_locale": "en-US",
+      "source_text": "1 large egg",
+      "classification": "structured",
+      "expected": {
+        "id": "egg-size-note",
+        "name": "egg",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "count.egg"
+        },
+        "note": "large",
+        "source_text": "1 large egg"
+      },
+      "must_not_infer": [
+        "egg-mass"
+      ]
+    },
+    {
+      "id": "divided-eggs",
+      "source_locale": "en",
+      "source_text": "2 eggs, divided",
+      "classification": "structured",
+      "expected": {
+        "id": "divided-eggs",
+        "name": "eggs",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          },
+          "unit": "count.egg"
+        },
+        "note": "divided",
+        "source_text": "2 eggs, divided"
+      }
+    },
+    {
+      "id": "additive-volume",
+      "source_locale": "en-US",
+      "source_text": "1/2 cup plus 2 tbsp brown sugar",
+      "classification": "structured",
+      "expected": {
+        "id": "additive-volume",
+        "name": "brown sugar",
+        "quantity": {
+          "kind": "sum",
+          "terms": [
+            {
+              "kind": "simple",
+              "amount": {
+                "value": "1/2"
+              },
+              "unit": "volume.cup.us.customary"
+            },
+            {
+              "kind": "simple",
+              "amount": {
+                "value": "2"
+              },
+              "unit": "volume.tablespoon.us.customary"
+            }
+          ]
+        },
+        "source_text": "1/2 cup plus 2 tbsp brown sugar"
+      }
+    },
+    {
+      "id": "qualitative-pinch",
+      "source_locale": "en",
+      "source_text": "a generous pinch of saffron",
+      "classification": "structured",
+      "expected": {
+        "id": "qualitative-pinch",
+        "name": "saffron",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "count.pinch"
+        },
+        "note": "generous",
+        "source_text": "a generous pinch of saffron"
+      },
+      "must_not_infer": [
+        "pinch-mass",
+        "pinch-volume"
+      ]
+    },
+    {
+      "id": "multiplied-tins",
+      "source_locale": "en-GB",
+      "source_text": "3 × 400 g tins chickpeas",
+      "classification": "structured",
+      "expected": {
+        "id": "multiplied-tins",
+        "name": "chickpeas",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "3"
+          },
+          "unit": "container.tin"
+        },
+        "package_size": {
+          "kind": "simple",
+          "amount": {
+            "value": "400"
+          },
+          "unit": "mass.gram"
+        },
+        "source_text": "3 × 400 g tins chickpeas"
+      }
+    },
+    {
+      "id": "alternative-mass",
+      "source_locale": "en-GB",
+      "source_text": "225 g / 8 oz unsalted butter",
+      "classification": "structured",
+      "expected": {
+        "id": "alternative-mass",
+        "name": "unsalted butter",
+        "quantity": {
+          "kind": "alternatives",
+          "options": [
+            {
+              "kind": "simple",
+              "amount": {
+                "value": "225"
+              },
+              "unit": "mass.gram"
+            },
+            {
+              "kind": "simple",
+              "amount": {
+                "value": "8"
+              },
+              "unit": "mass.ounce.avoirdupois"
+            }
+          ]
+        },
+        "source_text": "225 g / 8 oz unsalted butter"
+      },
+      "must_not_infer": [
+        "exact-equivalence"
+      ]
+    },
+    {
+      "id": "extra-for-dusting",
+      "source_locale": "en-US",
+      "source_text": "1 cup flour, plus more for dusting",
+      "classification": "structured",
+      "expected": {
+        "id": "extra-for-dusting",
+        "name": "flour",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "volume.cup.us.customary"
+        },
+        "note": "plus more for dusting",
+        "source_text": "1 cup flour, plus more for dusting"
+      },
+      "must_not_infer": [
+        "extra-amount"
+      ]
+    },
+    {
+      "id": "juiced-lemons",
+      "source_locale": "en",
+      "source_text": "juice of 2 lemons",
+      "classification": "partial",
+      "expected": {
+        "id": "juiced-lemons",
+        "name": "lemons",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          }
+        },
+        "note": "juiced",
+        "source_text": "juice of 2 lemons"
+      },
+      "must_not_infer": [
+        "juice-volume"
+      ]
+    },
+    {
+      "id": "orange-zest",
+      "source_locale": "en",
+      "source_text": "finely grated zest of 1 orange",
+      "classification": "partial",
+      "expected": {
+        "id": "orange-zest",
+        "name": "orange",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          }
+        },
+        "note": "finely grated zest",
+        "source_text": "finely grated zest of 1 orange"
+      },
+      "must_not_infer": [
+        "zest-mass"
+      ]
+    },
+    {
+      "id": "garlic-head",
+      "source_locale": "en",
+      "source_text": "1 head garlic, cloves separated",
+      "classification": "partial",
+      "expected": {
+        "id": "garlic-head",
+        "name": "garlic",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          }
+        },
+        "note": "head; cloves separated",
+        "source_text": "1 head garlic, cloves separated"
+      },
+      "must_not_infer": [
+        "clove-count"
+      ]
+    },
+    {
+      "id": "ice-cube-range",
+      "source_locale": "en",
+      "source_text": "12 to 16 ice cubes",
+      "classification": "structured",
+      "expected": {
+        "id": "ice-cube-range",
+        "name": "ice cubes",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "min": "12",
+            "max": "16"
+          }
+        },
+        "source_text": "12 to 16 ice cubes"
+      },
+      "must_not_infer": [
+        "ice-volume"
+      ]
+    },
+    {
+      "id": "decimal-yeast",
+      "source_locale": "en",
+      "source_text": "0.1 g instant yeast",
+      "classification": "structured",
+      "expected": {
+        "id": "decimal-yeast",
+        "name": "instant yeast",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1/10"
+          },
+          "unit": "mass.gram"
+        },
+        "source_text": "0.1 g instant yeast"
+      }
+    },
+    {
+      "id": "scant-cup",
+      "source_locale": "en-US",
+      "source_text": "1 scant cup basmati rice",
+      "classification": "structured",
+      "expected": {
+        "id": "scant-cup",
+        "name": "basmati rice",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "volume.cup.us.customary"
+        },
+        "note": "scant",
+        "source_text": "1 scant cup basmati rice"
+      },
+      "must_not_infer": [
+        "scant-adjustment"
+      ]
+    },
+    {
+      "id": "heaping-spoon",
+      "source_locale": "en-US",
+      "source_text": "1 heaping tbsp cocoa powder",
+      "classification": "structured",
+      "expected": {
+        "id": "heaping-spoon",
+        "name": "cocoa powder",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "volume.tablespoon.us.customary"
+        },
+        "note": "heaping",
+        "source_text": "1 heaping tbsp cocoa powder"
+      },
+      "must_not_infer": [
+        "heap-volume"
+      ]
+    },
+    {
+      "id": "splash-vinegar",
+      "source_locale": "en",
+      "source_text": "a splash of red wine vinegar",
+      "classification": "opaque",
+      "expected": {
+        "id": "splash-vinegar",
+        "name": "red wine vinegar",
+        "quantity": {
+          "kind": "opaque",
+          "text": "a splash"
+        },
+        "source_text": "a splash of red wine vinegar"
+      },
+      "must_not_infer": [
+        "splash-volume"
+      ]
+    },
+    {
+      "id": "knob-butter",
+      "source_locale": "en-GB",
+      "source_text": "a walnut-sized knob of butter",
+      "classification": "opaque",
+      "expected": {
+        "id": "knob-butter",
+        "name": "butter",
+        "quantity": {
+          "kind": "opaque",
+          "text": "a walnut-sized knob"
+        },
+        "source_text": "a walnut-sized knob of butter"
+      },
+      "must_not_infer": [
+        "knob-mass"
+      ]
+    },
+    {
+      "id": "bouquet-garni",
+      "source_locale": "fr",
+      "source_text": "1 bouquet garni",
+      "classification": "partial",
+      "expected": {
+        "id": "bouquet-garni",
+        "name": "bouquet garni",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          }
+        },
+        "source_text": "1 bouquet garni"
+      },
+      "must_not_infer": [
+        "bouquet-composition"
+      ]
+    },
+    {
+      "id": "cinnamon-stick-length",
+      "source_locale": "en-US",
+      "source_text": "one 6-inch cinnamon stick",
+      "classification": "partial",
+      "expected": {
+        "id": "cinnamon-stick-length",
+        "name": "cinnamon stick",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          }
+        },
+        "package_size": {
+          "kind": "simple",
+          "amount": {
+            "value": "6"
+          },
+          "unit": "length.inch.international"
+        },
+        "source_text": "one 6-inch cinnamon stick"
+      },
+      "must_not_infer": [
+        "stick-mass"
+      ]
+    },
+    {
+      "id": "whole-chicken-mass-range",
+      "source_locale": "en-US",
+      "source_text": "1 whole chicken, 2 1/2 to 3 lb",
+      "classification": "structured",
+      "expected": {
+        "id": "whole-chicken-mass-range",
+        "name": "whole chicken",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "count.item"
+        },
+        "package_size": {
+          "kind": "simple",
+          "amount": {
+            "min": "5/2",
+            "max": "3"
+          },
+          "unit": "mass.pound.avoirdupois"
+        },
+        "source_text": "1 whole chicken, 2 1/2 to 3 lb"
+      },
+      "must_not_infer": [
+        "edible-mass"
+      ]
+    },
+    {
+      "id": "wine-bottle-size",
+      "source_locale": "en",
+      "source_text": "one 750 mL bottle dry red wine",
+      "classification": "partial",
+      "expected": {
+        "id": "wine-bottle-size",
+        "name": "dry red wine",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          }
+        },
+        "package_size": {
+          "kind": "simple",
+          "amount": {
+            "value": "750"
+          },
+          "unit": "volume.milliliter"
+        },
+        "note": "bottle",
+        "source_text": "one 750 mL bottle dry red wine"
+      },
+      "must_not_infer": [
+        "bottle-unit"
+      ]
+    },
+    {
+      "id": "fractional-can",
+      "source_locale": "en-US",
+      "source_text": "1/2 of a 15 oz can pumpkin purée",
+      "classification": "structured",
+      "expected": {
+        "id": "fractional-can",
+        "name": "pumpkin purée",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1/2"
+          },
+          "unit": "container.can"
+        },
+        "package_size": {
+          "kind": "simple",
+          "amount": {
+            "value": "15"
+          },
+          "unit": "mass.ounce.avoirdupois"
+        },
+        "source_text": "1/2 of a 15 oz can pumpkin purée"
+      }
+    },
+    {
+      "id": "gelatin-packets",
+      "source_locale": "en",
+      "source_text": "4 packets powdered gelatin, 7 g each",
+      "classification": "structured",
+      "expected": {
+        "id": "gelatin-packets",
+        "name": "powdered gelatin",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "4"
+          },
+          "unit": "container.packet"
+        },
+        "package_size": {
+          "kind": "simple",
+          "amount": {
+            "value": "7"
+          },
+          "unit": "mass.gram"
+        },
+        "source_text": "4 packets powdered gelatin, 7 g each"
+      }
+    },
+    {
+      "id": "bakers-percentage",
+      "source_locale": "en",
+      "source_text": "bread flour, 100%",
+      "classification": "opaque",
+      "expected": {
+        "id": "bakers-percentage",
+        "name": "bread flour",
+        "quantity": {
+          "kind": "opaque",
+          "text": "100% baker's percentage"
+        },
+        "source_text": "bread flour, 100%"
+      },
+      "must_not_infer": [
+        "percentage-mass"
+      ]
+    },
+    {
+      "id": "subtractive-volume",
+      "source_locale": "en-US",
+      "source_text": "1 cup minus 1 tbsp whole milk",
+      "classification": "opaque",
+      "expected": {
+        "id": "subtractive-volume",
+        "name": "whole milk",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 cup minus 1 tbsp"
+        },
+        "source_text": "1 cup minus 1 tbsp whole milk"
+      },
+      "must_not_infer": [
+        "subtraction-collapse"
+      ]
+    },
+    {
+      "id": "as-needed-oil",
+      "source_locale": "en-US",
+      "source_text": "2 tbsp neutral oil, or as needed",
+      "classification": "structured",
+      "expected": {
+        "id": "as-needed-oil",
+        "name": "neutral oil",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          },
+          "unit": "volume.tablespoon.us.customary"
+        },
+        "note": "or as needed",
+        "source_text": "2 tbsp neutral oil, or as needed"
+      },
+      "must_not_infer": [
+        "maximum-amount"
+      ]
+    },
+    {
+      "id": "ginger-piece-length",
+      "source_locale": "en-US",
+      "source_text": "one 2-inch piece fresh ginger",
+      "classification": "partial",
+      "expected": {
+        "id": "ginger-piece-length",
+        "name": "fresh ginger",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          }
+        },
+        "package_size": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          },
+          "unit": "length.inch.international"
+        },
+        "note": "piece",
+        "source_text": "one 2-inch piece fresh ginger"
+      },
+      "must_not_infer": [
+        "ginger-mass"
+      ]
+    },
+    {
+      "id": "fractional-onion",
+      "source_locale": "en",
+      "source_text": "1/2 small red onion, thinly sliced",
+      "classification": "structured",
+      "expected": {
+        "id": "fractional-onion",
+        "name": "red onion",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1/2"
+          }
+        },
+        "note": "small; thinly sliced",
+        "source_text": "1/2 small red onion, thinly sliced"
+      },
+      "must_not_infer": [
+        "onion-mass"
+      ]
+    },
+    {
+      "id": "ranged-cans",
+      "source_locale": "en-CA",
+      "source_text": "1–2 (400 mL) cans coconut milk",
+      "classification": "structured",
+      "expected": {
+        "id": "ranged-cans",
+        "name": "coconut milk",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "min": "1",
+            "max": "2"
+          },
+          "unit": "container.can"
+        },
+        "package_size": {
+          "kind": "simple",
+          "amount": {
+            "value": "400"
+          },
+          "unit": "volume.milliliter"
+        },
+        "source_text": "1–2 (400 mL) cans coconut milk"
+      }
+    },
+    {
+      "id": "chicken-thigh-attributes",
+      "source_locale": "en",
+      "source_text": "4 skin-on, bone-in chicken thighs",
+      "classification": "partial",
+      "expected": {
+        "id": "chicken-thigh-attributes",
+        "name": "chicken thighs",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "4"
+          }
+        },
+        "note": "skin-on; bone-in",
+        "source_text": "4 skin-on, bone-in chicken thighs"
+      },
+      "must_not_infer": [
+        "edible-mass"
+      ]
+    },
+    {
+      "id": "basil-leaf-range",
+      "source_locale": "en",
+      "source_text": "6–8 large basil leaves, torn",
+      "classification": "partial",
+      "expected": {
+        "id": "basil-leaf-range",
+        "name": "basil leaves",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "min": "6",
+            "max": "8"
+          }
+        },
+        "note": "large; torn",
+        "source_text": "6–8 large basil leaves, torn"
+      },
+      "must_not_infer": [
+        "leaf-mass"
+      ]
+    },
+    {
+      "id": "packed-brown-sugar",
+      "source_locale": "en-US",
+      "source_text": "1 packed cup dark brown sugar",
+      "classification": "structured",
+      "expected": {
+        "id": "packed-brown-sugar",
+        "name": "dark brown sugar",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "volume.cup.us.customary"
+        },
+        "note": "packed",
+        "source_text": "1 packed cup dark brown sugar"
+      },
+      "must_not_infer": [
+        "packing-density"
+      ]
+    },
+    {
+      "id": "dessertspoon",
+      "source_locale": "en-GB",
+      "source_text": "1 level dessertspoon mustard",
+      "classification": "opaque",
+      "expected": {
+        "id": "dessertspoon",
+        "name": "mustard",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 level dessertspoon"
+        },
+        "source_text": "1 level dessertspoon mustard"
+      },
+      "must_not_infer": [
+        "tablespoon-equivalence"
+      ]
+    },
+    {
+      "id": "bitters-dashes",
+      "source_locale": "en",
+      "source_text": "3 dashes aromatic bitters",
+      "classification": "partial",
+      "expected": {
+        "id": "bitters-dashes",
+        "name": "aromatic bitters",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "3"
+          }
+        },
+        "note": "dashes",
+        "source_text": "3 dashes aromatic bitters"
+      },
+      "must_not_infer": [
+        "dash-volume"
+      ]
+    },
+    {
+      "id": "vanilla-drops",
+      "source_locale": "en",
+      "source_text": "12 drops vanilla extract",
+      "classification": "partial",
+      "expected": {
+        "id": "vanilla-drops",
+        "name": "vanilla extract",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "12"
+          }
+        },
+        "note": "drops",
+        "source_text": "12 drops vanilla extract"
+      },
+      "must_not_infer": [
+        "drop-volume"
+      ]
+    },
+    {
+      "id": "wineglass-sherry",
+      "source_locale": "en-GB",
+      "source_text": "1 small wineglass dry sherry",
+      "classification": "opaque",
+      "expected": {
+        "id": "wineglass-sherry",
+        "name": "dry sherry",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 small wineglass"
+        },
+        "source_text": "1 small wineglass dry sherry"
+      },
+      "must_not_infer": [
+        "wineglass-volume"
+      ]
+    },
+    {
+      "id": "coffee-cup-stock",
+      "source_locale": "en",
+      "source_text": "1 coffee cup chicken stock",
+      "classification": "opaque",
+      "expected": {
+        "id": "coffee-cup-stock",
+        "name": "chicken stock",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 coffee cup"
+        },
+        "source_text": "1 coffee cup chicken stock"
+      },
+      "must_not_infer": [
+        "culinary-cup"
+      ]
+    },
+    {
+      "id": "kombu-length",
+      "source_locale": "en",
+      "source_text": "a 5 cm piece kombu",
+      "classification": "partial",
+      "expected": {
+        "id": "kombu-length",
+        "name": "kombu",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          }
+        },
+        "package_size": {
+          "kind": "simple",
+          "amount": {
+            "value": "5"
+          },
+          "unit": "length.centimeter"
+        },
+        "note": "piece",
+        "source_text": "a 5 cm piece kombu"
+      },
+      "must_not_infer": [
+        "kombu-mass"
+      ]
+    },
+    {
+      "id": "thumb-ginger",
+      "source_locale": "en",
+      "source_text": "1 thumb-size piece ginger",
+      "classification": "opaque",
+      "expected": {
+        "id": "thumb-ginger",
+        "name": "ginger",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 thumb-size piece"
+        },
+        "source_text": "1 thumb-size piece ginger"
+      },
+      "must_not_infer": [
+        "thumb-length",
+        "thumb-mass"
+      ]
+    },
+    {
+      "id": "fistful-greens",
+      "source_locale": "en",
+      "source_text": "a fistful of tender greens",
+      "classification": "opaque",
+      "expected": {
+        "id": "fistful-greens",
+        "name": "tender greens",
+        "quantity": {
+          "kind": "opaque",
+          "text": "a fistful"
+        },
+        "source_text": "a fistful of tender greens"
+      },
+      "must_not_infer": [
+        "fistful-volume",
+        "fistful-mass"
+      ]
+    },
+    {
+      "id": "oil-glugs",
+      "source_locale": "en",
+      "source_text": "two glugs extra-virgin olive oil",
+      "classification": "opaque",
+      "expected": {
+        "id": "oil-glugs",
+        "name": "extra-virgin olive oil",
+        "quantity": {
+          "kind": "opaque",
+          "text": "two glugs"
+        },
+        "source_text": "two glugs extra-virgin olive oil"
+      },
+      "must_not_infer": [
+        "glug-volume"
+      ]
+    },
+    {
+      "id": "rounded-teaspoon",
+      "source_locale": "en-AU",
+      "source_text": "1 rounded tsp ground cumin",
+      "classification": "structured",
+      "expected": {
+        "id": "rounded-teaspoon",
+        "name": "ground cumin",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "volume.teaspoon.au"
+        },
+        "note": "rounded",
+        "source_text": "1 rounded tsp ground cumin"
+      },
+      "must_not_infer": [
+        "rounded-adjustment"
+      ]
+    },
+    {
+      "id": "scant-quarter-teaspoon",
+      "source_locale": "en-US",
+      "source_text": "a scant 1/4 tsp ground cloves",
+      "classification": "structured",
+      "expected": {
+        "id": "scant-quarter-teaspoon",
+        "name": "ground cloves",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1/4"
+          },
+          "unit": "volume.teaspoon.us.customary"
+        },
+        "note": "scant",
+        "source_text": "a scant 1/4 tsp ground cloves"
+      },
+      "must_not_infer": [
+        "scant-adjustment"
+      ]
+    },
+    {
+      "id": "between-fractions",
+      "source_locale": "en-US",
+      "source_text": "between 1/8 and 1/4 tsp cayenne",
+      "classification": "structured",
+      "expected": {
+        "id": "between-fractions",
+        "name": "cayenne",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "min": "1/8",
+            "max": "1/4"
+          },
+          "unit": "volume.teaspoon.us.customary"
+        },
+        "source_text": "between 1/8 and 1/4 tsp cayenne"
+      }
+    },
+    {
+      "id": "decimal-range",
+      "source_locale": "en",
+      "source_text": "0.5–1 g xanthan gum",
+      "classification": "structured",
+      "expected": {
+        "id": "decimal-range",
+        "name": "xanthan gum",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "min": "1/2",
+            "max": "1"
+          },
+          "unit": "mass.gram"
+        },
+        "source_text": "0.5–1 g xanthan gum"
+      }
+    },
+    {
+      "id": "fractional-bag",
+      "source_locale": "en-US",
+      "source_text": "1/3 of a 12 oz bag frozen peas",
+      "classification": "partial",
+      "expected": {
+        "id": "fractional-bag",
+        "name": "frozen peas",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1/3"
+          }
+        },
+        "package_size": {
+          "kind": "simple",
+          "amount": {
+            "value": "12"
+          },
+          "unit": "mass.ounce.avoirdupois"
+        },
+        "note": "bag",
+        "source_text": "1/3 of a 12 oz bag frozen peas"
+      },
+      "must_not_infer": [
+        "bag-unit"
+      ]
+    },
+    {
+      "id": "explicitly-unpacked",
+      "source_locale": "en-US",
+      "source_text": "2 1/2 cups spinach, not packed",
+      "classification": "structured",
+      "expected": {
+        "id": "explicitly-unpacked",
+        "name": "spinach",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "5/2"
+          },
+          "unit": "volume.cup.us.customary"
+        },
+        "note": "not packed",
+        "source_text": "2 1/2 cups spinach, not packed"
+      },
+      "must_not_infer": [
+        "spinach-mass"
+      ]
+    },
+    {
+      "id": "loose-packed",
+      "source_locale": "en-US",
+      "source_text": "1/2 cup loosely packed mint leaves",
+      "classification": "structured",
+      "expected": {
+        "id": "loose-packed",
+        "name": "mint leaves",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1/2"
+          },
+          "unit": "volume.cup.us.customary"
+        },
+        "note": "loosely packed",
+        "source_text": "1/2 cup loosely packed mint leaves"
+      },
+      "must_not_infer": [
+        "mint-mass"
+      ]
+    },
+    {
+      "id": "multiplied-yogurt-pots",
+      "source_locale": "en-GB",
+      "source_text": "4 × 125 g pots plain yoghurt",
+      "classification": "partial",
+      "expected": {
+        "id": "multiplied-yogurt-pots",
+        "name": "plain yoghurt",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "4"
+          }
+        },
+        "package_size": {
+          "kind": "simple",
+          "amount": {
+            "value": "125"
+          },
+          "unit": "mass.gram"
+        },
+        "note": "pots",
+        "source_text": "4 × 125 g pots plain yoghurt"
+      },
+      "must_not_infer": [
+        "pot-unit"
+      ]
+    },
+    {
+      "id": "tortilla-diameter",
+      "source_locale": "en-US",
+      "source_text": "two 8-inch flour tortillas",
+      "classification": "partial",
+      "expected": {
+        "id": "tortilla-diameter",
+        "name": "flour tortillas",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          }
+        },
+        "package_size": {
+          "kind": "simple",
+          "amount": {
+            "value": "8"
+          },
+          "unit": "length.inch.international"
+        },
+        "note": "diameter",
+        "source_text": "two 8-inch flour tortillas"
+      },
+      "must_not_infer": [
+        "tortilla-mass"
+      ]
+    },
+    {
+      "id": "pastry-dimensions",
+      "source_locale": "en",
+      "source_text": "1 sheet puff pastry, 25 × 25 cm",
+      "classification": "partial",
+      "expected": {
+        "id": "pastry-dimensions",
+        "name": "puff pastry",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          }
+        },
+        "note": "sheet; 25 × 25 cm",
+        "source_text": "1 sheet puff pastry, 25 × 25 cm"
+      },
+      "must_not_infer": [
+        "pastry-area-conversion"
+      ]
+    },
+    {
+      "id": "mixed-mass-sum",
+      "source_locale": "en-US",
+      "source_text": "1 lb 2 oz beef chuck",
+      "classification": "structured",
+      "expected": {
+        "id": "mixed-mass-sum",
+        "name": "beef chuck",
+        "quantity": {
+          "kind": "sum",
+          "terms": [
+            {
+              "kind": "simple",
+              "amount": {
+                "value": "1"
+              },
+              "unit": "mass.pound.avoirdupois"
+            },
+            {
+              "kind": "simple",
+              "amount": {
+                "value": "2"
+              },
+              "unit": "mass.ounce.avoirdupois"
+            }
+          ]
+        },
+        "source_text": "1 lb 2 oz beef chuck"
+      }
+    },
+    {
+      "id": "cross-metric-mass-sum",
+      "source_locale": "en",
+      "source_text": "3/4 kg plus 50 g potatoes",
+      "classification": "structured",
+      "expected": {
+        "id": "cross-metric-mass-sum",
+        "name": "potatoes",
+        "quantity": {
+          "kind": "sum",
+          "terms": [
+            {
+              "kind": "simple",
+              "amount": {
+                "value": "3/4"
+              },
+              "unit": "mass.kilogram"
+            },
+            {
+              "kind": "simple",
+              "amount": {
+                "value": "50"
+              },
+              "unit": "mass.gram"
+            }
+          ]
+        },
+        "source_text": "3/4 kg plus 50 g potatoes"
+      }
+    },
+    {
+      "id": "quart-plus-cup",
+      "source_locale": "en-US",
+      "source_text": "1 quart plus 1 cup vegetable stock",
+      "classification": "structured",
+      "expected": {
+        "id": "quart-plus-cup",
+        "name": "vegetable stock",
+        "quantity": {
+          "kind": "sum",
+          "terms": [
+            {
+              "kind": "simple",
+              "amount": {
+                "value": "1"
+              },
+              "unit": "volume.quart.us.liquid"
+            },
+            {
+              "kind": "simple",
+              "amount": {
+                "value": "1"
+              },
+              "unit": "volume.cup.us.customary"
+            }
+          ]
+        },
+        "source_text": "1 quart plus 1 cup vegetable stock"
+      },
+      "must_not_infer": [
+        "partial-sum-collapse"
+      ]
+    },
+    {
+      "id": "subtractive-metric",
+      "source_locale": "en-AU",
+      "source_text": "1 metric cup less 20 mL cream",
+      "classification": "opaque",
+      "expected": {
+        "id": "subtractive-metric",
+        "name": "cream",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 metric cup less 20 mL"
+        },
+        "source_text": "1 metric cup less 20 mL cream"
+      },
+      "must_not_infer": [
+        "subtraction-collapse"
+      ]
+    },
+    {
+      "id": "dozen-eggs",
+      "source_locale": "en",
+      "source_text": "1 dozen eggs",
+      "classification": "structured",
+      "expected": {
+        "id": "dozen-eggs",
+        "name": "eggs",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "12"
+          },
+          "unit": "count.egg"
+        },
+        "source_text": "1 dozen eggs"
+      }
+    },
+    {
+      "id": "half-dozen-oysters",
+      "source_locale": "en",
+      "source_text": "half a dozen shucked oysters",
+      "classification": "structured",
+      "expected": {
+        "id": "half-dozen-oysters",
+        "name": "shucked oysters",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "6"
+          }
+        },
+        "source_text": "half a dozen shucked oysters"
+      },
+      "must_not_infer": [
+        "oyster-mass"
+      ]
+    },
+    {
+      "id": "pair-bay-leaves",
+      "source_locale": "en",
+      "source_text": "a pair of dried bay leaves",
+      "classification": "structured",
+      "expected": {
+        "id": "pair-bay-leaves",
+        "name": "dried bay leaves",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          }
+        },
+        "source_text": "a pair of dried bay leaves"
+      }
+    },
+    {
+      "id": "bakers-dozen-rolls",
+      "source_locale": "en",
+      "source_text": "a baker's dozen dinner rolls",
+      "classification": "structured",
+      "expected": {
+        "id": "bakers-dozen-rolls",
+        "name": "dinner rolls",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "13"
+          }
+        },
+        "source_text": "a baker's dozen dinner rolls"
+      }
+    },
+    {
+      "id": "butter-sticks-nonphysical",
+      "source_locale": "en-US",
+      "source_text": "1 1/2 sticks butter",
+      "classification": "partial",
+      "expected": {
+        "id": "butter-sticks-nonphysical",
+        "name": "butter",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "3/2"
+          }
+        },
+        "note": "sticks",
+        "source_text": "1 1/2 sticks butter"
+      },
+      "must_not_infer": [
+        "stick-mass"
+      ]
+    },
+    {
+      "id": "stick-butter-annotated-mass",
+      "source_locale": "en-US",
+      "source_text": "1 US stick butter (4 oz)",
+      "classification": "structured",
+      "expected": {
+        "id": "stick-butter-annotated-mass",
+        "name": "butter",
+        "quantity": {
+          "kind": "alternatives",
+          "options": [
+            {
+              "kind": "simple",
+              "amount": {
+                "value": "1"
+              }
+            },
+            {
+              "kind": "simple",
+              "amount": {
+                "value": "4"
+              },
+              "unit": "mass.ounce.avoirdupois"
+            }
+          ]
+        },
+        "note": "US stick",
+        "source_text": "1 US stick butter (4 oz)"
+      },
+      "must_not_infer": [
+        "global-stick-definition"
+      ]
+    },
+    {
+      "id": "divided-water-range",
+      "source_locale": "en",
+      "source_text": "200–250 mL water, divided between dough and wash",
+      "classification": "structured",
+      "expected": {
+        "id": "divided-water-range",
+        "name": "water",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "min": "200",
+            "max": "250"
+          },
+          "unit": "volume.milliliter"
+        },
+        "note": "divided between dough and wash",
+        "source_text": "200–250 mL water, divided between dough and wash"
+      }
+    },
+    {
+      "id": "upper-bound-only",
+      "source_locale": "en-US",
+      "source_text": "up to 2 cups bread crumbs",
+      "classification": "opaque",
+      "expected": {
+        "id": "upper-bound-only",
+        "name": "bread crumbs",
+        "quantity": {
+          "kind": "opaque",
+          "text": "up to 2 cups"
+        },
+        "source_text": "up to 2 cups bread crumbs"
+      },
+      "must_not_infer": [
+        "zero-lower-bound"
+      ]
+    },
+    {
+      "id": "lower-bound-only",
+      "source_locale": "en-AU",
+      "source_text": "at least 3 tbsp pan juices",
+      "classification": "opaque",
+      "expected": {
+        "id": "lower-bound-only",
+        "name": "pan juices",
+        "quantity": {
+          "kind": "opaque",
+          "text": "at least 3 tbsp"
+        },
+        "source_text": "at least 3 tbsp pan juices"
+      },
+      "must_not_infer": [
+        "finite-upper-bound"
+      ]
+    },
+    {
+      "id": "more-than-mass",
+      "source_locale": "en",
+      "source_text": "more than 1 kg ripe tomatoes",
+      "classification": "opaque",
+      "expected": {
+        "id": "more-than-mass",
+        "name": "ripe tomatoes",
+        "quantity": {
+          "kind": "opaque",
+          "text": "more than 1 kg"
+        },
+        "source_text": "more than 1 kg ripe tomatoes"
+      },
+      "must_not_infer": [
+        "exact-kilogram"
+      ]
+    },
+    {
+      "id": "preferred-equivalence",
+      "source_locale": "en-US",
+      "source_text": "1 cup milk, preferably measured as 240 mL",
+      "classification": "structured",
+      "expected": {
+        "id": "preferred-equivalence",
+        "name": "milk",
+        "quantity": {
+          "kind": "alternatives",
+          "options": [
+            {
+              "kind": "simple",
+              "amount": {
+                "value": "1"
+              },
+              "unit": "volume.cup.us.culinary"
+            },
+            {
+              "kind": "simple",
+              "amount": {
+                "value": "240"
+              },
+              "unit": "volume.milliliter"
+            }
+          ]
+        },
+        "note": "240 mL preferred",
+        "source_text": "1 cup milk, preferably measured as 240 mL"
+      },
+      "must_not_infer": [
+        "exact-customary-equivalence"
+      ]
+    },
+    {
+      "id": "explicit-au-equivalence",
+      "source_locale": "en-AU",
+      "source_text": "250 mL (1 Australian cup) milk",
+      "classification": "structured",
+      "expected": {
+        "id": "explicit-au-equivalence",
+        "name": "milk",
+        "quantity": {
+          "kind": "alternatives",
+          "options": [
+            {
+              "kind": "simple",
+              "amount": {
+                "value": "250"
+              },
+              "unit": "volume.milliliter"
+            },
+            {
+              "kind": "simple",
+              "amount": {
+                "value": "1"
+              },
+              "unit": "volume.cup.au"
+            }
+          ]
+        },
+        "source_text": "250 mL (1 Australian cup) milk"
+      }
+    },
+    {
+      "id": "qualified-american-cup",
+      "source_locale": "en-US",
+      "source_text": "1 American cup cornmeal",
+      "classification": "structured",
+      "expected": {
+        "id": "qualified-american-cup",
+        "name": "cornmeal",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "volume.cup.us.customary"
+        },
+        "source_text": "1 American cup cornmeal"
+      },
+      "must_not_infer": [
+        "rounded-culinary-equivalence"
+      ]
+    },
+    {
+      "id": "imperial-pint",
+      "source_locale": "en-GB",
+      "source_text": "1 imperial pint whole milk",
+      "classification": "structured",
+      "expected": {
+        "id": "imperial-pint",
+        "name": "whole milk",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "volume.pint.imperial"
+        },
+        "source_text": "1 imperial pint whole milk"
+      },
+      "must_not_infer": [
+        "us-pint"
+      ]
+    },
+    {
+      "id": "gill-cream",
+      "source_locale": "en-GB",
+      "source_text": "1 gill double cream",
+      "classification": "opaque",
+      "expected": {
+        "id": "gill-cream",
+        "name": "double cream",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 gill"
+        },
+        "source_text": "1 gill double cream"
+      },
+      "must_not_infer": [
+        "gill-volume"
+      ]
+    },
+    {
+      "id": "fluid-ounce-us",
+      "source_locale": "en-US",
+      "source_text": "1 US fl oz rosewater",
+      "classification": "structured",
+      "expected": {
+        "id": "fluid-ounce-us",
+        "name": "rosewater",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "volume.fluidounce.us"
+        },
+        "source_text": "1 US fl oz rosewater"
+      },
+      "must_not_infer": [
+        "mass-ounce"
+      ]
+    },
+    {
+      "id": "ounce-chocolate",
+      "source_locale": "en-US",
+      "source_text": "1 oz bittersweet chocolate",
+      "classification": "structured",
+      "expected": {
+        "id": "ounce-chocolate",
+        "name": "bittersweet chocolate",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "mass.ounce.avoirdupois"
+        },
+        "source_text": "1 oz bittersweet chocolate"
+      }
+    },
+    {
+      "id": "ambiguous-ounce-liquid",
+      "source_locale": "en",
+      "source_text": "1 oz vanilla extract",
+      "classification": "opaque",
+      "expected": {
+        "id": "ambiguous-ounce-liquid",
+        "name": "vanilla extract",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 oz"
+        },
+        "source_text": "1 oz vanilla extract"
+      },
+      "must_not_infer": [
+        "mass-versus-volume-ounce"
+      ]
+    },
+    {
+      "id": "can-size-code",
+      "source_locale": "en-US",
+      "source_text": "1 No. 10 can crushed tomatoes",
+      "classification": "partial",
+      "expected": {
+        "id": "can-size-code",
+        "name": "crushed tomatoes",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "container.can"
+        },
+        "note": "No. 10 can size",
+        "source_text": "1 No. 10 can crushed tomatoes"
+      },
+      "must_not_infer": [
+        "can-size-mass",
+        "can-size-volume"
+      ]
+    },
+    {
+      "id": "small-box-pudding",
+      "source_locale": "en-US",
+      "source_text": "1 small box instant pudding mix",
+      "classification": "partial",
+      "expected": {
+        "id": "small-box-pudding",
+        "name": "instant pudding mix",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          }
+        },
+        "note": "small box",
+        "source_text": "1 small box instant pudding mix"
+      },
+      "must_not_infer": [
+        "box-size"
+      ]
+    },
+    {
+      "id": "family-bag-spinach",
+      "source_locale": "en-US",
+      "source_text": "one family-size bag baby spinach",
+      "classification": "partial",
+      "expected": {
+        "id": "family-bag-spinach",
+        "name": "baby spinach",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          }
+        },
+        "note": "family-size bag",
+        "source_text": "one family-size bag baby spinach"
+      },
+      "must_not_infer": [
+        "bag-size",
+        "spinach-mass"
+      ]
+    },
+    {
+      "id": "tea-bags",
+      "source_locale": "en",
+      "source_text": "3 individual Earl Grey tea bags",
+      "classification": "partial",
+      "expected": {
+        "id": "tea-bags",
+        "name": "Earl Grey tea",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "3"
+          }
+        },
+        "note": "individual tea bags",
+        "source_text": "3 individual Earl Grey tea bags"
+      },
+      "must_not_infer": [
+        "tea-mass"
+      ]
+    },
+    {
+      "id": "yeast-envelopes",
+      "source_locale": "en-US",
+      "source_text": "2 envelopes active dry yeast (7 g each)",
+      "classification": "structured",
+      "expected": {
+        "id": "yeast-envelopes",
+        "name": "active dry yeast",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          },
+          "unit": "container.packet"
+        },
+        "package_size": {
+          "kind": "simple",
+          "amount": {
+            "value": "7"
+          },
+          "unit": "mass.gram"
+        },
+        "note": "envelopes",
+        "source_text": "2 envelopes active dry yeast (7 g each)"
+      }
+    },
+    {
+      "id": "bouillon-cubes",
+      "source_locale": "en",
+      "source_text": "1 low-sodium bouillon cube",
+      "classification": "partial",
+      "expected": {
+        "id": "bouillon-cubes",
+        "name": "low-sodium bouillon cube",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          }
+        },
+        "source_text": "1 low-sodium bouillon cube"
+      },
+      "must_not_infer": [
+        "cube-mass",
+        "stock-volume"
+      ]
+    },
+    {
+      "id": "rennet-tablet",
+      "source_locale": "en",
+      "source_text": "1/4 rennet tablet, crushed",
+      "classification": "partial",
+      "expected": {
+        "id": "rennet-tablet",
+        "name": "rennet tablet",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1/4"
+          }
+        },
+        "note": "crushed",
+        "source_text": "1/4 rennet tablet, crushed"
+      },
+      "must_not_infer": [
+        "rennet-strength"
+      ]
+    },
+    {
+      "id": "gelatin-sheet",
+      "source_locale": "en",
+      "source_text": "1 gold-strength gelatin sheet",
+      "classification": "partial",
+      "expected": {
+        "id": "gelatin-sheet",
+        "name": "gelatin sheet",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          }
+        },
+        "note": "gold strength",
+        "source_text": "1 gold-strength gelatin sheet"
+      },
+      "must_not_infer": [
+        "gelatin-mass",
+        "bloom-equivalence"
+      ]
+    },
+    {
+      "id": "brie-wheel",
+      "source_locale": "en-US",
+      "source_text": "1 small wheel Brie (8 oz)",
+      "classification": "structured",
+      "expected": {
+        "id": "brie-wheel",
+        "name": "Brie",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          }
+        },
+        "package_size": {
+          "kind": "simple",
+          "amount": {
+            "value": "8"
+          },
+          "unit": "mass.ounce.avoirdupois"
+        },
+        "note": "small wheel",
+        "source_text": "1 small wheel Brie (8 oz)"
+      }
+    },
+    {
+      "id": "rack-ribs",
+      "source_locale": "en-US",
+      "source_text": "1 rack pork ribs, about 2 1/2 lb",
+      "classification": "structured",
+      "expected": {
+        "id": "rack-ribs",
+        "name": "pork ribs",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          }
+        },
+        "package_size": {
+          "kind": "simple",
+          "amount": {
+            "value": "5/2",
+            "approximate": true
+          },
+          "unit": "mass.pound.avoirdupois"
+        },
+        "note": "rack",
+        "source_text": "1 rack pork ribs, about 2 1/2 lb"
+      },
+      "must_not_infer": [
+        "rib-count"
+      ]
+    },
+    {
+      "id": "whole-nutmeg",
+      "source_locale": "en",
+      "source_text": "1 whole nutmeg, freshly grated",
+      "classification": "partial",
+      "expected": {
+        "id": "whole-nutmeg",
+        "name": "nutmeg",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          }
+        },
+        "note": "whole; freshly grated",
+        "source_text": "1 whole nutmeg, freshly grated"
+      },
+      "must_not_infer": [
+        "grated-volume"
+      ]
+    },
+    {
+      "id": "fractional-vanilla-bean",
+      "source_locale": "en",
+      "source_text": "1/4 vanilla bean, split lengthwise",
+      "classification": "partial",
+      "expected": {
+        "id": "fractional-vanilla-bean",
+        "name": "vanilla bean",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1/4"
+          }
+        },
+        "note": "split lengthwise",
+        "source_text": "1/4 vanilla bean, split lengthwise"
+      },
+      "must_not_infer": [
+        "vanilla-extract-equivalence"
+      ]
+    },
+    {
+      "id": "saffron-threads",
+      "source_locale": "en",
+      "source_text": "5 saffron threads",
+      "classification": "partial",
+      "expected": {
+        "id": "saffron-threads",
+        "name": "saffron threads",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "5"
+          }
+        },
+        "source_text": "5 saffron threads"
+      },
+      "must_not_infer": [
+        "saffron-mass"
+      ]
+    },
+    {
+      "id": "cardamom-pods",
+      "source_locale": "en",
+      "source_text": "3 green cardamom pods, lightly cracked",
+      "classification": "partial",
+      "expected": {
+        "id": "cardamom-pods",
+        "name": "green cardamom pods",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "3"
+          }
+        },
+        "note": "lightly cracked",
+        "source_text": "3 green cardamom pods, lightly cracked"
+      },
+      "must_not_infer": [
+        "seed-count"
+      ]
+    },
+    {
+      "id": "star-anise",
+      "source_locale": "en",
+      "source_text": "2 whole star anise",
+      "classification": "partial",
+      "expected": {
+        "id": "star-anise",
+        "name": "star anise",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          }
+        },
+        "note": "whole",
+        "source_text": "2 whole star anise"
+      },
+      "must_not_infer": [
+        "star-anise-mass"
+      ]
+    },
+    {
+      "id": "peel-strip-dimensions",
+      "source_locale": "en-US",
+      "source_text": "1 strip lemon peel, 2 × 1 inches",
+      "classification": "partial",
+      "expected": {
+        "id": "peel-strip-dimensions",
+        "name": "lemon peel",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          }
+        },
+        "note": "strip; 2 × 1 inches",
+        "source_text": "1 strip lemon peel, 2 × 1 inches"
+      },
+      "must_not_infer": [
+        "peel-area-to-mass"
+      ]
+    },
+    {
+      "id": "chocolate-squares",
+      "source_locale": "en",
+      "source_text": "4 squares dark chocolate",
+      "classification": "partial",
+      "expected": {
+        "id": "chocolate-squares",
+        "name": "dark chocolate",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "4"
+          }
+        },
+        "note": "squares",
+        "source_text": "4 squares dark chocolate"
+      },
+      "must_not_infer": [
+        "square-mass"
+      ]
+    },
+    {
+      "id": "three-finger-pinch",
+      "source_locale": "en",
+      "source_text": "a three-finger pinch flaky salt",
+      "classification": "opaque",
+      "expected": {
+        "id": "three-finger-pinch",
+        "name": "flaky salt",
+        "quantity": {
+          "kind": "opaque",
+          "text": "a three-finger pinch"
+        },
+        "source_text": "a three-finger pinch flaky salt"
+      },
+      "must_not_infer": [
+        "pinch-volume",
+        "pinch-mass"
+      ]
+    },
+    {
+      "id": "ladleful-broth",
+      "source_locale": "en",
+      "source_text": "1 ladleful hot broth",
+      "classification": "opaque",
+      "expected": {
+        "id": "ladleful-broth",
+        "name": "hot broth",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 ladleful"
+        },
+        "source_text": "1 ladleful hot broth"
+      },
+      "must_not_infer": [
+        "ladle-volume"
+      ]
+    },
+    {
+      "id": "numbered-scoop",
+      "source_locale": "en-US",
+      "source_text": "1 No. 10 scoop vanilla ice cream",
+      "classification": "opaque",
+      "expected": {
+        "id": "numbered-scoop",
+        "name": "vanilla ice cream",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 No. 10 scoop"
+        },
+        "source_text": "1 No. 10 scoop vanilla ice cream"
+      },
+      "must_not_infer": [
+        "scoop-volume",
+        "scoop-diameter"
+      ]
+    },
+    {
+      "id": "included-scoop",
+      "source_locale": "en",
+      "source_text": "2 level scoops protein powder, using the included scoop",
+      "classification": "partial",
+      "expected": {
+        "id": "included-scoop",
+        "name": "protein powder",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          }
+        },
+        "note": "level; use included scoop",
+        "source_text": "2 level scoops protein powder, using the included scoop"
+      },
+      "must_not_infer": [
+        "scoop-mass",
+        "scoop-volume"
+      ]
+    },
+    {
+      "id": "capful-vanilla",
+      "source_locale": "en",
+      "source_text": "1 capful vanilla extract",
+      "classification": "opaque",
+      "expected": {
+        "id": "capful-vanilla",
+        "name": "vanilla extract",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 capful"
+        },
+        "source_text": "1 capful vanilla extract"
+      },
+      "must_not_infer": [
+        "cap-volume"
+      ]
+    },
+    {
+      "id": "locale-pint-us",
+      "source_locale": "en-US",
+      "source_text": "1 pint heavy cream",
+      "classification": "structured",
+      "expected": {
+        "id": "locale-pint-us",
+        "name": "heavy cream",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "volume.pint.us.liquid"
+        },
+        "source_text": "1 pint heavy cream"
+      },
+      "must_not_infer": [
+        "imperial-pint-reading"
+      ]
+    },
+    {
+      "id": "locale-pint-imperial",
+      "source_locale": "en-GB",
+      "source_text": "1 pint double cream",
+      "classification": "structured",
+      "expected": {
+        "id": "locale-pint-imperial",
+        "name": "double cream",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "volume.pint.imperial"
+        },
+        "source_text": "1 pint double cream"
+      },
+      "must_not_infer": [
+        "us-pint"
+      ]
+    },
+    {
+      "id": "locale-fluid-ounce-imperial",
+      "source_locale": "en-GB",
+      "source_text": "5 fl oz single cream",
+      "classification": "structured",
+      "expected": {
+        "id": "locale-fluid-ounce-imperial",
+        "name": "single cream",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "5"
+          },
+          "unit": "volume.fluidounce.imperial"
+        },
+        "source_text": "5 fl oz single cream"
+      },
+      "must_not_infer": [
+        "us-fluid-ounce",
+        "mass-ounce"
+      ]
+    },
+    {
+      "id": "qualified-metric-cup",
+      "source_locale": "en-CA",
+      "source_text": "2 metric cups milk",
+      "classification": "structured",
+      "expected": {
+        "id": "qualified-metric-cup",
+        "name": "milk",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          },
+          "unit": "volume.cup.metric.culinary"
+        },
+        "source_text": "2 metric cups milk"
+      },
+      "must_not_infer": [
+        "us-legal-240-cup",
+        "us-customary-cup"
+      ]
+    },
+    {
+      "id": "deciliter-cream",
+      "source_locale": "en",
+      "source_text": "2 dl double cream",
+      "classification": "structured",
+      "expected": {
+        "id": "deciliter-cream",
+        "name": "double cream",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          },
+          "unit": "volume.deciliter"
+        },
+        "source_text": "2 dl double cream"
+      },
+      "must_not_infer": [
+        "deciliter-as-liter"
+      ]
+    },
+    {
+      "id": "locale-extension-fallback",
+      "source_locale": "en-US-u-nu-latn",
+      "source_text": "1 cup cake flour",
+      "classification": "structured",
+      "expected": {
+        "id": "locale-extension-fallback",
+        "name": "cake flour",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "volume.cup.us.customary"
+        },
+        "source_text": "1 cup cake flour"
+      },
+      "must_not_infer": [
+        "generic-language-cup",
+        "metric-cup"
+      ]
+    },
+    {
+      "id": "locale-language-fallback",
+      "source_locale": "en-CA-x-pub",
+      "source_text": "300 grams bread flour",
+      "classification": "structured",
+      "expected": {
+        "id": "locale-language-fallback",
+        "name": "bread flour",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "300"
+          },
+          "unit": "mass.gram"
+        },
+        "source_text": "300 grams bread flour"
+      },
+      "must_not_infer": [
+        "locale-required-for-generic-language-alias"
+      ]
+    },
+    {
+      "id": "locale-no-sibling-fallback",
+      "source_locale": "en-CA",
+      "source_text": "1 cup canola oil",
+      "classification": "opaque",
+      "expected": {
+        "id": "locale-no-sibling-fallback",
+        "name": "canola oil",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 cup"
+        },
+        "source_text": "1 cup canola oil"
+      },
+      "must_not_infer": [
+        "us-cup",
+        "imperial-cup",
+        "australian-cup"
+      ]
+    },
+    {
+      "id": "generic-metric-culinary-teaspoon",
+      "source_locale": "en-CA",
+      "source_text": "1 tsp ground coriander",
+      "classification": "opaque",
+      "expected": {
+        "id": "generic-metric-culinary-teaspoon",
+        "name": "ground coriander",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 tsp"
+        },
+        "source_text": "1 tsp ground coriander"
+      },
+      "must_not_infer": [
+        "metric-culinary-teaspoon",
+        "us-customary-teaspoon",
+        "australian-teaspoon"
+      ]
+    },
+    {
+      "id": "explicit-us-legal-tablespoon",
+      "source_locale": "en-US",
+      "source_text": "1 legal tablespoon molasses",
+      "classification": "structured",
+      "expected": {
+        "id": "explicit-us-legal-tablespoon",
+        "name": "molasses",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "volume.tablespoon.us.legal"
+        },
+        "source_text": "1 legal tablespoon molasses"
+      },
+      "must_not_infer": [
+        "us-customary-tablespoon",
+        "australian-tablespoon"
+      ]
+    },
+    {
+      "id": "language-locale-teaspoon",
+      "source_locale": "en",
+      "source_text": "1 teaspoon vanilla extract",
+      "classification": "opaque",
+      "expected": {
+        "id": "language-locale-teaspoon",
+        "name": "vanilla extract",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 teaspoon"
+        },
+        "source_text": "1 teaspoon vanilla extract"
+      },
+      "must_not_infer": [
+        "metric-culinary-teaspoon",
+        "us-customary-teaspoon",
+        "australian-teaspoon"
+      ]
+    },
+    {
+      "id": "language-locale-abbreviated-teaspoon",
+      "source_locale": "en",
+      "source_text": "1/2 tsp fine sea salt",
+      "classification": "opaque",
+      "expected": {
+        "id": "language-locale-abbreviated-teaspoon",
+        "name": "fine sea salt",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1/2 tsp"
+        },
+        "source_text": "1/2 tsp fine sea salt"
+      },
+      "must_not_infer": [
+        "metric-culinary-teaspoon",
+        "us-customary-teaspoon",
+        "australian-teaspoon"
+      ]
+    },
+    {
+      "id": "language-locale-punctuated-teaspoon",
+      "source_locale": "en",
+      "source_text": "1 tsp. baking soda",
+      "classification": "opaque",
+      "expected": {
+        "id": "language-locale-punctuated-teaspoon",
+        "name": "baking soda",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 tsp."
+        },
+        "source_text": "1 tsp. baking soda"
+      },
+      "must_not_infer": [
+        "metric-culinary-teaspoon",
+        "us-customary-teaspoon",
+        "australian-teaspoon"
+      ]
+    },
+    {
+      "id": "language-locale-plural-teaspoons",
+      "source_locale": "en",
+      "source_text": "2 teaspoons ground ginger",
+      "classification": "opaque",
+      "expected": {
+        "id": "language-locale-plural-teaspoons",
+        "name": "ground ginger",
+        "quantity": {
+          "kind": "opaque",
+          "text": "2 teaspoons"
+        },
+        "source_text": "2 teaspoons ground ginger"
+      },
+      "must_not_infer": [
+        "metric-culinary-teaspoon",
+        "us-customary-teaspoon",
+        "australian-teaspoon"
+      ]
+    },
+    {
+      "id": "teaspoon-only-ingredient-unlocalized",
+      "source_text": "1 teaspoon almond extract",
+      "classification": "opaque",
+      "expected": {
+        "id": "teaspoon-only-ingredient-unlocalized",
+        "name": "almond extract",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 teaspoon"
+        },
+        "source_text": "1 teaspoon almond extract"
+      },
+      "must_not_infer": [
+        "metric-culinary-teaspoon",
+        "us-customary-teaspoon",
+        "australian-teaspoon"
+      ]
+    },
+    {
+      "id": "qualified-metric-teaspoon",
+      "source_locale": "en",
+      "source_text": "2 metric teaspoons rosewater",
+      "classification": "structured",
+      "expected": {
+        "id": "qualified-metric-teaspoon",
+        "name": "rosewater",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          },
+          "unit": "volume.teaspoon.metric.culinary"
+        },
+        "source_text": "2 metric teaspoons rosewater"
+      },
+      "must_not_infer": [
+        "us-customary-teaspoon",
+        "australian-teaspoon"
+      ]
+    },
+    {
+      "id": "us-locale-teaspoon",
+      "source_locale": "en-US",
+      "source_text": "1 teaspoon smoked paprika",
+      "classification": "structured",
+      "expected": {
+        "id": "us-locale-teaspoon",
+        "name": "smoked paprika",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "volume.teaspoon.us.customary"
+        },
+        "source_text": "1 teaspoon smoked paprika"
+      },
+      "must_not_infer": [
+        "metric-culinary-teaspoon",
+        "us-legal-teaspoon"
+      ]
+    },
+    {
+      "id": "au-locale-teaspoon",
+      "source_locale": "en-AU",
+      "source_text": "1 tsp bicarbonate of soda",
+      "classification": "structured",
+      "expected": {
+        "id": "au-locale-teaspoon",
+        "name": "bicarbonate of soda",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "volume.teaspoon.au"
+        },
+        "source_text": "1 tsp bicarbonate of soda"
+      },
+      "must_not_infer": [
+        "metric-culinary-teaspoon",
+        "us-customary-teaspoon"
+      ]
+    },
+    {
+      "id": "unlocalized-compound-spoon-amount",
+      "source_text": "1 tablespoon plus 2 teaspoons neutral oil",
+      "classification": "opaque",
+      "expected": {
+        "id": "unlocalized-compound-spoon-amount",
+        "name": "neutral oil",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 tablespoon plus 2 teaspoons"
+        },
+        "source_text": "1 tablespoon plus 2 teaspoons neutral oil"
+      },
+      "must_not_infer": [
+        "us-customary-tablespoon",
+        "metric-culinary-teaspoon",
+        "partially-resolved-compound-amount"
+      ]
+    },
+    {
+      "id": "german-metric-tablespoon",
+      "source_locale": "de-DE",
+      "source_text": "2 EL Olivenöl",
+      "classification": "structured",
+      "expected": {
+        "id": "german-metric-tablespoon",
+        "name": "Olivenöl",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          },
+          "unit": "volume.tablespoon.metric.culinary"
+        },
+        "source_text": "2 EL Olivenöl"
+      }
+    },
+    {
+      "id": "german-range-and-decimal-comma",
+      "source_locale": "de",
+      "source_text": "2 bis 3 EL Zucker",
+      "classification": "structured",
+      "expected": {
+        "id": "german-range-and-decimal-comma",
+        "name": "Zucker",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "min": "2",
+            "max": "3"
+          },
+          "unit": "volume.tablespoon.metric.culinary"
+        },
+        "source_text": "2 bis 3 EL Zucker"
+      }
+    },
+    {
+      "id": "german-teaspoon-with-note",
+      "source_locale": "de",
+      "source_text": "1 TL Salz, fein",
+      "classification": "structured",
+      "expected": {
+        "id": "german-teaspoon-with-note",
+        "name": "Salz",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "volume.teaspoon.metric.culinary"
+        },
+        "source_text": "1 TL Salz, fein",
+        "note": "fein"
+      }
+    },
+    {
+      "id": "french-partitive-after-mass",
+      "source_locale": "fr-FR",
+      "source_text": "200 g de sucre",
+      "classification": "structured",
+      "expected": {
+        "id": "french-partitive-after-mass",
+        "name": "sucre",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "200"
+          },
+          "unit": "mass.gram"
+        },
+        "source_text": "200 g de sucre"
+      }
+    },
+    {
+      "id": "french-elided-partitive-after-spoon",
+      "source_locale": "fr",
+      "source_text": "2 cuillères à soupe d'huile d'olive",
+      "classification": "structured",
+      "expected": {
+        "id": "french-elided-partitive-after-spoon",
+        "name": "huile d'olive",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          },
+          "unit": "volume.tablespoon.metric.culinary"
+        },
+        "source_text": "2 cuillères à soupe d'huile d'olive"
+      }
+    },
+    {
+      "id": "spanish-clove-with-partitive",
+      "source_locale": "es-ES",
+      "source_text": "1 diente de ajo",
+      "classification": "structured",
+      "expected": {
+        "id": "spanish-clove-with-partitive",
+        "name": "ajo",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "count.clove"
+        },
+        "source_text": "1 diente de ajo"
+      }
+    },
+    {
+      "id": "russian-abbreviated-spoon",
+      "source_locale": "ru",
+      "source_text": "2 ст. л. олии",
+      "classification": "structured",
+      "expected": {
+        "id": "russian-abbreviated-spoon",
+        "name": "олии",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          },
+          "unit": "volume.tablespoon.metric.culinary"
+        },
+        "source_text": "2 ст. л. олии"
+      }
+    },
+    {
+      "id": "arabic-indic-digits",
+      "source_locale": "ar",
+      "source_text": "٢٠٠ غرام طحين",
+      "classification": "structured",
+      "expected": {
+        "id": "arabic-indic-digits",
+        "name": "طحين",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "200"
+          },
+          "unit": "mass.gram"
+        },
+        "source_text": "٢٠٠ غرام طحين"
+      }
+    },
+    {
+      "id": "japanese-name-first-amount",
+      "source_locale": "ja",
+      "source_text": "小麦粉 200g",
+      "classification": "structured",
+      "expected": {
+        "id": "japanese-name-first-amount",
+        "name": "小麦粉",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "200"
+          },
+          "unit": "mass.gram"
+        },
+        "source_text": "小麦粉 200g"
+      }
+    },
+    {
+      "id": "japanese-unit-before-number",
+      "source_locale": "ja-JP",
+      "source_text": "サラダ油 大さじ2",
+      "classification": "structured",
+      "expected": {
+        "id": "japanese-unit-before-number",
+        "name": "サラダ油",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          },
+          "unit": "volume.tablespoon.metric.culinary"
+        },
+        "source_text": "サラダ油 大さじ2"
+      }
+    },
+    {
+      "id": "japanese-cup-before-fraction",
+      "source_locale": "ja",
+      "source_text": "牛乳 カップ1/2",
+      "classification": "structured",
+      "expected": {
+        "id": "japanese-cup-before-fraction",
+        "name": "牛乳",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1/2"
+          },
+          "unit": "volume.cup.jp"
+        },
+        "source_text": "牛乳 カップ1/2"
+      }
+    },
+    {
+      "id": "korean-cup",
+      "source_locale": "ko-KR",
+      "source_text": "우유 1컵",
+      "classification": "structured",
+      "expected": {
+        "id": "korean-cup",
+        "name": "우유",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "volume.cup.kr"
+        },
+        "source_text": "우유 1컵"
+      }
+    },
+    {
+      "id": "chinese-spoon-without-space",
+      "source_locale": "zh-Hans",
+      "source_text": "酱油2汤匙",
+      "classification": "structured",
+      "expected": {
+        "id": "chinese-spoon-without-space",
+        "name": "酱油",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          },
+          "unit": "volume.tablespoon.metric.culinary"
+        },
+        "source_text": "酱油2汤匙"
+      }
+    },
+    {
+      "id": "thai-name-first-spoon",
+      "source_locale": "th",
+      "source_text": "น้ำตาล 2 ช้อนโต๊ะ",
+      "classification": "structured",
+      "expected": {
+        "id": "thai-name-first-spoon",
+        "name": "น้ำตาล",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          },
+          "unit": "volume.tablespoon.metric.culinary"
+        },
+        "source_text": "น้ำตาล 2 ช้อนโต๊ะ"
+      }
+    },
+    {
+      "id": "german-cup-has-no-single-size",
+      "source_locale": "de",
+      "source_text": "1 Tasse Milch",
+      "classification": "opaque",
+      "expected": {
+        "id": "german-cup-has-no-single-size",
+        "name": "Milch",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 Tasse"
+        },
+        "source_text": "1 Tasse Milch"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "french-cup-has-no-single-size",
+      "source_locale": "fr",
+      "source_text": "1 tasse de lait",
+      "classification": "opaque",
+      "expected": {
+        "id": "french-cup-has-no-single-size",
+        "name": "lait",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 tasse"
+        },
+        "source_text": "1 tasse de lait"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "english-source-does-not-read-a-german-unit",
+      "source_locale": "en-US",
+      "source_text": "2 EL flour",
+      "classification": "opaque",
+      "expected": {
+        "id": "english-source-does-not-read-a-german-unit",
+        "name": "flour",
+        "quantity": {
+          "kind": "opaque",
+          "text": "2 EL"
+        },
+        "source_text": "2 EL flour"
+      },
+      "must_not_infer": [
+        "german-tablespoon"
+      ]
+    },
+    {
+      "id": "qualified-australian-cup",
+      "source_locale": "en-GB",
+      "source_text": "1 Australian cup self-raising flour",
+      "classification": "structured",
+      "expected": {
+        "id": "qualified-australian-cup",
+        "name": "self-raising flour",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "volume.cup.au"
+        },
+        "source_text": "1 Australian cup self-raising flour"
+      },
+      "must_not_infer": [
+        "imperial-cup",
+        "us-customary-cup"
+      ]
+    },
+    {
+      "id": "qualified-australian-teaspoon",
+      "source_locale": "en",
+      "source_text": "2 Australian teaspoons baking soda",
+      "classification": "structured",
+      "expected": {
+        "id": "qualified-australian-teaspoon",
+        "name": "baking soda",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          },
+          "unit": "volume.teaspoon.au"
+        },
+        "source_text": "2 Australian teaspoons baking soda"
+      },
+      "must_not_infer": [
+        "us-customary-teaspoon"
+      ]
+    },
+    {
+      "id": "qualified-metric-tablespoon",
+      "source_locale": "en-AU",
+      "source_text": "3 metric tablespoons cream",
+      "classification": "structured",
+      "expected": {
+        "id": "qualified-metric-tablespoon",
+        "name": "cream",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "3"
+          },
+          "unit": "volume.tablespoon.metric.culinary"
+        },
+        "source_text": "3 metric tablespoons cream"
+      },
+      "must_not_infer": [
+        "australian-tablespoon",
+        "us-customary-tablespoon"
+      ]
+    },
+    {
+      "id": "portuguese-cc-has-no-single-size",
+      "source_locale": "pt-BR",
+      "source_text": "1 cc de fermento em pó",
+      "classification": "opaque",
+      "expected": {
+        "id": "portuguese-cc-has-no-single-size",
+        "name": "fermento em pó",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 cc"
+        },
+        "source_text": "1 cc de fermento em pó"
+      },
+      "must_not_infer": [
+        "five-milliliter-teaspoon",
+        "two-and-a-half-milliliter-coffee-spoon",
+        "cubic-centimetre"
+      ]
+    },
+    {
+      "id": "portuguese-cc-legend-case-is-kept",
+      "source_locale": "pt-PT",
+      "source_text": "1 Cc de sal",
+      "classification": "opaque",
+      "expected": {
+        "id": "portuguese-cc-legend-case-is-kept",
+        "name": "sal",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 Cc"
+        },
+        "source_text": "1 Cc de sal"
+      },
+      "must_not_infer": [
+        "five-milliliter-teaspoon",
+        "two-and-a-half-milliliter-coffee-spoon",
+        "cubic-centimetre"
+      ]
+    },
+    {
+      "id": "turkish-tea-spoon-has-no-single-size",
+      "source_locale": "tr",
+      "source_text": "1 çay kaşığı tuz",
+      "classification": "opaque",
+      "expected": {
+        "id": "turkish-tea-spoon-has-no-single-size",
+        "name": "tuz",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 çay kaşığı"
+        },
+        "source_text": "1 çay kaşığı tuz"
+      },
+      "must_not_infer": [
+        "five-milliliter-teaspoon",
+        "two-and-a-half-milliliter-teaspoon"
+      ]
+    },
+    {
+      "id": "turkish-abbreviated-tea-spoon-has-no-single-size",
+      "source_locale": "tr",
+      "source_text": "2 ç.k. karabiber",
+      "classification": "opaque",
+      "expected": {
+        "id": "turkish-abbreviated-tea-spoon-has-no-single-size",
+        "name": "karabiber",
+        "quantity": {
+          "kind": "opaque",
+          "text": "2 ç.k."
+        },
+        "source_text": "2 ç.k. karabiber"
+      },
+      "must_not_infer": [
+        "five-milliliter-teaspoon",
+        "two-and-a-half-milliliter-teaspoon"
+      ]
+    },
+    {
+      "id": "turkish-tablespoon-has-no-single-size",
+      "source_locale": "tr",
+      "source_text": "2 yemek kaşığı zeytinyağı",
+      "classification": "opaque",
+      "expected": {
+        "id": "turkish-tablespoon-has-no-single-size",
+        "name": "zeytinyağı",
+        "quantity": {
+          "kind": "opaque",
+          "text": "2 yemek kaşığı"
+        },
+        "source_text": "2 yemek kaşığı zeytinyağı"
+      },
+      "must_not_infer": [
+        "ten-milliliter-tablespoon",
+        "fifteen-milliliter-tablespoon"
+      ]
+    },
+    {
+      "id": "portuguese-culinary-tablespoon-is-not-the-label-measure",
+      "source_locale": "pt-BR",
+      "source_text": "2 colheres de sopa de azeite",
+      "classification": "structured",
+      "expected": {
+        "id": "portuguese-culinary-tablespoon-is-not-the-label-measure",
+        "name": "azeite",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          },
+          "unit": "volume.tablespoon.metric.culinary"
+        },
+        "source_text": "2 colheres de sopa de azeite"
+      },
+      "must_not_infer": [
+        "ten-milliliter-label-tablespoon"
+      ]
+    },
+    {
+      "id": "portuguese-portugal-tablespoon",
+      "source_locale": "pt-PT",
+      "source_text": "3 colheres de sopa de manteiga",
+      "classification": "structured",
+      "expected": {
+        "id": "portuguese-portugal-tablespoon",
+        "name": "manteiga",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "3"
+          },
+          "unit": "volume.tablespoon.metric.culinary"
+        },
+        "source_text": "3 colheres de sopa de manteiga"
+      }
+    },
+    {
+      "id": "french-vanilla-pod-is-not-a-clove",
+      "source_locale": "fr",
+      "source_text": "1 gousse de vanille",
+      "classification": "partial",
+      "expected": {
+        "id": "french-vanilla-pod-is-not-a-clove",
+        "name": "gousse de vanille",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          }
+        },
+        "source_text": "1 gousse de vanille"
+      },
+      "must_not_infer": [
+        "garlic-clove"
+      ]
+    },
+    {
+      "id": "french-garlic-clove-with-its-ingredient",
+      "source_locale": "fr",
+      "source_text": "2 gousses d'ail",
+      "classification": "structured",
+      "expected": {
+        "id": "french-garlic-clove-with-its-ingredient",
+        "name": "ail",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          },
+          "unit": "count.clove"
+        },
+        "source_text": "2 gousses d'ail"
+      }
+    },
+    {
+      "id": "swedish-fruit-segment-is-not-a-clove",
+      "source_locale": "sv",
+      "source_text": "1 klyfta citron",
+      "classification": "partial",
+      "expected": {
+        "id": "swedish-fruit-segment-is-not-a-clove",
+        "name": "klyfta citron",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          }
+        },
+        "source_text": "1 klyfta citron"
+      },
+      "must_not_infer": [
+        "garlic-clove"
+      ]
+    },
+    {
+      "id": "french-box-is-not-a-can",
+      "source_locale": "fr",
+      "source_text": "1 boîte de chocolats",
+      "classification": "partial",
+      "expected": {
+        "id": "french-box-is-not-a-can",
+        "name": "boîte de chocolats",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          }
+        },
+        "source_text": "1 boîte de chocolats"
+      },
+      "must_not_infer": [
+        "metal-can"
+      ]
+    },
+    {
+      "id": "french-preserve-tin-is-a-can",
+      "source_locale": "fr",
+      "source_text": "1 boîte de conserve de tomates",
+      "classification": "structured",
+      "expected": {
+        "id": "french-preserve-tin-is-a-can",
+        "name": "tomates",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "container.can"
+        },
+        "source_text": "1 boîte de conserve de tomates"
+      }
+    },
+    {
+      "id": "japanese-one-pinch",
+      "source_locale": "ja",
+      "source_text": "塩 ひとつまみ",
+      "classification": "structured",
+      "expected": {
+        "id": "japanese-one-pinch",
+        "name": "塩",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "count.pinch"
+        },
+        "source_text": "塩 ひとつまみ"
+      }
+    },
+    {
+      "id": "japanese-one-handful",
+      "source_locale": "ja",
+      "source_text": "パセリ ひとつかみ",
+      "classification": "structured",
+      "expected": {
+        "id": "japanese-one-handful",
+        "name": "パセリ",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "count.handful"
+        },
+        "source_text": "パセリ ひとつかみ"
+      }
+    },
+    {
+      "id": "indonesian-one-pinch",
+      "source_locale": "id",
+      "source_text": "sejumput garam",
+      "classification": "structured",
+      "expected": {
+        "id": "indonesian-one-pinch",
+        "name": "garam",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "count.pinch"
+        },
+        "source_text": "sejumput garam"
+      }
+    },
+    {
+      "id": "indonesian-one-handful",
+      "source_locale": "id",
+      "source_text": "segenggam kacang",
+      "classification": "structured",
+      "expected": {
+        "id": "indonesian-one-handful",
+        "name": "kacang",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "count.handful"
+        },
+        "source_text": "segenggam kacang"
+      }
+    },
+    {
+      "id": "indonesian-counted-pinches",
+      "source_locale": "id",
+      "source_text": "2 sejumput garam",
+      "classification": "structured",
+      "expected": {
+        "id": "indonesian-counted-pinches",
+        "name": "garam",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          },
+          "unit": "count.pinch"
+        },
+        "source_text": "2 sejumput garam"
+      }
+    },
+    {
+      "id": "japanese-slice-classifier",
+      "source_locale": "ja",
+      "source_text": "食パン 1枚",
+      "classification": "partial",
+      "expected": {
+        "id": "japanese-slice-classifier",
+        "name": "食パン",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          }
+        },
+        "source_text": "食パン 1枚"
+      },
+      "must_not_infer": [
+        "slice-weight"
+      ]
+    },
+    {
+      "id": "japanese-cut-classifier",
+      "source_locale": "ja",
+      "source_text": "鶏肉 2切れ",
+      "classification": "partial",
+      "expected": {
+        "id": "japanese-cut-classifier",
+        "name": "鶏肉",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          }
+        },
+        "source_text": "鶏肉 2切れ"
+      },
+      "must_not_infer": [
+        "piece-weight"
+      ]
+    },
+    {
+      "id": "chinese-slice-classifier",
+      "source_locale": "zh-Hans",
+      "source_text": "火腿 2片",
+      "classification": "partial",
+      "expected": {
+        "id": "chinese-slice-classifier",
+        "name": "火腿",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          }
+        },
+        "source_text": "火腿 2片"
+      },
+      "must_not_infer": [
+        "slice-weight"
+      ]
+    },
+    {
+      "id": "korean-paper-cup-is-not-the-korean-cup",
+      "source_locale": "ko",
+      "source_text": "물 종이컵 1컵",
+      "classification": "opaque",
+      "expected": {
+        "id": "korean-paper-cup-is-not-the-korean-cup",
+        "name": "물",
+        "quantity": {
+          "kind": "opaque",
+          "text": "종이컵 1컵"
+        },
+        "source_text": "물 종이컵 1컵"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "korean-paper-cup-note-is-not-the-korean-cup",
+      "source_locale": "ko",
+      "source_text": "밀가루 1컵 (종이컵)",
+      "classification": "opaque",
+      "expected": {
+        "id": "korean-paper-cup-note-is-not-the-korean-cup",
+        "name": "밀가루",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1컵 (종이컵)"
+        },
+        "source_text": "밀가루 1컵 (종이컵)"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "japanese-rice-cooker-cup-is-not-the-japanese-cup",
+      "source_locale": "ja",
+      "source_text": "米 炊飯器のカップ1",
+      "classification": "opaque",
+      "expected": {
+        "id": "japanese-rice-cooker-cup-is-not-the-japanese-cup",
+        "name": "米",
+        "quantity": {
+          "kind": "opaque",
+          "text": "炊飯器のカップ1"
+        },
+        "source_text": "米 炊飯器のカップ1"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "japanese-go-has-no-metric-cup",
+      "source_locale": "ja",
+      "source_text": "米 1合",
+      "classification": "opaque",
+      "expected": {
+        "id": "japanese-go-has-no-metric-cup",
+        "name": "米",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1合"
+        },
+        "source_text": "米 1合"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "french-decomposed-accents",
+      "source_locale": "fr",
+      "source_text": "1 cuillère à café de sel",
+      "classification": "structured",
+      "expected": {
+        "id": "french-decomposed-accents",
+        "name": "sel",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "volume.teaspoon.metric.culinary"
+        },
+        "source_text": "1 cuillère à café de sel"
+      }
+    },
+    {
+      "id": "hebrew-ascii-quote-kilogram",
+      "source_locale": "he",
+      "source_text": "2 ק\"ג קמח",
+      "classification": "structured",
+      "expected": {
+        "id": "hebrew-ascii-quote-kilogram",
+        "name": "קמח",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          },
+          "unit": "mass.kilogram"
+        },
+        "source_text": "2 ק\"ג קמח"
+      }
+    },
+    {
+      "id": "hebrew-gershayim-kilogram",
+      "source_locale": "he",
+      "source_text": "2 ק״ג סוכר",
+      "classification": "structured",
+      "expected": {
+        "id": "hebrew-gershayim-kilogram",
+        "name": "סוכר",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          },
+          "unit": "mass.kilogram"
+        },
+        "source_text": "2 ק״ג סוכר"
+      }
+    },
+    {
+      "id": "russian-capitalised-tablespoon",
+      "source_locale": "ru",
+      "source_text": "2 Ст. л. масла",
+      "classification": "structured",
+      "expected": {
+        "id": "russian-capitalised-tablespoon",
+        "name": "масла",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          },
+          "unit": "volume.tablespoon.metric.culinary"
+        },
+        "source_text": "2 Ст. л. масла"
+      }
+    },
+    {
+      "id": "de-pound-has-no-single-size",
+      "source_locale": "de",
+      "source_text": "1 Pfund Mehl",
+      "classification": "opaque",
+      "expected": {
+        "id": "de-pound-has-no-single-size",
+        "name": "Mehl",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 Pfund"
+        },
+        "source_text": "1 Pfund Mehl"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "french-glass-has-no-single-size",
+      "source_locale": "fr",
+      "source_text": "1 verre d'eau",
+      "classification": "opaque",
+      "expected": {
+        "id": "french-glass-has-no-single-size",
+        "name": "eau",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 verre"
+        },
+        "source_text": "1 verre d'eau"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "spanish-cup-has-no-single-size",
+      "source_locale": "es",
+      "source_text": "1 taza de leche",
+      "classification": "opaque",
+      "expected": {
+        "id": "spanish-cup-has-no-single-size",
+        "name": "leche",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 taza"
+        },
+        "source_text": "1 taza de leche"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "spanish-pound-has-no-single-size",
+      "source_locale": "es",
+      "source_text": "1 libra de harina",
+      "classification": "opaque",
+      "expected": {
+        "id": "spanish-pound-has-no-single-size",
+        "name": "harina",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 libra"
+        },
+        "source_text": "1 libra de harina"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "italian-cup-has-no-single-size",
+      "source_locale": "it",
+      "source_text": "1 tazza di latte",
+      "classification": "opaque",
+      "expected": {
+        "id": "italian-cup-has-no-single-size",
+        "name": "latte",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 tazza"
+        },
+        "source_text": "1 tazza di latte"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "brazilian-portuguese-cup-has-no-single-size",
+      "source_locale": "pt-BR",
+      "source_text": "1 xícara de leite",
+      "classification": "opaque",
+      "expected": {
+        "id": "brazilian-portuguese-cup-has-no-single-size",
+        "name": "leite",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 xícara"
+        },
+        "source_text": "1 xícara de leite"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "european-portuguese-cup-has-no-single-size",
+      "source_locale": "pt-PT",
+      "source_text": "1 chávena de leite",
+      "classification": "opaque",
+      "expected": {
+        "id": "european-portuguese-cup-has-no-single-size",
+        "name": "leite",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 chávena"
+        },
+        "source_text": "1 chávena de leite"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "dutch-cup-has-no-single-size",
+      "source_locale": "nl",
+      "source_text": "1 kop melk",
+      "classification": "opaque",
+      "expected": {
+        "id": "dutch-cup-has-no-single-size",
+        "name": "melk",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 kop"
+        },
+        "source_text": "1 kop melk"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "dutch-ons-has-no-single-size",
+      "source_locale": "nl",
+      "source_text": "1 ons kaas",
+      "classification": "opaque",
+      "expected": {
+        "id": "dutch-ons-has-no-single-size",
+        "name": "kaas",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 ons"
+        },
+        "source_text": "1 ons kaas"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "swedish-cup-has-no-single-size",
+      "source_locale": "sv",
+      "source_text": "1 kopp mjölk",
+      "classification": "opaque",
+      "expected": {
+        "id": "swedish-cup-has-no-single-size",
+        "name": "mjölk",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 kopp"
+        },
+        "source_text": "1 kopp mjölk"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "danish-cup-has-no-single-size",
+      "source_locale": "da",
+      "source_text": "1 kop mælk",
+      "classification": "opaque",
+      "expected": {
+        "id": "danish-cup-has-no-single-size",
+        "name": "mælk",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 kop"
+        },
+        "source_text": "1 kop mælk"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "norwegian-cup-has-no-single-size",
+      "source_locale": "nb",
+      "source_text": "1 kopp melk",
+      "classification": "opaque",
+      "expected": {
+        "id": "norwegian-cup-has-no-single-size",
+        "name": "melk",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 kopp"
+        },
+        "source_text": "1 kopp melk"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "finnish-cup-has-no-single-size",
+      "source_locale": "fi",
+      "source_text": "1 kuppi maitoa",
+      "classification": "opaque",
+      "expected": {
+        "id": "finnish-cup-has-no-single-size",
+        "name": "maitoa",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 kuppi"
+        },
+        "source_text": "1 kuppi maitoa"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "polish-glass-has-no-single-size",
+      "source_locale": "pl",
+      "source_text": "1 szklanka mleka",
+      "classification": "opaque",
+      "expected": {
+        "id": "polish-glass-has-no-single-size",
+        "name": "mleka",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 szklanka"
+        },
+        "source_text": "1 szklanka mleka"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "czech-mug-has-no-single-size",
+      "source_locale": "cs",
+      "source_text": "1 hrnek mléka",
+      "classification": "opaque",
+      "expected": {
+        "id": "czech-mug-has-no-single-size",
+        "name": "mléka",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 hrnek"
+        },
+        "source_text": "1 hrnek mléka"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "hungarian-mug-has-no-single-size",
+      "source_locale": "hu",
+      "source_text": "1 bögre tej",
+      "classification": "opaque",
+      "expected": {
+        "id": "hungarian-mug-has-no-single-size",
+        "name": "tej",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 bögre"
+        },
+        "source_text": "1 bögre tej"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "romanian-cup-has-no-single-size",
+      "source_locale": "ro",
+      "source_text": "1 cană de lapte",
+      "classification": "opaque",
+      "expected": {
+        "id": "romanian-cup-has-no-single-size",
+        "name": "lapte",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 cană"
+        },
+        "source_text": "1 cană de lapte"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "turkish-water-glass-has-no-single-size",
+      "source_locale": "tr",
+      "source_text": "1 su bardağı süt",
+      "classification": "opaque",
+      "expected": {
+        "id": "turkish-water-glass-has-no-single-size",
+        "name": "süt",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 su bardağı"
+        },
+        "source_text": "1 su bardağı süt"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "russian-glass-has-no-single-size",
+      "source_locale": "ru",
+      "source_text": "1 стакан молока",
+      "classification": "opaque",
+      "expected": {
+        "id": "russian-glass-has-no-single-size",
+        "name": "молока",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 стакан"
+        },
+        "source_text": "1 стакан молока"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "ukrainian-glass-has-no-single-size",
+      "source_locale": "uk",
+      "source_text": "1 склянка молока",
+      "classification": "opaque",
+      "expected": {
+        "id": "ukrainian-glass-has-no-single-size",
+        "name": "молока",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 склянка"
+        },
+        "source_text": "1 склянка молока"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "greek-cup-has-no-single-size",
+      "source_locale": "el",
+      "source_text": "1 φλιτζάνι γάλα",
+      "classification": "opaque",
+      "expected": {
+        "id": "greek-cup-has-no-single-size",
+        "name": "γάλα",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 φλιτζάνι"
+        },
+        "source_text": "1 φλιτζάνι γάλα"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "arabic-cup-has-no-single-size",
+      "source_locale": "ar",
+      "source_text": "1 كوب حليب",
+      "classification": "opaque",
+      "expected": {
+        "id": "arabic-cup-has-no-single-size",
+        "name": "حليب",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 كوب"
+        },
+        "source_text": "1 كوب حليب"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "hebrew-cup-has-no-single-size",
+      "source_locale": "he",
+      "source_text": "1 כוס חלב",
+      "classification": "opaque",
+      "expected": {
+        "id": "hebrew-cup-has-no-single-size",
+        "name": "חלב",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 כוס"
+        },
+        "source_text": "1 כוס חלב"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "vietnamese-bowl-has-no-single-size",
+      "source_locale": "vi",
+      "source_text": "1 chén sữa",
+      "classification": "opaque",
+      "expected": {
+        "id": "vietnamese-bowl-has-no-single-size",
+        "name": "sữa",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 chén"
+        },
+        "source_text": "1 chén sữa"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "indonesian-cup-has-no-single-size",
+      "source_locale": "id",
+      "source_text": "1 cangkir susu",
+      "classification": "opaque",
+      "expected": {
+        "id": "indonesian-cup-has-no-single-size",
+        "name": "susu",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 cangkir"
+        },
+        "source_text": "1 cangkir susu"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "chinese-cup-has-no-single-size",
+      "source_locale": "zh-Hans",
+      "source_text": "牛奶 1杯",
+      "classification": "opaque",
+      "expected": {
+        "id": "chinese-cup-has-no-single-size",
+        "name": "牛奶",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1杯"
+        },
+        "source_text": "牛奶 1杯"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "japanese-cup-character-has-no-single-size",
+      "source_locale": "ja",
+      "source_text": "牛乳 1杯",
+      "classification": "opaque",
+      "expected": {
+        "id": "japanese-cup-character-has-no-single-size",
+        "name": "牛乳",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1杯"
+        },
+        "source_text": "牛乳 1杯"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "korean-toe-has-no-single-size",
+      "source_locale": "ko",
+      "source_text": "우유 1되",
+      "classification": "opaque",
+      "expected": {
+        "id": "korean-toe-has-no-single-size",
+        "name": "우유",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1되"
+        },
+        "source_text": "우유 1되"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "thai-cup-has-no-single-size",
+      "source_locale": "th",
+      "source_text": "นม 1 ถ้วย",
+      "classification": "opaque",
+      "expected": {
+        "id": "thai-cup-has-no-single-size",
+        "name": "นม",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 ถ้วย"
+        },
+        "source_text": "นม 1 ถ้วย"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "swedish-garlic-clove-with-its-ingredient",
+      "source_locale": "sv",
+      "source_text": "1 klyfta vitlök",
+      "classification": "structured",
+      "expected": {
+        "id": "swedish-garlic-clove-with-its-ingredient",
+        "name": "vitlök",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "count.clove"
+        },
+        "source_text": "1 klyfta vitlök"
+      }
+    },
+    {
+      "id": "italian-garlic-clove-with-its-ingredient",
+      "source_locale": "it",
+      "source_text": "1 spicchio d'aglio",
+      "classification": "structured",
+      "expected": {
+        "id": "italian-garlic-clove-with-its-ingredient",
+        "name": "aglio",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "count.clove"
+        },
+        "source_text": "1 spicchio d'aglio"
+      }
+    },
+    {
+      "id": "italian-fruit-segment-is-not-a-clove",
+      "source_locale": "it",
+      "source_text": "2 spicchi di limone",
+      "classification": "partial",
+      "expected": {
+        "id": "italian-fruit-segment-is-not-a-clove",
+        "name": "spicchi di limone",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          }
+        },
+        "source_text": "2 spicchi di limone"
+      },
+      "must_not_infer": [
+        "garlic-clove"
+      ]
+    },
+    {
+      "id": "italian-canned-tomatoes-are-a-can",
+      "source_locale": "it",
+      "source_text": "1 scatola di pomodori pelati",
+      "classification": "structured",
+      "expected": {
+        "id": "italian-canned-tomatoes-are-a-can",
+        "name": "pomodori pelati",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "container.can"
+        },
+        "source_text": "1 scatola di pomodori pelati"
+      }
+    },
+    {
+      "id": "italian-box-of-chocolates-is-not-a-can",
+      "source_locale": "it",
+      "source_text": "1 scatola di cioccolatini",
+      "classification": "partial",
+      "expected": {
+        "id": "italian-box-of-chocolates-is-not-a-can",
+        "name": "scatola di cioccolatini",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          }
+        },
+        "source_text": "1 scatola di cioccolatini"
+      },
+      "must_not_infer": [
+        "metal-can"
+      ]
+    },
+    {
+      "id": "korean-garlic-clove-with-its-ingredient",
+      "source_locale": "ko",
+      "source_text": "마늘 3쪽",
+      "classification": "structured",
+      "expected": {
+        "id": "korean-garlic-clove-with-its-ingredient",
+        "name": "마늘",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "3"
+          },
+          "unit": "count.clove"
+        },
+        "source_text": "마늘 3쪽"
+      }
+    },
+    {
+      "id": "chinese-garlic-clove-with-its-ingredient",
+      "source_locale": "zh-Hans",
+      "source_text": "大蒜 3瓣",
+      "classification": "structured",
+      "expected": {
+        "id": "chinese-garlic-clove-with-its-ingredient",
+        "name": "大蒜",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "3"
+          },
+          "unit": "count.clove"
+        },
+        "source_text": "大蒜 3瓣"
+      }
+    },
+    {
+      "id": "finnish-mm-may-be-the-spice-measure",
+      "source_locale": "fi",
+      "source_text": "1 mm suolaa",
+      "classification": "opaque",
+      "expected": {
+        "id": "finnish-mm-may-be-the-spice-measure",
+        "name": "suolaa",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 mm"
+        },
+        "source_text": "1 mm suolaa"
+      },
+      "must_not_infer": [
+        "millimetre-of-salt",
+        "one-millilitre-spice-measure"
+      ]
+    },
+    {
+      "id": "finnish-centimetre-stays-a-length",
+      "source_locale": "fi",
+      "source_text": "2 cm inkivääriä",
+      "classification": "structured",
+      "expected": {
+        "id": "finnish-centimetre-stays-a-length",
+        "name": "inkivääriä",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          },
+          "unit": "length.centimeter"
+        },
+        "source_text": "2 cm inkivääriä"
+      }
+    },
+    {
+      "id": "finnish-millimetre-word-stays-a-length",
+      "source_locale": "fi",
+      "source_text": "5 millimetriä inkivääriä",
+      "classification": "structured",
+      "expected": {
+        "id": "finnish-millimetre-word-stays-a-length",
+        "name": "inkivääriä",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "5"
+          },
+          "unit": "length.millimeter"
+        },
+        "source_text": "5 millimetriä inkivääriä"
+      }
+    },
+    {
+      "id": "dutch-stated-equivalent-outranks-the-spoon-word",
+      "source_locale": "nl",
+      "source_text": "1 eetlepel (12 ml) olie",
+      "classification": "opaque",
+      "expected": {
+        "id": "dutch-stated-equivalent-outranks-the-spoon-word",
+        "name": "olie",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 eetlepel (12 ml)"
+        },
+        "source_text": "1 eetlepel (12 ml) olie"
+      },
+      "must_not_infer": [
+        "metric-culinary-tablespoon"
+      ]
+    },
+    {
+      "id": "italian-stated-equivalent-outranks-the-spoon-word",
+      "source_locale": "it",
+      "source_text": "1 cucchiaio (10 ml) di olio",
+      "classification": "opaque",
+      "expected": {
+        "id": "italian-stated-equivalent-outranks-the-spoon-word",
+        "name": "olio",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 cucchiaio (10 ml)"
+        },
+        "source_text": "1 cucchiaio (10 ml) di olio"
+      },
+      "must_not_infer": [
+        "metric-culinary-tablespoon"
+      ]
+    },
+    {
+      "id": "hungarian-stated-equivalent-outranks-the-spoon-word",
+      "source_locale": "hu",
+      "source_text": "1 evőkanál (10 ml) olaj",
+      "classification": "opaque",
+      "expected": {
+        "id": "hungarian-stated-equivalent-outranks-the-spoon-word",
+        "name": "olaj",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 evőkanál (10 ml)"
+        },
+        "source_text": "1 evőkanál (10 ml) olaj"
+      },
+      "must_not_infer": [
+        "metric-culinary-tablespoon"
+      ]
+    },
+    {
+      "id": "german-stated-equivalent-that-agrees-is-kept",
+      "source_locale": "de",
+      "source_text": "1 EL (15 ml) Öl",
+      "classification": "structured",
+      "expected": {
+        "id": "german-stated-equivalent-that-agrees-is-kept",
+        "name": "Öl",
+        "quantity": {
+          "kind": "alternatives",
+          "options": [
+            {
+              "kind": "simple",
+              "amount": {
+                "value": "1"
+              },
+              "unit": "volume.tablespoon.metric.culinary"
+            },
+            {
+              "kind": "simple",
+              "amount": {
+                "value": "15"
+              },
+              "unit": "volume.milliliter"
+            }
+          ]
+        },
+        "source_text": "1 EL (15 ml) Öl"
+      }
+    },
+    {
+      "id": "danish-abbreviated-tablespoonful",
+      "source_locale": "da",
+      "source_text": "2 spskf. olie",
+      "classification": "structured",
+      "expected": {
+        "id": "danish-abbreviated-tablespoonful",
+        "name": "olie",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          },
+          "unit": "volume.tablespoon.metric.culinary"
+        },
+        "source_text": "2 spskf. olie"
+      }
+    },
+    {
+      "id": "danish-abbreviated-teaspoonful",
+      "source_locale": "da",
+      "source_text": "1 tskf. salt",
+      "classification": "structured",
+      "expected": {
+        "id": "danish-abbreviated-teaspoonful",
+        "name": "salt",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "volume.teaspoon.metric.culinary"
+        },
+        "source_text": "1 tskf. salt"
+      }
+    }
+  ]
+}

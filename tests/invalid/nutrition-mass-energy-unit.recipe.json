@@ -1,0 +1,7 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "nutrition-mass-energy-unit",
+  "title": "Fat In Calories",
+  "nutrition": [{"basis": {"kind": "serving"}, "nutrients": [{"nutrient": "fat", "amount": {"value": "20"}, "unit": "kcal"}]}],
+  "instruction_sections": [{"id": "method", "steps": [{"id": "mix", "text": "Mix."}]}]
+}

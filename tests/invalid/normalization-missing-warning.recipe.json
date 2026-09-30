@@ -1,0 +1,22 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "normalization-missing-warning",
+  "title": "Normalization Missing Warning",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "flour",
+          "name": "flour",
+          "quantity": {"kind": "opaque", "text": "one cup"},
+          "source_text": "1 cup flour",
+          "normalization": {"method": "inferred"}
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {"id": "method", "steps": [{"id": "use", "text": "Use the flour."}]}
+  ]
+}

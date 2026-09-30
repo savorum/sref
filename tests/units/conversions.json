@@ -1,0 +1,383 @@
+{
+  "unit_registry": "0.2.0",
+  "cases": [
+    {
+      "id": "kilograms-to-grams",
+      "source_unit": "mass.kilogram",
+      "target_unit": "mass.gram",
+      "input": {"value": "3/2"},
+      "expected": {"amount": {"value": "1500"}, "approximate": false}
+    },
+    {
+      "id": "ounces-to-grams",
+      "source_unit": "mass.ounce.avoirdupois",
+      "target_unit": "mass.gram",
+      "input": {"value": "8"},
+      "expected": {"amount": {"value": "45359237/200000"}, "approximate": false}
+    },
+    {
+      "id": "pounds-to-grams",
+      "source_unit": "mass.pound.avoirdupois",
+      "target_unit": "mass.gram",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "45359237/100000"}, "approximate": false}
+    },
+    {
+      "id": "us-customary-cup-to-milliliters",
+      "source_unit": "volume.cup.us.customary",
+      "target_unit": "volume.milliliter",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "473176473/2000000"}, "approximate": false}
+    },
+    {
+      "id": "us-culinary-cup-to-milliliters",
+      "source_unit": "volume.cup.us.culinary",
+      "target_unit": "volume.milliliter",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "240", "approximate": true}, "approximate": true}
+    },
+    {
+      "id": "australian-cup-to-milliliters",
+      "source_unit": "volume.cup.au",
+      "target_unit": "volume.milliliter",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "250"}, "approximate": false}
+    },
+    {
+      "id": "australian-tablespoon-to-milliliters",
+      "source_unit": "volume.tablespoon.au",
+      "target_unit": "volume.milliliter",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "20"}, "approximate": false}
+    },
+    {
+      "id": "us-legal-tablespoon-to-milliliters",
+      "source_unit": "volume.tablespoon.us.legal",
+      "target_unit": "volume.milliliter",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "15"}, "approximate": false}
+    },
+    {
+      "id": "us-legal-teaspoon-to-milliliters",
+      "source_unit": "volume.teaspoon.us.legal",
+      "target_unit": "volume.milliliter",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "5"}, "approximate": false}
+    },
+    {
+      "id": "metric-culinary-teaspoon-to-milliliters",
+      "source_unit": "volume.teaspoon.metric.culinary",
+      "target_unit": "volume.milliliter",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "5"}, "approximate": false}
+    },
+    {
+      "id": "us-customary-tablespoon-to-milliliters",
+      "source_unit": "volume.tablespoon.us.customary",
+      "target_unit": "volume.milliliter",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "473176473/32000000"}, "approximate": false}
+    },
+    {
+      "id": "us-fluid-ounce-to-milliliters",
+      "source_unit": "volume.fluidounce.us",
+      "target_unit": "volume.milliliter",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "473176473/16000000"}, "approximate": false}
+    },
+    {
+      "id": "us-liquid-pint-to-milliliters",
+      "source_unit": "volume.pint.us.liquid",
+      "target_unit": "volume.milliliter",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "473176473/1000000"}, "approximate": false}
+    },
+    {
+      "id": "us-liquid-quart-to-milliliters",
+      "source_unit": "volume.quart.us.liquid",
+      "target_unit": "volume.milliliter",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "473176473/500000"}, "approximate": false}
+    },
+    {
+      "id": "us-liquid-gallon-to-milliliters",
+      "source_unit": "volume.gallon.us.liquid",
+      "target_unit": "volume.milliliter",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "473176473/125000"}, "approximate": false}
+    },
+    {
+      "id": "us-gallon-to-us-fluid-ounces",
+      "source_unit": "volume.gallon.us.liquid",
+      "target_unit": "volume.fluidounce.us",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "128"}, "approximate": false}
+    },
+    {
+      "id": "imperial-fluid-ounce-to-milliliters",
+      "source_unit": "volume.fluidounce.imperial",
+      "target_unit": "volume.milliliter",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "454609/16000"}, "approximate": false}
+    },
+    {
+      "id": "imperial-pint-to-milliliters",
+      "source_unit": "volume.pint.imperial",
+      "target_unit": "volume.milliliter",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "454609/800"}, "approximate": false}
+    },
+    {
+      "id": "imperial-quart-to-milliliters",
+      "source_unit": "volume.quart.imperial",
+      "target_unit": "volume.milliliter",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "454609/400"}, "approximate": false}
+    },
+    {
+      "id": "imperial-gallon-to-milliliters",
+      "source_unit": "volume.gallon.imperial",
+      "target_unit": "volume.milliliter",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "454609/100"}, "approximate": false}
+    },
+    {
+      "id": "imperial-gallon-to-imperial-fluid-ounces",
+      "source_unit": "volume.gallon.imperial",
+      "target_unit": "volume.fluidounce.imperial",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "160"}, "approximate": false}
+    },
+    {
+      "id": "us-pint-to-imperial-pint",
+      "source_unit": "volume.pint.us.liquid",
+      "target_unit": "volume.pint.imperial",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "473176473/568261250"}, "approximate": false}
+    },
+    {
+      "id": "metric-culinary-cup-to-milliliters",
+      "source_unit": "volume.cup.metric.culinary",
+      "target_unit": "volume.milliliter",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "250"}, "approximate": false}
+    },
+    {
+      "id": "us-legal-cup-to-milliliters",
+      "source_unit": "volume.cup.us.legal",
+      "target_unit": "volume.milliliter",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "240"}, "approximate": false}
+    },
+    {
+      "id": "deciliters-to-milliliters",
+      "source_unit": "volume.deciliter",
+      "target_unit": "volume.milliliter",
+      "input": {"value": "2"},
+      "expected": {"amount": {"value": "200"}, "approximate": false}
+    },
+    {
+      "id": "centiliters-to-milliliters",
+      "source_unit": "volume.centiliter",
+      "target_unit": "volume.milliliter",
+      "input": {"value": "20"},
+      "expected": {"amount": {"value": "200"}, "approximate": false}
+    },
+    {
+      "id": "centimeters-to-millimeters",
+      "source_unit": "length.centimeter",
+      "target_unit": "length.millimeter",
+      "input": {"value": "5"},
+      "expected": {"amount": {"value": "50"}, "approximate": false}
+    },
+    {
+      "id": "inches-to-millimeters",
+      "source_unit": "length.inch.international",
+      "target_unit": "length.millimeter",
+      "input": {"value": "2"},
+      "expected": {"amount": {"value": "254/5"}, "approximate": false}
+    },
+    {
+      "id": "freezing-fahrenheit-to-celsius",
+      "source_unit": "temperature.fahrenheit",
+      "target_unit": "temperature.celsius",
+      "input": {"value": "32"},
+      "expected": {"amount": {"value": "0"}, "approximate": false}
+    },
+    {
+      "id": "oven-fahrenheit-to-celsius",
+      "source_unit": "temperature.fahrenheit",
+      "target_unit": "temperature.celsius",
+      "input": {"value": "350"},
+      "expected": {"amount": {"value": "530/3"}, "approximate": false}
+    },
+    {
+      "id": "celsius-to-fahrenheit",
+      "source_unit": "temperature.celsius",
+      "target_unit": "temperature.fahrenheit",
+      "input": {"value": "177"},
+      "expected": {"amount": {"value": "1753/5"}, "approximate": false}
+    },
+    {
+      "id": "negative-forty-fixed-point",
+      "source_unit": "temperature.celsius",
+      "target_unit": "temperature.fahrenheit",
+      "input": {"value": "-40"},
+      "expected": {"amount": {"value": "-40"}, "approximate": false}
+    },
+    {
+      "id": "temperature-range",
+      "source_unit": "temperature.celsius",
+      "target_unit": "temperature.fahrenheit",
+      "input": {"min": "27", "max": "28"},
+      "expected": {"amount": {"min": "403/5", "max": "412/5"}, "approximate": false}
+    },
+    {
+      "id": "input-approximation-propagates",
+      "source_unit": "mass.kilogram",
+      "target_unit": "mass.gram",
+      "input": {"value": "2", "approximate": true},
+      "expected": {"amount": {"value": "2000", "approximate": true}, "approximate": true}
+    },
+    {
+      "id": "conventional-target-propagates-approximation",
+      "source_unit": "volume.milliliter",
+      "target_unit": "volume.cup.us.culinary",
+      "input": {"value": "240"},
+      "expected": {"amount": {"value": "1", "approximate": true}, "approximate": true}
+    },
+    {
+      "id": "sixteen-ounces-make-one-pound",
+      "source_unit": "mass.ounce.avoirdupois",
+      "target_unit": "mass.pound.avoirdupois",
+      "input": {"value": "16"},
+      "expected": {"amount": {"value": "1"}, "approximate": false}
+    },
+    {
+      "id": "one-pound-is-sixteen-ounces",
+      "source_unit": "mass.pound.avoirdupois",
+      "target_unit": "mass.ounce.avoirdupois",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "16"}, "approximate": false}
+    },
+    {
+      "id": "us-cup-is-sixteen-us-tablespoons",
+      "source_unit": "volume.cup.us.customary",
+      "target_unit": "volume.tablespoon.us.customary",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "16"}, "approximate": false}
+    },
+    {
+      "id": "us-tablespoon-is-three-us-teaspoons",
+      "source_unit": "volume.tablespoon.us.customary",
+      "target_unit": "volume.teaspoon.us.customary",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "3"}, "approximate": false}
+    },
+    {
+      "id": "imperial-pint-is-twenty-imperial-fluid-ounces",
+      "source_unit": "volume.pint.imperial",
+      "target_unit": "volume.fluidounce.imperial",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "20"}, "approximate": false}
+    },
+    {
+      "id": "us-liquid-pint-is-sixteen-us-fluid-ounces",
+      "source_unit": "volume.pint.us.liquid",
+      "target_unit": "volume.fluidounce.us",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "16"}, "approximate": false}
+    },
+    {
+      "id": "australian-tablespoon-is-four-australian-teaspoons",
+      "source_unit": "volume.tablespoon.au",
+      "target_unit": "volume.teaspoon.au",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "4"}, "approximate": false}
+    },
+    {
+      "id": "metric-culinary-tablespoon-is-three-metric-culinary-teaspoons",
+      "source_unit": "volume.tablespoon.metric.culinary",
+      "target_unit": "volume.teaspoon.metric.culinary",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "3"}, "approximate": false}
+    },
+    {
+      "id": "metric-culinary-tablespoon-to-milliliters",
+      "source_unit": "volume.tablespoon.metric.culinary",
+      "target_unit": "volume.milliliter",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "15"}, "approximate": false}
+    },
+    {
+      "id": "japanese-cup-to-milliliters",
+      "source_unit": "volume.cup.jp",
+      "target_unit": "volume.milliliter",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "200"}, "approximate": false}
+    },
+    {
+      "id": "korean-cup-to-milliliters",
+      "source_unit": "volume.cup.kr",
+      "target_unit": "volume.milliliter",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "200"}, "approximate": false}
+    },
+    {
+      "id": "us-legal-tablespoon-is-one-metric-culinary-tablespoon",
+      "source_unit": "volume.tablespoon.us.legal",
+      "target_unit": "volume.tablespoon.metric.culinary",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "1"}, "approximate": false}
+    },
+    {
+      "id": "us-culinary-tablespoon-to-milliliters",
+      "source_unit": "volume.tablespoon.us.culinary",
+      "target_unit": "volume.milliliter",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "15", "approximate": true}, "approximate": true}
+    },
+    {
+      "id": "us-culinary-teaspoon-to-milliliters",
+      "source_unit": "volume.teaspoon.us.culinary",
+      "target_unit": "volume.milliliter",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "5", "approximate": true}, "approximate": true}
+    },
+    {
+      "id": "boiling-fahrenheit-to-celsius",
+      "source_unit": "temperature.fahrenheit",
+      "target_unit": "temperature.celsius",
+      "input": {"value": "212"},
+      "expected": {"amount": {"value": "100"}, "approximate": false}
+    },
+    {
+      "id": "boiling-celsius-to-fahrenheit",
+      "source_unit": "temperature.celsius",
+      "target_unit": "temperature.fahrenheit",
+      "input": {"value": "100"},
+      "expected": {"amount": {"value": "212"}, "approximate": false}
+    },
+    {
+      "id": "reject-mass-to-volume",
+      "source_unit": "mass.gram",
+      "target_unit": "volume.milliliter",
+      "input": {"value": "100"},
+      "expected": {"error": "incompatible-dimension"}
+    },
+    {
+      "id": "reject-count-to-mass",
+      "source_unit": "count.clove",
+      "target_unit": "mass.gram",
+      "input": {"value": "2"},
+      "expected": {"error": "nonphysical-unit"}
+    },
+    {
+      "id": "reject-unknown-unit",
+      "source_unit": "volume.cup.unknown",
+      "target_unit": "volume.milliliter",
+      "input": {"value": "1"},
+      "expected": {"error": "unknown-unit"}
+    }
+  ]
+}

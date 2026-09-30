@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "units": [
+    {
+      "id": "mass.gram",
+      "kind": "physical",
+      "dimension": "mass",
+      "definition": {"kind": "base"},
+      "status": "active",
+      "replacement": "mass.kilogram",
+      "labels": {"en": {"name": "gram"}},
+      "aliases": [{"language": "en", "forms": ["g"], "case_sensitive": true}],
+      "references": ["https://example.com/mass"]
+    },
+    {
+      "id": "mass.kilogram",
+      "kind": "physical",
+      "dimension": "mass",
+      "definition": {
+        "kind": "linear",
+        "base_unit": "mass.gram",
+        "multiplier": "1000",
+        "exact": true
+      },
+      "status": "active",
+      "labels": {"en": {"name": "kilogram"}},
+      "aliases": [{"language": "en", "forms": ["kg"], "case_sensitive": true}],
+      "references": ["https://example.com/mass"]
+    }
+  ]
+}

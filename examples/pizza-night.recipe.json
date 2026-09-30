@@ -1,0 +1,47 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "pizza-night",
+  "title": "Two-Pizza Dough with Tomato Topping",
+  "description": "Two slowly fermented pizzas topped with tomato, mozzarella, and basil.",
+  "language": "en",
+  "source_locale": "en-IT",
+  "yields": [{"text": "2 round pizzas", "quantity": {"kind": "simple", "amount": {"value": "2"}, "unit": "count.item"}, "label": "round pizzas"}],
+  "times": {
+    "prep": {"value": "PT35M"},
+    "cook": {"value": "PT16M"},
+    "additional": {"text": "overnight"},
+    "assertions": [
+      {"id": "mix-time", "kind": "prep", "label": "Mix", "duration": {"value": "PT15M"}},
+      {"id": "ferment-time", "kind": "ferment", "duration": {"text": "overnight"}, "attention": "passive"},
+      {"id": "shape-time", "kind": "prep", "label": "Shape and top", "duration": {"value": "PT20M"}},
+      {"id": "bake-time", "kind": "cook", "duration": {"value": "PT16M"}}
+    ]
+  },
+  "ingredient_sections": [
+    {
+      "id": "dough",
+      "title": "Dough",
+      "ingredients": [
+        {"id": "bread-flour", "name": "bread flour", "quantity": {"kind": "simple", "amount": {"value": "500"}, "unit": "mass.gram"}, "note": "plus a little for shaping", "source_text": "500 g bread flour, plus a little for shaping"},
+        {"id": "dough-water", "name": "water", "quantity": {"kind": "simple", "amount": {"value": "325"}, "unit": "mass.gram"}, "note": "cool", "source_text": "325 g cool water"},
+        {"id": "yeast", "name": "instant yeast", "quantity": {"kind": "simple", "amount": {"value": "1"}, "unit": "mass.gram"}, "source_text": "1 g instant yeast"},
+        {"id": "dough-salt", "name": "fine sea salt", "quantity": {"kind": "simple", "amount": {"value": "10"}, "unit": "mass.gram"}, "source_text": "10 g fine sea salt"}
+      ]
+    },
+    {
+      "id": "tomato-topping",
+      "title": "Tomato topping",
+      "ingredients": [
+        {"id": "tomatoes", "name": "whole peeled tomatoes", "quantity": {"kind": "simple", "amount": {"value": "1"}, "unit": "container.can"}, "package_size": {"kind": "simple", "amount": {"value": "400"}, "unit": "mass.gram"}, "note": "drained lightly and crushed by hand", "source_text": "1 (400 g) can whole peeled tomatoes, lightly drained and hand-crushed"},
+        {"id": "mozzarella", "name": "fresh mozzarella", "quantity": {"kind": "simple", "amount": {"value": "250"}, "unit": "mass.gram"}, "note": "torn and drained", "source_text": "250 g fresh mozzarella, torn and drained"},
+        {"id": "basil", "name": "basil leaves", "quantity": {"kind": "simple", "amount": {"min": "8", "max": "12"}, "unit": "count.item"}, "source_text": "8–12 basil leaves"},
+        {"id": "olive-oil", "name": "extra-virgin olive oil", "quantity": {"kind": "opaque", "text": "a thin drizzle"}, "source_text": "a thin drizzle of extra-virgin olive oil", "normalization": {"method": "unresolved", "warnings": ["A thin drizzle has no defensible physical quantity without additional evidence."]}}
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {"id": "ferment", "title": "Mix and ferment", "steps": [{"id": "mix-dough", "text": "Mix the flour, water, yeast, and salt until no dry flour remains.", "timing_refs": ["mix-time"], "ingredient_uses": [{"ingredient_ref": "bread-flour"}, {"ingredient_ref": "dough-water"}, {"ingredient_ref": "yeast"}, {"ingredient_ref": "dough-salt"}]}, {"id": "fold-dough", "text": "Fold the dough several times during the first hour, then refrigerate overnight.", "timing_refs": ["ferment-time"]}]},
+    {"id": "shape", "title": "Divide and shape", "steps": [{"id": "divide", "text": "Divide the dough into two equal pieces, shape into balls, and let them relax at room temperature.", "timing_refs": ["shape-time"]}, {"id": "stretch", "text": "Stretch each ball into a round on a lightly floured surface.", "timing_refs": ["shape-time"], "ingredient_uses": [{"ingredient_ref": "bread-flour"}]}]},
+    {"id": "top-and-bake", "title": "Top and bake", "steps": [{"id": "top", "text": "Top each round with tomatoes and mozzarella.", "timing_refs": ["shape-time"], "ingredient_uses": [{"ingredient_ref": "tomatoes"}, {"ingredient_ref": "mozzarella"}]}, {"id": "bake", "text": "Bake on a thoroughly preheated surface until blistered; finish with basil and olive oil.", "timing_refs": ["bake-time"], "ingredient_uses": [{"ingredient_ref": "basil"}, {"ingredient_ref": "olive-oil"}]}]}
+  ]
+}

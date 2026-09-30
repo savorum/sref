@@ -1,0 +1,116 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "australian-scones",
+  "title": "Australian Scones",
+  "description": "Tender scones enriched with butter and lightly sweetened with golden syrup.",
+  "language": "en-AU",
+  "source_locale": "en-AU",
+  "yields": [{
+    "text": "12 scones",
+    "quantity": {
+      "kind": "simple",
+      "amount": {
+        "value": "12"
+      }
+    },
+    "label": "scones"
+  }],
+  "ingredient_sections": [
+    {
+      "id": "scones",
+      "ingredients": [
+        {
+          "id": "flour",
+          "name": "self-raising flour",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "3"
+            },
+            "unit": "volume.cup.au"
+          },
+          "source_text": "3 cups self-raising flour"
+        },
+        {
+          "id": "butter",
+          "name": "butter",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "60"
+            },
+            "unit": "mass.gram"
+          },
+          "note": "cold and cubed",
+          "source_text": "60 g cold butter, cubed"
+        },
+        {
+          "id": "milk",
+          "name": "milk",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "1"
+            },
+            "unit": "volume.cup.au"
+          },
+          "source_text": "1 cup milk"
+        },
+        {
+          "id": "syrup",
+          "name": "golden syrup",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "1"
+            },
+            "unit": "volume.tablespoon.au"
+          },
+          "note": "optional",
+          "source_text": "1 tbsp golden syrup, optional"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "make",
+      "title": "Make the dough",
+      "steps": [
+        {
+          "id": "rub-butter",
+          "text": "Rub the cold butter into the flour until the mixture is crumbly.",
+          "ingredient_uses": [
+            {"ingredient_ref": "flour"},
+            {"ingredient_ref": "butter"}
+          ]
+        },
+        {
+          "id": "add-liquid",
+          "text": "Stir in the milk and optional golden syrup just until a dough forms.",
+          "ingredient_uses": [
+            {"ingredient_ref": "milk"},
+            {"ingredient_ref": "syrup"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shape-bake",
+      "title": "Shape and bake",
+      "steps": [
+        {
+          "id": "shape",
+          "text": "Pat out the dough and cut it into rounds."
+        },
+        {
+          "id": "bake",
+          "text": "Bake until risen and golden."
+        }
+      ]
+    }
+  ]
+}

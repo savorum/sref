@@ -1,0 +1,12 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "carottes-roties",
+  "title": "Carottes rôties au sirop d'érable",
+  "language": "fr-CH",
+  "translations": [
+    {"relation": "alternate", "language": "de-CH", "recipe_id": "ofenrueebli", "title": "Ofenrüebli mit Ahornsirup", "url": "https://example.com/de/rezepte/19043", "x-com.example.review": {"checked": true}},
+    {"relation": "alternate", "language": "it-CH", "title": "Carote al forno con sciroppo d'acero"},
+    {"relation": "alternate", "language": "en", "url": "https://example.com/en/recipes/19043"}
+  ],
+  "instruction_sections": [{"id": "method", "steps": [{"id": "mix", "text": "Mix."}]}]
+}

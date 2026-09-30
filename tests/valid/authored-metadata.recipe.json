@@ -1,0 +1,37 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "authored-metadata",
+  "title": "Authored Metadata",
+  "categories": ["Bread", "Yeasted bread"],
+  "courses": ["Breakfast", "Side dish"],
+  "keywords": ["overnight", "weekend"],
+  "cuisines": ["French"],
+  "cooking_methods": ["Baking"],
+  "published": "2024-03-10",
+  "modified": "2025-01-18T14:30:00-05:00",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "flour",
+          "name": "bread flour"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "bake",
+          "text": "Bake until deeply browned."
+        }
+      ]
+    }
+  ]
+}

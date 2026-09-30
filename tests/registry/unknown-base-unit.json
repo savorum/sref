@@ -1,0 +1,20 @@
+{
+  "version": "0.2.0",
+  "units": [
+    {
+      "id": "mass.orphan",
+      "kind": "physical",
+      "dimension": "mass",
+      "definition": {
+        "kind": "linear",
+        "base_unit": "mass.missing",
+        "multiplier": "1",
+        "exact": true
+      },
+      "status": "active",
+      "labels": {"en": {"name": "orphan mass unit"}},
+      "aliases": [{"language": "en", "forms": ["orphan mass"], "case_sensitive": false}],
+      "references": ["https://example.com/mass"]
+    }
+  ]
+}

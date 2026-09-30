@@ -1,0 +1,7 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "asset-relative-source-url",
+  "title": "Relative Source",
+  "assets": [{"id": "photo", "path": "assets/photo.jpg", "media_type": "image/jpeg", "sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", "size": 10, "source_url": "/images/photo.jpg"}],
+  "instruction_sections": [{"id": "method", "steps": [{"id": "mix", "text": "Mix."}]}]
+}

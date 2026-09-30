@@ -1,0 +1,171 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "authored-choices",
+  "title": "Authored ingredient choices",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "fat",
+          "relation": "or",
+          "source_text": "1 cup butter or margarine",
+          "note": "softened",
+          "alternatives": [
+            {
+              "id": "butter",
+              "name": "butter",
+              "quantity": {
+                "kind": "simple",
+                "amount": {
+                  "value": "1"
+                },
+                "unit": "volume.cup.us.customary"
+              },
+              "x-org.example.choice": {
+                "source": "authored",
+                "optional": false
+              }
+            },
+            {
+              "id": "margarine",
+              "name": "margarine",
+              "quantity": {
+                "kind": "simple",
+                "amount": {
+                  "value": "1"
+                },
+                "unit": "volume.cup.us.customary"
+              }
+            }
+          ]
+        },
+        {
+          "id": "fallback",
+          "relation": "preferred",
+          "source_text": "Use 1 cup butter; if unavailable, substitute 3/4 cup shortening.",
+          "note": "If butter is unavailable, use shortening.",
+          "alternatives": [
+            {
+              "id": "preferred-butter",
+              "name": "butter",
+              "quantity": {
+                "kind": "simple",
+                "amount": {
+                  "value": "1"
+                },
+                "unit": "volume.cup.us.customary"
+              }
+            },
+            {
+              "id": "shortening",
+              "name": "shortening",
+              "quantity": {
+                "kind": "simple",
+                "amount": {
+                  "value": "3/4"
+                },
+                "unit": "volume.cup.us.customary"
+              },
+              "note": "room temperature"
+            }
+          ]
+        },
+        {
+          "id": "nuts",
+          "relation": "or",
+          "optional": true,
+          "alternatives": [
+            {
+              "id": "walnuts",
+              "name": "walnuts",
+              "quantity": {
+                "kind": "simple",
+                "amount": {
+                  "value": "1/2"
+                },
+                "unit": "volume.cup.us.customary"
+              }
+            },
+            {
+              "id": "pecans",
+              "name": "pecans",
+              "quantity": {
+                "kind": "simple",
+                "amount": {
+                  "value": "1/2"
+                },
+                "unit": "volume.cup.us.customary"
+              }
+            }
+          ]
+        },
+        {
+          "id": "seasoning",
+          "relation": "and_or",
+          "alternatives": [
+            {
+              "id": "salt",
+              "name": "salt",
+              "note": "to taste"
+            },
+            {
+              "id": "pepper",
+              "name": "pepper",
+              "optional": true,
+              "note": "freshly ground"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "mix",
+          "text": "Mix the selected fat with the remaining ingredients. Add nuts if desired.",
+          "ingredient_uses": [
+            {
+              "ingredient_ref": "fat"
+            },
+            {
+              "ingredient_ref": "nuts"
+            }
+          ]
+        },
+        {
+          "id": "fallback-use",
+          "text": "Use butter, or shortening if butter is unavailable.",
+          "ingredient_uses": [
+            {
+              "ingredient_ref": "preferred-butter",
+              "quantity": {
+                "kind": "simple",
+                "amount": {
+                  "value": "1"
+                },
+                "unit": "volume.cup.us.customary"
+              }
+            },
+            {
+              "ingredient_ref": "shortening",
+              "quantity": {
+                "kind": "simple",
+                "amount": {
+                  "value": "3/4"
+                },
+                "unit": "volume.cup.us.customary"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

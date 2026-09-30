@@ -1,0 +1,55 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "vietnamese-pickles",
+  "title": "Đồ Chua Cà Rốt và Củ Cải",
+  "description": "Dưa góp cà rốt và củ cải trắng ngâm chua ngọt.",
+  "language": "vi",
+  "source_locale": "vi-VN",
+  "yields": [{"text": "1 hũ lớn", "quantity": {"kind": "simple", "amount": {"value": "1"}, "unit": "count.item"}, "label": "hũ lớn"}],
+  "times": {
+    "prep": {"value": "PT25M"},
+    "additional": {"text": "ít nhất 2 giờ"},
+    "assertions": [
+      {"id": "prep-time", "kind": "prep", "duration": {"value": "PT25M"}},
+      {"id": "salt-rest-time", "kind": "rest", "duration": {"value": "PT15M"}},
+      {"id": "chill-time", "kind": "chill", "duration": {"text": "ít nhất 2 giờ"}, "attention": "passive"}
+    ]
+  },
+  "ingredient_sections": [
+    {
+      "id": "rau-cu",
+      "title": "Rau củ",
+      "ingredients": [
+        {"id": "carrot", "name": "cà rốt", "quantity": {"kind": "simple", "amount": {"value": "300"}, "unit": "mass.gram"}, "note": "cắt sợi", "source_text": "300 g cà rốt, cắt sợi"},
+        {"id": "daikon", "name": "củ cải trắng", "quantity": {"kind": "simple", "amount": {"value": "300"}, "unit": "mass.gram"}, "note": "cắt sợi", "source_text": "300 g củ cải trắng, cắt sợi"},
+        {"id": "salt", "name": "muối", "quantity": {"kind": "simple", "amount": {"value": "10"}, "unit": "mass.gram"}, "source_text": "10 g muối"}
+      ]
+    },
+    {
+      "id": "nuoc-ngam",
+      "title": "Nước ngâm",
+      "ingredients": [
+        {"id": "vinegar", "name": "giấm gạo", "quantity": {"kind": "simple", "amount": {"value": "250"}, "unit": "volume.milliliter"}, "source_text": "250 mL giấm gạo"},
+        {"id": "water", "name": "nước", "quantity": {"kind": "simple", "amount": {"value": "250"}, "unit": "volume.milliliter"}, "source_text": "250 mL nước"},
+        {"id": "sugar", "name": "đường", "quantity": {"kind": "simple", "amount": {"value": "100"}, "unit": "mass.gram"}, "source_text": "100 g đường"}
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "so-che",
+      "title": "Sơ chế rau củ",
+      "steps": [
+        {"id": "uop-muoi", "text": "Trộn cà rốt và củ cải với muối, để 15 phút rồi xả sạch và vắt ráo.", "timing_refs": ["prep-time", "salt-rest-time"], "ingredient_uses": [{"ingredient_ref": "carrot"}, {"ingredient_ref": "daikon"}, {"ingredient_ref": "salt"}]}
+      ]
+    },
+    {
+      "id": "ngam",
+      "title": "Ngâm",
+      "steps": [
+        {"id": "pha-nuoc", "text": "Khuấy giấm, nước và đường cho đến khi đường tan.", "timing_refs": ["prep-time"], "ingredient_uses": [{"ingredient_ref": "vinegar"}, {"ingredient_ref": "water"}, {"ingredient_ref": "sugar"}]},
+        {"id": "cho-vao-hu", "text": "Cho rau củ vào hũ, đổ nước ngâm ngập mặt và để lạnh ít nhất 2 giờ.", "timing_refs": ["chill-time"], "ingredient_uses": [{"ingredient_ref": "carrot"}, {"ingredient_ref": "daikon"}, {"ingredient_ref": "vinegar"}, {"ingredient_ref": "water"}, {"ingredient_ref": "sugar"}]}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "temperature-purposes",
+  "title": "Temperature Purposes",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "chicken",
+          "name": "chicken breast"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "cook",
+          "text": "Preheat, heat each medium, and cook the chicken to its stated targets.",
+          "temperatures": [
+            {"amount": {"value": "350"}, "unit": "temperature.fahrenheit", "purpose": {"kind": "oven"}},
+            {"amount": {"value": "165"}, "unit": "temperature.fahrenheit", "purpose": {"kind": "internal", "label": "breast"}},
+            {"amount": {"value": "350"}, "unit": "temperature.fahrenheit", "purpose": {"kind": "oil"}},
+            {"amount": {"value": "180"}, "unit": "temperature.fahrenheit", "purpose": {"kind": "water"}},
+            {"amount": {"value": "205"}, "unit": "temperature.celsius", "purpose": {"kind": "surface", "label": "griddle"}},
+            {"amount": {"min": "112", "max": "116"}, "unit": "temperature.celsius", "purpose": {"kind": "other", "label": "sugar syrup"}}
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+This is a synthetic source attachment for SREF package conformance.

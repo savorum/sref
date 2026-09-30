@@ -1,0 +1,128 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "sourdough",
+  "title": "Sourdough Loaf",
+  "description": "A naturally leavened country loaf with a flexible hydration range.",
+  "language": "en-GB",
+  "source_locale": "en-GB",
+  "yields": [{
+    "text": "1 loaf",
+    "quantity": {
+      "kind": "simple",
+      "amount": {
+        "value": "1"
+      },
+      "unit": "count.item"
+    },
+    "label": "loaf"
+  }],
+  "times": {
+    "prep": {"value": "PT35M"},
+    "cook": {"value": "PT45M"},
+    "additional": {"value": "PT18H"},
+    "total": {"value": "PT19H20M"}
+  },
+  "ingredient_sections": [
+    {
+      "id": "dough",
+      "title": "Dough",
+      "ingredients": [
+        {
+          "id": "flour",
+          "name": "bread flour",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "500"
+            },
+            "unit": "mass.gram"
+          },
+          "source_text": "500 g bread flour"
+        },
+        {
+          "id": "water",
+          "name": "water",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "min": "350",
+              "max": "375",
+              "approximate": true
+            },
+            "unit": "mass.gram"
+          },
+          "source_text": "about 350–375 g water"
+        },
+        {
+          "id": "starter",
+          "name": "active sourdough starter",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "100"
+            },
+            "unit": "mass.gram"
+          },
+          "source_text": "100 g active sourdough starter"
+        },
+        {
+          "id": "salt",
+          "name": "fine salt",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "10"
+            },
+            "unit": "mass.gram"
+          },
+          "source_text": "10 g fine salt"
+        },
+        {
+          "id": "rice-flour",
+          "name": "rice flour",
+          "quantity": {
+            "kind": "opaque",
+            "text": "enough for dusting"
+          },
+          "note": "for the proofing basket",
+          "source_text": "rice flour, enough for dusting"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "mix",
+          "text": "Mix the flour, most of the water, starter, and salt. Add the remaining water only as needed.",
+          "ingredient_uses": [
+            {"ingredient_ref": "flour"},
+            {"ingredient_ref": "water"},
+            {"ingredient_ref": "starter"},
+            {"ingredient_ref": "salt"}
+          ]
+        },
+        {
+          "id": "ferment",
+          "text": "Ferment and fold the dough until it is elastic and aerated."
+        },
+        {
+          "id": "proof",
+          "text": "Shape, place in a rice-floured basket, and proof until ready.",
+          "ingredient_uses": [
+            {"ingredient_ref": "rice-flour"}
+          ]
+        },
+        {
+          "id": "bake",
+          "text": "Bake until deeply browned and cool completely before slicing."
+        }
+      ]
+    }
+  ]
+}

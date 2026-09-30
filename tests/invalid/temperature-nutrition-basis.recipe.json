@@ -1,0 +1,7 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "temperature-nutrition-basis",
+  "title": "Temperature Basis",
+  "nutrition": [{"basis": {"kind": "quantity", "quantity": {"kind": "simple", "amount": {"value": "100"}, "unit": "temperature.celsius"}}, "nutrients": [{"nutrient": "protein", "amount": {"value": "4"}, "unit": "g"}]}],
+  "instruction_sections": [{"id": "method", "steps": [{"id": "mix", "text": "Mix."}]}]
+}

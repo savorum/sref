@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "units": [
+    {
+      "id": "mass.gram",
+      "kind": "physical",
+      "dimension": "mass",
+      "definition": {"kind": "base"},
+      "status": "active",
+      "labels": {"en": {"name": "gram"}},
+      "aliases": [
+        {"language": "en", "forms": ["gram"], "case_sensitive": false}
+      ],
+      "references": []
+    }
+  ]
+}

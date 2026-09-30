@@ -1,0 +1,26 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "nutrition-bases",
+  "title": "Lentil Soup",
+  "yields": [{"text": "6 servings", "quantity": {"kind": "simple", "amount": {"value": "6"}}, "label": "servings"}],
+  "nutrition": [
+    {
+      "basis": {"kind": "serving", "text": "1 cup (240 ml)", "quantity": {"kind": "simple", "amount": {"value": "240"}, "unit": "volume.milliliter"}},
+      "nutrients": [
+        {"nutrient": "energy", "amount": {"value": "220"}, "unit": "kcal", "label": "Calories"},
+        {"nutrient": "protein", "amount": {"value": "14"}, "unit": "g"},
+        {"nutrient": "fat", "amount": {"value": "0"}, "unit": "g"},
+        {"nutrient": "fiber", "amount": {"value": "9", "approximate": true}, "unit": "g", "source_text": "about 9 g"},
+        {"nutrient": "sugars", "text": "trace"},
+        {"nutrient": "other", "label": "Iron", "amount": {"value": "4"}, "unit": "mg"}
+      ]
+    },
+    {
+      "basis": {"kind": "quantity", "text": "per 100 g", "quantity": {"kind": "simple", "amount": {"value": "100"}, "unit": "mass.gram"}},
+      "nutrients": [{"nutrient": "energy", "amount": {"value": "385"}, "unit": "kJ"}, {"nutrient": "salt", "amount": {"min": "1/2", "max": "3/5"}, "unit": "g"}]
+    },
+    {"basis": {"kind": "recipe"}, "nutrients": [{"nutrient": "energy", "amount": {"value": "1320"}, "unit": "kcal"}]},
+    {"basis": {"kind": "unspecified"}, "nutrients": [{"nutrient": "energy", "amount": {"value": "220"}}], "note": "Calories listed without a serving size."}
+  ],
+  "instruction_sections": [{"id": "method", "steps": [{"id": "mix", "text": "Mix."}]}]
+}

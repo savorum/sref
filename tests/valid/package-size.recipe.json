@@ -1,0 +1,48 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "package-size",
+  "title": "Package Size Fixture",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "tomatoes",
+          "name": "diced tomatoes",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "2"
+            },
+            "unit": "container.can"
+          },
+          "package_size": {
+            "kind": "simple",
+            "amount": {
+              "value": "14"
+            },
+            "unit": "mass.ounce.avoirdupois"
+          },
+          "source_text": "2 (14 oz) cans diced tomatoes"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "add",
+          "text": "Add the tomatoes.",
+          "ingredient_uses": [
+            {"ingredient_ref": "tomatoes"}
+          ]
+        }
+      ]
+    }
+  ]
+}

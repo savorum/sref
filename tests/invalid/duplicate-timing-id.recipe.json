@@ -1,0 +1,38 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "duplicate-timing-id",
+  "title": "Duplicate Timing Identity",
+  "times": {
+    "assertions": [
+      {
+        "id": "wait-time",
+        "kind": "rest",
+        "duration": {"value": "PT10M"}
+      },
+      {
+        "id": "wait-time",
+        "kind": "cool",
+        "duration": {"value": "PT20M"}
+      }
+    ]
+  },
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {"id": "water", "name": "water"}
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {"id": "wait", "text": "Wait, then cool."}
+      ]
+    }
+  ]
+}

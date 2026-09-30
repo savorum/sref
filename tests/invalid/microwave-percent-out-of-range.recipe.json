@@ -1,0 +1,7 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "microwave-percent-out-of-range",
+  "title": "Microwave Percent Out of Range",
+  "times": {"assertions": [{"id": "heat", "duration": {"value": "PT2M"}, "microwave": {"power": {"percent": "101"}, "source_text": "at 101%"}}]},
+  "instruction_sections": [{"id": "method", "steps": [{"id": "heat-step", "text": "Heat.", "timing_refs": ["heat"]}]}]
+}

@@ -1,0 +1,38 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "alternative-inside-sum",
+  "title": "Alternative Inside Sum",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "oil",
+          "name": "oil",
+          "quantity": {
+            "kind": "alternatives",
+            "options": [
+              {
+                "kind": "sum",
+                "terms": [
+                  {"kind": "simple", "amount": {"value": "1"}},
+                  {
+                    "kind": "alternatives",
+                    "options": [
+                      {"kind": "simple", "amount": {"value": "2"}},
+                      {"kind": "simple", "amount": {"value": "3"}}
+                    ]
+                  }
+                ]
+              },
+              {"kind": "simple", "amount": {"value": "4"}}
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {"id": "method", "steps": [{"id": "add", "text": "Add the oil."}]}
+  ]
+}

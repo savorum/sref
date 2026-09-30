@@ -1,0 +1,70 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "timing-assertion-preservation",
+  "title": "Overnight Beans",
+  "times": {
+    "prep": {"value": "PT25M"},
+    "cook": {"value": "PT1H"},
+    "additional": {"value": "PT14H"},
+    "total": {"value": "PT15H25M"},
+    "assertions": [
+      {
+        "id": "soak-time",
+        "kind": "soak",
+        "duration": {"value": "PT12H", "source_text": "12 hours"},
+        "attention": "passive",
+        "note": "cover generously"
+      },
+      {
+        "id": "prep-time",
+        "kind": "prep",
+        "duration": {"value": "PT25M"}
+      },
+      {
+        "id": "cook-time",
+        "kind": "cook",
+        "duration": {"min": "PT50M", "max": "PT1H10M", "approximate": true, "source_text": "about 50–70 minutes"},
+        "attention": "active"
+      },
+      {
+        "id": "cool-time",
+        "kind": "cool",
+        "label": "Cool completely",
+        "duration": {"text": "until completely cool"},
+        "attention": "passive",
+        "x-org.example.vendor-note": {"kept": true}
+      }
+    ]
+  },
+  "ingredient_sections": [
+    {
+      "id": "beans",
+      "ingredients": [
+        {
+          "id": "dried-beans",
+          "name": "dried beans",
+          "quantity": {
+            "kind": "simple",
+            "amount": {"value": "1"},
+            "unit": "mass.pound.avoirdupois"
+          },
+          "source_text": "1 lb dried beans"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {"id": "soak-beans", "text": "Cover the beans generously with water and soak for 12 hours.", "timing_refs": ["soak-time"], "ingredient_uses": [{"ingredient_ref": "dried-beans"}]},
+        {"id": "prepare-beans", "text": "Drain, rinse, and season the beans.", "timing_refs": ["prep-time"], "ingredient_uses": [{"ingredient_ref": "dried-beans"}]},
+        {"id": "cook-beans", "text": "Simmer until tender, about 50–70 minutes.", "timing_refs": ["cook-time"], "ingredient_uses": [{"ingredient_ref": "dried-beans"}]},
+        {"id": "cool-beans", "text": "Cool completely before storing.", "timing_refs": ["cool-time"], "ingredient_uses": [{"ingredient_ref": "dried-beans"}]}
+      ]
+    }
+  ]
+}

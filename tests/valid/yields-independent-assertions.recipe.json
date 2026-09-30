@@ -1,0 +1,12 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "yields-independent-assertions",
+  "title": "Brown Butter Shortbread",
+  "yields": [
+    {"text": "24 fingers", "quantity": {"kind": "simple", "amount": {"value": "24"}}, "label": "fingers"},
+    {"text": "about 600 g", "quantity": {"kind": "simple", "amount": {"value": "600", "approximate": true}, "unit": "mass.gram"}},
+    {"text": "8–10 servings", "quantity": {"kind": "simple", "amount": {"min": "8", "max": "10"}}, "label": "servings"},
+    {"text": "one 23 cm tin"}
+  ],
+  "instruction_sections": [{"id": "method", "steps": [{"id": "mix", "text": "Mix."}]}]
+}

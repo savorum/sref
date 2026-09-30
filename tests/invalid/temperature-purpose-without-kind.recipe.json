@@ -1,0 +1,11 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "temperature-purpose-without-kind",
+  "title": "Temperature Purpose Without Kind",
+  "ingredient_sections": [{"id": "ingredients", "ingredients": [{"id": "oil", "name": "oil"}]}],
+  "instruction_sections": [{"id": "method", "steps": [{
+    "id": "heat",
+    "text": "Heat the oil.",
+    "temperatures": [{"amount": {"value": "350"}, "unit": "temperature.fahrenheit", "purpose": {"label": "oil"}}]
+  }]}]
+}

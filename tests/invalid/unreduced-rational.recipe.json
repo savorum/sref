@@ -1,0 +1,37 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "unreduced-rational",
+  "title": "Unreduced Rational",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "water",
+          "name": "water",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "2/4"
+            },
+            "unit": "volume.milliliter"
+          }
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "add",
+          "text": "Add the water."
+        }
+      ]
+    }
+  ]
+}

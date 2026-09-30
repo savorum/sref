@@ -1,0 +1,39 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "duplicate-ingredient-id",
+  "title": "Duplicate Ingredient ID",
+  "ingredient_sections": [
+    {
+      "id": "first",
+      "ingredients": [
+        {
+          "id": "salt",
+          "name": "fine salt"
+        }
+      ]
+    },
+    {
+      "id": "second",
+      "ingredients": [
+        {
+          "id": "salt",
+          "name": "flaky salt"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "season",
+          "text": "Season."
+        }
+      ]
+    }
+  ]
+}

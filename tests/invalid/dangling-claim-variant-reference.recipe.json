@@ -1,0 +1,8 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "dangling-claim-variant-reference",
+  "title": "Dangling Variant",
+  "variants": [{"id": "plain", "text": "Omit the nuts."}],
+  "allergen_declarations": [{"text": "Nut-free", "substance": "nuts", "presence": "free_from", "variant_ref": "missing"}],
+  "instruction_sections": [{"id": "method", "steps": [{"id": "mix", "text": "Mix."}]}]
+}

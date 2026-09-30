@@ -1,0 +1,15 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "fine-spiced-wine",
+  "title": "Fine Spiced Wine",
+  "language": "en",
+  "translations": [
+    {"relation": "original", "language": "la", "title": "Conditum paradoxum"},
+    {"relation": "translation", "language": "de", "recipe_id": "wuerzwein", "title": "Gewürzwein"},
+    {"relation": "alternate", "language": "ar", "url": "https://example.com/ar/recipes/spiced-wine"}
+  ],
+  "ingredient_sections": [
+    {"id": "wine", "ingredients": [{"id": "honey", "name": "honey", "quantity": {"kind": "opaque", "text": "6 sextarii"}}]}
+  ],
+  "instruction_sections": [{"id": "method", "steps": [{"id": "mix", "text": "Mix."}]}]
+}

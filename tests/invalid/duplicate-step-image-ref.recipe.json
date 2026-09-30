@@ -1,0 +1,32 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "duplicate-step-image-ref",
+  "title": "Duplicate Step Image Reference",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [{"id": "flour", "name": "flour"}]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "mix",
+          "text": "Mix.",
+          "image_refs": ["mixing-step", "mixing-step"]
+        }
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "id": "mixing-step",
+      "path": "assets/mixing-step.png",
+      "media_type": "image/png",
+      "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "size": 0
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "sref": {
+    "version": "1.0.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "incompatible-format-version",
+  "title": "Incompatible Format Version",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "salt",
+          "name": "salt"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "season",
+          "text": "Season."
+        }
+      ]
+    }
+  ]
+}

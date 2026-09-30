@@ -1,0 +1,36 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "missing-ingredient-use-ref",
+  "title": "Missing Ingredient Use Reference",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {"id": "sugar", "name": "sugar"}
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "mix",
+          "text": "Mix in one cup of sugar.",
+          "ingredient_uses": [
+            {
+              "quantity": {
+                "kind": "simple",
+                "amount": {"value": "1"},
+                "unit": "volume.cup.us.customary"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "translation-two-originals",
+  "title": "Translation Two Originals",
+  "language": "en",
+  "translations": [
+    {"relation": "original", "language": "fr", "title": "Recette"},
+    {"relation": "original", "language": "de", "title": "Rezept"}
+  ],
+  "instruction_sections": [{"id": "method", "steps": [{"id": "mix", "text": "Mix."}]}]
+}

@@ -1,0 +1,21 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "legacy-primary-image-role",
+  "title": "Legacy Primary Image Role",
+  "ingredient_sections": [
+    {"id": "ingredients", "ingredients": [{"id": "salt", "name": "salt"}]}
+  ],
+  "instruction_sections": [
+    {"id": "method", "steps": [{"id": "season", "text": "Season."}]}
+  ],
+  "assets": [
+    {
+      "id": "hero-image",
+      "path": "assets/hero.jpg",
+      "media_type": "image/jpeg",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size": 0,
+      "role": "primary-image"
+    }
+  ]
+}

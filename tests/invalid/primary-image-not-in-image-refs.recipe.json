@@ -1,0 +1,31 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "primary-image-not-in-image-refs",
+  "title": "Primary Image Outside Recipe Images",
+  "ingredient_sections": [
+    {"id": "ingredients", "ingredients": [{"id": "salt", "name": "salt"}]}
+  ],
+  "instruction_sections": [
+    {"id": "method", "steps": [{"id": "season", "text": "Season."}]}
+  ],
+  "assets": [
+    {
+      "id": "hero-image",
+      "path": "assets/hero.jpg",
+      "media_type": "image/jpeg",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size": 0,
+      "role": "image"
+    },
+    {
+      "id": "gallery-image",
+      "path": "assets/gallery.jpg",
+      "media_type": "image/jpeg",
+      "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "size": 0,
+      "role": "image"
+    }
+  ],
+  "image_refs": ["gallery-image"],
+  "primary_image": "hero-image"
+}

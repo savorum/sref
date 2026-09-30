@@ -1,0 +1,11 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "opaque-temperature-conflict",
+  "title": "Conflicting Temperature",
+  "ingredient_sections": [{"id": "ingredients", "ingredients": [{"id": "flour", "name": "flour"}]}],
+  "instruction_sections": [{"id": "method", "steps": [
+    {"id": "bake", "text": "Bake in a moderate oven.", "temperatures": [
+      {"text": "moderate oven", "amount": {"value": "350"}, "unit": "temperature.fahrenheit"}
+    ]}
+  ]}]
+}

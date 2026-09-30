@@ -1,0 +1,21 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "invalid-temperature-unit",
+  "title": "Invalid Temperature Unit",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "water",
+          "name": "water",
+          "quantity": {"kind": "simple", "amount": {"value": "250"}, "unit": "volume.milliliter"},
+          "temperature": {"amount": {"value": "40"}, "unit": "volume.milliliter"}
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {"id": "method", "steps": [{"id": "use", "text": "Use the water."}]}
+  ]
+}

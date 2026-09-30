@@ -1,0 +1,2647 @@
+{
+  "unit_registry": "0.2.0",
+  "profiles": [
+    {
+      "id": "us-customary-spoons",
+      "label": "US customary",
+      "unit_registry": "0.2.0",
+      "units": {
+        "volume.cup": "volume.cup.us.customary",
+        "volume.tablespoon": "volume.tablespoon.us.customary",
+        "volume.teaspoon": "volume.teaspoon.us.customary"
+      }
+    },
+    {
+      "id": "au-spoons",
+      "label": "Australian",
+      "unit_registry": "0.2.0",
+      "units": {
+        "volume.cup": "volume.cup.au",
+        "volume.tablespoon": "volume.tablespoon.au",
+        "volume.teaspoon": "volume.teaspoon.au"
+      }
+    },
+    {
+      "id": "metric-culinary-volume",
+      "label": "Metric culinary cup and teaspoon only (partial: no tablespoon)",
+      "unit_registry": "0.2.0",
+      "units": {
+        "volume.cup": "volume.cup.metric.culinary",
+        "volume.teaspoon": "volume.teaspoon.metric.culinary"
+      }
+    },
+    {
+      "id": "metric-culinary-full",
+      "label": "Metric culinary cup, tablespoon, and teaspoon",
+      "unit_registry": "0.2.0",
+      "units": {
+        "volume.cup": "volume.cup.metric.culinary",
+        "volume.tablespoon": "volume.tablespoon.metric.culinary",
+        "volume.teaspoon": "volume.teaspoon.metric.culinary"
+      }
+    },
+    {
+      "id": "us-customary-spoons-only",
+      "label": "US customary spoons, no cup",
+      "unit_registry": "0.2.0",
+      "units": {
+        "volume.tablespoon": "volume.tablespoon.us.customary",
+        "volume.teaspoon": "volume.teaspoon.us.customary"
+      }
+    }
+  ],
+  "cases": [
+    {
+      "id": "bare-tsp-language-locale",
+      "description": "A source stating only the language leaves the bare form 'tsp' unresolved.",
+      "source_locale": "en",
+      "source_text": "1 tsp ground cinnamon",
+      "occurrences": [
+        {
+          "id": "spoon",
+          "ingredient": "cinnamon",
+          "form": "tsp",
+          "family": "volume.teaspoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "spoon": null
+        }
+      }
+    },
+    {
+      "id": "bare-tsp-no-locale",
+      "description": "A source stating no locale leaves the bare form 'tsp' unresolved.",
+      "source_text": "2 tsp ground cinnamon",
+      "occurrences": [
+        {
+          "id": "spoon",
+          "ingredient": "cinnamon",
+          "form": "tsp",
+          "family": "volume.teaspoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "spoon": null
+        }
+      }
+    },
+    {
+      "id": "bare-tsp-period-language-locale",
+      "description": "A source stating only the language leaves the bare form 'tsp.' unresolved.",
+      "source_locale": "en",
+      "source_text": "1 tsp. ground cinnamon",
+      "occurrences": [
+        {
+          "id": "spoon",
+          "ingredient": "cinnamon",
+          "form": "tsp.",
+          "family": "volume.teaspoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "spoon": null
+        }
+      }
+    },
+    {
+      "id": "bare-tsp-period-no-locale",
+      "description": "A source stating no locale leaves the bare form 'tsp.' unresolved.",
+      "source_text": "2 tsp. ground cinnamon",
+      "occurrences": [
+        {
+          "id": "spoon",
+          "ingredient": "cinnamon",
+          "form": "tsp.",
+          "family": "volume.teaspoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "spoon": null
+        }
+      }
+    },
+    {
+      "id": "bare-teaspoon-language-locale",
+      "description": "A source stating only the language leaves the bare form 'teaspoon' unresolved.",
+      "source_locale": "en",
+      "source_text": "1 teaspoon ground cinnamon",
+      "occurrences": [
+        {
+          "id": "spoon",
+          "ingredient": "cinnamon",
+          "form": "teaspoon",
+          "family": "volume.teaspoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "spoon": null
+        }
+      }
+    },
+    {
+      "id": "bare-teaspoon-no-locale",
+      "description": "A source stating no locale leaves the bare form 'teaspoon' unresolved.",
+      "source_text": "2 teaspoon ground cinnamon",
+      "occurrences": [
+        {
+          "id": "spoon",
+          "ingredient": "cinnamon",
+          "form": "teaspoon",
+          "family": "volume.teaspoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "spoon": null
+        }
+      }
+    },
+    {
+      "id": "bare-teaspoons-language-locale",
+      "description": "A source stating only the language leaves the bare form 'teaspoons' unresolved.",
+      "source_locale": "en",
+      "source_text": "1 teaspoons ground cinnamon",
+      "occurrences": [
+        {
+          "id": "spoon",
+          "ingredient": "cinnamon",
+          "form": "teaspoons",
+          "family": "volume.teaspoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "spoon": null
+        }
+      }
+    },
+    {
+      "id": "bare-teaspoons-no-locale",
+      "description": "A source stating no locale leaves the bare form 'teaspoons' unresolved.",
+      "source_text": "2 teaspoons ground cinnamon",
+      "occurrences": [
+        {
+          "id": "spoon",
+          "ingredient": "cinnamon",
+          "form": "teaspoons",
+          "family": "volume.teaspoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "spoon": null
+        }
+      }
+    },
+    {
+      "id": "bare-teaspoon-regional-language-fallback",
+      "description": "An English regional locale with no teaspoon alias set of its own does not acquire a metric teaspoon by falling back to the language level.",
+      "source_locale": "en-CA",
+      "source_text": "1 tsp ground coriander",
+      "occurrences": [
+        {
+          "id": "spoon",
+          "ingredient": "coriander",
+          "form": "tsp",
+          "family": "volume.teaspoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "spoon": null
+        }
+      }
+    },
+    {
+      "id": "language-fallback-still-applies",
+      "description": "Removing the bare teaspoon forms does not disable language-level lookup: a gram still resolves through the `en` alias set from an `en-CA` source.",
+      "source_locale": "en-CA-x-pub",
+      "source_text": "300 grams bread flour",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "flour",
+          "form": "grams",
+          "family": "mass.gram"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.gram"
+        }
+      }
+    },
+    {
+      "id": "bare-teaspoon-us-locale",
+      "description": "The United States regional identity is unchanged.",
+      "source_locale": "en-US",
+      "source_text": "1 tsp fine salt",
+      "occurrences": [
+        {
+          "id": "spoon",
+          "ingredient": "salt",
+          "form": "tsp",
+          "family": "volume.teaspoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "spoon": "volume.teaspoon.us.customary"
+        }
+      }
+    },
+    {
+      "id": "bare-teaspoon-au-locale",
+      "description": "The Australian regional identity is unchanged.",
+      "source_locale": "en-AU",
+      "source_text": "1 teaspoon fine salt",
+      "occurrences": [
+        {
+          "id": "spoon",
+          "ingredient": "salt",
+          "form": "teaspoon",
+          "family": "volume.teaspoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "spoon": "volume.teaspoon.au"
+        }
+      }
+    },
+    {
+      "id": "qualified-metric-teaspoon-us-locale",
+      "description": "An explicitly qualified metric teaspoon keeps its meaning in a United States source: the qualifier is matched before the region has anything unqualified to answer.",
+      "source_locale": "en-US",
+      "source_text": "2 metric teaspoons vanilla extract",
+      "occurrences": [
+        {
+          "id": "spoon",
+          "ingredient": "vanilla",
+          "form": "metric teaspoons",
+          "family": "volume.teaspoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "spoon": "volume.teaspoon.metric.culinary"
+        }
+      }
+    },
+    {
+      "id": "qualified-metric-teaspoon-language-locale",
+      "description": "The qualified form is unaffected by the alias removal under `en`.",
+      "source_locale": "en",
+      "source_text": "1 metric teaspoon baking soda",
+      "occurrences": [
+        {
+          "id": "spoon",
+          "ingredient": "soda",
+          "form": "metric teaspoon",
+          "family": "volume.teaspoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "spoon": "volume.teaspoon.metric.culinary"
+        }
+      }
+    },
+    {
+      "id": "bare-cup-and-teaspoon-agree",
+      "description": "A locale-free source leaves the cup and the teaspoon of one line equally unresolved, which is the asymmetry registry 0.2.0 removes.",
+      "source_text": "1 cup milk and 1 tsp salt",
+      "occurrences": [
+        {
+          "id": "cup",
+          "ingredient": "milk",
+          "form": "cup",
+          "family": "volume.cup"
+        },
+        {
+          "id": "spoon",
+          "ingredient": "salt",
+          "form": "tsp",
+          "family": "volume.teaspoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "cup": null,
+          "spoon": null
+        }
+      }
+    },
+    {
+      "id": "compound-sum-ingredient-convention",
+      "description": "One ingredient convention resolves every term of a compound amount, including a teaspoon the reader was never asked about.",
+      "source_text": "1 tablespoon plus 2 teaspoons neutral oil",
+      "occurrences": [
+        {
+          "id": "spoon-large",
+          "ingredient": "oil",
+          "form": "tablespoon",
+          "family": "volume.tablespoon"
+        },
+        {
+          "id": "spoon-small",
+          "ingredient": "oil",
+          "form": "teaspoons",
+          "family": "volume.teaspoon"
+        }
+      ],
+      "decisions": [
+        {
+          "kind": "ingredient-convention",
+          "ingredient": "oil",
+          "profile": "us-customary-spoons"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "spoon-large": "volume.tablespoon.us.customary",
+          "spoon-small": "volume.teaspoon.us.customary"
+        }
+      }
+    },
+    {
+      "id": "compound-sum-occurrence-only",
+      "description": "An occurrence interpretation settles the occurrence it addresses and nothing else; the remaining term stays available for review.",
+      "source_text": "1 tablespoon plus 2 teaspoons neutral oil, reviewed one measure at a time",
+      "occurrences": [
+        {
+          "id": "spoon-large",
+          "ingredient": "oil",
+          "form": "tablespoon",
+          "family": "volume.tablespoon"
+        },
+        {
+          "id": "spoon-small",
+          "ingredient": "oil",
+          "form": "teaspoons",
+          "family": "volume.teaspoon"
+        }
+      ],
+      "decisions": [
+        {
+          "kind": "occurrence-interpretation",
+          "occurrence": "spoon-large",
+          "unit": "volume.tablespoon.us.customary"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "spoon-large": "volume.tablespoon.us.customary",
+          "spoon-small": null
+        }
+      }
+    },
+    {
+      "id": "compound-sum-no-decision",
+      "description": "With no answer at all, no convention is invented from the ingredient.",
+      "source_text": "1 tablespoon plus 2 teaspoons neutral oil, unreviewed",
+      "occurrences": [
+        {
+          "id": "spoon-large",
+          "ingredient": "oil",
+          "form": "tablespoon",
+          "family": "volume.tablespoon"
+        },
+        {
+          "id": "spoon-small",
+          "ingredient": "oil",
+          "form": "teaspoons",
+          "family": "volume.teaspoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "spoon-large": null,
+          "spoon-small": null
+        }
+      }
+    },
+    {
+      "id": "german-teaspoon-baseline-without-a-convention",
+      "description": "A German source resolves TL to the metric culinary teaspoon through its language-level alias, and the gram keeps its own identity. This is the answer a convention has to outrank.",
+      "source_locale": "de",
+      "source_text": "1 TL Zucker und 100 g Zucker",
+      "occurrences": [
+        {
+          "id": "spoon",
+          "ingredient": "sugar",
+          "form": "TL",
+          "family": "volume.teaspoon"
+        },
+        {
+          "id": "mass",
+          "ingredient": "sugar",
+          "form": "g",
+          "family": "mass.gram"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "spoon": "volume.teaspoon.metric.culinary",
+          "mass": "mass.gram"
+        }
+      }
+    },
+    {
+      "id": "convention-outranks-language-level-match",
+      "description": "An ingredient convention outranks a language-level alias match: the same German TL resolves to the US customary teaspoon under the decision. The gram is untouched because the profile does not cover it.",
+      "source_locale": "de",
+      "source_text": "1 TL Zucker und 100 g Zucker",
+      "occurrences": [
+        {
+          "id": "spoon",
+          "ingredient": "sugar",
+          "form": "TL",
+          "family": "volume.teaspoon"
+        },
+        {
+          "id": "mass",
+          "ingredient": "sugar",
+          "form": "g",
+          "family": "mass.gram"
+        }
+      ],
+      "decisions": [
+        {
+          "kind": "ingredient-convention",
+          "ingredient": "sugar",
+          "profile": "us-customary-spoons"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "spoon": "volume.teaspoon.us.customary",
+          "mass": "mass.gram"
+        }
+      }
+    },
+    {
+      "id": "convention-outranks-regional-locale",
+      "description": "An ingredient convention outranks an exact-region locale match. The difference from the stated locale is a review disclosure, not agreement.",
+      "source_locale": "en-AU",
+      "source_text": "1 cup thickened cream",
+      "occurrences": [
+        {
+          "id": "cup",
+          "ingredient": "cream",
+          "form": "cup",
+          "family": "volume.cup"
+        }
+      ],
+      "decisions": [
+        {
+          "kind": "ingredient-convention",
+          "ingredient": "cream",
+          "profile": "us-customary-spoons"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "cup": "volume.cup.us.customary"
+        }
+      }
+    },
+    {
+      "id": "explicit-qualifier-survives-convention",
+      "description": "An explicitly qualified metric teaspoon keeps its authored meaning while the unqualified tablespoon of the same ingredient follows the decision.",
+      "source_text": "1 tablespoon plus 2 metric teaspoons neutral oil",
+      "occurrences": [
+        {
+          "id": "spoon-large",
+          "ingredient": "oil",
+          "form": "tablespoon",
+          "family": "volume.tablespoon"
+        },
+        {
+          "id": "spoon-small",
+          "ingredient": "oil",
+          "form": "metric teaspoons",
+          "family": "volume.teaspoon",
+          "explicit_unit": "volume.teaspoon.metric.culinary"
+        }
+      ],
+      "decisions": [
+        {
+          "kind": "ingredient-convention",
+          "ingredient": "oil",
+          "profile": "us-customary-spoons"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "spoon-large": "volume.tablespoon.us.customary",
+          "spoon-small": "volume.teaspoon.metric.culinary"
+        }
+      }
+    },
+    {
+      "id": "occurrence-exception-within-convention",
+      "description": "An occurrence interpretation outranks the ingredient convention for the occurrence it addresses, which is how a reviewed exception is expressed.",
+      "source_text": "1 cup stock plus 1 tablespoon stock",
+      "occurrences": [
+        {
+          "id": "cup",
+          "ingredient": "stock",
+          "form": "cup",
+          "family": "volume.cup"
+        },
+        {
+          "id": "spoon",
+          "ingredient": "stock",
+          "form": "tablespoon",
+          "family": "volume.tablespoon"
+        }
+      ],
+      "decisions": [
+        {
+          "kind": "ingredient-convention",
+          "ingredient": "stock",
+          "profile": "us-customary-spoons"
+        },
+        {
+          "kind": "occurrence-interpretation",
+          "occurrence": "spoon",
+          "unit": "volume.tablespoon.au"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "cup": "volume.cup.us.customary",
+          "spoon": "volume.tablespoon.au"
+        }
+      }
+    },
+    {
+      "id": "uncovered-family-stays-unresolved",
+      "description": "A convention that maps no cup leaves the cup unresolved rather than borrowing another convention to complete the ingredient.",
+      "source_text": "1 cup buttermilk plus 1 tablespoon buttermilk",
+      "occurrences": [
+        {
+          "id": "cup",
+          "ingredient": "buttermilk",
+          "form": "cup",
+          "family": "volume.cup"
+        },
+        {
+          "id": "spoon",
+          "ingredient": "buttermilk",
+          "form": "tablespoon",
+          "family": "volume.tablespoon"
+        }
+      ],
+      "decisions": [
+        {
+          "kind": "ingredient-convention",
+          "ingredient": "buttermilk",
+          "profile": "us-customary-spoons-only"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "cup": null,
+          "spoon": "volume.tablespoon.us.customary"
+        }
+      }
+    },
+    {
+      "id": "alternative-branches-follow-one-convention",
+      "description": "A convention reaches every alternative branch. The unambiguous gram branch is untouched, and the two amounts are not reconciled.",
+      "source_locale": "en",
+      "source_text": "1.5 cups/187 grams all-purpose flour",
+      "occurrences": [
+        {
+          "id": "cup",
+          "ingredient": "flour",
+          "form": "cups",
+          "family": "volume.cup"
+        },
+        {
+          "id": "mass",
+          "ingredient": "flour",
+          "form": "grams",
+          "family": "mass.gram"
+        }
+      ],
+      "decisions": [
+        {
+          "kind": "ingredient-convention",
+          "ingredient": "flour",
+          "profile": "us-customary-spoons"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "cup": "volume.cup.us.customary",
+          "mass": "mass.gram"
+        }
+      }
+    },
+    {
+      "id": "alternative-branches-milliliter-disagreement",
+      "description": "The authored alternatives disagree materially under the decided interpretation. Both source assertions survive resolution unchanged.",
+      "source_locale": "en",
+      "source_text": "0.33 cup/113 milliliters unsulphured molasses",
+      "occurrences": [
+        {
+          "id": "cup",
+          "ingredient": "molasses",
+          "form": "cup",
+          "family": "volume.cup"
+        },
+        {
+          "id": "volume",
+          "ingredient": "molasses",
+          "form": "milliliters",
+          "family": "volume.milliliter"
+        }
+      ],
+      "decisions": [
+        {
+          "kind": "ingredient-convention",
+          "ingredient": "molasses",
+          "profile": "us-customary-spoons"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "cup": "volume.cup.us.customary",
+          "volume": "volume.milliliter"
+        }
+      }
+    },
+    {
+      "id": "convention-does-not-reach-other-ingredients",
+      "description": "A convention submitted for one ingredient leaves the identical alias in another ingredient of the same recipe unresolved.",
+      "source_text": "1 cup flour; 1 cup rolled oats",
+      "occurrences": [
+        {
+          "id": "cup-flour",
+          "ingredient": "flour",
+          "form": "cup",
+          "family": "volume.cup"
+        },
+        {
+          "id": "cup-oats",
+          "ingredient": "oats",
+          "form": "cup",
+          "family": "volume.cup"
+        }
+      ],
+      "decisions": [
+        {
+          "kind": "ingredient-convention",
+          "ingredient": "flour",
+          "profile": "us-customary-spoons"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "cup-flour": "volume.cup.us.customary",
+          "cup-oats": null
+        }
+      }
+    },
+    {
+      "id": "repeated-alias-is-addressed-separately",
+      "description": "One ingredient can contain the same alias twice. An occurrence identity distinguishes them; an alias string could not.",
+      "source_text": "1 cup water, plus 1 cup for the glaze",
+      "occurrences": [
+        {
+          "id": "cup-first",
+          "ingredient": "water",
+          "form": "cup",
+          "family": "volume.cup"
+        },
+        {
+          "id": "cup-second",
+          "ingredient": "water",
+          "form": "cup",
+          "family": "volume.cup"
+        }
+      ],
+      "decisions": [
+        {
+          "kind": "occurrence-interpretation",
+          "occurrence": "cup-first",
+          "unit": "volume.cup.au"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "cup-first": "volume.cup.au",
+          "cup-second": null
+        }
+      }
+    },
+    {
+      "id": "conflicting-occurrence-interpretations",
+      "description": "Two incompatible interpretations of one occurrence are a conflict, not a race between the first and the last answer.",
+      "source_locale": "en-US",
+      "source_text": "1 cup single cream",
+      "occurrences": [
+        {
+          "id": "cup",
+          "ingredient": "cream",
+          "form": "cup",
+          "family": "volume.cup"
+        }
+      ],
+      "decisions": [
+        {
+          "kind": "occurrence-interpretation",
+          "occurrence": "cup",
+          "unit": "volume.cup.us.customary"
+        },
+        {
+          "kind": "occurrence-interpretation",
+          "occurrence": "cup",
+          "unit": "volume.cup.au"
+        }
+      ],
+      "expected": {
+        "outcome": "conflict",
+        "conflict": "occurrence"
+      }
+    },
+    {
+      "id": "conflicting-ingredient-conventions",
+      "description": "Two incompatible conventions for one ingredient scope are a conflict, and must not fall back to the locale the source stated.",
+      "source_locale": "en-US",
+      "source_text": "1 cup caster sugar",
+      "occurrences": [
+        {
+          "id": "cup",
+          "ingredient": "sugar",
+          "form": "cup",
+          "family": "volume.cup"
+        }
+      ],
+      "decisions": [
+        {
+          "kind": "ingredient-convention",
+          "ingredient": "sugar",
+          "profile": "us-customary-spoons"
+        },
+        {
+          "kind": "ingredient-convention",
+          "ingredient": "sugar",
+          "profile": "au-spoons"
+        }
+      ],
+      "expected": {
+        "outcome": "conflict",
+        "conflict": "convention"
+      }
+    },
+    {
+      "id": "metric-convention-selects-the-metric-cup",
+      "description": "A metric culinary profile names the identities it selects. It is not derived from a unit whose factor happens to agree with another.",
+      "source_text": "1 cup natural yoghurt",
+      "occurrences": [
+        {
+          "id": "cup",
+          "ingredient": "yoghurt",
+          "form": "cup",
+          "family": "volume.cup"
+        }
+      ],
+      "decisions": [
+        {
+          "kind": "ingredient-convention",
+          "ingredient": "yoghurt",
+          "profile": "metric-culinary-volume"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "cup": "volume.cup.metric.culinary"
+        }
+      }
+    },
+    {
+      "id": "convention-resolves-a-teaspoon-only-ingredient",
+      "description": "The ingredient whose only measure is a teaspoon is resolvable by decision once the bare form no longer resolves at the language level.",
+      "source_locale": "en",
+      "source_text": "1 tsp baking powder",
+      "occurrences": [
+        {
+          "id": "spoon",
+          "ingredient": "powder",
+          "form": "tsp",
+          "family": "volume.teaspoon"
+        }
+      ],
+      "decisions": [
+        {
+          "kind": "ingredient-convention",
+          "ingredient": "powder",
+          "profile": "us-customary-spoons"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "spoon": "volume.teaspoon.us.customary"
+        }
+      }
+    },
+    {
+      "id": "uncovered-family-does-not-fall-back-to-a-us-locale",
+      "description": "An uncovered convention-dependent family stays unresolved inside a convention scope. Falling through to the source locale produced a US customary tablespoon beside a metric teaspoon on one line.",
+      "source_locale": "en-US",
+      "source_text": "1 tablespoon plus 2 teaspoons neutral oil, read as metric",
+      "occurrences": [
+        {
+          "id": "spoon-large",
+          "ingredient": "oil",
+          "form": "tablespoon",
+          "family": "volume.tablespoon"
+        },
+        {
+          "id": "spoon-small",
+          "ingredient": "oil",
+          "form": "teaspoons",
+          "family": "volume.teaspoon"
+        }
+      ],
+      "decisions": [
+        {
+          "kind": "ingredient-convention",
+          "ingredient": "oil",
+          "profile": "metric-culinary-volume"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "spoon-large": null,
+          "spoon-small": "volume.teaspoon.metric.culinary"
+        }
+      }
+    },
+    {
+      "id": "uncovered-family-does-not-fall-back-to-an-au-locale",
+      "description": "The same rule under an exact regional locale that would have answered. The locale is evidence about the document, not a definition of a measure the person has said to read another way.",
+      "source_locale": "en-AU",
+      "source_text": "2 tablespoons golden syrup, read as metric",
+      "occurrences": [
+        {
+          "id": "spoon",
+          "ingredient": "syrup",
+          "form": "tablespoons",
+          "family": "volume.tablespoon"
+        }
+      ],
+      "decisions": [
+        {
+          "kind": "ingredient-convention",
+          "ingredient": "syrup",
+          "profile": "metric-culinary-volume"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "spoon": null
+        }
+      }
+    },
+    {
+      "id": "uncovered-family-yields-to-an-explicit-qualifier",
+      "description": "Resolver level: an occurrence that already carries the identity its qualifier states keeps it inside the same scope. The ingredient-line corpus tests that the phrase is recognized from the text.",
+      "source_locale": "en-US",
+      "source_text": "1 Australian tablespoon plus 2 teaspoons oil, read as metric",
+      "occurrences": [
+        {
+          "id": "spoon-large",
+          "ingredient": "oil",
+          "form": "tablespoon",
+          "family": "volume.tablespoon",
+          "explicit_unit": "volume.tablespoon.au"
+        },
+        {
+          "id": "spoon-small",
+          "ingredient": "oil",
+          "form": "teaspoons",
+          "family": "volume.teaspoon"
+        }
+      ],
+      "decisions": [
+        {
+          "kind": "ingredient-convention",
+          "ingredient": "oil",
+          "profile": "metric-culinary-volume"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "spoon-large": "volume.tablespoon.au",
+          "spoon-small": "volume.teaspoon.metric.culinary"
+        }
+      }
+    },
+    {
+      "id": "uncovered-family-yields-to-an-occurrence-interpretation",
+      "description": "An occurrence interpretation settles a measure the convention cannot, which is how a partly covered profile is completed rather than abandoned.",
+      "source_locale": "en-US",
+      "source_text": "1 tablespoon plus 2 teaspoons oil, mostly metric",
+      "occurrences": [
+        {
+          "id": "spoon-large",
+          "ingredient": "oil",
+          "form": "tablespoon",
+          "family": "volume.tablespoon"
+        },
+        {
+          "id": "spoon-small",
+          "ingredient": "oil",
+          "form": "teaspoons",
+          "family": "volume.teaspoon"
+        }
+      ],
+      "decisions": [
+        {
+          "kind": "ingredient-convention",
+          "ingredient": "oil",
+          "profile": "metric-culinary-volume"
+        },
+        {
+          "kind": "occurrence-interpretation",
+          "occurrence": "spoon-large",
+          "unit": "volume.tablespoon.us.customary"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "spoon-large": "volume.tablespoon.us.customary",
+          "spoon-small": "volume.teaspoon.metric.culinary"
+        }
+      }
+    },
+    {
+      "id": "an-uncontested-measure-keeps-its-own-evidence",
+      "description": "The rule bites only on a contested family. A gram is metric and nothing else is called a gram, so a convention that says nothing about mass leaves it resolving exactly as it did.",
+      "source_locale": "en-US",
+      "source_text": "1 cup flour and 200 grams flour, read as metric",
+      "occurrences": [
+        {
+          "id": "cup",
+          "ingredient": "flour",
+          "form": "cup",
+          "family": "volume.cup"
+        },
+        {
+          "id": "mass",
+          "ingredient": "flour",
+          "form": "grams",
+          "family": "mass.gram"
+        }
+      ],
+      "decisions": [
+        {
+          "kind": "ingredient-convention",
+          "ingredient": "flour",
+          "profile": "metric-culinary-volume"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "cup": "volume.cup.metric.culinary",
+          "mass": "mass.gram"
+        }
+      }
+    },
+    {
+      "id": "german-tablespoon-language-locale",
+      "description": "A German source resolves EL to the 15 mL metric tablespoon.",
+      "source_locale": "de-DE",
+      "source_text": "2 EL Olivenöl",
+      "occurrences": [
+        {
+          "id": "measure",
+          "ingredient": "olive-oil",
+          "form": "EL",
+          "family": "volume.tablespoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "measure": "volume.tablespoon.metric.culinary"
+        }
+      }
+    },
+    {
+      "id": "german-teaspoon-language-locale",
+      "description": "A German source resolves TL to the 5 mL metric teaspoon.",
+      "source_locale": "de",
+      "source_text": "1 TL Salz",
+      "occurrences": [
+        {
+          "id": "measure",
+          "ingredient": "salt",
+          "form": "TL",
+          "family": "volume.teaspoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "measure": "volume.teaspoon.metric.culinary"
+        }
+      }
+    },
+    {
+      "id": "french-spoon-regional-locale",
+      "description": "A French source with a regional tag reaches the French set through its primary language.",
+      "source_locale": "fr-CA",
+      "source_text": "1 cuillère à soupe d'huile",
+      "occurrences": [
+        {
+          "id": "measure",
+          "ingredient": "oil",
+          "form": "cuillère à soupe",
+          "family": "volume.tablespoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "measure": "volume.tablespoon.metric.culinary"
+        }
+      }
+    },
+    {
+      "id": "traditional-chinese-spoon-script-locale",
+      "description": "A source tagged with script and region reaches the Chinese set by truncation.",
+      "source_locale": "zh-Hant-TW",
+      "source_text": "2 湯匙 醬油",
+      "occurrences": [
+        {
+          "id": "measure",
+          "ingredient": "soy-sauce",
+          "form": "湯匙",
+          "family": "volume.tablespoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "measure": "volume.tablespoon.metric.culinary"
+        }
+      }
+    },
+    {
+      "id": "japanese-cup-language-locale",
+      "description": "A Japanese source resolves カップ to the 200 mL Japanese cup.",
+      "source_locale": "ja-JP",
+      "source_text": "カップ2 牛乳",
+      "occurrences": [
+        {
+          "id": "measure",
+          "ingredient": "milk",
+          "form": "カップ",
+          "family": "volume.cup"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "measure": "volume.cup.jp"
+        }
+      }
+    },
+    {
+      "id": "korean-cup-language-locale",
+      "description": "A Korean source resolves 컵 to the 200 mL Korean cup.",
+      "source_locale": "ko-KR",
+      "source_text": "우유 1컵",
+      "occurrences": [
+        {
+          "id": "measure",
+          "ingredient": "milk",
+          "form": "컵",
+          "family": "volume.cup"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "measure": "volume.cup.kr"
+        }
+      }
+    },
+    {
+      "id": "portuguese-symbol-regional-locale",
+      "description": "A Brazilian Portuguese source resolves a metric symbol through the pt set.",
+      "source_locale": "pt-BR",
+      "source_text": "250 ml de leite",
+      "occurrences": [
+        {
+          "id": "measure",
+          "ingredient": "milk",
+          "form": "ml",
+          "family": "volume.milliliter"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "measure": "volume.milliliter"
+        }
+      }
+    },
+    {
+      "id": "english-source-does-not-reach-german-alias",
+      "description": "An English source does not acquire a German alias, so EL stays unresolved.",
+      "source_locale": "en-US",
+      "source_text": "2 EL flour",
+      "occurrences": [
+        {
+          "id": "measure",
+          "ingredient": "flour",
+          "form": "EL",
+          "family": "volume.tablespoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "measure": null
+        }
+      }
+    },
+    {
+      "id": "german-source-does-not-reach-english-alias",
+      "description": "A German source does not acquire an English alias, so tbsp stays unresolved.",
+      "source_locale": "de-DE",
+      "source_text": "2 tbsp Mehl",
+      "occurrences": [
+        {
+          "id": "measure",
+          "ingredient": "flour",
+          "form": "tbsp",
+          "family": "volume.tablespoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "measure": null
+        }
+      }
+    },
+    {
+      "id": "no-locale-does-not-reach-german-alias",
+      "description": "A source stating no locale does not acquire a German alias.",
+      "source_text": "2 EL Mehl",
+      "occurrences": [
+        {
+          "id": "measure",
+          "ingredient": "flour",
+          "form": "EL",
+          "family": "volume.tablespoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "measure": null
+        }
+      }
+    },
+    {
+      "id": "full-metric-profile-selects-the-metric-tablespoon",
+      "description": "A metric profile that names the tablespoon resolves a bare English tablespoon and teaspoon to the metric culinary identities under a regional locale that would otherwise answer differently.",
+      "source_locale": "en-AU",
+      "source_text": "1 tablespoon plus 2 teaspoons neutral oil, read as metric",
+      "occurrences": [
+        {
+          "id": "spoon-large",
+          "ingredient": "oil",
+          "form": "tablespoon",
+          "family": "volume.tablespoon"
+        },
+        {
+          "id": "spoon-small",
+          "ingredient": "oil",
+          "form": "teaspoons",
+          "family": "volume.teaspoon"
+        }
+      ],
+      "decisions": [
+        {
+          "kind": "ingredient-convention",
+          "ingredient": "oil",
+          "profile": "metric-culinary-full"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "spoon-large": "volume.tablespoon.metric.culinary",
+          "spoon-small": "volume.teaspoon.metric.culinary"
+        }
+      }
+    },
+    {
+      "id": "convention-outranks-a-non-english-tablespoon-alias",
+      "description": "A German EL resolves to the metric culinary tablespoon by language. A US customary decision for the ingredient outranks that alias.",
+      "source_locale": "de",
+      "source_text": "2 EL Mehl",
+      "occurrences": [
+        {
+          "id": "measure",
+          "ingredient": "flour",
+          "form": "EL",
+          "family": "volume.tablespoon"
+        }
+      ],
+      "decisions": [
+        {
+          "kind": "ingredient-convention",
+          "ingredient": "flour",
+          "profile": "us-customary-spoons"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "measure": "volume.tablespoon.us.customary"
+        }
+      }
+    },
+    {
+      "id": "single-letter-t-is-a-case-sensitive-tablespoon",
+      "description": "Single-letter T and t are case-sensitive US aliases and name different units.",
+      "source_locale": "en-US",
+      "source_text": "1 T butter and 1 t vanilla",
+      "occurrences": [
+        {
+          "id": "large",
+          "ingredient": "butter",
+          "form": "T",
+          "family": "volume.tablespoon"
+        },
+        {
+          "id": "small",
+          "ingredient": "vanilla",
+          "form": "t",
+          "family": "volume.teaspoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "large": "volume.tablespoon.us.customary",
+          "small": "volume.teaspoon.us.customary"
+        }
+      }
+    },
+    {
+      "id": "case-insensitive-word-aliases-admit-any-capitalisation",
+      "description": "A case-insensitive word alias matches under any capitalisation of its letters.",
+      "source_locale": "en-US",
+      "source_text": "2 TBSP oil and 1 Teaspoon salt",
+      "occurrences": [
+        {
+          "id": "large",
+          "ingredient": "oil",
+          "form": "TBSP",
+          "family": "volume.tablespoon"
+        },
+        {
+          "id": "small",
+          "ingredient": "salt",
+          "form": "Teaspoon",
+          "family": "volume.teaspoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "large": "volume.tablespoon.us.customary",
+          "small": "volume.teaspoon.us.customary"
+        }
+      }
+    },
+    {
+      "id": "milliliter-symbol-tolerates-capital-letters",
+      "description": "The case-insensitive ml set admits ML and Ml beside the case-sensitive mL set. Matching is tolerant, not strict SI or UCUM parsing.",
+      "source_locale": "en",
+      "source_text": "100 ML water, 100 Ml milk, 100 mL juice",
+      "occurrences": [
+        {
+          "id": "upper",
+          "ingredient": "water",
+          "form": "ML",
+          "family": "volume.milliliter"
+        },
+        {
+          "id": "mixed",
+          "ingredient": "milk",
+          "form": "Ml",
+          "family": "volume.milliliter"
+        },
+        {
+          "id": "si",
+          "ingredient": "juice",
+          "form": "mL",
+          "family": "volume.milliliter"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "upper": "volume.milliliter",
+          "mixed": "volume.milliliter",
+          "si": "volume.milliliter"
+        }
+      }
+    },
+    {
+      "id": "liter-symbols-are-case-sensitive-and-both-registered",
+      "description": "L and l are registered separately as case-sensitive liter symbols.",
+      "source_locale": "en",
+      "source_text": "1 L water and 1 l milk",
+      "occurrences": [
+        {
+          "id": "upper",
+          "ingredient": "water",
+          "form": "L",
+          "family": "volume.liter"
+        },
+        {
+          "id": "lower",
+          "ingredient": "milk",
+          "form": "l",
+          "family": "volume.liter"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "upper": "volume.liter",
+          "lower": "volume.liter"
+        }
+      }
+    },
+    {
+      "id": "portuguese-regional-tags-share-the-portuguese-set",
+      "description": "pt-BR, pt-PT, and lower-case or upper-case spellings of those tags reach the same Portuguese alias set.",
+      "source_locale": "pt-br",
+      "source_text": "2 colheres de sopa de azeite",
+      "occurrences": [
+        {
+          "id": "brazil",
+          "ingredient": "oil-br",
+          "form": "colher de sopa",
+          "family": "volume.tablespoon"
+        },
+        {
+          "id": "portugal",
+          "ingredient": "oil-pt",
+          "form": "colher de sopa",
+          "family": "volume.tablespoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "brazil": "volume.tablespoon.metric.culinary",
+          "portugal": "volume.tablespoon.metric.culinary"
+        }
+      }
+    },
+    {
+      "id": "portuguese-portugal-tag-in-capitals",
+      "description": "Alias-set language tags compare ASCII case-insensitively, so PT-pt reaches the pt set.",
+      "source_locale": "PT-pt",
+      "source_text": "1 colher de chá de sal",
+      "occurrences": [
+        {
+          "id": "measure",
+          "ingredient": "salt",
+          "form": "colher de chá",
+          "family": "volume.teaspoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "measure": "volume.teaspoon.metric.culinary"
+        }
+      }
+    },
+    {
+      "id": "simplified-chinese-tag-reaches-both-scripts",
+      "description": "One zh alias set serves both scripts, so a Simplified Chinese source also resolves the Traditional spelling.",
+      "source_locale": "zh-Hans-CN",
+      "source_text": "2 汤匙 酱油 and 2 湯匙 醬油",
+      "occurrences": [
+        {
+          "id": "simplified",
+          "ingredient": "soy-sauce",
+          "form": "汤匙",
+          "family": "volume.tablespoon"
+        },
+        {
+          "id": "traditional",
+          "ingredient": "soy-sauce-2",
+          "form": "湯匙",
+          "family": "volume.tablespoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "simplified": "volume.tablespoon.metric.culinary",
+          "traditional": "volume.tablespoon.metric.culinary"
+        }
+      }
+    },
+    {
+      "id": "traditional-chinese-tag-reaches-both-scripts",
+      "description": "A Traditional Chinese source resolves the Simplified spelling through the same set.",
+      "source_locale": "zh-Hant-TW",
+      "source_text": "2 汤匙 酱油 and 2 湯匙 醬油",
+      "occurrences": [
+        {
+          "id": "simplified",
+          "ingredient": "soy-sauce",
+          "form": "汤匙",
+          "family": "volume.tablespoon"
+        },
+        {
+          "id": "traditional",
+          "ingredient": "soy-sauce-2",
+          "form": "湯匙",
+          "family": "volume.tablespoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "simplified": "volume.tablespoon.metric.culinary",
+          "traditional": "volume.tablespoon.metric.culinary"
+        }
+      }
+    },
+    {
+      "id": "unicode-extension-tag-truncates-to-the-language",
+      "description": "A locale tag with a Unicode extension is truncated one subtag at a time, and a trailing singleton goes with the subtag before it.",
+      "source_locale": "de-DE-u-nu-latn",
+      "source_text": "2 EL Öl",
+      "occurrences": [
+        {
+          "id": "measure",
+          "ingredient": "oil",
+          "form": "EL",
+          "family": "volume.tablespoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "measure": "volume.tablespoon.metric.culinary"
+        }
+      }
+    },
+    {
+      "id": "private-use-tag-truncates-to-the-language",
+      "description": "A private-use subtag sequence is removed with its singleton, leaving the language.",
+      "source_locale": "de-x-kitchen",
+      "source_text": "2 EL Öl",
+      "occurrences": [
+        {
+          "id": "measure",
+          "ingredient": "oil",
+          "form": "EL",
+          "family": "volume.tablespoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "measure": "volume.tablespoon.metric.culinary"
+        }
+      }
+    },
+    {
+      "id": "upper-case-language-tag-is-compared-without-case",
+      "description": "The source tag compares with alias-set tags ASCII case-insensitively.",
+      "source_locale": "DE-de",
+      "source_text": "2 EL Öl",
+      "occurrences": [
+        {
+          "id": "measure",
+          "ingredient": "oil",
+          "form": "EL",
+          "family": "volume.tablespoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "measure": "volume.tablespoon.metric.culinary"
+        }
+      }
+    },
+    {
+      "id": "decomposed-accents-match-a-composed-alias",
+      "description": "A form written with combining accents matches the composed registered form. Text is compared in canonical composition and no other normalization.",
+      "source_locale": "fr",
+      "source_text": "1 cuillère à café d'huile",
+      "occurrences": [
+        {
+          "id": "measure",
+          "ingredient": "oil",
+          "form": "cuillère à café",
+          "family": "volume.teaspoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "measure": "volume.teaspoon.metric.culinary"
+        }
+      }
+    },
+    {
+      "id": "capitalised-cyrillic-abbreviation-matches-under-case-folding",
+      "description": "A case-insensitive Cyrillic alias matches a capitalised spelling.",
+      "source_locale": "ru",
+      "source_text": "2 Ст. л. масла",
+      "occurrences": [
+        {
+          "id": "measure",
+          "ingredient": "oil",
+          "form": "Ст. л.",
+          "family": "volume.tablespoon"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "measure": "volume.tablespoon.metric.culinary"
+        }
+      }
+    },
+    {
+      "id": "hebrew-quote-variants-are-both-registered",
+      "description": "Hebrew abbreviations are registered with the ASCII quotation mark and with the gershayim, and each variant resolves.",
+      "source_locale": "he",
+      "source_text": "2 ק\"ג קמח ו-2 ק״ג סוכר",
+      "occurrences": [
+        {
+          "id": "ascii",
+          "ingredient": "flour",
+          "form": "ק\"ג",
+          "family": "mass.kilogram"
+        },
+        {
+          "id": "gershayim",
+          "ingredient": "sugar",
+          "form": "ק״ג",
+          "family": "mass.kilogram"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "ascii": "mass.kilogram",
+          "gershayim": "mass.kilogram"
+        }
+      }
+    },
+    {
+      "id": "coverage-en-us",
+      "description": "A en-US source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "en-US",
+      "source_text": "2 pounds; 2 milliliters; 2 cans",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "pounds",
+          "family": "mass.pound"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "milliliters",
+          "family": "volume.milliliter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "cans",
+          "family": "container.can"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.pound.avoirdupois",
+          "volume": "volume.milliliter",
+          "other": "container.can"
+        }
+      }
+    },
+    {
+      "id": "coverage-de-de",
+      "description": "A de-DE source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "de-DE",
+      "source_text": "2 Kilogramm; 2 Liter; 2 Zehen",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "Kilogramm",
+          "family": "mass.kilogram"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "Liter",
+          "family": "volume.liter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "Zehen",
+          "family": "count.clove"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.kilogram",
+          "volume": "volume.liter",
+          "other": "count.clove"
+        }
+      }
+    },
+    {
+      "id": "coverage-fr-fr",
+      "description": "A fr-FR source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "fr-FR",
+      "source_text": "2 grammes; 2 millilitres; 2 sachets",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "grammes",
+          "family": "mass.gram"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "millilitres",
+          "family": "volume.milliliter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "sachets",
+          "family": "container.packet"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.gram",
+          "volume": "volume.milliliter",
+          "other": "container.packet"
+        }
+      }
+    },
+    {
+      "id": "coverage-es-es",
+      "description": "A es-ES source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "es-ES",
+      "source_text": "2 kilos; 2 litros; 2 latas",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "kilos",
+          "family": "mass.kilogram"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "litros",
+          "family": "volume.liter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "latas",
+          "family": "container.can"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.kilogram",
+          "volume": "volume.liter",
+          "other": "container.can"
+        }
+      }
+    },
+    {
+      "id": "coverage-it-it",
+      "description": "A it-IT source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "it-IT",
+      "source_text": "2 grammi; 2 millilitri; 2 uova",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "grammi",
+          "family": "mass.gram"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "millilitri",
+          "family": "volume.milliliter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "uova",
+          "family": "count.egg"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.gram",
+          "volume": "volume.milliliter",
+          "other": "count.egg"
+        }
+      }
+    },
+    {
+      "id": "coverage-pt-br",
+      "description": "A pt-BR source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "pt-BR",
+      "source_text": "2 quilos; 2 litros; 2 pacotes",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "quilos",
+          "family": "mass.kilogram"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "litros",
+          "family": "volume.liter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "pacotes",
+          "family": "container.packet"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.kilogram",
+          "volume": "volume.liter",
+          "other": "container.packet"
+        }
+      }
+    },
+    {
+      "id": "coverage-pt-pt",
+      "description": "A pt-PT source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "pt-PT",
+      "source_text": "2 gramas; 2 mililitros; 2 latas",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "gramas",
+          "family": "mass.gram"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "mililitros",
+          "family": "volume.milliliter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "latas",
+          "family": "container.can"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.gram",
+          "volume": "volume.milliliter",
+          "other": "container.can"
+        }
+      }
+    },
+    {
+      "id": "coverage-nl-nl",
+      "description": "A nl-NL source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "nl-NL",
+      "source_text": "2 gram; 2 liter; 2 blikjes",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "gram",
+          "family": "mass.gram"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "liter",
+          "family": "volume.liter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "blikjes",
+          "family": "container.can"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.gram",
+          "volume": "volume.liter",
+          "other": "container.can"
+        }
+      }
+    },
+    {
+      "id": "coverage-sv-se",
+      "description": "A sv-SE source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "sv-SE",
+      "source_text": "2 kilo; 2 milliliter; 2 burkar",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "kilo",
+          "family": "mass.kilogram"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "milliliter",
+          "family": "volume.milliliter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "burkar",
+          "family": "container.can"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.kilogram",
+          "volume": "volume.milliliter",
+          "other": "container.can"
+        }
+      }
+    },
+    {
+      "id": "coverage-da-dk",
+      "description": "A da-DK source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "da-DK",
+      "source_text": "2 gram; 2 liter; 2 dåser",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "gram",
+          "family": "mass.gram"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "liter",
+          "family": "volume.liter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "dåser",
+          "family": "container.can"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.gram",
+          "volume": "volume.liter",
+          "other": "container.can"
+        }
+      }
+    },
+    {
+      "id": "coverage-nb-no",
+      "description": "A nb-NO source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "nb-NO",
+      "source_text": "2 kilogram; 2 liter; 2 pakker",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "kilogram",
+          "family": "mass.kilogram"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "liter",
+          "family": "volume.liter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "pakker",
+          "family": "container.packet"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.kilogram",
+          "volume": "volume.liter",
+          "other": "container.packet"
+        }
+      }
+    },
+    {
+      "id": "coverage-fi-fi",
+      "description": "A fi-FI source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "fi-FI",
+      "source_text": "2 grammaa; 2 litraa; 2 tölkkiä",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "grammaa",
+          "family": "mass.gram"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "litraa",
+          "family": "volume.liter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "tölkkiä",
+          "family": "container.can"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.gram",
+          "volume": "volume.liter",
+          "other": "container.can"
+        }
+      }
+    },
+    {
+      "id": "coverage-pl-pl",
+      "description": "A pl-PL source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "pl-PL",
+      "source_text": "2 gramów; 2 mililitrów; 2 ząbki",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "gramów",
+          "family": "mass.gram"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "mililitrów",
+          "family": "volume.milliliter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "ząbki",
+          "family": "count.clove"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.gram",
+          "volume": "volume.milliliter",
+          "other": "count.clove"
+        }
+      }
+    },
+    {
+      "id": "coverage-cs-cz",
+      "description": "A cs-CZ source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "cs-CZ",
+      "source_text": "2 kilogramů; 2 litrů; 2 plechovky",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "kilogramů",
+          "family": "mass.kilogram"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "litrů",
+          "family": "volume.liter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "plechovky",
+          "family": "container.can"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.kilogram",
+          "volume": "volume.liter",
+          "other": "container.can"
+        }
+      }
+    },
+    {
+      "id": "coverage-hu-hu",
+      "description": "A hu-HU source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "hu-HU",
+      "source_text": "2 gramm; 2 liter; 2 gerezd",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "gramm",
+          "family": "mass.gram"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "liter",
+          "family": "volume.liter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "gerezd",
+          "family": "count.clove"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.gram",
+          "volume": "volume.liter",
+          "other": "count.clove"
+        }
+      }
+    },
+    {
+      "id": "coverage-ro-ro",
+      "description": "A ro-RO source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "ro-RO",
+      "source_text": "2 grame; 2 mililitri; 2 pachete",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "grame",
+          "family": "mass.gram"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "mililitri",
+          "family": "volume.milliliter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "pachete",
+          "family": "container.packet"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.gram",
+          "volume": "volume.milliliter",
+          "other": "container.packet"
+        }
+      }
+    },
+    {
+      "id": "coverage-tr-tr",
+      "description": "A tr-TR source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "tr-TR",
+      "source_text": "2 kilogram; 2 litre; 2 diş",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "kilogram",
+          "family": "mass.kilogram"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "litre",
+          "family": "volume.liter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "diş",
+          "family": "count.clove"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.kilogram",
+          "volume": "volume.liter",
+          "other": "count.clove"
+        }
+      }
+    },
+    {
+      "id": "coverage-ru-ru",
+      "description": "A ru-RU source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "ru-RU",
+      "source_text": "2 граммов; 2 миллилитров; 2 зубчика",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "граммов",
+          "family": "mass.gram"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "миллилитров",
+          "family": "volume.milliliter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "зубчика",
+          "family": "count.clove"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.gram",
+          "volume": "volume.milliliter",
+          "other": "count.clove"
+        }
+      }
+    },
+    {
+      "id": "coverage-uk-ua",
+      "description": "A uk-UA source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "uk-UA",
+      "source_text": "2 кілограма; 2 літра; 2 банки",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "кілограма",
+          "family": "mass.kilogram"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "літра",
+          "family": "volume.liter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "банки",
+          "family": "container.can"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.kilogram",
+          "volume": "volume.liter",
+          "other": "container.can"
+        }
+      }
+    },
+    {
+      "id": "coverage-el-gr",
+      "description": "A el-GR source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "el-GR",
+      "source_text": "2 γραμμάρια; 2 λίτρα; 2 σκελίδες",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "γραμμάρια",
+          "family": "mass.gram"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "λίτρα",
+          "family": "volume.liter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "σκελίδες",
+          "family": "count.clove"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.gram",
+          "volume": "volume.liter",
+          "other": "count.clove"
+        }
+      }
+    },
+    {
+      "id": "coverage-ar-eg",
+      "description": "A ar-EG source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "ar-EG",
+      "source_text": "2 كيلو; 2 لتر; 2 علب",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "كيلو",
+          "family": "mass.kilogram"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "لتر",
+          "family": "volume.liter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "علب",
+          "family": "container.can"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.kilogram",
+          "volume": "volume.liter",
+          "other": "container.can"
+        }
+      }
+    },
+    {
+      "id": "coverage-he-il",
+      "description": "A he-IL source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "he-IL",
+      "source_text": "2 גרם; 2 ליטר; 2 שקיות",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "גרם",
+          "family": "mass.gram"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "ליטר",
+          "family": "volume.liter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "שקיות",
+          "family": "container.packet"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.gram",
+          "volume": "volume.liter",
+          "other": "container.packet"
+        }
+      }
+    },
+    {
+      "id": "coverage-th-th",
+      "description": "A th-TH source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "th-TH",
+      "source_text": "2 กรัม; 2 มิลลิลิตร; 2 กระป๋อง",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "กรัม",
+          "family": "mass.gram"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "มิลลิลิตร",
+          "family": "volume.milliliter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "กระป๋อง",
+          "family": "container.can"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.gram",
+          "volume": "volume.milliliter",
+          "other": "container.can"
+        }
+      }
+    },
+    {
+      "id": "coverage-vi-vn",
+      "description": "A vi-VN source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "vi-VN",
+      "source_text": "2 gram; 2 lít; 2 tép",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "gram",
+          "family": "mass.gram"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "lít",
+          "family": "volume.liter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "tép",
+          "family": "count.clove"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.gram",
+          "volume": "volume.liter",
+          "other": "count.clove"
+        }
+      }
+    },
+    {
+      "id": "coverage-id-id",
+      "description": "A id-ID source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "id-ID",
+      "source_text": "2 kilogram; 2 mililiter; 2 kaleng",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "kilogram",
+          "family": "mass.kilogram"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "mililiter",
+          "family": "volume.milliliter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "kaleng",
+          "family": "container.can"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.kilogram",
+          "volume": "volume.milliliter",
+          "other": "container.can"
+        }
+      }
+    },
+    {
+      "id": "coverage-ja-jp",
+      "description": "A ja-JP source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "ja-JP",
+      "source_text": "2 グラム; 2 リットル; 2 缶",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "グラム",
+          "family": "mass.gram"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "リットル",
+          "family": "volume.liter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "缶",
+          "family": "container.can"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.gram",
+          "volume": "volume.liter",
+          "other": "container.can"
+        }
+      }
+    },
+    {
+      "id": "coverage-ko-kr",
+      "description": "A ko-KR source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "ko-KR",
+      "source_text": "2 킬로그램; 2 밀리리터; 2 캔",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "킬로그램",
+          "family": "mass.kilogram"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "밀리리터",
+          "family": "volume.milliliter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "캔",
+          "family": "container.can"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.kilogram",
+          "volume": "volume.milliliter",
+          "other": "container.can"
+        }
+      }
+    },
+    {
+      "id": "coverage-zh-hans-cn",
+      "description": "A zh-Hans-CN source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "zh-Hans-CN",
+      "source_text": "2 公斤; 2 毫升; 2 罐",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "公斤",
+          "family": "mass.kilogram"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "毫升",
+          "family": "volume.milliliter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "罐",
+          "family": "container.can"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.kilogram",
+          "volume": "volume.milliliter",
+          "other": "container.can"
+        }
+      }
+    },
+    {
+      "id": "coverage-zh-hant-tw",
+      "description": "A zh-Hant-TW source resolves a mass word, a volume word, and a count or container word through its own alias set.",
+      "source_locale": "zh-Hant-TW",
+      "source_text": "2 公克; 2 公升; 2 包",
+      "occurrences": [
+        {
+          "id": "mass",
+          "ingredient": "first",
+          "form": "公克",
+          "family": "mass.gram"
+        },
+        {
+          "id": "volume",
+          "ingredient": "second",
+          "form": "公升",
+          "family": "volume.liter"
+        },
+        {
+          "id": "other",
+          "ingredient": "third",
+          "form": "包",
+          "family": "container.packet"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "mass": "mass.gram",
+          "volume": "volume.liter",
+          "other": "container.packet"
+        }
+      }
+    }
+  ]
+}

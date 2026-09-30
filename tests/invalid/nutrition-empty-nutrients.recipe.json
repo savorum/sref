@@ -1,0 +1,7 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "nutrition-empty-nutrients",
+  "title": "No Nutrients",
+  "nutrition": [{"basis": {"kind": "serving"}, "nutrients": []}],
+  "instruction_sections": [{"id": "method", "steps": [{"id": "mix", "text": "Mix."}]}]
+}

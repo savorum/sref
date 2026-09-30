@@ -1,0 +1,40 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "source-identity-preservation",
+  "title": "Source Identity Preservation",
+  "source": {
+    "name": "Independent Recipe Archive",
+    "url": "https://archive.example/recipes/12345",
+    "application": "Archive Exporter",
+    "source_id": "12345",
+    "retrieved_at": "2026-08-29T12:00:00Z",
+    "attribution": "Courtesy of the Independent Recipe Archive"
+  },
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "salt",
+          "name": "salt",
+          "note": "to taste",
+          "source_text": "salt, to taste"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "season",
+          "text": "Season to taste."
+        }
+      ]
+    }
+  ]
+}

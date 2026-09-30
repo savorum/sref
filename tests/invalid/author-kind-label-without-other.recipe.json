@@ -1,0 +1,14 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "author-kind-label-without-other",
+  "title": "Author Kind Label Without Other",
+  "authors": [
+    {"name": "Example Test Kitchen", "kind": "organization", "kind_label": "collective"}
+  ],
+  "ingredient_sections": [
+    {"id": "ingredients", "ingredients": [{"id": "salt", "name": "salt"}]}
+  ],
+  "instruction_sections": [
+    {"id": "method", "steps": [{"id": "season", "text": "Season."}]}
+  ]
+}

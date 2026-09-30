@@ -1,0 +1,21 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "invalid-publication-date",
+  "title": "Invalid Publication Date",
+  "published": "2024-02-30",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [{"id": "salt", "name": "salt"}]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [{"id": "season", "text": "Season."}]
+    }
+  ]
+}

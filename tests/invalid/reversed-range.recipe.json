@@ -1,0 +1,38 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "reversed-range",
+  "title": "Reversed Range",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "oil",
+          "name": "oil",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "min": "3",
+              "max": "2"
+            },
+            "unit": "volume.milliliter"
+          }
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "add",
+          "text": "Add the oil."
+        }
+      ]
+    }
+  ]
+}

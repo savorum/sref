@@ -1,0 +1,7 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "microwave-choice-duplicate-conditions",
+  "title": "Microwave Choice Duplicate Conditions",
+  "times": {"assertions": [{"id": "heat", "duration": {"text": "600 W: 4 minutes or 5 minutes"}, "microwave": {"source_text": "600 W: 4 minutes or 5 minutes", "choices": [{"power": {"watts": 600}, "duration": {"value": "PT4M"}, "source_text": "600 W: 4 minutes"}, {"power": {"watts": 600}, "duration": {"value": "PT5M"}, "source_text": "600 W: 5 minutes"}]}}]},
+  "instruction_sections": [{"id": "method", "steps": [{"id": "heat-step", "text": "Heat.", "timing_refs": ["heat"]}]}]
+}

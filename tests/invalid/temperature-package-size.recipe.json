@@ -1,0 +1,21 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "temperature-package-size",
+  "title": "Temperature Used as Package Size",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "tomatoes",
+          "name": "tomatoes",
+          "quantity": {"kind": "simple", "amount": {"value": "2"}, "unit": "container.can"},
+          "package_size": {"kind": "simple", "amount": {"value": "20"}, "unit": "temperature.celsius"}
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {"id": "method", "steps": [{"id": "open", "text": "Open the cans."}]}
+  ]
+}

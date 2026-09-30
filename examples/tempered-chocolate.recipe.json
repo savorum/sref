@@ -1,0 +1,45 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "tempered-chocolate",
+  "title": "Seed-Tempered Dark Chocolate",
+  "description": "Dark couverture chocolate tempered by seeding for moulding or dipping.",
+  "language": "en-GB",
+  "source_locale": "en-GB",
+  "yields": [{
+    "text": "500 g tempered chocolate",
+    "quantity": {"kind": "simple", "amount": {"value": "500"}, "unit": "mass.gram"}
+  }],
+  "ingredient_sections": [
+    {
+      "id": "chocolate",
+      "ingredients": [
+        {"id": "melt-chocolate", "name": "dark couverture chocolate", "quantity": {"kind": "simple", "amount": {"value": "400"}, "unit": "mass.gram"}, "note": "finely chopped", "source_text": "400 g dark couverture chocolate, finely chopped"},
+        {"id": "seed-chocolate", "name": "dark couverture chocolate", "quantity": {"kind": "simple", "amount": {"value": "100"}, "unit": "mass.gram"}, "note": "finely chopped and reserved for seeding", "source_text": "100 g dark couverture chocolate, finely chopped, for seeding"}
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "temper",
+      "steps": [
+        {
+          "id": "melt",
+          "text": "Melt the larger portion of chocolate to 45–50 °C.",
+          "ingredient_uses": [{"ingredient_ref": "melt-chocolate"}],
+          "temperatures": [{"amount": {"min": "45", "max": "50"}, "unit": "temperature.celsius", "note": "melted chocolate", "source_text": "45–50 °C"}]
+        },
+        {
+          "id": "seed",
+          "text": "Stir in the reserved chocolate gradually and cool the mixture to 27–28 °C.",
+          "ingredient_uses": [{"ingredient_ref": "seed-chocolate"}],
+          "temperatures": [{"amount": {"min": "27", "max": "28"}, "unit": "temperature.celsius", "note": "cooling target", "source_text": "27–28 °C"}]
+        },
+        {
+          "id": "working-temperature",
+          "text": "Warm gently to a working temperature of 31–32 °C and use immediately.",
+          "temperatures": [{"amount": {"min": "31", "max": "32"}, "unit": "temperature.celsius", "note": "working range", "source_text": "31–32 °C"}]
+        }
+      ]
+    }
+  ]
+}

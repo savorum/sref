@@ -1,0 +1,11 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "recipe-dependencies",
+  "title": "Fruit Tart",
+  "ingredient_sections": [{"id": "main", "ingredients": [
+    {"id": "cream", "name": "pastry cream", "quantity": {"kind": "simple", "amount": {"value": "1"}}, "source_text": "1 batch pastry cream (see Pastry Cream)", "recipe": {"title": "Pastry Cream", "url": "https://example.com/recipes/pastry-cream"}},
+    {"id": "shell", "name": "sweet tart shell", "quantity": {"kind": "simple", "amount": {"value": "1"}}, "recipe": {"recipe_id": "pate-sucree"}},
+    {"id": "glaze", "name": "apricot glaze", "recipe": {"title": "Apricot Glaze"}}
+  ]}],
+  "instruction_sections": [{"id": "method", "steps": [{"id": "mix", "text": "Mix."}]}]
+}

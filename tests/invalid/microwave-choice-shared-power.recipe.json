@@ -1,0 +1,7 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "microwave-choice-shared-power",
+  "title": "Microwave Choice Shared Power",
+  "times": {"assertions": [{"id": "heat", "duration": {"text": "800 W: 3 minutes; 1000 W: 2 minutes"}, "microwave": {"power": {"watts": 800}, "source_text": "800 W: 3 minutes; 1000 W: 2 minutes", "choices": [{"power": {"watts": 800}, "duration": {"value": "PT3M"}, "source_text": "800 W: 3 minutes"}, {"power": {"watts": 1000}, "duration": {"value": "PT2M"}, "source_text": "1000 W: 2 minutes"}]}}]},
+  "instruction_sections": [{"id": "method", "steps": [{"id": "heat-step", "text": "Heat.", "timing_refs": ["heat"]}]}]
+}

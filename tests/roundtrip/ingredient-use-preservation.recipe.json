@@ -1,0 +1,73 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "ingredient-use-preservation",
+  "title": "Ingredient Use Preservation",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "sugar",
+          "name": "sugar",
+          "quantity": {
+            "kind": "simple",
+            "amount": {"value": "2"},
+            "unit": "volume.cup.us.customary"
+          },
+          "note": "divided"
+        },
+        {
+          "id": "vanilla",
+          "name": "vanilla extract"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "mix",
+          "text": "Mix 1 1/2 cups sugar with the vanilla.",
+          "ingredient_uses": [
+            {
+              "ingredient_ref": "sugar",
+              "quantity": {
+                "kind": "simple",
+                "amount": {
+                  "value": "3/2",
+                  "approximate": false
+                },
+                "unit": "volume.cup.us.customary"
+              },
+              "x-org.example.use-note": {
+                "source": "first addition"
+              }
+            },
+            {
+              "ingredient_ref": "vanilla",
+              "x-org.example.use-note": null
+            }
+          ]
+        },
+        {
+          "id": "finish",
+          "text": "Finish with the remaining sugar.",
+          "ingredient_uses": [
+            {
+              "ingredient_ref": "sugar",
+              "quantity": {
+                "kind": "opaque",
+                "text": "the remaining sugar"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

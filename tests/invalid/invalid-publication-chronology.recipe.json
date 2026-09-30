@@ -1,0 +1,21 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "invalid-publication-chronology",
+  "title": "Invalid Publication Chronology",
+  "published": "March 10, 2024",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [{"id": "salt", "name": "salt"}]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [{"id": "season", "text": "Season."}]
+    }
+  ]
+}

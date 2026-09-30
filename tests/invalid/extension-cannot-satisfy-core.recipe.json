@@ -1,0 +1,31 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "extension-cannot-satisfy-core",
+  "x-org.example.title": "Not the standard title",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "salt",
+          "name": "salt",
+          "source_text": "salt"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "season",
+          "text": "Season."
+        }
+      ]
+    }
+  ]
+}

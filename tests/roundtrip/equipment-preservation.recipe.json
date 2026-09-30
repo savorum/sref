@@ -1,0 +1,43 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "equipment-roundtrip",
+  "title": "Equipment preservation",
+  "equipment": [
+    {
+      "name": "9-inch springform pan",
+      "note": "Greased and lined",
+      "x-org.example.import.source-label": "Tin"
+    },
+    {
+      "name": "ramekin",
+      "quantity": {
+        "kind": "alternatives",
+        "options": [
+          {
+            "kind": "simple",
+            "amount": {"value": "6"},
+            "unit": "count.item"
+          },
+          {
+            "kind": "simple",
+            "amount": {"value": "3"},
+            "unit": "count.item"
+          }
+        ]
+      }
+    },
+    {
+      "name": "mixing bowl",
+      "quantity": {"kind": "opaque", "text": "one for each batter"}
+    }
+  ],
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [{"id": "custard", "name": "custard mixture"}]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "temperature-yield",
+  "title": "Temperature Used as Yield",
+  "yields": [{
+    "text": "180 degrees",
+    "quantity": {"kind": "simple", "amount": {"value": "180"}, "unit": "temperature.celsius"}
+  }],
+  "ingredient_sections": [
+    {"id": "ingredients", "ingredients": [{"id": "water", "name": "water"}]}
+  ],
+  "instruction_sections": [
+    {"id": "method", "steps": [{"id": "use", "text": "Use the water."}]}
+  ]
+}

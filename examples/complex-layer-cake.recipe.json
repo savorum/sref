@@ -1,0 +1,272 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "complex-layer-cake",
+  "title": "Vanilla Berry Layer Cake",
+  "description": "A two-layer vanilla cake with berry filling and buttercream.",
+  "language": "en-CA",
+  "source_locale": "en-CA",
+  "yields": [{
+    "text": "1 two-layer cake",
+    "quantity": {
+      "kind": "simple",
+      "amount": {
+        "value": "1"
+      },
+      "unit": "count.item"
+    },
+    "label": "two-layer cake"
+  }],
+  "times": {
+    "assertions": [
+      {
+        "id": "bake-cake-time",
+        "kind": "cook",
+        "duration": {"value": "PT25M", "approximate": true, "source_text": "about 25 minutes"}
+      }
+    ]
+  },
+  "ingredient_sections": [
+    {
+      "id": "cake",
+      "title": "Cake layers",
+      "ingredients": [
+        {
+          "id": "cake-flour",
+          "name": "plain flour",
+          "quantity": {
+            "kind": "alternatives",
+            "options": [
+              {
+                "kind": "simple",
+                "amount": {
+                  "value": "300"
+                },
+                "unit": "mass.gram"
+              },
+              {
+                "kind": "simple",
+                "amount": {
+                  "value": "21/8"
+                },
+                "unit": "volume.cup.metric.culinary"
+              }
+            ]
+          },
+          "source_text": "300 g / 2 5/8 metric cups plain flour"
+        },
+        {
+          "id": "cake-eggs",
+          "name": "eggs",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "4"
+            },
+            "unit": "count.egg"
+          },
+          "note": "large, at room temperature",
+          "source_text": "4 large eggs, at room temperature"
+        },
+        {
+          "id": "cake-sugar",
+          "name": "sugar",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "250"
+            },
+            "unit": "mass.gram"
+          },
+          "source_text": "250 g sugar"
+        },
+        {
+          "id": "cake-butter",
+          "name": "unsalted butter",
+          "quantity": {
+            "kind": "simple",
+            "amount": {"value": "225"},
+            "unit": "mass.gram"
+          },
+          "note": "softened",
+          "source_text": "225 g unsalted butter, softened"
+        },
+        {
+          "id": "cake-milk",
+          "name": "whole milk",
+          "quantity": {
+            "kind": "simple",
+            "amount": {"value": "180"},
+            "unit": "volume.milliliter"
+          },
+          "source_text": "180 mL whole milk"
+        },
+        {
+          "id": "baking-powder",
+          "name": "baking powder",
+          "quantity": {
+            "kind": "simple",
+            "amount": {"value": "10"},
+            "unit": "mass.gram"
+          },
+          "source_text": "10 g baking powder"
+        }
+      ]
+    },
+    {
+      "id": "filling",
+      "title": "Berry filling",
+      "ingredients": [
+        {
+          "id": "berries",
+          "name": "frozen mixed berries",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "2"
+            },
+            "unit": "container.packet"
+          },
+          "package_size": {
+            "kind": "simple",
+            "amount": {
+              "value": "300"
+            },
+            "unit": "mass.gram"
+          },
+          "note": "thawed and drained",
+          "source_text": "2 (300 g) packets frozen mixed berries, thawed and drained"
+        },
+        {
+          "id": "filling-sugar",
+          "name": "sugar",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "min": "50",
+              "max": "75"
+            },
+            "unit": "mass.gram"
+          },
+          "note": "to taste",
+          "source_text": "50–75 g sugar, to taste"
+        },
+        {
+          "id": "pastry-cream",
+          "name": "pastry cream",
+          "quantity": {"kind": "simple", "amount": {"value": "400"}, "unit": "mass.gram"},
+          "note": "chilled",
+          "source_text": "400 g pastry cream (see Vanilla Pastry Cream), chilled",
+          "recipe": {
+            "title": "Vanilla Pastry Cream",
+            "url": "https://recipes.example/vanilla-pastry-cream"
+          }
+        }
+      ]
+    },
+    {
+      "id": "frosting",
+      "title": "Frosting",
+      "ingredients": [
+        {
+          "id": "frosting-butter",
+          "name": "butter",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "225"
+            },
+            "unit": "mass.gram"
+          },
+          "note": "softened",
+          "source_text": "225 g butter, softened"
+        },
+        {
+          "id": "icing-sugar",
+          "name": "icing sugar",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "400",
+              "approximate": true
+            },
+            "unit": "mass.gram"
+          },
+          "source_text": "about 400 g icing sugar"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "make-cake",
+      "title": "Make the cake layers",
+      "steps": [
+        {
+          "id": "mix-cake",
+          "text": "Cream the butter and sugar, beat in the eggs, then mix in the flour, baking powder, and milk until smooth.",
+          "ingredient_uses": [
+            {"ingredient_ref": "cake-flour"},
+            {"ingredient_ref": "cake-eggs"},
+            {"ingredient_ref": "cake-sugar"},
+            {"ingredient_ref": "cake-butter"},
+            {"ingredient_ref": "cake-milk"},
+            {"ingredient_ref": "baking-powder"}
+          ]
+        },
+        {
+          "id": "bake-cake",
+          "text": "Divide between two prepared pans and bake at 180 °C for about 25 minutes, until the centres spring back.",
+          "timing_refs": ["bake-cake-time"],
+          "temperatures": [
+            {"amount": {"value": "180"}, "unit": "temperature.celsius", "purpose": {"kind": "oven"}, "source_text": "180 °C"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "make-filling",
+      "title": "Make the filling",
+      "steps": [
+        {
+          "id": "cook-filling",
+          "text": "Cook the berries and sugar until thick, then cool.",
+          "ingredient_uses": [
+            {"ingredient_ref": "berries"},
+            {"ingredient_ref": "filling-sugar"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "title": "Assemble",
+      "steps": [
+        {
+          "id": "make-frosting",
+          "text": "Beat the butter and icing sugar until light.",
+          "ingredient_uses": [
+            {"ingredient_ref": "frosting-butter"},
+            {"ingredient_ref": "icing-sugar"}
+          ]
+        },
+        {
+          "id": "fill-and-frost",
+          "text": "Layer the cooled cakes with pastry cream and berry filling and cover with frosting.",
+          "ingredient_uses": [
+            {"ingredient_ref": "berries"},
+            {"ingredient_ref": "pastry-cream"},
+            {"ingredient_ref": "frosting-butter"},
+            {"ingredient_ref": "icing-sugar"}
+          ]
+        }
+      ]
+    }
+  ],
+  "x-sref.spec.audit": {
+    "purpose": "round-trip extension preservation",
+    "ordinal": 1
+  }
+}

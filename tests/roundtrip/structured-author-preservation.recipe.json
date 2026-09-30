@@ -1,0 +1,57 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "structured-author-preservation",
+  "title": "Structured Author Preservation",
+  "authors": [
+    {
+      "name": "Source-Unclassified Credit",
+      "x-org.example.credit-note": "preserve without classifying"
+    },
+    {
+      "name": "Avery Morgan",
+      "kind": "person",
+      "url": "https://recipes.example/authors/avery-morgan"
+    },
+    {
+      "name": "Example Test Kitchen",
+      "kind": "organization"
+    },
+    {
+      "name": "Saturday Supper Collective",
+      "kind": "other",
+      "kind_label": "collective"
+    }
+  ],
+  "source": {
+    "name": "Independent Recipe Archive",
+    "url": "https://archive.example/recipes/structured-author-preservation",
+    "application": "Archive Exporter"
+  },
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "salt",
+          "name": "salt",
+          "note": "to taste",
+          "source_text": "salt, to taste"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "season",
+          "text": "Season to taste."
+        }
+      ]
+    }
+  ]
+}

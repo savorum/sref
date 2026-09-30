@@ -1,0 +1,7 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "duplicate-variant-id",
+  "title": "Duplicate Variant",
+  "variants": [{"id": "plain", "text": "Omit the nuts."}, {"id": "plain", "text": "Omit the seeds."}],
+  "instruction_sections": [{"id": "method", "steps": [{"id": "mix", "text": "Mix."}]}]
+}

@@ -1,0 +1,14 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "timing-summary-scalar",
+  "title": "Scalar Timing Summary",
+  "times": {
+    "total": "PT10M"
+  },
+  "ingredient_sections": [
+    {"id": "ingredients", "ingredients": [{"id": "water", "name": "water"}]}
+  ],
+  "instruction_sections": [
+    {"id": "method", "steps": [{"id": "wait", "text": "Wait for ten minutes."}]}
+  ]
+}

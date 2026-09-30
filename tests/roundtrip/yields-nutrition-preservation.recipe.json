@@ -1,0 +1,8 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "yields-nutrition-preservation",
+  "title": "Oat Bars",
+  "yields": [{"text": "16 bars", "quantity": {"kind": "simple", "amount": {"value": "16"}}, "label": "bars"}, {"text": "16 bars", "label": "bars"}, {"text": "about 900 g", "quantity": {"kind": "simple", "amount": {"value": "900", "approximate": true}, "unit": "mass.gram"}, "x-com.example.check": {"weighed": true}}],
+  "nutrition": [{"basis": {"kind": "serving", "text": "1 bar"}, "nutrients": [{"nutrient": "energy", "amount": {"value": "0"}, "unit": "kcal"}, {"nutrient": "fiber", "text": "< 1 g"}, {"nutrient": "energy", "label": "Energy (kJ)", "amount": {"value": "0"}, "unit": "kJ"}], "x-com.example.check": {"panel": "front"}}, {"basis": {"kind": "unspecified", "text": "as sold"}, "nutrients": [{"nutrient": "protein", "amount": {"value": "4"}}]}],
+  "instruction_sections": [{"id": "method", "steps": [{"id": "mix", "text": "Mix."}]}]
+}

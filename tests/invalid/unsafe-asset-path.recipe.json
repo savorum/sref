@@ -1,0 +1,26 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "unsafe-asset-path",
+  "title": "Unsafe Asset Path",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [{"id": "flour", "name": "flour"}]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [{"id": "mix", "text": "Mix."}]
+    }
+  ],
+  "assets": [
+    {
+      "id": "photo",
+      "path": "assets/photos/../photo.jpg",
+      "media_type": "image/jpeg",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size": 0
+    }
+  ]
+}

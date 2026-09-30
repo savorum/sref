@@ -1,0 +1,30 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "oversized-rational",
+  "title": "Oversized Rational",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "rice",
+          "name": "grains of rice",
+          "quantity": {
+            "kind": "simple",
+            "amount": {"value": "18446744073709551616"},
+            "unit": "count.item"
+          }
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [{"id": "count", "text": "Count the rice."}]
+    }
+  ]
+}

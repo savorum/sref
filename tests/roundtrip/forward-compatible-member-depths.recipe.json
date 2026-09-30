@@ -1,0 +1,53 @@
+{
+  "sref": {
+    "version": "0.5.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "forward-compatible-member-depths",
+  "title": "Forward-Compatible Member Depths",
+  "presentation_mode": {
+    "kind": "future-card"
+  },
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "future_section_role": "base",
+      "ingredients": [
+        {
+          "id": "flour",
+          "name": "flour",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "100"
+            },
+            "unit": "mass.gram"
+          },
+          "future_selection_policy": {
+            "kind": "preferred"
+          }
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "future_phase_role": "finish",
+      "steps": [
+        {
+          "id": "mix",
+          "text": "Mix the flour.",
+          "ingredient_uses": [
+            {
+              "ingredient_ref": "flour"
+            }
+          ],
+          "future_action_kind": {
+            "kind": "combine"
+          }
+        }
+      ]
+    }
+  ]
+}

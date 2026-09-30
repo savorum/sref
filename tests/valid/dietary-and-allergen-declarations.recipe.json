@@ -1,0 +1,19 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "dietary-and-allergen-declarations",
+  "title": "Peanut Noodles",
+  "variants": [{"id": "sunflower", "title": "Nut-free noodles", "text": "Use sunflower seed butter instead of peanut butter."}],
+  "dietary_claims": [
+    {"text": "Vegan", "suitability": "suitable", "diet": "vegan"},
+    {"text": "Vegetarian when made with vegetable stock", "suitability": "suitable", "diet": "vegetarian", "condition": "when made with vegetable stock"},
+    {"text": "Not suitable for a low-sodium diet", "suitability": "unsuitable", "diet": "low_salt"},
+    {"text": "Plant-forward", "suitability": "suitable"}
+  ],
+  "allergen_declarations": [
+    {"text": "Contains peanuts", "substance": "peanuts", "presence": "contains"},
+    {"text": "May contain sesame", "substance": "sesame", "presence": "may_contain"},
+    {"text": "Peanut-free", "substance": "peanuts", "presence": "free_from", "variant_ref": "sunflower"},
+    {"text": "Gluten-free when made with tamari", "substance": "gluten", "presence": "free_from", "condition": "when made with tamari"}
+  ],
+  "instruction_sections": [{"id": "method", "steps": [{"id": "mix", "text": "Mix."}]}]
+}

@@ -1,0 +1,21 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "nonfinite-number",
+  "title": "Nonfinite Number",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [{"id": "salt", "name": "salt"}]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [{"id": "season", "text": "Season."}]
+    }
+  ],
+  "x-org.example.invalid-number": NaN
+}

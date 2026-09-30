@@ -1,0 +1,37 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "temperature-ingredient-use",
+  "title": "Temperature Ingredient Use",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {"id": "water", "name": "water"}
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "heat",
+          "text": "Heat the water to 80 degrees Celsius.",
+          "ingredient_uses": [
+            {
+              "ingredient_ref": "water",
+              "quantity": {
+                "kind": "simple",
+                "amount": {"value": "80"},
+                "unit": "temperature.celsius"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "microwave-chocolate-sauce",
+  "title": "Microwave Chocolate Sauce",
+  "times": {
+    "assertions": [
+      {
+        "id": "melt",
+        "kind": "cook",
+        "duration": {"min": "PT2M", "max": "PT3M", "approximate": true, "source_text": "about 2–3 minutes"},
+        "microwave": {
+          "rated_output_watts": 1000,
+          "power": {"percent": "50"},
+          "source_text": "Microwave at 50% power in a 1000 W microwave until melted, about 2–3 minutes."
+        }
+      },
+      {
+        "id": "stand",
+        "kind": "rest",
+        "duration": {"value": "PT2M", "source_text": "stand for 2 minutes"}
+      }
+    ]
+  },
+  "ingredient_sections": [
+    {
+      "id": "sauce",
+      "ingredients": [
+        {"id": "chocolate", "name": "chocolate", "source_text": "chocolate"}
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "melt-step",
+          "text": "Microwave at 50% power in a 1000 W microwave until melted, about 2–3 minutes.",
+          "timing_refs": ["melt"],
+          "ingredient_uses": [{"ingredient_ref": "chocolate"}]
+        },
+        {"id": "stand-step", "text": "Stand for 2 minutes.", "timing_refs": ["stand"]}
+      ]
+    }
+  ]
+}

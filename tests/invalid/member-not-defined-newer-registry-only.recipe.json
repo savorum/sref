@@ -1,0 +1,35 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.4.0"
+  },
+  "id": "member-not-defined-newer-registry-only",
+  "title": "Minimal Recipe",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "salt",
+          "name": "salt",
+          "note": "to taste",
+          "source_text": "salt, to taste"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "season",
+          "text": "Season to taste."
+        }
+      ]
+    }
+  ],
+  "future_standard_field": {
+    "value": 4
+  }
+}

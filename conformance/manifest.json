@@ -1,0 +1,3229 @@
+{
+  "sref_version": "0.4.0",
+  "unit_registry_version": "0.2.0",
+  "cases": [
+    {
+      "id": "registry-units",
+      "capabilities": [
+        "registry"
+      ],
+      "fixture": "registry/units.json",
+      "expected": "valid",
+      "description": "The published unit registry passes structural and semantic validation."
+    },
+    {
+      "id": "registry-duplicate-unit-id",
+      "capabilities": [
+        "registry"
+      ],
+      "fixture": "tests/registry/duplicate-unit-id.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "duplicate-unit-id",
+      "description": "Unit IDs are unique within a registry snapshot."
+    },
+    {
+      "id": "registry-nonpositive-multiplier",
+      "capabilities": [
+        "registry"
+      ],
+      "fixture": "tests/registry/nonpositive-multiplier.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "nonpositive-unit-multiplier",
+      "description": "Physical conversion multipliers are strictly positive."
+    },
+    {
+      "id": "registry-affine-nontemperature",
+      "capabilities": [
+        "registry"
+      ],
+      "fixture": "tests/registry/affine-nontemperature.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "affine-nontemperature-unit",
+      "description": "Affine conversion definitions are restricted to temperature."
+    },
+    {
+      "id": "registry-unknown-base-unit",
+      "capabilities": [
+        "registry"
+      ],
+      "fixture": "tests/registry/unknown-base-unit.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "unknown-unit-base",
+      "description": "Every derived physical unit names an existing base unit."
+    },
+    {
+      "id": "registry-conversion-cycle",
+      "capabilities": [
+        "registry"
+      ],
+      "fixture": "tests/registry/conversion-cycle.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "unit-conversion-cycle",
+      "description": "Physical conversion definitions cannot form a cycle."
+    },
+    {
+      "id": "registry-multiple-dimension-bases",
+      "capabilities": [
+        "registry"
+      ],
+      "fixture": "tests/registry/multiple-dimension-bases.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "multiple-dimension-bases",
+      "description": "A physical dimension has exactly one registry base unit."
+    },
+    {
+      "id": "registry-duplicate-normalized-alias",
+      "capabilities": [
+        "registry"
+      ],
+      "fixture": "tests/registry/duplicate-normalized-alias.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "duplicate-normalized-unit-alias",
+      "description": "Case-insensitive alias sets cannot contain equivalent forms."
+    },
+    {
+      "id": "registry-active-unit-replacement",
+      "capabilities": [
+        "registry"
+      ],
+      "fixture": "tests/registry/active-unit-replacement.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "active-unit-replacement",
+      "description": "An active unit cannot redirect to a replacement."
+    },
+    {
+      "id": "registry-missing-unit-replacement",
+      "capabilities": [
+        "registry"
+      ],
+      "fixture": "tests/registry/missing-unit-replacement.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "missing-unit-replacement",
+      "description": "A deprecated unit names an existing active replacement."
+    },
+    {
+      "id": "registry-active-unit-without-alias",
+      "capabilities": [
+        "registry"
+      ],
+      "fixture": "tests/registry/active-unit-without-alias.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "active-unit-without-alias",
+      "description": "Every active unit provides at least one parser alias."
+    },
+    {
+      "id": "registry-invalid-language-tag",
+      "capabilities": [
+        "registry"
+      ],
+      "fixture": "tests/registry/invalid-language-tag.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "invalid-language-tag",
+      "description": "Registry label and alias languages use well-formed BCP 47 tags."
+    },
+    {
+      "id": "registry-missing-physical-reference",
+      "capabilities": [
+        "registry"
+      ],
+      "fixture": "tests/registry/missing-physical-reference.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "physical-unit-reference-required",
+      "description": "Every physical unit definition cites a standards or official-guidance source."
+    },
+    {
+      "id": "registry-duplicate-alias-set",
+      "capabilities": [
+        "registry"
+      ],
+      "fixture": "tests/registry/duplicate-alias-set.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "duplicate-unit-alias-set",
+      "description": "A unit has at most one alias set for a language and case-sensitivity policy."
+    },
+    {
+      "id": "example-cookies",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "examples/chocolate-chip-cookies.recipe.json",
+      "expected": "valid",
+      "description": "US customary measures, sums, alternatives, notes, and references are valid."
+    },
+    {
+      "id": "example-australian-scones",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "examples/australian-scones.recipe.json",
+      "expected": "valid",
+      "description": "Australian cup and tablespoon identities remain regional."
+    },
+    {
+      "id": "example-sourdough",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "examples/sourdough.recipe.json",
+      "expected": "valid",
+      "description": "Metric ranges, approximation, and opaque quantities are valid."
+    },
+    {
+      "id": "example-complex-layer-cake",
+      "capabilities": [
+        "json-reader",
+        "json-writer",
+        "round-trip"
+      ],
+      "fixture": "examples/complex-layer-cake.recipe.json",
+      "expected": "valid",
+      "description": "Independent sections, package size, alternatives, and extensions remain valid."
+    },
+    {
+      "id": "example-savory-hand-pies",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "examples/savory-hand-pies.recipe.json",
+      "expected": "valid",
+      "description": "Independent pastry, filling, finish, and assembly structures remain valid."
+    },
+    {
+      "id": "example-vegetable-biryani",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "examples/vegetable-biryani.recipe.json",
+      "expected": "valid",
+      "description": "Cross-component assembly and a counted spice with a physical length remain lossless."
+    },
+    {
+      "id": "example-ramen-bowl",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "examples/ramen-bowl.recipe.json",
+      "expected": "valid",
+      "description": "Opaque measures, packet sizes, and multi-stage bowl assembly remain valid."
+    },
+    {
+      "id": "example-preserved-lemons",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "examples/preserved-lemons.recipe.json",
+      "expected": "valid",
+      "description": "A vessel-dependent quantity remains explicitly unresolved."
+    },
+    {
+      "id": "example-pizza-night",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "examples/pizza-night.recipe.json",
+      "expected": "valid",
+      "description": "Mass-based hydration, package size, fermentation, and ingredient reuse remain valid."
+    },
+    {
+      "id": "example-holiday-punch",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "examples/holiday-punch.recipe.json",
+      "expected": "valid",
+      "description": "An ambiguous Canadian cup remains opaque while known metric amounts remain structured."
+    },
+    {
+      "id": "example-roast-chicken",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "examples/roast-chicken.recipe.json",
+      "expected": "valid",
+      "description": "Per-item mass, staged oven settings, an internal target, and exact, ranged, and approximate timing assertions remain distinct."
+    },
+    {
+      "id": "example-microwave-chocolate-sauce",
+      "capabilities": ["json-reader", "json-writer"],
+      "fixture": "examples/microwave-chocolate-sauce.recipe.json",
+      "expected": "valid",
+      "description": "A ranged half-power microwave interval carries its source rating while the following standing time remains unannotated."
+    },
+    {
+      "id": "example-mint-tea",
+      "capabilities": ["json-reader", "json-writer"],
+      "fixture": "examples/mint-tea.recipe.json",
+      "expected": "valid",
+      "description": "An Arabic recipe with Latin unit abbreviations names its English translation by recipe ID."
+    },
+    {
+      "id": "example-mint-tea-english",
+      "capabilities": ["json-reader", "json-writer"],
+      "fixture": "examples/mint-tea-english.recipe.json",
+      "expected": "valid",
+      "description": "An English translation names its Arabic original and differs from it in steps, IDs, and notes."
+    },
+    {
+      "id": "valid-temperature-purposes",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/valid/temperature-purposes.recipe.json",
+      "expected": "valid",
+      "description": "The stable temperature-purpose vocabulary and a labeled unusual purpose are valid in one ordered step."
+    },
+    {
+      "id": "example-tempered-chocolate",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "examples/tempered-chocolate.recipe.json",
+      "expected": "valid",
+      "description": "Ordered temperature ranges survive without becoming scalable recipe amounts."
+    },
+    {
+      "id": "example-berry-granita",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "examples/berry-granita.recipe.json",
+      "expected": "valid",
+      "description": "A negative freezer setpoint remains a canonical signed temperature."
+    },
+    {
+      "id": "example-vietnamese-pickles",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "examples/vietnamese-pickles.recipe.json",
+      "expected": "valid",
+      "description": "Non-English Unicode recipe content and localized sections remain lossless."
+    },
+    {
+      "id": "example-creme-anglaise",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "examples/creme-anglaise.recipe.json",
+      "expected": "valid",
+      "description": "Ingredient temperature, approximate yield, cooking range, and opaque lower-bounded chilling time remain distinct."
+    },
+    {
+      "id": "example-divided-sugar-cake",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "examples/divided-sugar-cake.recipe.json",
+      "expected": "valid",
+      "description": "Two steps preserve distinct authored uses of one divided ingredient."
+    },
+    {
+      "id": "minimal-recipe",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/valid/minimal.recipe.json",
+      "expected": "valid",
+      "description": "An ingredient without an amount or unit is valid."
+    },
+    {
+      "id": "equipment-recipe",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/valid/equipment.recipe.json",
+      "expected": "valid",
+      "description": "Ordered authored equipment names may carry ordinary quantities and notes without IDs or step references."
+    },
+    {
+      "id": "roundtrip-equipment-preservation",
+      "capabilities": [
+        "json-reader",
+        "json-writer",
+        "round-trip"
+      ],
+      "fixture": "tests/roundtrip/equipment-preservation.recipe.json",
+      "expected": "valid",
+      "description": "Equipment order, authored names, quantity forms, notes, and scoped extensions survive a read and write cycle."
+    },
+    {
+      "id": "equipment-name-required",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/equipment-without-name.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "equipment-name-required",
+      "description": "Every equipment entry preserves a nonempty authored name."
+    },
+    {
+      "id": "temperature-equipment",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/temperature-equipment-quantity.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "temperature-equipment",
+      "description": "A temperature describes a condition rather than an equipment quantity."
+    },
+    {
+      "id": "structured-authors",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/valid/structured-authors.recipe.json",
+      "expected": "valid",
+      "description": "Ordered name-only, person, organization, and labeled other author credits are valid without inferred identity."
+    },
+    {
+      "id": "recipe-image-relationships",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/valid/recipe-image-relationships.recipe.json",
+      "expected": "valid",
+      "description": "Ordered recipe images, a primary selection, and a shared recipe/step image resolve through explicit asset references."
+    },
+    {
+      "id": "ingredient-uses-recipe",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/valid/ingredient-uses.recipe.json",
+      "expected": "valid",
+      "description": "A step ingredient use may carry an authored quantity or only a reference."
+    },
+    {
+      "id": "compound-quantity-alternatives",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/valid/compound-quantity-alternatives.recipe.json",
+      "expected": "valid",
+      "description": "An alternative option may preserve a non-recursive sum of simple quantities."
+    },
+    {
+      "id": "package-size-recipe",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/valid/package-size.recipe.json",
+      "expected": "valid",
+      "description": "Container count and per-container physical size remain distinct."
+    },
+    {
+      "id": "grandfathered-language-tag",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/valid/grandfathered-language-tag.recipe.json",
+      "expected": "valid",
+      "description": "A registered grandfathered BCP 47 language tag is accepted."
+    },
+    {
+      "id": "ingredient-line-corpus",
+      "capabilities": [
+        "ingredient-parser"
+      ],
+      "fixture": "tests/amounts/ingredient-lines.json",
+      "expected": "valid",
+      "description": "Every difficult ingredient line satisfies its expected and prohibited inferences."
+    },
+    {
+      "id": "unit-conversion-corpus",
+      "capabilities": [
+        "unit-conversion"
+      ],
+      "fixture": "tests/units/conversions.json",
+      "expected": "valid",
+      "description": "Exact, affine, approximate, ranged, incompatible, nonphysical, and unknown-unit conversions match the registry."
+    },
+    {
+      "id": "unit-resolution-corpus",
+      "capabilities": [
+        "unit-resolution"
+      ],
+      "fixture": "tests/resolution/unit-resolution.json",
+      "expected": "valid",
+      "description": "Every resolution vector reaches its specified identity, unresolved outcome, or reported conflict from the decisions it supplies."
+    },
+    {
+      "id": "roundtrip-extension-preservation",
+      "capabilities": [
+        "json-reader",
+        "json-writer",
+        "round-trip"
+      ],
+      "fixture": "tests/roundtrip/extension-preservation.recipe.json",
+      "expected": "valid",
+      "description": "Unknown extensions and their opaque JSON payloads survive at their original object scopes."
+    },
+    {
+      "id": "roundtrip-structured-author-preservation",
+      "capabilities": [
+        "json-reader",
+        "json-writer",
+        "round-trip"
+      ],
+      "fixture": "tests/roundtrip/structured-author-preservation.recipe.json",
+      "expected": "valid",
+      "description": "Author order, omitted and explicit kinds, labels, URLs, and scoped extensions survive independently from source provenance."
+    },
+    {
+      "id": "roundtrip-source-identity-preservation",
+      "capabilities": [
+        "json-reader",
+        "json-writer",
+        "round-trip"
+      ],
+      "fixture": "tests/roundtrip/source-identity-preservation.recipe.json",
+      "expected": "valid",
+      "description": "Source identity, application-scoped identifier, attribution, and supplementary retrieval time survive a round trip."
+    },
+    {
+      "id": "source-retrieved-at-only",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/source-retrieved-at-only.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "source-identity-required",
+      "description": "A retrieval timestamp records an event but does not identify a source."
+    },
+    {
+      "id": "source-id-only",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/source-id-only.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "source-identity-required",
+      "description": "An unscoped source-system identifier does not identify a portable source."
+    },
+    {
+      "id": "source-id-without-application",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/source-id-without-application.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "source-application-required",
+      "description": "A source-system identifier names its application or format namespace."
+    },
+    {
+      "id": "roundtrip-temperature-purpose-preservation",
+      "capabilities": [
+        "json-reader",
+        "json-writer",
+        "round-trip"
+      ],
+      "fixture": "tests/roundtrip/temperature-purpose-preservation.recipe.json",
+      "expected": "valid",
+      "description": "Temperature-purpose order, known kinds, labels, absent purpose, and scoped extensions survive a read and write cycle."
+    },
+    {
+      "id": "roundtrip-opaque-temperature-preservation",
+      "capabilities": [
+        "json-reader",
+        "json-writer",
+        "round-trip"
+      ],
+      "fixture": "tests/roundtrip/opaque-temperature-preservation.recipe.json",
+      "expected": "valid",
+      "description": "Opaque temperature wording and its optional purpose survive a read and write cycle without numeric inference."
+    },
+    {
+      "id": "roundtrip-image-relationship-preservation",
+      "capabilities": [
+        "json-reader",
+        "json-writer",
+        "round-trip"
+      ],
+      "fixture": "tests/roundtrip/image-relationship-preservation.recipe.json",
+      "expected": "valid",
+      "description": "Recipe image order, a non-first primary image, shared step imagery, asset roles, and scoped extensions survive a round trip."
+    },
+    {
+      "id": "roundtrip-default-equivalence",
+      "capabilities": [
+        "json-reader",
+        "json-writer",
+        "round-trip"
+      ],
+      "fixture": "tests/roundtrip/default-equivalence.recipe.json",
+      "expected": "valid",
+      "description": "Omitted approximate and explicit false are semantically equivalent for amounts and normalized durations."
+    },
+    {
+      "id": "roundtrip-ingredient-use-preservation",
+      "capabilities": [
+        "json-reader",
+        "json-writer",
+        "round-trip"
+      ],
+      "fixture": "tests/roundtrip/ingredient-use-preservation.recipe.json",
+      "expected": "valid",
+      "description": "Ingredient-use order, optional quantities, quantity forms, and scoped extensions survive a read and write cycle."
+    },
+    {
+      "id": "roundtrip-recipe-variant-preservation",
+      "capabilities": [
+        "json-reader",
+        "json-writer",
+        "round-trip"
+      ],
+      "fixture": "tests/roundtrip/recipe-variant-preservation.recipe.json",
+      "expected": "valid",
+      "description": "Authored recipe variants survive a read and write cycle with their order, titles, and text, including an untitled variant and one that refers to another variant in prose."
+    },
+    {
+      "id": "variant-forward-compatible-members",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/valid/variant-forward-compatible-members.recipe.json",
+      "expected": "valid",
+      "description": "A variant in a document declaring a newer format version preserves an unknown future standard member and a well-formed scoped extension, without admitting the recipe members forbidden by section 6.7."
+    },
+    {
+      "id": "variant-nested",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/variant-nested.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "variant-nesting",
+      "description": "Variants do not nest or compose."
+    },
+    {
+      "id": "variant-embedded-recipe",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/variant-embedded-recipe.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "variant-restructures-recipe",
+      "description": "A variant preserves authored content and is not shorthand for an embedded recipe."
+    },
+    {
+      "id": "roundtrip-optional-ingredient-preservation",
+      "capabilities": [
+        "json-reader",
+        "json-writer",
+        "round-trip"
+      ],
+      "fixture": "tests/roundtrip/optional-ingredient-preservation.recipe.json",
+      "expected": "valid",
+      "description": "Authored ingredient optionality survives a read and write cycle, is scoped to the ingredient occurrence rather than the ingredient identity, and is kept distinct from unquantified, serving-purpose, and preference ingredients."
+    },
+    {
+      "id": "optional-ingredient-not-boolean",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/optional-ingredient-not-boolean.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "optional-must-be-boolean",
+      "description": "Ingredient optionality is a boolean assertion, not free text."
+    },
+    {
+      "id": "roundtrip-step-title-preservation",
+      "capabilities": [
+        "json-reader",
+        "json-writer",
+        "round-trip"
+      ],
+      "fixture": "tests/roundtrip/step-title-preservation.recipe.json",
+      "expected": "valid",
+      "description": "Authored step titles survive independently from section titles and authoritative instruction text."
+    },
+    {
+      "id": "step-title-without-text",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/step-title-without-text.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "step-text-required",
+      "description": "A step title labels but does not replace authoritative instruction text."
+    },
+    {
+      "id": "roundtrip-compound-quantity-alternative-preservation",
+      "capabilities": [
+        "json-reader",
+        "json-writer",
+        "round-trip"
+      ],
+      "fixture": "tests/roundtrip/compound-quantity-alternative-preservation.recipe.json",
+      "expected": "valid",
+      "description": "Simple and sum alternative options preserve their order and shallow structure through a round trip."
+    },
+    {
+      "id": "valid-authored-metadata",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/valid/authored-metadata.recipe.json",
+      "expected": "valid",
+      "description": "Distinct authored classifications and date- or timestamp-precision source chronology are valid."
+    },
+    {
+      "id": "roundtrip-authored-metadata-preservation",
+      "capabilities": [
+        "json-reader",
+        "json-writer",
+        "round-trip"
+      ],
+      "fixture": "tests/roundtrip/authored-metadata-preservation.recipe.json",
+      "expected": "valid",
+      "description": "Classification order and publication chronology precision survive a read and write cycle."
+    },
+    {
+      "id": "duplicate-authored-category",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/duplicate-authored-category.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "duplicate-authored-category",
+      "description": "An authored classification array does not repeat one exact label."
+    },
+    {
+      "id": "invalid-publication-chronology",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/invalid-publication-chronology.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "invalid-publication-chronology",
+      "description": "Publication chronology uses an RFC 3339 full date or date-time rather than localized prose."
+    },
+    {
+      "id": "invalid-publication-date",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/invalid-publication-date.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "invalid-publication-date",
+      "description": "A date-shaped publication value must also be a real calendar date."
+    },
+    {
+      "id": "legacy-string-author",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/string-author.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "legacy-string-author",
+      "description": "The unreleased string author form is replaced by one canonical object representation."
+    },
+    {
+      "id": "author-name-required",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/author-without-name.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "author-name-required",
+      "description": "Every author object has a credited name."
+    },
+    {
+      "id": "unknown-author-kind",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/unknown-author-kind.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "unknown-author-kind",
+      "description": "Author kinds use the intentionally small standardized vocabulary."
+    },
+    {
+      "id": "author-kind-label-requires-other",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/author-kind-label-without-other.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "author-kind-label-requires-other",
+      "description": "An authored kind label refines only the other author kind."
+    },
+    {
+      "id": "absolute-author-url-required",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/relative-author-url.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "absolute-author-url-required",
+      "description": "An author URL is absolute rather than relative to an importing location."
+    },
+    {
+      "id": "nested-quantity-alternative",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/nested-quantity-alternative.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "nested-quantity-alternative",
+      "description": "An alternative option cannot itself be another alternative."
+    },
+    {
+      "id": "alternative-inside-sum",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/alternative-inside-sum.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "alternative-inside-sum",
+      "description": "A sum inside an alternative still accepts only simple terms."
+    },
+    {
+      "id": "extension-name-depth",
+      "capabilities": [
+        "json-reader",
+        "json-writer",
+        "round-trip"
+      ],
+      "fixture": "tests/valid/extension-name-depth.recipe.json",
+      "expected": "valid",
+      "description": "An extension name carries two reversed-domain labels and one or more local labels, at any depth within the length limits, including in the reserved x-sref.spec namespace."
+    },
+    {
+      "id": "invalid-extension-name",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/invalid-extension-name.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "invalid-extension-name",
+      "description": "An extension name without a collision-resistant reverse-domain namespace is invalid."
+    },
+    {
+      "id": "extension-name-too-shallow",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/extension-name-too-shallow.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "invalid-extension-name",
+      "description": "Two labels name a domain and nothing within it, so the name identifies no particular extension."
+    },
+    {
+      "id": "extension-name-empty-label",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/extension-name-empty-label.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "invalid-extension-name",
+      "description": "Every label begins and ends with a letter or digit, so an empty label is invalid however many labels surround it."
+    },
+    {
+      "id": "extension-cannot-satisfy-core",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/extension-cannot-satisfy-core.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "extension-cannot-satisfy-core",
+      "description": "An extension resembling a required core member does not satisfy that requirement."
+    },
+    {
+      "id": "missing-format-version",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/missing-version.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "missing-format-version",
+      "description": "A recipe without the required format version is invalid."
+    },
+    {
+      "id": "decimal-normalized-rational",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/decimal-rational.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "noncanonical-rational-syntax",
+      "description": "A decimal string cannot be used as a normalized rational."
+    },
+    {
+      "id": "forward-compatible-preservation",
+      "capabilities": [
+        "json-reader",
+        "json-writer",
+        "round-trip"
+      ],
+      "fixture": "tests/roundtrip/forward-compatible-preservation.recipe.json",
+      "expected": "valid",
+      "description": "A newer compatible recipe with unknown standard members and a future registry ID remains readable and preserves opaque data at every scope."
+    },
+    {
+      "id": "forward-compatible-member-depths",
+      "capabilities": [
+        "json-reader",
+        "json-writer",
+        "round-trip"
+      ],
+      "fixture": "tests/roundtrip/forward-compatible-member-depths.recipe.json",
+      "expected": "valid",
+      "description": "A newer compatible recipe version with the current registry preserves unknown standard members at the document, section, ingredient, and step scopes."
+    },
+    {
+      "id": "forward-compatible-unit-shapes",
+      "capabilities": [
+        "json-reader",
+        "json-writer",
+        "round-trip"
+      ],
+      "fixture": "tests/roundtrip/forward-compatible-unit-shapes.recipe.json",
+      "expected": "valid",
+      "description": "The current recipe version with a newer compatible registry preserves unknown unit IDs in simple, range, sum, alternative, yield, package-size, and temperature positions."
+    },
+    {
+      "id": "incompatible-format-version",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/incompatible-format-version.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "unsupported-format-version",
+      "requirement_id": "unsupported-format-version",
+      "description": "A recipe from another format compatibility line is rejected explicitly."
+    },
+    {
+      "id": "incompatible-registry-version",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/incompatible-registry-version.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "unsupported-registry-version",
+      "requirement_id": "unsupported-registry-version",
+      "description": "A recipe naming a registry from another compatibility line is rejected explicitly."
+    },
+    {
+      "id": "unreduced-rational",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/unreduced-rational.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "unreduced-rational",
+      "description": "A normalized fraction must be reduced."
+    },
+    {
+      "id": "reversed-range",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/reversed-range.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "range-order",
+      "description": "A range minimum cannot exceed its maximum."
+    },
+    {
+      "id": "duplicate-ingredient-id",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/duplicate-ingredient-id.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "duplicate-ingredient-id",
+      "description": "Ingredient IDs must be unique across every ingredient section."
+    },
+    {
+      "id": "dangling-ingredient-reference",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/dangling-ingredient-ref.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "dangling-ingredient-reference",
+      "description": "Every step ingredient reference must resolve in the recipe."
+    },
+    {
+      "id": "ingredient-use-reference-required",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/missing-ingredient-use-ref.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "ingredient-use-reference-required",
+      "description": "Every step ingredient use identifies the ingredient it describes."
+    },
+    {
+      "id": "duplicate-step-ingredient-reference",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/duplicate-step-ingredient-ref.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "duplicate-step-ingredient-reference",
+      "description": "A step cannot contain multiple uses of the same ingredient."
+    },
+    {
+      "id": "temperature-ingredient-use",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/temperature-ingredient-use.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "temperature-ingredient-use",
+      "description": "A temperature unit cannot describe how much of an ingredient a step uses."
+    },
+    {
+      "id": "unknown-unit",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/unknown-unit.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "unknown-unit",
+      "requirement_id": "unknown-unit",
+      "description": "Every standard unit ID must exist in the selected registry."
+    },
+    {
+      "id": "duplicate-json-member",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/duplicate-json-key.recipe.json",
+      "expected": "invalid",
+      "validation": "json",
+      "error_category": "invalid-artifact",
+      "requirement_id": "duplicate-json-member",
+      "description": "A reader rejects an object that repeats a member name."
+    },
+    {
+      "id": "nonfinite-json-number",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/nonfinite-number.recipe.json",
+      "expected": "invalid",
+      "validation": "json",
+      "error_category": "invalid-artifact",
+      "requirement_id": "nonfinite-json-number",
+      "description": "A reader rejects nonfinite numeric tokens even inside an extension."
+    },
+    {
+      "id": "invalid-language-tag",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/invalid-language-tag.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "invalid-language-tag",
+      "description": "Recipe language and source locale values use well-formed BCP 47 tags."
+    },
+    {
+      "id": "duplicate-step-id",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/duplicate-step-id.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "duplicate-step-id",
+      "description": "Step IDs are unique across all instruction sections."
+    },
+    {
+      "id": "duplicate-section-id",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/duplicate-section-id.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "duplicate-section-id",
+      "description": "Ingredient section IDs are unique within a recipe."
+    },
+    {
+      "id": "duplicate-instruction-section-id",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/duplicate-instruction-section-id.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "duplicate-instruction-section-id",
+      "description": "Instruction section IDs are unique within a recipe."
+    },
+    {
+      "id": "noncanonical-denominator-one",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/noncanonical-denominator-one.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "noncanonical-denominator",
+      "description": "A whole number is serialized as an integer rather than with denominator one."
+    },
+    {
+      "id": "oversized-rational",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/oversized-rational.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "rational-out-of-range",
+      "description": "Normalized rational components fit in the unsigned 64-bit interoperability bound."
+    },
+    {
+      "id": "prohibited-control-character",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/control-character.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "prohibited-control-character",
+      "description": "Human-readable text excludes prohibited C0 control characters."
+    },
+    {
+      "id": "primary-image-media-type",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/bad-primary-image.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "primary-image-media-type",
+      "description": "The primary image resolves to an asset with an image media type."
+    },
+    {
+      "id": "dangling-recipe-image-ref",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/dangling-recipe-image-ref.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "dangling-recipe-image-reference",
+      "description": "Every recipe-level image reference resolves to an asset in the same recipe."
+    },
+    {
+      "id": "recipe-image-media-type",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/recipe-image-media-type.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "recipe-image-media-type",
+      "description": "A recipe-level image reference cannot resolve to a non-image asset."
+    },
+    {
+      "id": "duplicate-recipe-image-ref",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/duplicate-recipe-image-ref.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "duplicate-recipe-image-reference",
+      "description": "Recipe-level image references are unique while retaining authored order."
+    },
+    {
+      "id": "duplicate-asset-id",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/duplicate-asset-id.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "duplicate-asset-id",
+      "description": "Asset IDs are unique within a recipe."
+    },
+    {
+      "id": "duplicate-asset-path",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/duplicate-asset-path.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "duplicate-asset-path",
+      "description": "Asset paths are unique within a recipe."
+    },
+    {
+      "id": "unsafe-asset-path",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/unsafe-asset-path.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "unsafe-asset-path",
+      "description": "Asset paths cannot contain empty, current-directory, or parent-directory segments."
+    },
+    {
+      "id": "primary-image-not-in-image-refs",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/primary-image-not-in-image-refs.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "primary-image-not-in-image-refs",
+      "description": "The primary image is selected from the recipe-level image references."
+    },
+    {
+      "id": "legacy-primary-image-role",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/legacy-primary-image-role.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "legacy-primary-image-role",
+      "description": "Asset roles cannot duplicate the explicit primary-image relationship."
+    },
+    {
+      "id": "legacy-step-image-role",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/legacy-step-image-role.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "legacy-step-image-role",
+      "description": "Asset roles cannot duplicate explicit step-image relationships."
+    },
+    {
+      "id": "invalid-temperature-unit",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/invalid-temperature-unit.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "invalid-temperature-unit",
+      "description": "Ingredient and step temperature fields use registered temperature units."
+    },
+    {
+      "id": "opaque-temperature-conflict",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/opaque-temperature-conflict.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "opaque-temperature-conflict",
+      "description": "One temperature assertion cannot be both numeric and opaque."
+    },
+    {
+      "id": "negative-zero-temperature",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/negative-zero-temperature.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "negative-zero-temperature",
+      "description": "A signed temperature rational cannot use negative zero."
+    },
+    {
+      "id": "temperature-as-quantity",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/temperature-as-quantity.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "temperature-as-quantity",
+      "description": "A temperature unit appears only in a dedicated temperature field."
+    },
+    {
+      "id": "temperature-package-size",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/temperature-package-size.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "temperature-package-size",
+      "description": "A temperature unit cannot describe the size of an item or package."
+    },
+    {
+      "id": "temperature-yield",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/temperature-yield.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "temperature-yield",
+      "description": "A temperature unit cannot describe recipe yield."
+    },
+    {
+      "id": "temperature-purpose-kind-required",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/temperature-purpose-without-kind.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "temperature-purpose-kind-required",
+      "description": "A structured temperature purpose always names its standardized kind."
+    },
+    {
+      "id": "temperature-purpose-unknown-kind",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/temperature-purpose-unknown-kind.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "temperature-purpose-unknown-kind",
+      "description": "An unusual purpose uses labeled other rather than extending the stable kind vocabulary."
+    },
+    {
+      "id": "temperature-purpose-other-label-required",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/temperature-purpose-other-without-label.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "temperature-purpose-other-label-required",
+      "description": "The other temperature-purpose kind carries source terminology in a label."
+    },
+    {
+      "id": "nonphysical-package-size",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/nonphysical-package-size.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "nonphysical-package-size",
+      "description": "A package size is expressed in a physical unit."
+    },
+    {
+      "id": "normalization-source-required",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/normalization-missing-source.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "normalization-source-required",
+      "description": "Extracted, inferred, and unresolved normalization retains source text."
+    },
+    {
+      "id": "normalization-warning-required",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/normalization-missing-warning.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "normalization-warning-required",
+      "description": "Inferred and unresolved normalization explains the remaining uncertainty."
+    },
+    {
+      "id": "valid-package-with-asset",
+      "capabilities": [
+        "package-reader",
+        "package-writer"
+      ],
+      "fixture": "tests/packages/valid-with-asset.sref",
+      "expected": "valid",
+      "description": "A complete declared asset with digit-leading portable IDs and matching digest and size is valid."
+    },
+    {
+      "id": "package-missing-asset",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/missing-asset.sref",
+      "expected": "invalid",
+      "validation": "package",
+      "error_category": "integrity-failure",
+      "requirement_id": "missing-asset-entry",
+      "description": "A declared asset missing from the archive is invalid."
+    },
+    {
+      "id": "package-undeclared-file",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/undeclared-file.sref",
+      "expected": "invalid",
+      "validation": "package",
+      "error_category": "integrity-failure",
+      "requirement_id": "undeclared-archive-entry",
+      "description": "A regular archive file absent from the manifest is invalid."
+    },
+    {
+      "id": "package-asset-digest-mismatch",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/asset-digest-mismatch.sref",
+      "expected": "invalid",
+      "validation": "package",
+      "error_category": "integrity-failure",
+      "requirement_id": "asset-digest-mismatch",
+      "description": "Asset bytes must match the declared SHA-256 digest even when size is unchanged."
+    },
+    {
+      "id": "package-asset-size-mismatch",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/asset-size-mismatch.sref",
+      "expected": "invalid",
+      "validation": "package",
+      "error_category": "integrity-failure",
+      "requirement_id": "asset-size-mismatch",
+      "description": "Asset bytes must match the declared size."
+    },
+    {
+      "id": "package-recipe-digest-mismatch",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/recipe-digest-mismatch.sref",
+      "expected": "invalid",
+      "validation": "package",
+      "error_category": "integrity-failure",
+      "requirement_id": "recipe-digest-mismatch",
+      "description": "Recipe bytes must match the manifest digest and size."
+    },
+    {
+      "id": "package-manifest-disagreement",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/manifest-disagreement.sref",
+      "expected": "invalid",
+      "validation": "package",
+      "error_category": "integrity-failure",
+      "requirement_id": "recipe-manifest-disagreement",
+      "description": "Recipe and manifest asset declarations must agree exactly."
+    },
+    {
+      "id": "package-duplicate-manifest-asset",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/duplicate-manifest-asset.sref",
+      "expected": "invalid",
+      "validation": "package",
+      "error_category": "invalid-artifact",
+      "requirement_id": "duplicate-manifest-asset",
+      "description": "Manifest asset IDs and paths are each unique."
+    },
+    {
+      "id": "package-manifest-duplicate-version",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/manifest-duplicate-version.sref",
+      "expected": "invalid",
+      "validation": "json",
+      "error_category": "invalid-artifact",
+      "requirement_id": "duplicate-package-manifest-member",
+      "description": "A package manifest cannot repeat its version member."
+    },
+    {
+      "id": "package-manifest-duplicate-recipe-digest",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/manifest-duplicate-recipe-digest.sref",
+      "expected": "invalid",
+      "validation": "json",
+      "error_category": "invalid-artifact",
+      "requirement_id": "duplicate-package-manifest-member",
+      "description": "A package manifest cannot repeat an integrity-bearing recipe digest member."
+    },
+    {
+      "id": "package-manifest-trailing-value",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/manifest-trailing-value.sref",
+      "expected": "invalid",
+      "validation": "json",
+      "error_category": "invalid-artifact",
+      "requirement_id": "trailing-package-manifest-value",
+      "description": "A package manifest contains exactly one complete JSON value."
+    },
+    {
+      "id": "package-unsafe-traversal",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/unsafe-traversal.sref",
+      "expected": "invalid",
+      "validation": "package",
+      "error_category": "unsafe-archive",
+      "requirement_id": "unsafe-archive-path",
+      "description": "Archive entries cannot escape the package root with parent segments."
+    },
+    {
+      "id": "package-backslash-path",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/backslash-path.sref",
+      "expected": "invalid",
+      "validation": "package",
+      "error_category": "unsafe-archive",
+      "requirement_id": "backslash-archive-path",
+      "description": "Archive entry names use forward slashes only."
+    },
+    {
+      "id": "package-absolute-path",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/absolute-path.sref",
+      "expected": "invalid",
+      "validation": "package",
+      "error_category": "unsafe-archive",
+      "requirement_id": "absolute-archive-path",
+      "description": "Archive entry names are relative to the package root."
+    },
+    {
+      "id": "package-drive-letter-path",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/drive-letter-path.sref",
+      "expected": "invalid",
+      "validation": "package",
+      "error_category": "unsafe-archive",
+      "requirement_id": "drive-letter-archive-path",
+      "description": "Archive entry names cannot use a platform drive-letter prefix."
+    },
+    {
+      "id": "package-control-character-path",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/control-character-path.sref",
+      "expected": "invalid",
+      "validation": "package",
+      "error_category": "unsafe-archive",
+      "requirement_id": "control-character-archive-path",
+      "description": "Archive entry names cannot contain control characters."
+    },
+    {
+      "id": "package-empty-path-segment",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/empty-path-segment.sref",
+      "expected": "invalid",
+      "validation": "package",
+      "error_category": "unsafe-archive",
+      "requirement_id": "empty-archive-path-segment",
+      "description": "Archive entry names cannot contain empty path segments."
+    },
+    {
+      "id": "package-duplicate-entry",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/duplicate-entry.sref",
+      "expected": "invalid",
+      "validation": "package",
+      "error_category": "unsafe-archive",
+      "requirement_id": "duplicate-archive-entry",
+      "description": "A package cannot repeat an archive entry name."
+    },
+    {
+      "id": "package-symlink-entry",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/symlink-entry.sref",
+      "expected": "invalid",
+      "validation": "package",
+      "error_category": "unsafe-archive",
+      "requirement_id": "nonregular-archive-entry",
+      "description": "A package cannot contain symbolic links or other non-regular members."
+    },
+    {
+      "id": "package-missing-manifest",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/missing-manifest.sref",
+      "expected": "invalid",
+      "validation": "package",
+      "error_category": "invalid-artifact",
+      "requirement_id": "missing-manifest",
+      "description": "A package contains exactly one root manifest.json."
+    },
+    {
+      "id": "package-missing-recipe",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/missing-recipe.sref",
+      "expected": "invalid",
+      "validation": "package",
+      "error_category": "invalid-artifact",
+      "requirement_id": "missing-recipe",
+      "description": "A package contains exactly one root recipe.json."
+    },
+    {
+      "id": "package-malformed-recipe-json",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/malformed-recipe-json.sref",
+      "expected": "invalid",
+      "validation": "package",
+      "error_category": "invalid-artifact",
+      "requirement_id": "malformed-package-json",
+      "description": "The required recipe entry contains valid UTF-8 JSON."
+    },
+    {
+      "id": "package-excessive-compression-ratio",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/excessive-compression-ratio.sref",
+      "expected": "invalid",
+      "validation": "package",
+      "error_category": "resource-limit",
+      "requirement_id": "compression-ratio-limit",
+      "description": "A package reader enforces a finite compression-ratio limit before extraction."
+    },
+    {
+      "id": "package-invalid-zip",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/not-a-zip.sref",
+      "expected": "invalid",
+      "validation": "package",
+      "error_category": "invalid-artifact",
+      "requirement_id": "invalid-zip",
+      "description": "Malformed archive bytes are rejected without extraction."
+    },
+    {
+      "id": "timing-assertions",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/valid/timing-assertions.recipe.json",
+      "expected": "valid",
+      "description": "Exact, approximate, ranged, and opaque duration expressions coexist with canonical timing identities, shared references, and independent summaries."
+    },
+    {
+      "id": "microwave-conditions",
+      "capabilities": ["json-reader", "json-writer"],
+      "fixture": "tests/valid/microwave-conditions.recipe.json",
+      "expected": "valid",
+      "description": "Rated output, selected watts, explicit percentages, opaque levels, and nonheating intervals remain distinct."
+    },
+    {
+      "id": "microwave-alternatives-preservation",
+      "capabilities": ["json-reader", "json-writer", "round-trip"],
+      "fixture": "tests/roundtrip/microwave-alternatives-preservation.recipe.json",
+      "expected": "valid",
+      "description": "One opaque authored schedule and its ordered power/time choices, restrictions, source wording, and unknown scoped data survive a round trip."
+    },
+    {
+      "id": "microwave-power-conflict",
+      "capabilities": ["json-reader"],
+      "fixture": "tests/invalid/microwave-power-conflict.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "microwave-power-conflict",
+      "description": "Selected watts, percentage, and opaque wording are exclusive representations of one power setting."
+    },
+    {
+      "id": "microwave-percent-out-of-range",
+      "capabilities": ["json-reader"],
+      "fixture": "tests/invalid/microwave-percent-out-of-range.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "microwave-percent-out-of-range",
+      "description": "An explicit operating percentage is greater than zero and at most 100."
+    },
+    {
+      "id": "microwave-choice-normalized-duration",
+      "capabilities": ["json-reader"],
+      "fixture": "tests/invalid/microwave-choice-normalized-duration.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "microwave-choice-duration-must-be-opaque",
+      "description": "An authored alternative schedule retains its complete opaque duration rather than becoming a range."
+    },
+    {
+      "id": "microwave-choice-shared-power",
+      "capabilities": ["json-reader"],
+      "fixture": "tests/invalid/microwave-choice-shared-power.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "microwave-choice-shared-power-conflict",
+      "description": "A choice schedule does not also claim one shared power condition."
+    },
+    {
+      "id": "microwave-choice-duplicate-conditions",
+      "capabilities": ["json-reader"],
+      "fixture": "tests/invalid/microwave-choice-duplicate-conditions.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "microwave-choice-duplicate-conditions",
+      "description": "Power/time choices have distinct source conditions."
+    },
+    {
+      "id": "translation-relationships",
+      "capabilities": ["json-reader", "json-writer"],
+      "fixture": "tests/valid/translation-relationships.recipe.json",
+      "expected": "valid",
+      "description": "A translation names its original by title, a later translation by bundle-local recipe ID, and an alternate by URL."
+    },
+    {
+      "id": "translation-preservation",
+      "capabilities": ["json-reader", "json-writer", "round-trip"],
+      "fixture": "tests/roundtrip/translation-preservation.recipe.json",
+      "expected": "valid",
+      "description": "Relationship order, relations, languages, titles, recipe IDs, URLs, and a scoped extension survive a round trip."
+    },
+    {
+      "id": "translation-without-counterpart",
+      "capabilities": ["json-reader"],
+      "fixture": "tests/invalid/translation-without-counterpart.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "translation-counterpart-required",
+      "description": "A relationship identifies its counterpart by title, recipe ID, or URL."
+    },
+    {
+      "id": "translation-unknown-relation",
+      "capabilities": ["json-reader"],
+      "fixture": "tests/invalid/translation-unknown-relation.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "translation-unknown-relation",
+      "description": "A relationship is original, translation, or alternate."
+    },
+    {
+      "id": "translation-invalid-language",
+      "capabilities": ["json-reader"],
+      "fixture": "tests/invalid/translation-invalid-language.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "translation-invalid-language",
+      "description": "A counterpart's language is a well-formed BCP 47 tag."
+    },
+    {
+      "id": "translation-two-originals",
+      "capabilities": ["json-reader"],
+      "fixture": "tests/invalid/translation-two-originals.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "translation-single-original",
+      "description": "A recipe declares at most one original."
+    },
+    {
+      "id": "translation-without-document-language",
+      "capabilities": ["json-reader"],
+      "fixture": "tests/invalid/translation-without-document-language.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "translation-requires-document-language",
+      "description": "A recipe that declares translations states its own language."
+    },
+    {
+      "id": "translation-self-reference",
+      "capabilities": ["json-reader"],
+      "fixture": "tests/invalid/translation-self-reference.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "translation-self-reference",
+      "description": "A relationship does not name the recipe's own ID as its counterpart."
+    },
+    {
+      "id": "timing-other-without-label",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/timing-other-without-label.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "timing-other-without-label",
+      "description": "A timing classified as other requires authored presentation text."
+    },
+    {
+      "id": "timing-unknown-kind",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/timing-unknown-kind.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "timing-unknown-kind",
+      "description": "A newer compatible release cannot add a timing kind outside the compatibility line's frozen closed set."
+    },
+    {
+      "id": "timing-id-required",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/timing-without-id.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "timing-id-required",
+      "description": "Every canonical timing assertion has recipe-local identity."
+    },
+    {
+      "id": "timing-without-duration",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/timing-without-duration.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "timing-without-duration",
+      "description": "A timing assertion without a duration expression says nothing and is invalid."
+    },
+    {
+      "id": "timing-duration-conflict",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/timing-duration-conflict.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "timing-duration-conflict",
+      "description": "One duration expression cannot be both normalized and opaque."
+    },
+    {
+      "id": "timing-invalid-attention",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/timing-invalid-attention.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "timing-invalid-attention",
+      "description": "Authored timing attention is active, passive, or unstated."
+    },
+    {
+      "id": "duplicate-step-timing-reference",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/duplicate-step-timing-ref.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "duplicate-step-timing-reference",
+      "description": "A step refers to one timing assertion at most once."
+    },
+    {
+      "id": "timing-summary-expression-required",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/timing-summary-scalar.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "timing-summary-expression-required",
+      "description": "A recipe timing summary uses a duration expression rather than a scalar duration string."
+    },
+    {
+      "id": "duplicate-timing-id",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/duplicate-timing-id.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "duplicate-timing-id",
+      "description": "Timing assertion identities are unique within a recipe clock."
+    },
+    {
+      "id": "roundtrip-timing-assertion-preservation",
+      "capabilities": [
+        "json-reader",
+        "json-writer",
+        "round-trip"
+      ],
+      "fixture": "tests/roundtrip/timing-assertion-preservation.recipe.json",
+      "expected": "valid",
+      "description": "Timing order, duration expressions, labels, step references, attention semantics, source text, and scoped extensions survive a read and write cycle."
+    },
+    {
+      "id": "dangling-step-timing-ref",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/dangling-step-timing-ref.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "dangling-step-timing-reference",
+      "description": "A step cannot refer to a timing assertion the recipe does not contain."
+    },
+    {
+      "id": "step-image-dangling-ref",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/step-image-dangling-ref.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "dangling-step-image-reference",
+      "description": "A step image reference resolves to an image asset in the same recipe."
+    },
+    {
+      "id": "step-image-media-type",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/step-image-media-type.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "step-image-media-type",
+      "description": "A step image reference cannot resolve to a non-image asset."
+    },
+    {
+      "id": "duplicate-step-image-ref",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/duplicate-step-image-ref.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "duplicate-step-image-reference",
+      "description": "Step image references are unique while retaining authored order."
+    },
+    {
+      "id": "bundle-valid",
+      "capabilities": [
+        "bundle-reader",
+        "bundle-writer"
+      ],
+      "fixture": "tests/bundles/valid.srefbundle",
+      "expected": "valid",
+      "description": "An ordered bundle with a digit-leading member ID whose members are each complete, independently valid packages."
+    },
+    {
+      "id": "bundle-manifest-duplicate-format",
+      "capabilities": [
+        "bundle-reader"
+      ],
+      "fixture": "tests/bundles/manifest-duplicate-format.srefbundle",
+      "expected": "invalid",
+      "validation": "json",
+      "error_category": "invalid-artifact",
+      "requirement_id": "duplicate-bundle-manifest-member",
+      "description": "A bundle manifest cannot repeat its format member."
+    },
+    {
+      "id": "bundle-manifest-duplicate-member-id",
+      "capabilities": [
+        "bundle-reader"
+      ],
+      "fixture": "tests/bundles/manifest-duplicate-member-id.srefbundle",
+      "expected": "invalid",
+      "validation": "json",
+      "error_category": "invalid-artifact",
+      "requirement_id": "duplicate-bundle-manifest-member",
+      "description": "A bundle manifest cannot repeat an identity-bearing member ID at any nesting depth."
+    },
+    {
+      "id": "bundle-manifest-trailing-value",
+      "capabilities": [
+        "bundle-reader"
+      ],
+      "fixture": "tests/bundles/manifest-trailing-value.srefbundle",
+      "expected": "invalid",
+      "validation": "json",
+      "error_category": "invalid-artifact",
+      "requirement_id": "trailing-bundle-manifest-value",
+      "description": "A bundle manifest contains exactly one complete JSON value."
+    },
+    {
+      "id": "bundle-missing-member",
+      "capabilities": [
+        "bundle-reader"
+      ],
+      "fixture": "tests/bundles/missing-member.srefbundle",
+      "expected": "invalid",
+      "validation": "bundle",
+      "error_category": "integrity-failure",
+      "requirement_id": "missing-bundle-member",
+      "description": "A declared member the archive does not carry."
+    },
+    {
+      "id": "bundle-undeclared-member",
+      "capabilities": [
+        "bundle-reader"
+      ],
+      "fixture": "tests/bundles/undeclared-member.srefbundle",
+      "expected": "invalid",
+      "validation": "bundle",
+      "error_category": "integrity-failure",
+      "requirement_id": "undeclared-bundle-entry",
+      "description": "A package below recipes/ that the manifest does not declare."
+    },
+    {
+      "id": "bundle-undeclared-root-entry",
+      "capabilities": [
+        "bundle-reader"
+      ],
+      "fixture": "tests/bundles/undeclared-root-entry.srefbundle",
+      "expected": "invalid",
+      "validation": "bundle",
+      "error_category": "unsafe-archive",
+      "requirement_id": "bundle-entry-outside-recipes",
+      "description": "A root file other than the manifest."
+    },
+    {
+      "id": "bundle-member-digest-mismatch",
+      "capabilities": [
+        "bundle-reader"
+      ],
+      "fixture": "tests/bundles/member-digest-mismatch.srefbundle",
+      "expected": "invalid",
+      "validation": "bundle",
+      "error_category": "integrity-failure",
+      "requirement_id": "bundle-member-digest-mismatch",
+      "description": "A member of the declared size whose bytes were altered."
+    },
+    {
+      "id": "bundle-member-size-mismatch",
+      "capabilities": [
+        "bundle-reader"
+      ],
+      "fixture": "tests/bundles/member-size-mismatch.srefbundle",
+      "expected": "invalid",
+      "validation": "bundle",
+      "error_category": "integrity-failure",
+      "requirement_id": "bundle-member-size-mismatch",
+      "description": "A member longer than the manifest declares."
+    },
+    {
+      "id": "bundle-duplicate-recipe-id",
+      "capabilities": [
+        "bundle-reader",
+        "bundle-writer"
+      ],
+      "fixture": "tests/bundles/duplicate-recipe-id.srefbundle",
+      "expected": "valid",
+      "description": "Two independently valid packages with the same recipe-local ID and distinct bundle member IDs."
+    },
+    {
+      "id": "bundle-member-id-required",
+      "capabilities": [
+        "bundle-reader"
+      ],
+      "fixture": "tests/bundles/missing-member-id.srefbundle",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "bundle-member-id-required",
+      "description": "A bundle recipe entry without its required bundle-local member identity."
+    },
+    {
+      "id": "bundle-duplicate-member-id",
+      "capabilities": [
+        "bundle-reader"
+      ],
+      "fixture": "tests/bundles/duplicate-member-id.srefbundle",
+      "expected": "invalid",
+      "validation": "bundle",
+      "error_category": "invalid-artifact",
+      "requirement_id": "duplicate-bundle-member-id",
+      "description": "One bundle-local member ID declared twice."
+    },
+    {
+      "id": "bundle-member-path-mismatch",
+      "capabilities": [
+        "bundle-reader"
+      ],
+      "fixture": "tests/bundles/member-path-mismatch.srefbundle",
+      "expected": "invalid",
+      "validation": "bundle",
+      "error_category": "invalid-artifact",
+      "requirement_id": "bundle-member-path-mismatch",
+      "description": "A member named by application convention rather than by its recipe ID."
+    },
+    {
+      "id": "bundle-recipe-id-disagreement",
+      "capabilities": [
+        "bundle-reader"
+      ],
+      "fixture": "tests/bundles/recipe-id-disagreement.srefbundle",
+      "expected": "invalid",
+      "validation": "bundle",
+      "error_category": "integrity-failure",
+      "requirement_id": "bundle-recipe-id-disagreement",
+      "description": "A verified member carrying a different recipe than the manifest claims."
+    },
+    {
+      "id": "bundle-invalid-member-package",
+      "capabilities": [
+        "bundle-reader"
+      ],
+      "fixture": "tests/bundles/invalid-member-package.srefbundle",
+      "expected": "invalid",
+      "validation": "bundle",
+      "error_category": "integrity-failure",
+      "requirement_id": "invalid-bundle-member-package",
+      "description": "A member whose digest verifies and whose package is incomplete."
+    },
+    {
+      "id": "bundle-empty",
+      "capabilities": [
+        "bundle-reader"
+      ],
+      "fixture": "tests/bundles/empty-bundle.srefbundle",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "empty-bundle",
+      "description": "A bundle declaring no recipes."
+    },
+    {
+      "id": "bundle-manifest-timestamp",
+      "capabilities": [
+        "bundle-reader"
+      ],
+      "fixture": "tests/bundles/bundle-manifest-timestamp.srefbundle",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "bundle-manifest-timestamp",
+      "description": "A generation timestamp is prohibited because it introduces container variation unrelated to recipe content."
+    },
+    {
+      "id": "bundle-missing-manifest",
+      "capabilities": [
+        "bundle-reader"
+      ],
+      "fixture": "tests/bundles/missing-bundle-manifest.srefbundle",
+      "expected": "invalid",
+      "validation": "bundle",
+      "error_category": "invalid-artifact",
+      "requirement_id": "missing-bundle-manifest",
+      "description": "A bundle with members and no manifest."
+    },
+    {
+      "id": "bundle-unsafe-member-path",
+      "capabilities": [
+        "bundle-reader"
+      ],
+      "fixture": "tests/bundles/unsafe-member-path.srefbundle",
+      "expected": "invalid",
+      "validation": "bundle",
+      "error_category": "unsafe-archive",
+      "requirement_id": "unsafe-bundle-member-path",
+      "description": "A member path that escapes the archive root."
+    },
+    {
+      "id": "bundle-not-a-zip",
+      "capabilities": [
+        "bundle-reader"
+      ],
+      "fixture": "tests/bundles/not-a-zip.srefbundle",
+      "expected": "invalid",
+      "validation": "bundle",
+      "error_category": "invalid-artifact",
+      "requirement_id": "invalid-zip-bundle",
+      "description": "A file with the bundle suffix that is not an archive."
+    },
+    {
+      "id": "package-valid-no-assets",
+      "capabilities": [
+        "package-reader",
+        "package-writer"
+      ],
+      "fixture": "tests/packages/valid-no-assets.sref",
+      "expected": "valid",
+      "description": "A package for a recipe with no assets, whose manifest still declares an empty `assets` array."
+    },
+    {
+      "id": "package-manifest-missing-assets",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/manifest-missing-assets.sref",
+      "expected": "invalid",
+      "validation": "package",
+      "error_category": "invalid-artifact",
+      "requirement_id": "malformed-package-json",
+      "description": "`assets` is required even when the recipe declares none."
+    },
+    {
+      "id": "package-manifest-missing-package-header",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/manifest-missing-package-header.sref",
+      "expected": "invalid",
+      "validation": "package",
+      "error_category": "invalid-artifact",
+      "requirement_id": "malformed-package-json",
+      "description": "A manifest states the package version it was written to."
+    },
+    {
+      "id": "package-manifest-unsupported-package-version",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/manifest-unsupported-package-version.sref",
+      "expected": "invalid",
+      "validation": "package",
+      "error_category": "unsupported-format-version",
+      "requirement_id": "unsupported-package-version",
+      "description": "The package version is a constant, not a range."
+    },
+    {
+      "id": "package-manifest-wrong-recipe-path",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/manifest-wrong-recipe-path.sref",
+      "expected": "invalid",
+      "validation": "package",
+      "error_category": "invalid-artifact",
+      "requirement_id": "malformed-package-json",
+      "description": "The recipe entry names `recipe.json` and nothing else."
+    },
+    {
+      "id": "package-manifest-wrong-recipe-media-type",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/manifest-wrong-recipe-media-type.sref",
+      "expected": "invalid",
+      "validation": "package",
+      "error_category": "invalid-artifact",
+      "requirement_id": "malformed-package-json",
+      "description": "The recipe entry declares `application/json` and nothing else."
+    },
+    {
+      "id": "package-manifest-extra-member",
+      "capabilities": [
+        "package-reader"
+      ],
+      "fixture": "tests/packages/manifest-extra-member.sref",
+      "expected": "invalid",
+      "validation": "package",
+      "error_category": "invalid-artifact",
+      "requirement_id": "malformed-package-json",
+      "description": "The manifest's member set is closed, so a writer cannot add one to it."
+    },
+    {
+      "id": "bundle-manifest-wrong-format",
+      "capabilities": [
+        "bundle-reader"
+      ],
+      "fixture": "tests/bundles/manifest-wrong-format.srefbundle",
+      "expected": "invalid",
+      "validation": "bundle",
+      "error_category": "invalid-artifact",
+      "requirement_id": "malformed-package-json",
+      "description": "`format` is a constant, so another value is another format."
+    },
+    {
+      "id": "bundle-manifest-missing-format",
+      "capabilities": [
+        "bundle-reader"
+      ],
+      "fixture": "tests/bundles/manifest-missing-format.srefbundle",
+      "expected": "invalid",
+      "validation": "bundle",
+      "error_category": "invalid-artifact",
+      "requirement_id": "malformed-package-json",
+      "description": "A bundle manifest says what it is before anything reads it."
+    },
+    {
+      "id": "bundle-manifest-wrong-version",
+      "capabilities": [
+        "bundle-reader"
+      ],
+      "fixture": "tests/bundles/manifest-wrong-version.srefbundle",
+      "expected": "invalid",
+      "validation": "bundle",
+      "error_category": "unsupported-format-version",
+      "requirement_id": "unsupported-bundle-version",
+      "description": "The bundle manifest version is a constant, and a later one is not this one."
+    },
+    {
+      "id": "bundle-manifest-extra-member",
+      "capabilities": [
+        "bundle-reader"
+      ],
+      "fixture": "tests/bundles/manifest-extra-member.srefbundle",
+      "expected": "invalid",
+      "validation": "bundle",
+      "error_category": "invalid-artifact",
+      "requirement_id": "malformed-package-json",
+      "description": "The bundle manifest's member set is closed."
+    },
+    {
+      "id": "package-unknown-unit",
+      "capabilities": [
+        "package-reader",
+        "package-writer"
+      ],
+      "fixture": "tests/packages/unknown-unit.sref",
+      "expected": "invalid",
+      "validation": "package",
+      "error_category": "unknown-unit",
+      "requirement_id": "unknown-unit",
+      "description": "A package's recipe names a unit absent from the registry it declares, which a reader refuses to load and a writer refuses to produce."
+    },
+    {
+      "id": "bundle-member-unknown-unit",
+      "capabilities": [
+        "bundle-reader"
+      ],
+      "fixture": "tests/bundles/unknown-unit-member.srefbundle",
+      "expected": "invalid",
+      "validation": "bundle",
+      "error_category": "unknown-unit",
+      "requirement_id": "invalid-bundle-member-package",
+      "description": "A bundle member's recipe names a unit absent from the registry it declares, which makes the member an invalid package and a reader refuses the bundle."
+    },
+    {
+      "id": "bundle-writer-member-unknown-unit",
+      "capabilities": [
+        "bundle-writer"
+      ],
+      "fixture": "tests/bundles/unknown-unit-writer.srefbundle",
+      "expected": "invalid",
+      "validation": "bundle",
+      "error_category": "unknown-unit",
+      "requirement_id": "unknown-unit",
+      "description": "A bundle writer refuses to produce a member whose recipe names a unit absent from the registry it declares. This fixture is byte-equivalent to the reader case but separately indexed so each processor boundary has its own requirement ID."
+    },
+    {
+      "id": "package-valid-media-types",
+      "capabilities": [
+        "package-reader",
+        "package-writer"
+      ],
+      "fixture": "tests/packages/valid-media-types.sref",
+      "expected": "valid",
+      "description": "A package carrying text, SVG and binary assets, so an asset a reader cannot treat as text survives the round trip."
+    },
+    {
+      "id": "package-valid-extensions",
+      "capabilities": [
+        "package-reader",
+        "package-writer"
+      ],
+      "fixture": "tests/packages/valid-extensions.sref",
+      "expected": "valid",
+      "description": "A package whose recipe carries extension members, which a writer must return unchanged without understanding them."
+    },
+    {
+      "id": "package-valid-forward-members",
+      "capabilities": [
+        "package-reader",
+        "package-writer"
+      ],
+      "fixture": "tests/packages/valid-forward-members.sref",
+      "expected": "valid",
+      "description": "A package whose recipe declares a newer format version and carries unknown standard members at several depths, all of which must survive the container."
+    },
+    {
+      "id": "package-valid-forward-units",
+      "capabilities": [
+        "package-reader",
+        "package-writer"
+      ],
+      "fixture": "tests/packages/valid-forward-units.sref",
+      "expected": "valid",
+      "description": "A package whose recipe declares a newer unit registry and uses unknown registry IDs across the quantity shapes, which must be preserved rather than resolved."
+    },
+    {
+      "id": "bundle-valid-three-members",
+      "capabilities": [
+        "bundle-reader",
+        "bundle-writer"
+      ],
+      "fixture": "tests/bundles/valid-three-members.srefbundle",
+      "expected": "valid",
+      "description": "A bundle of three members - one with assets, one minimal, one carrying extensions - so member order is more than a swap and mixed members share one bundle."
+    },
+    {
+      "id": "bundle-linked-translations",
+      "capabilities": [
+        "bundle-reader",
+        "bundle-writer"
+      ],
+      "fixture": "tests/bundles/valid-linked-translations.srefbundle",
+      "expected": "valid",
+      "description": "Two members declare each other as language alternates by recipe ID; each remains a complete package on its own."
+    },
+    {
+      "id": "translation-counterpart",
+      "capabilities": ["json-reader", "json-writer"],
+      "fixture": "tests/valid/translation-counterpart.recipe.json",
+      "expected": "valid",
+      "description": "A rendition with a different step structure from its counterpart names it by recipe ID."
+    },
+    {
+      "id": "member-not-defined-root",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/member-not-defined-root.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "member-not-defined-by-version",
+      "description": "A document declaring 0.1.0 carries an unprefixed root member 0.1.0 does not define, which a reader refuses and a writer refuses to produce."
+    },
+    {
+      "id": "member-not-defined-ingredient",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/member-not-defined-ingredient.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "member-not-defined-by-version",
+      "description": "The same rule inside an ingredient, so the vocabulary is scoped by version at every object depth rather than only at the root."
+    },
+    {
+      "id": "member-not-defined-step",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/member-not-defined-step.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "member-not-defined-by-version",
+      "description": "The same rule inside a step."
+    },
+    {
+      "id": "member-not-defined-newer-registry-only",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/member-not-defined-newer-registry-only.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "member-not-defined-by-version",
+      "description": "A newer unit registry does not widen the recipe member vocabulary: the registry and recipe compatibility lines are independent."
+    },
+    {
+      "id": "unknown-unit-newer-recipe-only",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/unknown-unit-newer-recipe-only.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "unknown-unit",
+      "requirement_id": "unknown-unit",
+      "description": "The converse: a newer recipe version does not admit an unknown registry ID, which stays an unknown unit."
+    },
+    {
+      "id": "minimum-ingredients-only",
+      "capabilities": [
+        "json-reader",
+        "json-writer",
+        "round-trip"
+      ],
+      "fixture": "tests/valid/minimum-ingredients-only.recipe.json",
+      "expected": "valid",
+      "description": "Recipe minimum: ingredients-only."
+    },
+    {
+      "id": "minimum-instructions-only",
+      "capabilities": [
+        "json-reader",
+        "json-writer",
+        "round-trip"
+      ],
+      "fixture": "tests/valid/minimum-instructions-only.recipe.json",
+      "expected": "valid",
+      "description": "Recipe minimum: instructions-only."
+    },
+    {
+      "id": "minimum-neither-collection",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/minimum-neither-collection.recipe.json",
+      "expected": "invalid",
+      "description": "Recipe minimum: neither-collection.",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "recipe-content-required"
+    },
+    {
+      "id": "minimum-empty-ingredient-collection",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/minimum-empty-ingredient-collection.recipe.json",
+      "expected": "invalid",
+      "description": "Recipe minimum: empty-ingredient-collection.",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "recipe-collection-nonempty"
+    },
+    {
+      "id": "minimum-empty-instruction-collection",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/minimum-empty-instruction-collection.recipe.json",
+      "expected": "invalid",
+      "description": "Recipe minimum: empty-instruction-collection.",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "recipe-collection-nonempty"
+    },
+    {
+      "id": "minimum-null-ingredient-collection",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/minimum-null-ingredient-collection.recipe.json",
+      "expected": "invalid",
+      "description": "Recipe minimum: null-ingredient-collection.",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "recipe-collection-nonempty"
+    },
+    {
+      "id": "minimum-null-instruction-collection",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/minimum-null-instruction-collection.recipe.json",
+      "expected": "invalid",
+      "description": "Recipe minimum: null-instruction-collection.",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "recipe-collection-nonempty"
+    },
+    {
+      "id": "package-minimum-ingredients-only",
+      "capabilities": [
+        "package-reader",
+        "package-writer"
+      ],
+      "fixture": "tests/packages/minimum-ingredients-only.sref",
+      "expected": "valid",
+      "description": "A package preserves a recipe with one authored collection."
+    },
+    {
+      "id": "package-minimum-instructions-only",
+      "capabilities": [
+        "package-reader",
+        "package-writer"
+      ],
+      "fixture": "tests/packages/minimum-instructions-only.sref",
+      "expected": "valid",
+      "description": "A package preserves a recipe with one authored collection."
+    },
+    {
+      "id": "bundle-minimum-collections",
+      "capabilities": [
+        "bundle-reader",
+        "bundle-writer"
+      ],
+      "fixture": "tests/bundles/minimum-collections.srefbundle",
+      "expected": "valid",
+      "description": "A bundle preserves ingredients-only and instructions-only recipes."
+    },
+    {
+      "id": "authored-ingredient-choices",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/valid/authored-ingredient-choices.recipe.json",
+      "expected": "valid",
+      "description": "Complete shallow branches preserve identity, different quantities, scoped notes and optionality, authored relationships, and step uses."
+    },
+    {
+      "id": "roundtrip-ingredient-choices",
+      "capabilities": [
+        "json-reader",
+        "json-writer",
+        "round-trip"
+      ],
+      "fixture": "tests/roundtrip/ingredient-choices.recipe.json",
+      "expected": "valid",
+      "description": "Choice relationships, branch IDs and extensions remain scoped during round trips."
+    },
+    {
+      "id": "choice-single-branch",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/choice-single-branch.recipe.json",
+      "expected": "invalid",
+      "description": "A choice requires at least two branches.",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "schema-violation"
+    },
+    {
+      "id": "choice-nested",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/choice-nested.recipe.json",
+      "expected": "invalid",
+      "description": "A choice branch cannot be another choice.",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "schema-violation"
+    },
+    {
+      "id": "choice-shared-quantity",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/choice-shared-quantity.recipe.json",
+      "expected": "invalid",
+      "description": "Quantities belong to complete branches, never the choice.",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "schema-violation"
+    },
+    {
+      "id": "choice-unknown-relation",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/choice-unknown-relation.recipe.json",
+      "expected": "invalid",
+      "description": "Authored relationships do not define Boolean logic.",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "schema-violation"
+    },
+    {
+      "id": "choice-missing-relation",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/choice-missing-relation.recipe.json",
+      "expected": "invalid",
+      "description": "A choice declares its authored relationship.",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "schema-violation"
+    },
+    {
+      "id": "choice-branch-without-name",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/choice-branch-without-name.recipe.json",
+      "expected": "invalid",
+      "description": "Every complete branch has an authored name.",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "schema-violation"
+    },
+    {
+      "id": "choice-duplicate-id",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/choice-duplicate-id.recipe.json",
+      "expected": "invalid",
+      "description": "Choice and branch IDs share the ingredient namespace.",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "duplicate-ingredient-id"
+    },
+    {
+      "id": "choice-use-quantity",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/invalid/choice-use-quantity.recipe.json",
+      "expected": "invalid",
+      "description": "Whole-choice references cannot assign an ambiguous amount.",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "choice-use-quantity"
+    },
+    {
+      "id": "example-authored-ingredient-choices",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "examples/authored-ingredient-choices.recipe.json",
+      "expected": "valid",
+      "description": "A complete authored-choice example."
+    },
+    {
+      "id": "yields-independent-assertions",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/valid/yields-independent-assertions.recipe.json",
+      "expected": "valid",
+      "description": "Four independently authored yields, one approximate, one ranged, and one opaque, need not convert into one another."
+    },
+    {
+      "id": "nutrition-bases",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/valid/nutrition-bases.recipe.json",
+      "expected": "valid",
+      "description": "Per-serving, per-100 g, whole-recipe, and unspecified nutrition statements keep authored zero, approximation, ranges, opaque values, and a unitless value."
+    },
+    {
+      "id": "dietary-and-allergen-declarations",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/valid/dietary-and-allergen-declarations.recipe.json",
+      "expected": "valid",
+      "description": "Separate dietary claims and allergen declarations keep presence, precaution, absence, conditions, and a variant scope."
+    },
+    {
+      "id": "recipe-dependencies",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/valid/recipe-dependencies.recipe.json",
+      "expected": "valid",
+      "description": "Ingredients name the recipes that make them by title and URL, by bundle-local recipe ID, and by title alone; each stays unresolved without error."
+    },
+    {
+      "id": "asset-provenance",
+      "capabilities": [
+        "json-reader",
+        "json-writer"
+      ],
+      "fixture": "tests/valid/asset-provenance.recipe.json",
+      "expected": "valid",
+      "description": "One asset carries creator, credit, rights, license, and source URL; one carries only a credit that names no creator; one carries no provenance, so its license is unknown."
+    },
+    {
+      "id": "yields-nutrition-preservation",
+      "capabilities": [
+        "json-reader",
+        "json-writer",
+        "round-trip"
+      ],
+      "fixture": "tests/roundtrip/yields-nutrition-preservation.recipe.json",
+      "expected": "valid",
+      "description": "Yield order and apparently equivalent yields, nutrition bases, authored zeros, opaque values, unitless values, and scoped extensions survive a round trip."
+    },
+    {
+      "id": "declaration-provenance-preservation",
+      "capabilities": [
+        "json-reader",
+        "json-writer",
+        "round-trip"
+      ],
+      "fixture": "tests/roundtrip/declaration-provenance-preservation.recipe.json",
+      "expected": "valid",
+      "description": "Claim order, conditions, variant scope, and asset provenance survive a round trip."
+    },
+    {
+      "id": "singular-yield-member",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/singular-yield-member.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "singular-yield-member",
+      "description": "SREF 0.4 records yields as an array; a singular yield member is not defined."
+    },
+    {
+      "id": "empty-yields",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/empty-yields.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "empty-yields",
+      "description": "A yields array is nonempty."
+    },
+    {
+      "id": "nutrition-energy-mass-unit",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/nutrition-energy-mass-unit.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "nutrition-energy-mass-unit",
+      "description": "Energy uses kcal or kJ."
+    },
+    {
+      "id": "nutrition-mass-energy-unit",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/nutrition-mass-energy-unit.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "nutrition-mass-energy-unit",
+      "description": "A nutrient other than energy uses a mass unit."
+    },
+    {
+      "id": "nutrition-quantity-basis-without-quantity",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/nutrition-quantity-basis-without-quantity.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "nutrition-quantity-basis-without-quantity",
+      "description": "A quantity basis states its quantity."
+    },
+    {
+      "id": "nutrition-unspecified-basis-with-quantity",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/nutrition-unspecified-basis-with-quantity.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "nutrition-unspecified-basis-with-quantity",
+      "description": "An unspecified basis carries no quantity."
+    },
+    {
+      "id": "nutrition-opaque-value-with-amount",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/nutrition-opaque-value-with-amount.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "nutrition-opaque-value-with-amount",
+      "description": "An opaque nutrient value carries no amount or unit."
+    },
+    {
+      "id": "nutrition-other-without-label",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/nutrition-other-without-label.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "nutrition-other-without-label",
+      "description": "A nutrient of other carries a label."
+    },
+    {
+      "id": "nutrition-unknown-basis",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/nutrition-unknown-basis.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "nutrition-unknown-basis",
+      "description": "A basis kind is recipe, serving, quantity, or unspecified."
+    },
+    {
+      "id": "nutrition-empty-nutrients",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/nutrition-empty-nutrients.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "nutrition-empty-nutrients",
+      "description": "A nutrition statement lists at least one nutrient."
+    },
+    {
+      "id": "nutrition-duplicate-nutrient",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/nutrition-duplicate-nutrient.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "nutrition-duplicate-nutrient",
+      "description": "A statement lists a nutrient and label once."
+    },
+    {
+      "id": "temperature-nutrition-basis",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/temperature-nutrition-basis.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "temperature-nutrition-basis",
+      "description": "A temperature unit cannot describe a nutrition basis."
+    },
+    {
+      "id": "dietary-claim-suitability-required",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/dietary-claim-suitability-required.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "dietary-claim-suitability-required",
+      "description": "A dietary claim states suitable or unsuitable."
+    },
+    {
+      "id": "dietary-claim-unknown-diet",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/dietary-claim-unknown-diet.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "dietary-claim-unknown-diet",
+      "description": "A diet outside the normalized subjects stays in the claim text."
+    },
+    {
+      "id": "allergen-presence-required",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/allergen-presence-required.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "allergen-presence-required",
+      "description": "A bare allergen name is not a declaration; presence is required."
+    },
+    {
+      "id": "allergen-unknown-presence",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/allergen-unknown-presence.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "allergen-unknown-presence",
+      "description": "Presence is contains, may_contain, or free_from."
+    },
+    {
+      "id": "allergen-substance-required",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/allergen-substance-required.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "allergen-substance-required",
+      "description": "An allergen declaration names its substance."
+    },
+    {
+      "id": "dangling-claim-variant-reference",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/dangling-claim-variant-reference.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "dangling-claim-variant-reference",
+      "description": "A claim scoped to a variant names an existing variant ID."
+    },
+    {
+      "id": "duplicate-variant-id",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/duplicate-variant-id.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "duplicate-variant-id",
+      "description": "Variant IDs are unique."
+    },
+    {
+      "id": "dependency-identity-required",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/dependency-identity-required.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "dependency-identity-required",
+      "description": "A recipe dependency identifies the other recipe by title, recipe ID, or URL."
+    },
+    {
+      "id": "dependency-self-reference",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/dependency-self-reference.recipe.json",
+      "expected": "invalid",
+      "validation": "semantic",
+      "error_category": "invalid-artifact",
+      "requirement_id": "dependency-self-reference",
+      "description": "A recipe dependency does not name the recipe's own ID."
+    },
+    {
+      "id": "asset-license-identity-required",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/asset-license-identity-required.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "asset-license-identity-required",
+      "description": "An asset license has a name, a URL, or both."
+    },
+    {
+      "id": "asset-relative-source-url",
+      "capabilities": [
+        "json-reader"
+      ],
+      "fixture": "tests/invalid/asset-relative-source-url.recipe.json",
+      "expected": "invalid",
+      "validation": "schema",
+      "error_category": "invalid-artifact",
+      "requirement_id": "asset-relative-source-url",
+      "description": "An asset source URL is absolute."
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "savory-hand-pies",
+  "title": "Mushroom and Leek Hand Pies",
+  "description": "Flaky hand pies filled with browned mushrooms, leeks, garlic, and thyme.",
+  "language": "en-GB",
+  "source_locale": "en-GB",
+  "yields": [{
+    "text": "8 hand pies",
+    "quantity": {"kind": "simple", "amount": {"value": "8"}, "unit": "count.item"},
+    "label": "hand pies"
+  }],
+  "times": {
+    "prep": {"value": "PT45M"},
+    "cook": {"value": "PT30M"},
+    "additional": {"value": "PT1H"},
+    "total": {"value": "PT2H15M"},
+    "assertions": [
+      {"id": "make-pastry-time", "kind": "prep", "label": "Make pastry", "duration": {"value": "PT15M"}},
+      {"id": "chill-time", "kind": "chill", "duration": {"value": "PT1H"}, "attention": "passive"},
+      {"id": "fill-pies-time", "kind": "prep", "label": "Fill pies", "duration": {"value": "PT30M"}},
+      {"id": "bake-time", "kind": "cook", "duration": {"value": "PT30M"}}
+    ]
+  },
+  "ingredient_sections": [
+    {
+      "id": "pastry",
+      "title": "Pastry",
+      "ingredients": [
+        {
+          "id": "pastry-flour",
+          "name": "plain flour",
+          "quantity": {"kind": "simple", "amount": {"value": "350"}, "unit": "mass.gram"},
+          "note": "plus more for dusting",
+          "source_text": "350 g plain flour, plus more for dusting",
+          "normalization": {"method": "authored"}
+        },
+        {
+          "id": "pastry-butter",
+          "name": "unsalted butter",
+          "quantity": {"kind": "simple", "amount": {"value": "200"}, "unit": "mass.gram"},
+          "note": "cold and cubed",
+          "source_text": "200 g cold unsalted butter, cubed"
+        },
+        {
+          "id": "pastry-water",
+          "name": "ice water",
+          "quantity": {"kind": "simple", "amount": {"min": "75", "max": "100"}, "unit": "volume.milliliter"},
+          "note": "add only as needed",
+          "source_text": "75–100 mL ice water, as needed"
+        }
+      ]
+    },
+    {
+      "id": "filling",
+      "title": "Mushroom filling",
+      "ingredients": [
+        {
+          "id": "mushrooms",
+          "name": "mixed mushrooms",
+          "quantity": {"kind": "simple", "amount": {"value": "500"}, "unit": "mass.gram"},
+          "note": "roughly chopped",
+          "source_text": "500 g mixed mushrooms, roughly chopped"
+        },
+        {
+          "id": "leeks",
+          "name": "leeks",
+          "quantity": {"kind": "simple", "amount": {"value": "2"}, "unit": "count.item"},
+          "note": "white and pale-green parts, washed and sliced",
+          "source_text": "2 leeks, white and pale-green parts only, washed and sliced"
+        },
+        {
+          "id": "garlic",
+          "name": "garlic",
+          "quantity": {"kind": "simple", "amount": {"value": "2"}, "unit": "count.clove"},
+          "note": "finely chopped",
+          "source_text": "2 cloves garlic, finely chopped"
+        },
+        {
+          "id": "thyme",
+          "name": "thyme",
+          "quantity": {"kind": "simple", "amount": {"value": "4"}, "unit": "count.sprig"},
+          "note": "leaves stripped",
+          "source_text": "4 sprigs thyme, leaves stripped"
+        }
+      ]
+    },
+    {
+      "id": "finish",
+      "title": "To finish",
+      "ingredients": [
+        {
+          "id": "egg-wash",
+          "name": "egg",
+          "quantity": {"kind": "simple", "amount": {"value": "1"}, "unit": "count.egg"},
+          "note": "beaten with a splash of water",
+          "source_text": "1 egg, beaten with a splash of water"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "make-pastry",
+      "title": "Make and chill the pastry",
+      "steps": [
+        {"id": "rub-butter", "text": "Rub the butter into the flour, leaving some pea-sized pieces.", "timing_refs": ["make-pastry-time"], "ingredient_uses": [{"ingredient_ref": "pastry-flour"}, {"ingredient_ref": "pastry-butter"}]},
+        {"id": "hydrate-dough", "text": "Add only enough ice water for the dough to hold together, then chill for 1 hour.", "timing_refs": ["make-pastry-time", "chill-time"], "ingredient_uses": [{"ingredient_ref": "pastry-water"}]}
+      ]
+    },
+    {
+      "id": "cook-filling",
+      "title": "Cook the filling",
+      "steps": [
+        {"id": "brown-filling", "text": "Cook the mushrooms until dry and browned; add the leeks, garlic, and thyme and cook until tender.", "timing_refs": ["fill-pies-time"], "ingredient_uses": [{"ingredient_ref": "mushrooms"}, {"ingredient_ref": "leeks"}, {"ingredient_ref": "garlic"}, {"ingredient_ref": "thyme"}]}
+      ]
+    },
+    {
+      "id": "assemble-and-bake",
+      "title": "Assemble and bake",
+      "steps": [
+        {"id": "fill-pies", "text": "Roll and cut the pastry, divide the cooled filling among the pieces, and seal the edges.", "timing_refs": ["fill-pies-time"]},
+        {"id": "glaze-bake", "text": "Brush with egg wash, vent, and bake until deeply golden.", "timing_refs": ["bake-time"], "ingredient_uses": [{"ingredient_ref": "egg-wash"}]}
+      ]
+    }
+  ]
+}

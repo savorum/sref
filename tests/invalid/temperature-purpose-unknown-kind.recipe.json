@@ -1,0 +1,11 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "temperature-purpose-unknown-kind",
+  "title": "Temperature Purpose Unknown Kind",
+  "ingredient_sections": [{"id": "ingredients", "ingredients": [{"id": "water", "name": "water"}]}],
+  "instruction_sections": [{"id": "method", "steps": [{
+    "id": "heat",
+    "text": "Heat the water.",
+    "temperatures": [{"amount": {"value": "180"}, "unit": "temperature.fahrenheit", "purpose": {"kind": "steam"}}]
+  }]}]
+}

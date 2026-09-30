@@ -1,0 +1,42 @@
+{
+  "sref": {
+    "version": "0.5.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "variant-forward-compatible-members",
+  "title": "Variant Forward-Compatible Members",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "flour",
+          "name": "flour"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "use",
+          "text": "Use the flour."
+        }
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "title": "Future-aware version",
+      "text": "Use the future method when it becomes available.",
+      "future_change_set": {
+        "mode": "opaque"
+      },
+      "x-org.example.variant-note": {
+        "reviewed": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "declaration-provenance-preservation",
+  "title": "Sesame Greens",
+  "variants": [{"id": "plain", "text": "Omit the sesame seeds."}],
+  "dietary_claims": [{"text": "Vegan", "suitability": "suitable", "diet": "vegan", "x-com.example.check": {"seen": true}}, {"text": "Kosher (pareve) when made with certified oil", "suitability": "suitable", "diet": "kosher", "condition": "when made with certified oil"}],
+  "allergen_declarations": [{"text": "Contains sesame", "substance": "sesame", "presence": "contains"}, {"text": "Sesame-free", "substance": "sesame", "presence": "free_from", "variant_ref": "plain"}],
+  "assets": [{"id": "photo", "path": "assets/photo.jpg", "media_type": "image/jpeg", "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", "size": 10, "credit": "Photo courtesy of the grower", "license": {"url": "https://example.com/license"}, "source_url": "https://example.com/greens"}],
+  "ingredient_sections": [{"id": "main", "ingredients": [{"id": "dressing", "name": "sesame dressing", "recipe": {"title": "Sesame Dressing", "recipe_id": "sesame-dressing", "url": "https://example.com/dressing"}}]}],
+  "instruction_sections": [{"id": "method", "steps": [{"id": "mix", "text": "Mix."}]}]
+}

@@ -1,0 +1,44 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "vegetable-biryani",
+  "title": "Layered Vegetable Biryani",
+  "description": "Fragrant basmati rice layered with spiced vegetables, herbs, and saffron milk.",
+  "language": "en-IN",
+  "source_locale": "en-IN",
+  "yields": [{"text": "6 servings", "quantity": {"kind": "simple", "amount": {"value": "6"}, "unit": "count.serving"}}],
+  "ingredient_sections": [
+    {
+      "id": "rice",
+      "title": "Rice",
+      "ingredients": [
+        {"id": "basmati", "name": "aged basmati rice", "quantity": {"kind": "simple", "amount": {"value": "400"}, "unit": "mass.gram"}, "note": "rinsed until the water runs clear", "source_text": "400 g aged basmati rice, rinsed until the water runs clear"},
+        {"id": "rice-salt", "name": "fine salt", "quantity": {"kind": "simple", "amount": {"value": "2"}, "unit": "volume.teaspoon.metric.culinary"}, "source_text": "2 tsp fine salt"}
+      ]
+    },
+    {
+      "id": "vegetables",
+      "title": "Vegetable masala",
+      "ingredients": [
+        {"id": "cauliflower", "name": "cauliflower florets", "quantity": {"kind": "simple", "amount": {"value": "300"}, "unit": "mass.gram"}, "source_text": "300 g cauliflower florets"},
+        {"id": "peas", "name": "green peas", "quantity": {"kind": "simple", "amount": {"value": "150"}, "unit": "mass.gram"}, "note": "fresh or frozen", "source_text": "150 g green peas, fresh or frozen"},
+        {"id": "yogurt", "name": "plain yogurt", "quantity": {"kind": "simple", "amount": {"value": "200"}, "unit": "mass.gram"}, "source_text": "200 g plain yogurt"},
+        {"id": "garam-masala", "name": "garam masala", "quantity": {"kind": "simple", "amount": {"value": "3/2"}, "unit": "volume.teaspoon.metric.culinary"}, "source_text": "1 1/2 tsp garam masala"},
+        {"id": "cassia", "name": "cassia bark", "quantity": {"kind": "simple", "amount": {"value": "1"}}, "package_size": {"kind": "simple", "amount": {"value": "5"}, "unit": "length.centimeter"}, "note": "piece", "source_text": "one 5 cm piece cassia bark"}
+      ]
+    },
+    {
+      "id": "assembly",
+      "title": "For layering",
+      "ingredients": [
+        {"id": "fried-onions", "name": "fried onions", "quantity": {"kind": "simple", "amount": {"value": "2"}, "unit": "count.handful"}, "source_text": "2 handfuls fried onions"},
+        {"id": "mint", "name": "mint leaves", "quantity": {"kind": "simple", "amount": {"value": "1"}, "unit": "count.bunch"}, "note": "small bunch, leaves picked", "source_text": "1 small bunch mint, leaves picked"},
+        {"id": "saffron-milk", "name": "warm milk with saffron", "quantity": {"kind": "simple", "amount": {"value": "60"}, "unit": "volume.milliliter"}, "note": "infused with a generous pinch of saffron", "source_text": "60 mL warm milk infused with a generous pinch of saffron"}
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {"id": "parboil", "title": "Parboil the rice", "steps": [{"id": "boil-rice", "text": "Boil the rice in salted water until the grains are flexible but still firm, then drain.", "ingredient_uses": [{"ingredient_ref": "basmati"}, {"ingredient_ref": "rice-salt"}]}]},
+    {"id": "make-masala", "title": "Cook the vegetable masala", "steps": [{"id": "cook-vegetables", "text": "Cook the cauliflower, peas, yogurt, garam masala, and cassia until the vegetables are nearly tender.", "ingredient_uses": [{"ingredient_ref": "cauliflower"}, {"ingredient_ref": "peas"}, {"ingredient_ref": "yogurt"}, {"ingredient_ref": "garam-masala"}, {"ingredient_ref": "cassia"}]}]},
+    {"id": "dum", "title": "Layer and steam", "steps": [{"id": "layer", "text": "Layer the rice and vegetable masala with fried onions, mint, and saffron milk.", "ingredient_uses": [{"ingredient_ref": "basmati"}, {"ingredient_ref": "fried-onions"}, {"ingredient_ref": "mint"}, {"ingredient_ref": "saffron-milk"}]}, {"id": "steam", "text": "Cover tightly and cook over low heat until the rice is tender; rest before opening."}]}
+  ]
+}

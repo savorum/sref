@@ -1,0 +1,7 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "nutrition-unspecified-basis-with-quantity",
+  "title": "Unspecified Basis",
+  "nutrition": [{"basis": {"kind": "unspecified", "quantity": {"kind": "simple", "amount": {"value": "100"}, "unit": "mass.gram"}}, "nutrients": [{"nutrient": "protein", "amount": {"value": "4"}, "unit": "g"}]}],
+  "instruction_sections": [{"id": "method", "steps": [{"id": "mix", "text": "Mix."}]}]
+}

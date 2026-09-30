@@ -1,0 +1,35 @@
+{
+  "version": "0.2.0",
+  "units": [
+    {
+      "id": "mass.alpha",
+      "kind": "physical",
+      "dimension": "mass",
+      "definition": {
+        "kind": "linear",
+        "base_unit": "mass.beta",
+        "multiplier": "2",
+        "exact": true
+      },
+      "status": "active",
+      "labels": {"en": {"name": "alpha mass unit"}},
+      "aliases": [{"language": "en", "forms": ["alpha mass"], "case_sensitive": false}],
+      "references": ["https://example.com/mass"]
+    },
+    {
+      "id": "mass.beta",
+      "kind": "physical",
+      "dimension": "mass",
+      "definition": {
+        "kind": "linear",
+        "base_unit": "mass.alpha",
+        "multiplier": "1/2",
+        "exact": true
+      },
+      "status": "active",
+      "labels": {"en": {"name": "beta mass unit"}},
+      "aliases": [{"language": "en", "forms": ["beta mass"], "case_sensitive": false}],
+      "references": ["https://example.com/mass"]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "step-title-without-text",
+  "title": "Step Title Without Text",
+  "ingredient_sections": [
+    {"id": "ingredients", "ingredients": [{"id": "cake", "name": "cake"}]}
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {"id": "cool", "title": "Let cool completely"}
+      ]
+    }
+  ]
+}

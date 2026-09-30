@@ -1,0 +1,301 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "chocolate-chip-cookies",
+  "title": "Chocolate Chip Cookies",
+  "description": "Soft-centred chocolate chip cookies with crisp, browned edges.",
+  "language": "en",
+  "source_locale": "en-US",
+  "authors": [
+    {
+      "name": "Mira Chen",
+      "kind": "person",
+      "url": "https://recipes.example/authors/mira-chen"
+    },
+    {
+      "name": "Northstar Test Kitchen",
+      "kind": "organization"
+    }
+  ],
+  "yields": [
+    {
+      "text": "24 cookies",
+      "quantity": {"kind": "simple", "amount": {"value": "24"}},
+      "label": "cookies"
+    },
+    {
+      "text": "about 1.1 kg of dough",
+      "quantity": {"kind": "simple", "amount": {"value": "11/10", "approximate": true}, "unit": "mass.kilogram"}
+    },
+    {
+      "text": "12 servings",
+      "quantity": {"kind": "simple", "amount": {"value": "12"}},
+      "label": "servings"
+    }
+  ],
+  "nutrition": [
+    {
+      "basis": {"kind": "serving", "text": "2 cookies"},
+      "nutrients": [
+        {"nutrient": "energy", "amount": {"value": "310"}, "unit": "kcal"},
+        {"nutrient": "fat", "amount": {"value": "16"}, "unit": "g"},
+        {"nutrient": "saturated_fat", "amount": {"value": "10"}, "unit": "g"},
+        {"nutrient": "carbohydrate", "amount": {"value": "40"}, "unit": "g"},
+        {"nutrient": "sugars", "amount": {"min": "24", "max": "26", "approximate": true}, "unit": "g", "source_text": "about 24–26 g"},
+        {"nutrient": "fiber", "text": "less than 1 g"},
+        {"nutrient": "protein", "amount": {"value": "3"}, "unit": "g"},
+        {"nutrient": "sodium", "amount": {"value": "190"}, "unit": "mg"}
+      ],
+      "note": "Estimated by the Northstar Test Kitchen."
+    }
+  ],
+  "times": {
+    "prep": {"value": "PT20M"},
+    "cook": {"value": "PT12M", "approximate": true, "source_text": "about 12 minutes"},
+    "total": {"value": "PT32M"},
+    "assertions": [
+      {
+        "id": "bake-time",
+        "kind": "cook",
+        "duration": {"value": "PT12M", "approximate": true, "source_text": "about 12 minutes"}
+      }
+    ]
+  },
+  "categories": [
+    "Cookies"
+  ],
+  "courses": [
+    "Dessert"
+  ],
+  "keywords": [
+    "cookies",
+    "baking"
+  ],
+  "cuisines": [
+    "American"
+  ],
+  "cooking_methods": [
+    "Baking"
+  ],
+  "published": "2024-03-10",
+  "modified": "2025-01-18T14:30:00-05:00",
+  "variants": [
+    {
+      "id": "oat-flour",
+      "title": "Gluten-free cookies",
+      "text": "Replace the flour with the same volume of certified gluten-free oat flour."
+    }
+  ],
+  "dietary_claims": [
+    {"text": "Vegetarian", "suitability": "suitable", "diet": "vegetarian"},
+    {
+      "text": "Gluten-free when made with certified gluten-free oat flour",
+      "suitability": "suitable",
+      "diet": "gluten_free",
+      "condition": "when made with certified gluten-free oat flour",
+      "variant_ref": "oat-flour"
+    }
+  ],
+  "allergen_declarations": [
+    {"text": "Contains wheat, milk, and eggs", "substance": "wheat", "presence": "contains"},
+    {"text": "Contains wheat, milk, and eggs", "substance": "milk", "presence": "contains"},
+    {"text": "Contains wheat, milk, and eggs", "substance": "eggs", "presence": "contains"},
+    {"text": "May contain tree nuts: our kitchen also bakes with walnuts", "substance": "tree nuts", "presence": "may_contain"},
+    {"text": "Peanut-free", "substance": "peanuts", "presence": "free_from"}
+  ],
+  "ingredient_sections": [
+    {
+      "id": "dry",
+      "title": "Dry ingredients",
+      "ingredients": [
+        {
+          "id": "flour",
+          "name": "all-purpose flour",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "9/4"
+            },
+            "unit": "volume.cup.us.customary"
+          },
+          "source_text": "2 1/4 cups all-purpose flour"
+        },
+        {
+          "id": "salt",
+          "name": "fine salt",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "1/2"
+            },
+            "unit": "volume.teaspoon.us.customary"
+          },
+          "source_text": "1/2 tsp fine salt"
+        },
+        {
+          "id": "baking-soda",
+          "name": "baking soda",
+          "quantity": {
+            "kind": "simple",
+            "amount": {"value": "1"},
+            "unit": "volume.teaspoon.us.customary"
+          },
+          "source_text": "1 tsp baking soda"
+        }
+      ]
+    },
+    {
+      "id": "wet",
+      "title": "Wet ingredients",
+      "ingredients": [
+        {
+          "id": "butter",
+          "name": "unsalted butter",
+          "quantity": {
+            "kind": "alternatives",
+            "options": [
+              {
+                "kind": "simple",
+                "amount": {
+                  "value": "225"
+                },
+                "unit": "mass.gram"
+              },
+              {
+                "kind": "simple",
+                "amount": {
+                  "value": "8"
+                },
+                "unit": "mass.ounce.avoirdupois"
+              }
+            ]
+          },
+          "note": "softened",
+          "source_text": "225 g / 8 oz unsalted butter, softened"
+        },
+        {
+          "id": "sugar",
+          "name": "brown sugar",
+          "quantity": {
+            "kind": "alternatives",
+            "options": [
+              {
+                "kind": "sum",
+                "terms": [
+                  {
+                    "kind": "simple",
+                    "amount": {
+                      "value": "1/2"
+                    },
+                    "unit": "volume.cup.us.customary"
+                  },
+                  {
+                    "kind": "simple",
+                    "amount": {
+                      "value": "2"
+                    },
+                    "unit": "volume.tablespoon.us.customary"
+                  }
+                ]
+              },
+              {
+                "kind": "simple",
+                "amount": {
+                  "value": "125"
+                },
+                "unit": "mass.gram"
+              }
+            ]
+          },
+          "source_text": "1/2 cup plus 2 tbsp / 125 g brown sugar"
+        },
+        {
+          "id": "egg",
+          "name": "egg",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "1"
+            },
+            "unit": "count.egg"
+          },
+          "note": "large",
+          "source_text": "1 large egg"
+        },
+        {
+          "id": "chips",
+          "name": "chocolate chips",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "1"
+            },
+            "unit": "volume.cup.us.customary"
+          },
+          "source_text": "1 cup chocolate chips"
+        },
+        {
+          "id": "vanilla",
+          "name": "vanilla extract",
+          "quantity": {
+            "kind": "simple",
+            "amount": {"value": "2"},
+            "unit": "volume.teaspoon.us.customary"
+          },
+          "source_text": "2 tsp vanilla extract"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "mix",
+      "title": "Mix",
+      "steps": [
+        {
+          "id": "mix-dry",
+          "text": "Whisk the flour and salt together.",
+          "ingredient_uses": [
+            {"ingredient_ref": "flour"},
+            {"ingredient_ref": "salt"},
+            {"ingredient_ref": "baking-soda"}
+          ]
+        },
+        {
+          "id": "mix-wet",
+          "text": "Beat the butter and sugar, then mix in the egg.",
+          "ingredient_uses": [
+            {"ingredient_ref": "butter"},
+            {"ingredient_ref": "sugar"},
+            {"ingredient_ref": "egg"},
+            {"ingredient_ref": "vanilla"}
+          ]
+        },
+        {
+          "id": "combine",
+          "text": "Combine the mixtures and fold in the chocolate chips.",
+          "ingredient_uses": [
+            {"ingredient_ref": "flour"},
+            {"ingredient_ref": "chips"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bake",
+      "title": "Bake",
+      "steps": [
+        {
+          "id": "portion-and-bake",
+          "text": "Portion onto a lined tray and bake at 350 °F for about 12 minutes, until the edges are set.",
+          "timing_refs": ["bake-time"],
+          "temperatures": [
+            {"amount": {"value": "350"}, "unit": "temperature.fahrenheit", "purpose": {"kind": "oven"}, "source_text": "350 °F"}
+          ]
+        }
+      ]
+    }
+  ]
+}

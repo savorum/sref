@@ -1,0 +1,32 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "mint-tea-en",
+  "title": "Mint Tea",
+  "language": "en",
+  "translations": [
+    {"relation": "original", "language": "ar", "recipe_id": "mint-tea-ar", "title": "شاي بالنعناع"}
+  ],
+  "yields": [{"quantity": {"kind": "simple", "amount": {"value": "4"}, "unit": "count.serving"}}],
+  "notes": ["Gunpowder is a rolled Chinese green tea sold under that name."],
+  "ingredient_sections": [
+    {
+      "id": "tea",
+      "ingredients": [
+        {"id": "tea", "name": "gunpowder green tea", "quantity": {"kind": "simple", "amount": {"value": "10"}, "unit": "mass.gram"}, "source_text": "10 g gunpowder green tea"},
+        {"id": "fresh-mint", "name": "fresh mint", "quantity": {"kind": "simple", "amount": {"value": "1"}, "unit": "count.bunch"}, "source_text": "1 bunch fresh mint"},
+        {"id": "sugar", "name": "sugar", "quantity": {"kind": "simple", "amount": {"value": "40"}, "unit": "mass.gram"}, "source_text": "40 g sugar, or to taste", "optional": true},
+        {"id": "boiling-water", "name": "boiling water", "quantity": {"kind": "simple", "amount": {"value": "750"}, "unit": "volume.milliliter"}, "source_text": "750 ml boiling water"}
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {"id": "rinse", "text": "Rinse the tea with a splash of boiling water and pour the water away.", "ingredient_uses": [{"ingredient_ref": "tea"}]},
+        {"id": "steep", "text": "Add the mint, sugar, and remaining water. Steep for 4 to 5 minutes.", "ingredient_uses": [{"ingredient_ref": "fresh-mint"}, {"ingredient_ref": "sugar"}, {"ingredient_ref": "boiling-water"}]},
+        {"id": "pour", "text": "Pour into glasses from a height so the tea froths."}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "timing-without-duration",
+  "title": "Timing Without A Duration",
+  "times": {
+    "total": {"value": "PT9H15M"},
+    "assertions": [
+      {
+        "id": "rest-time",
+        "kind": "rest"
+      }
+    ]
+  },
+  "ingredient_sections": [
+    {
+      "id": "marinade",
+      "ingredients": [
+        {
+          "id": "beef",
+          "name": "flanken-cut short ribs",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "3"
+            },
+            "unit": "mass.pound.avoirdupois"
+          },
+          "source_text": "3 lb flanken-cut short ribs"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "marinate",
+          "text": "Marinate overnight, then grill and rest before slicing."
+        }
+      ]
+    }
+  ]
+}

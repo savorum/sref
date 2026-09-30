@@ -1,0 +1,61 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "3f2504e0-4f89-41d3-9a0c-0305e82c3301",
+  "title": "Package With Asset",
+  "source": {
+    "name": "Synthetic package fixture"
+  },
+  "ingredient_sections": [
+    {
+      "id": "1ingredients",
+      "ingredients": [
+        {
+          "id": "2salt",
+          "name": "salt",
+          "note": "to taste"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "3method",
+      "steps": [
+        {
+          "id": "4season",
+          "text": "Season to taste.",
+          "image_refs": ["6hero-image"]
+        }
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "id": "5source-note",
+      "path": "assets/source.txt",
+      "media_type": "text/plain",
+      "sha256": "ba339742e97b474a64d35260f840f2c37a119fb61c819f5c70b302d62ae7556e",
+      "size": 68,
+      "role": "source"
+    },
+    {
+      "id": "6hero-image",
+      "path": "assets/hero.svg",
+      "media_type": "image/svg+xml",
+      "sha256": "06b3e54d9cd14f3e58d6295aaee02b4dfe9ff8ca22ac14f602b8fd2d9f3e9f80",
+      "size": 572,
+      "role": "image",
+      "alt": "A geometric bowl and spoon illustration",
+      "creator": "Ada Byrne",
+      "credit": "Illustration: Ada Byrne for the fixture kitchen",
+      "rights": "© 2026 Ada Byrne",
+      "license": {"name": "CC BY 4.0", "url": "https://creativecommons.org/licenses/by/4.0/"},
+      "source_url": "https://example.com/illustrations/bowl-and-spoon"
+    }
+  ],
+  "image_refs": ["6hero-image"],
+  "primary_image": "6hero-image"
+}

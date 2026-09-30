@@ -1,0 +1,7 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "microwave-power-conflict",
+  "title": "Microwave Power Conflict",
+  "times": {"assertions": [{"id": "heat", "duration": {"value": "PT2M"}, "microwave": {"power": {"watts": 600, "percent": "50"}, "source_text": "600 W at 50%"}}]},
+  "instruction_sections": [{"id": "method", "steps": [{"id": "heat-step", "text": "Heat.", "timing_refs": ["heat"]}]}]
+}

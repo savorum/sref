@@ -1,0 +1,7 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "allergen-substance-required",
+  "title": "Declaration Without Substance",
+  "allergen_declarations": [{"text": "Allergen-free", "presence": "free_from"}],
+  "instruction_sections": [{"id": "method", "steps": [{"id": "mix", "text": "Mix."}]}]
+}

@@ -1,0 +1,132 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "optional-ingredient-preservation",
+  "title": "Optional Ingredient Preservation",
+  "ingredient_sections": [
+    {
+      "id": "stew",
+      "title": "Stew",
+      "ingredients": [
+        {
+          "id": "parsley-stew",
+          "name": "flat-leaf parsley",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "10"
+            },
+            "unit": "mass.gram"
+          },
+          "note": "Required here: the stalks go into the braise.",
+          "source_text": "10 g flat-leaf parsley, stalks and leaves separated"
+        },
+        {
+          "id": "flour",
+          "name": "plain flour",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "30"
+            },
+            "unit": "mass.gram"
+          },
+          "optional": false
+        },
+        {
+          "id": "salt",
+          "name": "salt",
+          "source_text": "Salt to taste",
+          "note": "Required but unquantified; this is a quantity question, not optionality."
+        }
+      ]
+    },
+    {
+      "id": "garnish",
+      "title": "To garnish",
+      "ingredients": [
+        {
+          "id": "parsley-garnish",
+          "name": "flat-leaf parsley",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "1"
+            },
+            "unit": "volume.tablespoon.us.customary"
+          },
+          "optional": true,
+          "source_text": "1 tbsp chopped flat-leaf parsley (optional)",
+          "normalization": {
+            "method": "extracted"
+          }
+        },
+        {
+          "id": "cream",
+          "name": "double cream",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "2"
+            },
+            "unit": "volume.tablespoon.us.customary"
+          },
+          "optional": true,
+          "note": "The author sanctions leaving this out.",
+          "source_text": "2 tbsp double cream, if desired",
+          "normalization": {
+            "method": "inferred",
+            "warnings": [
+              "Optionality was inferred from the authored phrase “if desired”."
+            ]
+          }
+        },
+        {
+          "id": "lemon",
+          "name": "lemon wedges",
+          "source_text": "Lemon wedges, for serving",
+          "note": "Serving purpose, not optionality."
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "braise",
+          "text": "Stir the flour into the pan, season with salt, and braise with the parsley stalks until tender.",
+          "ingredient_uses": [
+            {
+              "ingredient_ref": "flour"
+            },
+            {
+              "ingredient_ref": "salt"
+            },
+            {
+              "ingredient_ref": "parsley-stew"
+            }
+          ]
+        },
+        {
+          "id": "finish",
+          "text": "Swirl through the cream and scatter the chopped parsley over, then serve with lemon wedges.",
+          "ingredient_uses": [
+            {
+              "ingredient_ref": "cream"
+            },
+            {
+              "ingredient_ref": "parsley-garnish"
+            },
+            {
+              "ingredient_ref": "lemon"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

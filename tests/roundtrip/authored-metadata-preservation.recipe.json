@@ -1,0 +1,37 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "authored-metadata-preservation",
+  "title": "Authored Metadata Preservation",
+  "categories": ["Cake", "Celebration cake"],
+  "courses": ["Dessert", "Afternoon tea"],
+  "keywords": ["layered", "make-ahead"],
+  "cuisines": ["British", "Australian"],
+  "cooking_methods": ["Baking", "Whipping"],
+  "published": "2023-05-04",
+  "modified": "2025-06-07T08:09:10Z",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "flour",
+          "name": "plain flour"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "bake",
+          "text": "Bake, cool, and decorate."
+        }
+      ]
+    }
+  ]
+}

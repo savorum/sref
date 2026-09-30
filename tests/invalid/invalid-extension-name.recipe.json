@@ -1,0 +1,32 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "invalid-extension-name",
+  "title": "Invalid Extension Name",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "salt",
+          "name": "salt",
+          "source_text": "salt",
+          "x-vendor-note": "not collision resistant"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "season",
+          "text": "Season."
+        }
+      ]
+    }
+  ]
+}

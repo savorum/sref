@@ -1,0 +1,30 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "1.0.0"
+  },
+  "id": "incompatible-registry-version",
+  "title": "Incompatible Registry Version",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "salt",
+          "name": "salt"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "season",
+          "text": "Season."
+        }
+      ]
+    }
+  ]
+}

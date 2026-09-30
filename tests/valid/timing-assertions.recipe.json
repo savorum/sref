@@ -1,0 +1,75 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "timing-assertions",
+  "title": "Overnight Marinated Beef",
+  "times": {
+    "prep": {"value": "PT20M"},
+    "cook": {"min": "PT40M", "max": "PT50M", "approximate": true, "source_text": "about 40–50 minutes"},
+    "additional": {"text": "overnight, plus resting"},
+    "total": {"min": "PT8H", "max": "PT10H", "approximate": true, "source_text": "about 8–10 hours"},
+    "assertions": [
+      {
+        "id": "prep-time",
+        "kind": "prep",
+        "duration": {"value": "PT20M"},
+        "attention": "active"
+      },
+      {
+        "id": "marinate-time",
+        "kind": "marinate",
+        "duration": {"min": "PT7H", "max": "PT9H", "approximate": true, "source_text": "about 7–9 hours"},
+        "attention": "passive",
+        "note": "in the refrigerator"
+      },
+      {
+        "id": "grill-time",
+        "kind": "cook",
+        "duration": {"min": "PT40M", "max": "PT50M", "approximate": true, "source_text": "about 40–50 minutes"},
+        "attention": "active"
+      },
+      {
+        "id": "rest-time",
+        "kind": "rest",
+        "duration": {"text": "until ready to slice"},
+        "attention": "passive"
+      },
+      {
+        "id": "finish-time",
+        "kind": "other",
+        "label": "Slice and dress",
+        "duration": {"value": "PT10M"}
+      }
+    ]
+  },
+  "ingredient_sections": [
+    {
+      "id": "beef",
+      "ingredients": [
+        {
+          "id": "short-ribs",
+          "name": "flanken-cut short ribs",
+          "quantity": {
+            "kind": "simple",
+            "amount": {"value": "3"},
+            "unit": "mass.pound.avoirdupois"
+          },
+          "source_text": "3 lb flanken-cut short ribs"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {"id": "prepare-marinade", "text": "Prepare the marinade and coat the beef.", "timing_refs": ["prep-time"], "ingredient_uses": [{"ingredient_ref": "short-ribs"}]},
+        {"id": "marinate-beef", "text": "Finish coating the beef, then refrigerate for about 7–9 hours.", "timing_refs": ["prep-time", "marinate-time"], "ingredient_uses": [{"ingredient_ref": "short-ribs"}]},
+        {"id": "grill-beef", "text": "Grill the beef until browned and cooked through, about 40–50 minutes.", "timing_refs": ["grill-time"], "ingredient_uses": [{"ingredient_ref": "short-ribs"}]},
+        {"id": "finish-beef", "text": "Rest until ready to slice, then slice, dress, and arrange the beef.", "timing_refs": ["rest-time", "finish-time"], "ingredient_uses": [{"ingredient_ref": "short-ribs"}]}
+      ]
+    }
+  ]
+}

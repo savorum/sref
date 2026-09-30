@@ -1,0 +1,37 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "unknown-unit",
+  "title": "Unknown Unit",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "flour",
+          "name": "flour",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "1"
+            },
+            "unit": "volume.scoop.mystery"
+          }
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "mix",
+          "text": "Mix."
+        }
+      ]
+    }
+  ]
+}

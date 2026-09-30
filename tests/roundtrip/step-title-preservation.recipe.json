@@ -1,0 +1,43 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "step-title-preservation",
+  "title": "Step Title Preservation",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {"id": "butter", "name": "butter"},
+        {"id": "flour", "name": "flour"},
+        {"id": "milk", "name": "milk"}
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "sauce",
+      "title": "Sauce",
+      "steps": [
+        {
+          "id": "make-roux",
+          "title": "Make the roux",
+          "text": "Melt the butter and stir in the flour.",
+          "ingredient_uses": [
+            {"ingredient_ref": "butter"},
+            {"ingredient_ref": "flour"}
+          ]
+        },
+        {
+          "id": "add-dairy",
+          "title": "Add the dairy",
+          "text": "Slowly whisk in the milk until smooth.",
+          "ingredient_uses": [
+            {"ingredient_ref": "milk"}
+          ]
+        }
+      ]
+    }
+  ]
+}

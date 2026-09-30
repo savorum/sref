@@ -1,0 +1,11 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "temperature-purpose-other-without-label",
+  "title": "Temperature Purpose Other Without Label",
+  "ingredient_sections": [{"id": "ingredients", "ingredients": [{"id": "sugar", "name": "sugar"}]}],
+  "instruction_sections": [{"id": "method", "steps": [{
+    "id": "heat",
+    "text": "Heat the syrup.",
+    "temperatures": [{"amount": {"value": "115"}, "unit": "temperature.celsius", "purpose": {"kind": "other"}}]
+  }]}]
+}

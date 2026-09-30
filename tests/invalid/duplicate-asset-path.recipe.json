@@ -1,0 +1,27 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "duplicate-asset-path",
+  "title": "Duplicate Asset Path",
+  "ingredient_sections": [
+    {"id": "ingredients", "ingredients": [{"id": "flour", "name": "flour"}]}
+  ],
+  "instruction_sections": [
+    {"id": "method", "steps": [{"id": "mix", "text": "Mix."}]}
+  ],
+  "assets": [
+    {
+      "id": "first-photo",
+      "path": "assets/photo.jpg",
+      "media_type": "image/jpeg",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size": 0
+    },
+    {
+      "id": "second-photo",
+      "path": "assets/photo.jpg",
+      "media_type": "image/jpeg",
+      "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "size": 0
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "ingredient-uses",
+  "title": "Ingredient Uses",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "sugar",
+          "name": "sugar",
+          "quantity": {
+            "kind": "simple",
+            "amount": {"value": "2"},
+            "unit": "volume.cup.us.customary"
+          },
+          "note": "divided"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "mix",
+          "text": "Mix in 1 1/2 cups sugar.",
+          "ingredient_uses": [
+            {
+              "ingredient_ref": "sugar",
+              "quantity": {
+                "kind": "simple",
+                "amount": {"value": "3/2"},
+                "unit": "volume.cup.us.customary"
+              }
+            }
+          ]
+        },
+        {
+          "id": "finish",
+          "text": "Sprinkle with the remaining sugar.",
+          "ingredient_uses": [
+            {"ingredient_ref": "sugar"}
+          ]
+        }
+      ]
+    }
+  ]
+}

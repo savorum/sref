@@ -1,0 +1,39 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "berry-granita",
+  "title": "Mixed Berry Granita",
+  "description": "A bright frozen dessert with loose, fork-scraped berry crystals.",
+  "language": "en",
+  "source_locale": "en-GB",
+  "yields": [{"text": "6 servings", "quantity": {"kind": "simple", "amount": {"value": "6"}, "unit": "count.serving"}}],
+  "ingredient_sections": [
+    {
+      "id": "granita",
+      "ingredients": [
+        {"id": "berries", "name": "mixed berries", "quantity": {"kind": "simple", "amount": {"value": "500"}, "unit": "mass.gram"}, "note": "fresh or frozen", "source_text": "500 g mixed berries, fresh or frozen"},
+        {"id": "sugar", "name": "caster sugar", "quantity": {"kind": "simple", "amount": {"min": "100", "max": "140"}, "unit": "mass.gram"}, "note": "adjust to the sweetness of the fruit", "source_text": "100–140 g caster sugar"},
+        {"id": "water", "name": "water", "quantity": {"kind": "simple", "amount": {"value": "250"}, "unit": "volume.milliliter"}, "source_text": "250 mL water"},
+        {"id": "lemon-juice", "name": "lemon juice", "quantity": {"kind": "simple", "amount": {"value": "30"}, "unit": "volume.milliliter"}, "source_text": "30 mL lemon juice"}
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "prepare",
+      "steps": [
+        {"id": "make-syrup", "text": "Heat the sugar and water until dissolved, then cool.", "ingredient_uses": [{"ingredient_ref": "sugar"}, {"ingredient_ref": "water"}]},
+        {"id": "blend", "text": "Blend the berries, syrup, and lemon juice; strain if desired.", "ingredient_uses": [{"ingredient_ref": "berries"}, {"ingredient_ref": "sugar"}, {"ingredient_ref": "water"}, {"ingredient_ref": "lemon-juice"}]}
+      ]
+    },
+    {
+      "id": "freeze",
+      "steps": [
+        {
+          "id": "freeze-mixture",
+          "text": "Freeze in a shallow tray at −18 °C, scraping with a fork as crystals form, until loose and granular.",
+          "temperatures": [{"amount": {"value": "-18"}, "unit": "temperature.celsius", "note": "freezer setpoint", "source_text": "−18 °C"}]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "step-image-media-type",
+  "title": "Step Image With Text Asset",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [{"id": "salt", "name": "salt"}]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "season",
+          "text": "Season to taste.",
+          "image_refs": ["source-note"]
+        }
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "id": "source-note",
+      "path": "assets/source.txt",
+      "media_type": "text/plain",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "size": 0
+    }
+  ]
+}

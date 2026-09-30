@@ -1,0 +1,25 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "negative-zero-temperature",
+  "title": "Negative Zero Temperature",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [{"id": "water", "name": "water"}]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "freeze",
+          "text": "Hold at zero degrees.",
+          "temperatures": [
+            {"amount": {"value": "-0"}, "unit": "temperature.celsius"}
+          ]
+        }
+      ]
+    }
+  ]
+}

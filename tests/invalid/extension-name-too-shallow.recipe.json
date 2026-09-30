@@ -1,0 +1,35 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "extension-name-too-shallow",
+  "title": "Extension name too shallow",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "salt",
+          "name": "salt",
+          "note": "to taste",
+          "source_text": "salt, to taste"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "season",
+          "text": "Season to taste."
+        }
+      ]
+    }
+  ],
+  "x-org.example": {
+    "labels": 2
+  }
+}

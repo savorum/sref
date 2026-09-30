@@ -1,0 +1,42 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "ramen-bowl",
+  "title": "Miso Mushroom Ramen",
+  "description": "Mushroom and kombu broth seasoned with red miso and served with fresh noodles.",
+  "language": "en",
+  "source_locale": "en-JP",
+  "yields": [{"text": "4 bowls", "quantity": {"kind": "simple", "amount": {"value": "4"}}, "label": "bowls"}],
+  "ingredient_sections": [
+    {
+      "id": "broth",
+      "title": "Broth",
+      "ingredients": [
+        {"id": "broth-water", "name": "water", "quantity": {"kind": "simple", "amount": {"value": "3/2"}, "unit": "volume.liter"}, "source_text": "1.5 L water", "normalization": {"method": "extracted"}},
+        {"id": "kombu", "name": "kombu", "quantity": {"kind": "opaque", "text": "one palm-sized piece"}, "note": "wipe clean; do not rinse", "source_text": "1 palm-sized piece kombu, wiped clean", "normalization": {"method": "unresolved", "warnings": ["Palm-sized is intentionally retained as an opaque authored measure."]}},
+        {"id": "dried-shiitake", "name": "dried shiitake mushrooms", "quantity": {"kind": "simple", "amount": {"value": "6"}, "unit": "count.item"}, "source_text": "6 dried shiitake mushrooms"}
+      ]
+    },
+    {
+      "id": "tare",
+      "title": "Miso seasoning",
+      "ingredients": [
+        {"id": "miso", "name": "red miso", "quantity": {"kind": "simple", "amount": {"value": "100"}, "unit": "mass.gram"}, "source_text": "100 g red miso"},
+        {"id": "soy", "name": "soy sauce", "quantity": {"kind": "simple", "amount": {"value": "45"}, "unit": "volume.milliliter"}, "source_text": "45 mL soy sauce"}
+      ]
+    },
+    {
+      "id": "bowls",
+      "title": "Noodles and toppings",
+      "ingredients": [
+        {"id": "noodles", "name": "fresh ramen noodles", "quantity": {"kind": "simple", "amount": {"value": "4"}, "unit": "container.packet"}, "package_size": {"kind": "simple", "amount": {"value": "120"}, "unit": "mass.gram"}, "source_text": "4 (120 g) packets fresh ramen noodles"},
+        {"id": "eggs", "name": "soft-boiled eggs", "quantity": {"kind": "simple", "amount": {"value": "2"}, "unit": "count.egg"}, "note": "halved", "source_text": "2 soft-boiled eggs, halved"},
+        {"id": "scallions", "name": "scallions", "quantity": {"kind": "simple", "amount": {"min": "2", "max": "3"}, "unit": "count.item"}, "note": "thinly sliced", "source_text": "2–3 scallions, thinly sliced"}
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {"id": "infuse", "title": "Infuse the broth", "steps": [{"id": "soak", "text": "Soak the kombu and dried mushrooms in the water, then heat slowly.", "ingredient_uses": [{"ingredient_ref": "broth-water"}, {"ingredient_ref": "kombu"}, {"ingredient_ref": "dried-shiitake"}]}, {"id": "strain", "text": "Remove the kombu before boiling and simmer the mushrooms until the broth is savoury."}]},
+    {"id": "season", "title": "Season", "steps": [{"id": "make-tare", "text": "Whisk the miso and soy sauce with a ladleful of warm broth.", "ingredient_uses": [{"ingredient_ref": "miso"}, {"ingredient_ref": "soy"}]}]},
+    {"id": "serve", "title": "Assemble the bowls", "steps": [{"id": "cook-noodles", "text": "Cook the noodles separately and drain well.", "ingredient_uses": [{"ingredient_ref": "noodles"}]}, {"id": "assemble-bowls", "text": "Divide seasoning and noodles among bowls, add hot broth, and finish with eggs and scallions.", "ingredient_uses": [{"ingredient_ref": "miso"}, {"ingredient_ref": "soy"}, {"ingredient_ref": "noodles"}, {"ingredient_ref": "eggs"}, {"ingredient_ref": "scallions"}]}]}
+  ]
+}

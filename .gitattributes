@@ -1,0 +1,4 @@
+* text=auto eol=lf
+*.sref binary
+*.srefbundle binary
+*.svg text eol=lf

@@ -1,0 +1,27 @@
+{
+  "sref_package": {
+    "version": "0.1.0"
+  },
+  "recipe": {
+    "path": "recipe.json",
+    "media_type": "application/json",
+    "sha256": "b4fa9e31aef0b697e20d77f9a4ab11bc239a53b2d8367a5e07e7ac6fffe2d45c",
+    "size": 1546
+  },
+  "assets": [
+    {
+      "id": "5source-note",
+      "path": "assets/source.txt",
+      "media_type": "text/plain",
+      "sha256": "ba339742e97b474a64d35260f840f2c37a119fb61c819f5c70b302d62ae7556e",
+      "size": 68
+    },
+    {
+      "id": "6hero-image",
+      "path": "assets/hero.svg",
+      "media_type": "image/svg+xml",
+      "sha256": "06b3e54d9cd14f3e58d6295aaee02b4dfe9ff8ca22ac14f602b8fd2d9f3e9f80",
+      "size": 572
+    }
+  ]
+}

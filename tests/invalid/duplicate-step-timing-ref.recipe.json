@@ -1,0 +1,21 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "duplicate-step-timing-ref",
+  "title": "Duplicate Step Timing Reference",
+  "times": {
+    "assertions": [
+      {"id": "wait-time", "kind": "rest", "duration": {"value": "PT10M"}}
+    ]
+  },
+  "ingredient_sections": [
+    {"id": "ingredients", "ingredients": [{"id": "water", "name": "water"}]}
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {"id": "wait", "text": "Wait for ten minutes.", "timing_refs": ["wait-time", "wait-time"]}
+      ]
+    }
+  ]
+}

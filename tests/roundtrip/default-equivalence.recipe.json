@@ -1,0 +1,71 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "default-equivalence",
+  "title": "Default Equivalence",
+  "times": {
+    "prep": {
+      "value": "PT5M",
+      "approximate": false
+    },
+    "assertions": [
+      {
+        "id": "rest",
+        "kind": "rest",
+        "duration": {
+          "value": "PT10M"
+        }
+      }
+    ]
+  },
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "flour",
+          "name": "flour",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "2"
+            },
+            "unit": "volume.cup.us.customary"
+          }
+        },
+        {
+          "id": "salt",
+          "name": "salt",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "1",
+              "approximate": false
+            },
+            "unit": "volume.teaspoon.us.customary"
+          }
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "mix",
+          "text": "Mix the ingredients, then rest the dough.",
+          "ingredient_uses": [
+            {"ingredient_ref": "flour"},
+            {"ingredient_ref": "salt"}
+          ],
+          "timing_refs": [
+            "rest"
+          ]
+        }
+      ]
+    }
+  ]
+}

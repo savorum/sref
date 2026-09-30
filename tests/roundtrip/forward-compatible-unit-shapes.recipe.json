@@ -1,0 +1,157 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.4.0"
+  },
+  "id": "forward-compatible-unit-shapes",
+  "title": "Forward-Compatible Unit Shapes",
+  "yields": [{
+    "quantity": {
+      "kind": "simple",
+      "amount": {
+        "value": "4"
+      },
+      "unit": "future.count.serving"
+    }
+  }],
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "simple",
+          "name": "simple measure",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "1"
+            },
+            "unit": "future.volume.simple"
+          }
+        },
+        {
+          "id": "range",
+          "name": "range measure",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "min": "1",
+              "max": "2"
+            },
+            "unit": "future.mass.range"
+          }
+        },
+        {
+          "id": "sum",
+          "name": "sum measure",
+          "quantity": {
+            "kind": "sum",
+            "terms": [
+              {
+                "kind": "simple",
+                "amount": {
+                  "value": "1"
+                },
+                "unit": "future.volume.large"
+              },
+              {
+                "kind": "simple",
+                "amount": {
+                  "value": "2"
+                },
+                "unit": "future.volume.small"
+              }
+            ]
+          }
+        },
+        {
+          "id": "alternatives",
+          "name": "alternative measures",
+          "quantity": {
+            "kind": "alternatives",
+            "options": [
+              {
+                "kind": "simple",
+                "amount": {
+                  "value": "3"
+                },
+                "unit": "future.container.sachet"
+              },
+              {
+                "kind": "sum",
+                "terms": [
+                  {
+                    "kind": "simple",
+                    "amount": {
+                      "value": "1"
+                    },
+                    "unit": "future.container.large"
+                  },
+                  {
+                    "kind": "simple",
+                    "amount": {
+                      "value": "1"
+                    },
+                    "unit": "future.container.small"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "package",
+          "name": "packaged ingredient",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "2"
+            },
+            "unit": "count.item"
+          },
+          "package_size": {
+            "kind": "simple",
+            "amount": {
+              "value": "250"
+            },
+            "unit": "future.mass.package"
+          }
+        },
+        {
+          "id": "temperature",
+          "name": "temperature-sensitive ingredient",
+          "temperature": {
+            "amount": {
+              "value": "20"
+            },
+            "unit": "future.temperature.scale"
+          }
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "combine",
+          "text": "Combine the ingredients."
+        },
+        {
+          "id": "heat",
+          "text": "Heat to the future temperature.",
+          "temperatures": [
+            {
+              "amount": {
+                "min": "90",
+                "max": "95"
+              },
+              "unit": "future.temperature.oven"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

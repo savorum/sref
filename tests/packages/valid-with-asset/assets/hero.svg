@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-labelledby="title desc">
+  <title id="title">Bowl and spoon fixture</title>
+  <desc id="desc">A simple geometric illustration used to test a packaged image asset.</desc>
+  <rect width="320" height="200" fill="#f5ead7"/>
+  <path d="M70 95h180c-8 52-39 78-90 78s-82-26-90-78z" fill="#a94832"/>
+  <path d="M98 84c32-19 92-19 124 0" fill="none" stroke="#4d6a45" stroke-width="12" stroke-linecap="round"/>
+  <path d="M218 32l-55 82" stroke="#5d4937" stroke-width="8" stroke-linecap="round"/>
+</svg>

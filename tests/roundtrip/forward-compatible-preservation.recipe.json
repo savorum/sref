@@ -1,0 +1,51 @@
+{
+  "sref": {
+    "version": "0.5.0",
+    "unit_registry": "0.4.0",
+    "compatibility_notes": {
+      "introduced_by": "0.4.0"
+    }
+  },
+  "id": "forward-compatible-preservation",
+  "title": "Forward-compatible Preservation",
+  "publication": {
+    "status": "draft",
+    "sequence": 2
+  },
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "herbs",
+          "name": "fresh herbs",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "1"
+            },
+            "unit": "volume.deciliter.metric"
+          },
+          "preparation_style": {
+            "kind": "roughly-chopped"
+          }
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "prepare",
+          "title": "Prepare the herbs",
+          "text": "Roughly chop the herbs.",
+          "ingredient_uses": [
+            {"ingredient_ref": "herbs"}
+          ]
+        }
+      ]
+    }
+  ]
+}

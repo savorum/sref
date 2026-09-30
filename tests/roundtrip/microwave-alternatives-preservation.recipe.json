@@ -1,0 +1,35 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "microwave-alternatives-preservation",
+  "title": "Microwave Alternative Schedule",
+  "times": {
+    "assertions": [
+      {
+        "id": "heat",
+        "kind": "cook",
+        "duration": {"text": "600 W: 4 minutes; 500 W: 5 minutes"},
+        "microwave": {
+          "source_text": "600 W: 4 minutes; 500 W: 5 minutes",
+          "restrictions": ["Use only 500 W or 600 W; other settings are unsuitable."],
+          "choices": [
+            {
+              "power": {"watts": 600},
+              "duration": {"value": "PT4M", "source_text": "4 minutes"},
+              "source_text": "600 W: 4 minutes"
+            },
+            {
+              "power": {"watts": 500},
+              "duration": {"value": "PT5M", "source_text": "5 minutes"},
+              "source_text": "500 W: 5 minutes",
+              "x-sref.spec.round-trip.ordinal": 2
+            }
+          ],
+          "x-sref.spec.round-trip.reviewed": true
+        }
+      }
+    ]
+  },
+  "instruction_sections": [
+    {"id": "method", "steps": [{"id": "heat-step", "text": "Heat according to the schedule.", "timing_refs": ["heat"]}]}
+  ]
+}

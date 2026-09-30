@@ -1,0 +1,50 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "microwave-conditions",
+  "title": "Microwave Conditions",
+  "times": {
+    "assertions": [
+      {
+        "id": "rated-high",
+        "kind": "cook",
+        "duration": {"value": "PT2M", "source_text": "2 minutes"},
+        "microwave": {
+          "rated_output_watts": 1000,
+          "power": {"percent": "100"},
+          "source_text": "on high for 2 minutes in a 1000 W oven"
+        }
+      },
+      {
+        "id": "selected-watts",
+        "kind": "cook",
+        "duration": {"value": "PT1M", "source_text": "1 minute"},
+        "microwave": {
+          "power": {"watts": 600},
+          "source_text": "at 600 W for 1 minute"
+        }
+      },
+      {
+        "id": "opaque-level",
+        "kind": "cook",
+        "duration": {"value": "PT2M", "source_text": "2 minutes"},
+        "microwave": {
+          "power": {"text": "medium"},
+          "source_text": "on medium for 2 minutes"
+        }
+      },
+      {
+        "id": "stand",
+        "kind": "rest",
+        "duration": {"value": "PT2M", "source_text": "stand for 2 minutes"}
+      }
+    ]
+  },
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {"id": "heat", "text": "Microwave in the stated stages, then stand.", "timing_refs": ["rated-high", "selected-watts", "opaque-level", "stand"]}
+      ]
+    }
+  ]
+}

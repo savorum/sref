@@ -1,0 +1,37 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "duplicate-step-ingredient-ref",
+  "title": "Duplicate Step Ingredient Reference",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {"id": "sugar", "name": "sugar"}
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "mix",
+          "text": "Mix in the sugar.",
+          "ingredient_uses": [
+            {"ingredient_ref": "sugar"},
+            {
+              "ingredient_ref": "sugar",
+              "quantity": {
+                "kind": "simple",
+                "amount": {"value": "1"}
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

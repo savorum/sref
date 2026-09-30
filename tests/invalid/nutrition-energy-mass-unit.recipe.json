@@ -1,0 +1,7 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "nutrition-energy-mass-unit",
+  "title": "Energy In Grams",
+  "nutrition": [{"basis": {"kind": "serving"}, "nutrients": [{"nutrient": "energy", "amount": {"value": "200"}, "unit": "g"}]}],
+  "instruction_sections": [{"id": "method", "steps": [{"id": "mix", "text": "Mix."}]}]
+}

@@ -1,0 +1,12 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "ofenrueebli",
+  "title": "Ofenrüebli mit Ahornsirup",
+  "language": "de-CH",
+  "translations": [
+    {"relation": "alternate", "language": "fr-CH", "recipe_id": "carottes-roties", "title": "Carottes rôties au sirop d'érable"}
+  ],
+  "instruction_sections": [
+    {"id": "zubereitung", "steps": [{"id": "vorbereiten", "text": "Rüebli schälen."}, {"id": "backen", "text": "Im Ofen backen."}]}
+  ]
+}

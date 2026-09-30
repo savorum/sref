@@ -1,0 +1,12 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "source-retrieved-at-only",
+  "title": "Source Retrieved At Only",
+  "source": {"retrieved_at": "2026-08-29T12:00:00Z"},
+  "ingredient_sections": [
+    {"id": "ingredients", "ingredients": [{"id": "salt", "name": "salt"}]}
+  ],
+  "instruction_sections": [
+    {"id": "method", "steps": [{"id": "season", "text": "Season."}]}
+  ]
+}

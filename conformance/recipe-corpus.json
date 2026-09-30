@@ -1,0 +1,108 @@
+{
+  "schema_version": 3,
+  "corpus": {
+    "commit": "1fe02c0d5823256695a273fa4241a174b77660d0",
+    "targets_directory": "evaluations/sref/d1988251d64717d6ac65d3a4160ac98d10ce685f/targets"
+  },
+  "loss_audit": {
+    "report": "reports/coverage.json",
+    "target": {
+      "kind": "sref",
+      "version": "d1988251d64717d6ac65d3a4160ac98d10ce685f"
+    },
+    "expected_classifications": {
+      "accidentally_lost": 3432,
+      "exact": 7,
+      "mapping_unverified": 597,
+      "misrepresented": 5,
+      "semantics_unverified": 643,
+      "sref_unsupported": 497,
+      "upstream_lost": 475
+    },
+    "expected_feature_count": 49,
+    "expected_accidental_losses": {
+      "count": 3432,
+      "issues": [
+        "savorum/recipe-corpus#21"
+      ]
+    },
+    "expected_misrepresentations": {
+      "count": 5,
+      "issues": [
+        "savorum/recipe-corpus#21"
+      ]
+    },
+    "full_corpus": {
+      "expected_representation_count": 837,
+      "expected_dispositions": {
+        "evaluated": 787,
+        "reference_only": 50,
+        "non_executable": 0
+      },
+      "expected_concept_count": 5656,
+      "expected_input_boundaries": {
+        "sref_input": 5181,
+        "application_export": 119,
+        "bridge_input": 356
+      },
+      "expected_concepts_sha256": "8fb9365fe8c94cfc0555a54d8d9f6d4a9b66fb62d19f7b2a20f66239ed4480eb"
+    }
+  },
+  "cases": [
+    {
+      "id": "rc-000048",
+      "fixture": "rc-000048.recipe.json",
+      "rights": "redistributable"
+    },
+    {
+      "id": "rc-000043",
+      "fixture": "rc-000043.recipe.json",
+      "rights": "redistributable"
+    },
+    {
+      "id": "rc-000049",
+      "fixture": "rc-000049.recipe.json",
+      "rights": "redistributable"
+    },
+    {
+      "id": "rc-000051",
+      "fixture": "rc-000051.recipe.json",
+      "rights": "redistributable"
+    },
+    {
+      "id": "rc-000052",
+      "fixture": "rc-000052.recipe.json",
+      "rights": "redistributable"
+    },
+    {
+      "id": "rc-000431",
+      "fixture": "rc-000431.recipe.json",
+      "rights": "redistributable"
+    },
+    {
+      "id": "rc-000551",
+      "fixture": "rc-000551.recipe.json",
+      "rights": "redistributable"
+    },
+    {
+      "id": "rc-000637",
+      "fixture": "rc-000637.recipe.json",
+      "rights": "redistributable"
+    },
+    {
+      "id": "rc-000828",
+      "fixture": "rc-000828.recipe.json",
+      "rights": "redistributable"
+    },
+    {
+      "id": "rc-000834",
+      "fixture": "rc-000834.recipe.json",
+      "rights": "redistributable"
+    },
+    {
+      "id": "rc-000835",
+      "fixture": "rc-000835.recipe.json",
+      "rights": "redistributable"
+    }
+  ]
+}

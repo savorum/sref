@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+dist/
+.recipe-corpus/
+/recipe-corpus/
+/local-private/
+*.paprikarecipe
+*.paprikarecipes

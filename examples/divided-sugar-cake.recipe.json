@@ -1,0 +1,112 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "divided-sugar-cake",
+  "title": "Divided Sugar Cake",
+  "description": "A simple butter cake with sugar divided between the batter and topping.",
+  "language": "en",
+  "source_locale": "en-US",
+  "yields": [{
+    "text": "one 9-inch cake",
+    "quantity": {
+      "kind": "simple",
+      "amount": {"value": "1"}
+    },
+    "label": "cake"
+  }],
+  "ingredient_sections": [
+    {
+      "id": "cake",
+      "ingredients": [
+        {
+          "id": "flour",
+          "name": "all-purpose flour",
+          "quantity": {
+            "kind": "simple",
+            "amount": {"value": "2"},
+            "unit": "volume.cup.us.customary"
+          },
+          "source_text": "2 cups all-purpose flour"
+        },
+        {
+          "id": "butter",
+          "name": "unsalted butter",
+          "quantity": {
+            "kind": "simple",
+            "amount": {"value": "1"},
+            "unit": "volume.cup.us.customary"
+          },
+          "note": "softened",
+          "source_text": "1 cup unsalted butter, softened"
+        },
+        {
+          "id": "sugar",
+          "name": "granulated sugar",
+          "quantity": {
+            "kind": "simple",
+            "amount": {"value": "2"},
+            "unit": "volume.cup.us.customary"
+          },
+          "note": "divided",
+          "source_text": "2 cups granulated sugar, divided"
+        },
+        {
+          "id": "eggs",
+          "name": "eggs",
+          "quantity": {
+            "kind": "simple",
+            "amount": {"value": "2"},
+            "unit": "count.egg"
+          },
+          "source_text": "2 eggs"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "cream",
+          "text": "Beat the butter with 1 1/2 cups of the sugar, then beat in the eggs.",
+          "ingredient_uses": [
+            {"ingredient_ref": "butter"},
+            {
+              "ingredient_ref": "sugar",
+              "quantity": {
+                "kind": "simple",
+                "amount": {"value": "3/2"},
+                "unit": "volume.cup.us.customary"
+              }
+            },
+            {"ingredient_ref": "eggs"}
+          ]
+        },
+        {
+          "id": "make-batter",
+          "text": "Fold in the flour to make a smooth batter.",
+          "ingredient_uses": [
+            {"ingredient_ref": "flour"}
+          ]
+        },
+        {
+          "id": "top-and-bake",
+          "text": "Spread the batter in the pan, sprinkle with the remaining 1/2 cup sugar, and bake until set.",
+          "ingredient_uses": [
+            {
+              "ingredient_ref": "sugar",
+              "quantity": {
+                "kind": "simple",
+                "amount": {"value": "1/2"},
+                "unit": "volume.cup.us.customary"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

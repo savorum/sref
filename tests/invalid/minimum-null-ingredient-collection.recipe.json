@@ -1,0 +1,20 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "minimum",
+  "title": "Authored recipe",
+  "ingredient_sections": null,
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "rest",
+          "text": "Rest in a cool place."
+        }
+      ]
+    }
+  ]
+}

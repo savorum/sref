@@ -1,0 +1,10 @@
+# Adopted texts keep their published form.
+LICENSE.md
+LICENSES/
+CODE_OF_CONDUCT.md
+# Released snapshots are frozen.
+snapshots/*/
+dist/
+.recipe-corpus/
+recipe-corpus/
+local-private/

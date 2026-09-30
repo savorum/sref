@@ -1,0 +1,98 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "recipe-variant-preservation",
+  "title": "Recipe Variant Preservation",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "chicken",
+          "name": "chicken thighs",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "800"
+            },
+            "unit": "mass.gram"
+          }
+        },
+        {
+          "id": "bacon",
+          "name": "smoked bacon lardons",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "150"
+            },
+            "unit": "mass.gram"
+          }
+        },
+        {
+          "id": "stock",
+          "name": "chicken stock",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "500"
+            },
+            "unit": "volume.milliliter"
+          }
+        },
+        {
+          "id": "vanilla",
+          "name": "vanilla extract",
+          "quantity": {
+            "kind": "simple",
+            "amount": {
+              "value": "1"
+            },
+            "unit": "volume.teaspoon.us.customary"
+          }
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "brown",
+          "text": "Brown the chicken and bacon, then pour in the stock."
+        },
+        {
+          "id": "bake",
+          "text": "Cover and bake for 50 minutes, finishing with the vanilla."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Rest for ten minutes before serving."
+  ],
+  "variants": [
+    {
+      "title": "Richer version",
+      "text": "For a richer version, add 100 ml cream with the stock."
+    },
+    {
+      "title": "Vegetarian version",
+      "text": "For a vegetarian version, omit the bacon and replace the chicken stock with vegetable stock."
+    },
+    {
+      "title": "Individual pies",
+      "text": "For individual pies, divide among six ramekins and bake for 20 minutes instead."
+    },
+    {
+      "title": "Chocolate-orange version",
+      "text": "For the chocolate-orange version, follow the chocolate variation above but replace the vanilla with orange zest."
+    },
+    {
+      "text": "Variation: a spoonful of mustard stirred through at the end sharpens it."
+    }
+  ]
+}

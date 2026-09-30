@@ -1,0 +1,33 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "equipment-example",
+  "title": "Equipment example",
+  "equipment": [
+    {
+      "name": "baking sheet",
+      "quantity": {
+        "kind": "simple",
+        "amount": {"value": "2"},
+        "unit": "count.item"
+      }
+    },
+    {
+      "name": "stand mixer with dough hook",
+      "note": "Use the dough hook rather than the paddle."
+    },
+    {
+      "name": "clean, dry bowl"
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {"id": "mix", "text": "Mix the dough, then bake it on the sheets."}
+      ]
+    }
+  ]
+}

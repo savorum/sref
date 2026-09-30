@@ -1,0 +1,26 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "step-image-dangling-ref",
+  "title": "Dangling Step Image Reference",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [{"id": "salt", "name": "salt"}]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "season",
+          "text": "Season to taste.",
+          "image_refs": ["missing-image"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "grandfathered-language-tag",
+  "title": "Language Tag Fixture",
+  "language": "zh-min-nan",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [{"id": "water", "name": "water"}]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [{"id": "use", "text": "Use the water."}]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "sref": {
+    "unit_registry": "0.2.0"
+  },
+  "id": "missing-version",
+  "title": "Missing Version",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "salt",
+          "name": "salt"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "season",
+          "text": "Season."
+        }
+      ]
+    }
+  ]
+}

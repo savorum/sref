@@ -1,0 +1,30 @@
+{
+  "version": "0.2.0",
+  "units": [
+    {
+      "id": "mass.gram",
+      "kind": "physical",
+      "dimension": "mass",
+      "definition": {"kind": "base"},
+      "status": "active",
+      "labels": {"en": {"name": "gram"}},
+      "aliases": [{"language": "en", "forms": ["g"], "case_sensitive": true}],
+      "references": ["https://example.com/mass"]
+    },
+    {
+      "id": "mass.invalid",
+      "kind": "physical",
+      "dimension": "mass",
+      "definition": {
+        "kind": "linear",
+        "base_unit": "mass.gram",
+        "multiplier": "0",
+        "exact": true
+      },
+      "status": "active",
+      "labels": {"en": {"name": "invalid mass unit"}},
+      "aliases": [{"language": "en", "forms": ["invalid mass"], "case_sensitive": false}],
+      "references": ["https://example.com/mass"]
+    }
+  ]
+}

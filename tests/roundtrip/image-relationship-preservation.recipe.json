@@ -1,0 +1,54 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "image-relationship-preservation",
+  "title": "Image Relationship Preservation",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "dough",
+          "name": "dough"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "shape",
+          "text": "Shape the dough.",
+          "image_refs": ["process-image"],
+          "x-org.example.image-context": "close-up"
+        }
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "id": "finished-image",
+      "path": "assets/finished.webp",
+      "media_type": "image/webp",
+      "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "size": 0,
+      "role": "image",
+      "x-org.example.credit": "Example photographer"
+    },
+    {
+      "id": "process-image",
+      "path": "assets/process.webp",
+      "media_type": "image/webp",
+      "sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+      "size": 0,
+      "role": "image"
+    }
+  ],
+  "image_refs": ["process-image", "finished-image"],
+  "primary_image": "finished-image",
+  "x-org.example.gallery-layout": "authored-order"
+}

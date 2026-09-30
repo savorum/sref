@@ -1,0 +1,12 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "unknown-author-kind",
+  "title": "Unknown Author Kind",
+  "authors": [{"name": "Example Credit", "kind": "team"}],
+  "ingredient_sections": [
+    {"id": "ingredients", "ingredients": [{"id": "salt", "name": "salt"}]}
+  ],
+  "instruction_sections": [
+    {"id": "method", "steps": [{"id": "season", "text": "Season."}]}
+  ]
+}

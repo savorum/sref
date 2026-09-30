@@ -1,0 +1,12 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "asset-provenance",
+  "title": "Asset Provenance",
+  "assets": [
+    {"id": "photo", "path": "assets/photo.jpg", "media_type": "image/jpeg", "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "size": 1024, "role": "image", "creator": "Jane Smith", "credit": "Photo: Jane Smith", "rights": "© 2024 Jane Smith", "license": {"name": "CC BY-SA 4.0", "url": "https://creativecommons.org/licenses/by-sa/4.0/"}, "source_url": "https://example.com/recipes/tart"},
+    {"id": "courtesy", "path": "assets/courtesy.jpg", "media_type": "image/jpeg", "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "size": 2048, "role": "image", "credit": "Courtesy of Example Foods"},
+    {"id": "unknown", "path": "assets/unknown.jpg", "media_type": "image/jpeg", "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc", "size": 512, "role": "image"}
+  ],
+  "image_refs": ["photo", "courtesy", "unknown"],
+  "instruction_sections": [{"id": "method", "steps": [{"id": "mix", "text": "Mix."}]}]
+}

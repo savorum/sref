@@ -1,0 +1,49 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "temperature-purpose-preservation",
+  "title": "Temperature Purpose Preservation",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "chicken",
+          "name": "chicken breast",
+          "temperature": {
+            "amount": {"value": "4", "approximate": true},
+            "unit": "temperature.celsius",
+            "note": "refrigerated starting temperature"
+          }
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "fry",
+          "text": "Heat the oil to 350 °F and cook until the breast reaches 165 °F internally.",
+          "temperatures": [
+            {
+              "amount": {"value": "350"},
+              "unit": "temperature.fahrenheit",
+              "purpose": {"kind": "oil", "x-org.example.probe": "preserve at purpose scope"},
+              "source_text": "350 °F"
+            },
+            {
+              "amount": {"value": "165"},
+              "unit": "temperature.fahrenheit",
+              "purpose": {"kind": "internal", "label": "breast"},
+              "source_text": "165 °F"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

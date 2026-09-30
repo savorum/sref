@@ -1,0 +1,7 @@
+{
+  "sref": {"version": "0.4.0", "unit_registry": "0.2.0"},
+  "id": "nutrition-other-without-label",
+  "title": "Unlabeled Nutrient",
+  "nutrition": [{"basis": {"kind": "serving"}, "nutrients": [{"nutrient": "other", "amount": {"value": "4"}, "unit": "mg"}]}],
+  "instruction_sections": [{"id": "method", "steps": [{"id": "mix", "text": "Mix."}]}]
+}

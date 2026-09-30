@@ -1,0 +1,31 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "optional-ingredient-not-boolean",
+  "title": "Optional Ingredient Not Boolean",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "parsley",
+          "name": "chopped parsley",
+          "optional": "yes"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "use",
+          "text": "Scatter the parsley over the dish."
+        }
+      ]
+    }
+  ]
+}

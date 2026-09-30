@@ -1,0 +1,48 @@
+{
+  "sref": {
+    "version": "0.4.0",
+    "unit_registry": "0.2.0"
+  },
+  "id": "extension-name-depth",
+  "title": "Extension name depth",
+  "ingredient_sections": [
+    {
+      "id": "ingredients",
+      "ingredients": [
+        {
+          "id": "salt",
+          "name": "salt",
+          "note": "to taste",
+          "source_text": "salt, to taste",
+          "x-org.example.ingredient.substitution.note": "scoped and deep"
+        }
+      ]
+    }
+  ],
+  "instruction_sections": [
+    {
+      "id": "method",
+      "steps": [
+        {
+          "id": "season",
+          "text": "Season to taste."
+        }
+      ]
+    }
+  ],
+  "x-org.example.marker": {
+    "labels": 3
+  },
+  "x-org.example.import.paprika": {
+    "labels": 4
+  },
+  "x-com.example.recipe.display.compact": {
+    "labels": 5
+  },
+  "x-sref.spec.round-trip.ordinal": 1,
+  "extensions": {
+    "x-org.example.import.paprika.source": {
+      "kind": "collection"
+    }
+  }
+}
