@@ -5,7 +5,7 @@
   "unit_registry_version": "0.3.0",
   "state": "candidate",
   "files": {
-    "registry/units.json": "b2b81fc0c91ed0c8da39a6bf9df5795b6fbb6f2846a99c1ed2fb69026c140134",
+    "registry/units.json": "3ab4ae9d4310a6522a667a90d62fc5942013e11fce4687729f65c1d04eab0506",
     "schema/bundle-manifest.schema.json": "f4ee0dc257f6b2ba6eaabceee62aed9c41c9251e55007ae0efe78410b5edb0b7",
     "schema/conformance-manifest.schema.json": "a7cdf8157f22657d0eadf7754c4649e8bae1c0527c67d4e73e1f192208a7ecaf",
     "schema/ingredient-line-corpus.schema.json": "e8fed6da98e2d60ff8ec616f791f63603d549946d7328c049d2da16da3cd1748",

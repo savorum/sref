@@ -5602,6 +5602,84 @@
       ]
     },
     {
+      "id": "greek-tea-cup-has-no-single-size",
+      "source_locale": "el",
+      "source_text": "1 φλιτζάνι τσαγιού αλεύρι",
+      "classification": "opaque",
+      "expected": {
+        "id": "greek-tea-cup-has-no-single-size",
+        "name": "αλεύρι",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1 φλιτζάνι τσαγιού"
+        },
+        "source_text": "1 φλιτζάνι τσαγιού αλεύρι"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "greek-cup-abbreviation",
+      "source_locale": "el",
+      "source_text": "1/2 φλ. τσαγιού ζάχαρη",
+      "classification": "opaque",
+      "expected": {
+        "id": "greek-cup-abbreviation",
+        "name": "ζάχαρη",
+        "quantity": {
+          "kind": "opaque",
+          "text": "1/2 φλ. τσαγιού"
+        },
+        "source_text": "1/2 φλ. τσαγιού ζάχαρη"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "greek-bare-tablespoon",
+      "source_locale": "el",
+      "source_text": "2 κουταλιές ελαιόλαδο",
+      "classification": "structured",
+      "expected": {
+        "id": "greek-bare-tablespoon",
+        "name": "ελαιόλαδο",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          },
+          "unit": "volume.tablespoon.metric.culinary"
+        },
+        "source_text": "2 κουταλιές ελαιόλαδο"
+      },
+      "must_not_infer": [
+        "household-spoon-capacity"
+      ]
+    },
+    {
+      "id": "greek-bare-teaspoon",
+      "source_locale": "el",
+      "source_text": "1 κουταλάκι αλάτι",
+      "classification": "structured",
+      "expected": {
+        "id": "greek-bare-teaspoon",
+        "name": "αλάτι",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "volume.teaspoon.metric.culinary"
+        },
+        "source_text": "1 κουταλάκι αλάτι"
+      },
+      "must_not_infer": [
+        "household-spoon-capacity"
+      ]
+    },
+    {
       "id": "hebrew-cup-fraction-candidates",
       "source_locale": "he-IL",
       "source_text": "½ כוס פירורי לחם",
@@ -6416,6 +6494,423 @@
       "must_not_infer": [
         "item-count",
         "container-identity"
+      ]
+    },
+    {
+      "id": "chinese-bottle-counter",
+      "source_locale": "zh-Hans",
+      "source_text": "啤酒 1瓶",
+      "classification": "structured",
+      "expected": {
+        "id": "chinese-bottle-counter",
+        "name": "啤酒",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "container.bottle"
+        },
+        "source_text": "啤酒 1瓶"
+      }
+    },
+    {
+      "id": "arabic-slices",
+      "source_locale": "ar",
+      "source_text": "4 شرائح خبز",
+      "classification": "structured",
+      "expected": {
+        "id": "arabic-slices",
+        "name": "خبز",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "4"
+          },
+          "unit": "count.slice"
+        },
+        "source_text": "4 شرائح خبز"
+      },
+      "must_not_infer": [
+        "item-count"
+      ]
+    },
+    {
+      "id": "indonesian-a-handful",
+      "source_locale": "id",
+      "source_text": "sekepal kacang tanah",
+      "classification": "structured",
+      "expected": {
+        "id": "indonesian-a-handful",
+        "name": "kacang tanah",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "count.handful"
+        },
+        "source_text": "sekepal kacang tanah"
+      },
+      "must_not_infer": [
+        "item-count"
+      ]
+    },
+    {
+      "id": "ukrainian-pinch",
+      "source_locale": "uk",
+      "source_text": "1 дрібка солі",
+      "classification": "structured",
+      "expected": {
+        "id": "ukrainian-pinch",
+        "name": "солі",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "count.pinch"
+        },
+        "source_text": "1 дрібка солі"
+      },
+      "must_not_infer": [
+        "item-count"
+      ]
+    },
+    {
+      "id": "korean-measuring-cup",
+      "source_locale": "ko",
+      "source_text": "우유 1계량컵",
+      "classification": "structured",
+      "expected": {
+        "id": "korean-measuring-cup",
+        "name": "우유",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "volume.cup.kr"
+        },
+        "source_text": "우유 1계량컵"
+      },
+      "must_not_infer": [
+        "cup-volume"
+      ]
+    },
+    {
+      "id": "danish-bottle",
+      "source_locale": "da",
+      "source_text": "1 flaske hvidvin",
+      "classification": "structured",
+      "expected": {
+        "id": "danish-bottle",
+        "name": "hvidvin",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "container.bottle"
+        },
+        "source_text": "1 flaske hvidvin"
+      },
+      "must_not_infer": [
+        "item-count"
+      ]
+    },
+    {
+      "id": "norwegian-garlic-head",
+      "source_locale": "nb",
+      "source_text": "1 hode hvitløk",
+      "classification": "structured",
+      "expected": {
+        "id": "norwegian-garlic-head",
+        "name": "hvitløk",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "count.head"
+        },
+        "source_text": "1 hode hvitløk"
+      },
+      "must_not_infer": [
+        "item-count"
+      ]
+    },
+    {
+      "id": "swedish-slices",
+      "source_locale": "sv",
+      "source_text": "4 skivor bacon",
+      "classification": "structured",
+      "expected": {
+        "id": "swedish-slices",
+        "name": "bacon",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "4"
+          },
+          "unit": "count.slice"
+        },
+        "source_text": "4 skivor bacon"
+      },
+      "must_not_infer": [
+        "item-count"
+      ]
+    },
+    {
+      "id": "finnish-stalks-partitive",
+      "source_locale": "fi",
+      "source_text": "2 vartta selleriä",
+      "classification": "structured",
+      "expected": {
+        "id": "finnish-stalks-partitive",
+        "name": "selleriä",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          },
+          "unit": "count.stalk"
+        },
+        "source_text": "2 vartta selleriä"
+      },
+      "must_not_infer": [
+        "item-count"
+      ]
+    },
+    {
+      "id": "czech-genitive-plural-drops",
+      "source_locale": "cs",
+      "source_text": "5 kapek vanilkového extraktu",
+      "classification": "structured",
+      "expected": {
+        "id": "czech-genitive-plural-drops",
+        "name": "vanilkového extraktu",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "5"
+          },
+          "unit": "count.drop"
+        },
+        "source_text": "5 kapek vanilkového extraktu"
+      },
+      "must_not_infer": [
+        "item-count"
+      ]
+    },
+    {
+      "id": "polish-jar",
+      "source_locale": "pl",
+      "source_text": "1 słoik miodu",
+      "classification": "structured",
+      "expected": {
+        "id": "polish-jar",
+        "name": "miodu",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "container.jar"
+        },
+        "source_text": "1 słoik miodu"
+      },
+      "must_not_infer": [
+        "item-count"
+      ]
+    },
+    {
+      "id": "hungarian-garlic-head",
+      "source_locale": "hu",
+      "source_text": "1 fej fokhagyma",
+      "classification": "structured",
+      "expected": {
+        "id": "hungarian-garlic-head",
+        "name": "fokhagyma",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "count.head"
+        },
+        "source_text": "1 fej fokhagyma"
+      },
+      "must_not_infer": [
+        "item-count"
+      ]
+    },
+    {
+      "id": "romanian-jar",
+      "source_locale": "ro",
+      "source_text": "1 borcan de miere",
+      "classification": "structured",
+      "expected": {
+        "id": "romanian-jar",
+        "name": "miere",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "container.jar"
+        },
+        "source_text": "1 borcan de miere"
+      },
+      "must_not_infer": [
+        "item-count"
+      ]
+    },
+    {
+      "id": "turkish-corn-cobs",
+      "source_locale": "tr",
+      "source_text": "2 koçan mısır",
+      "classification": "structured",
+      "expected": {
+        "id": "turkish-corn-cobs",
+        "name": "mısır",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          },
+          "unit": "count.ear"
+        },
+        "source_text": "2 koçan mısır"
+      },
+      "must_not_infer": [
+        "item-count"
+      ]
+    },
+    {
+      "id": "ukrainian-genitive-plural-slices",
+      "source_locale": "uk",
+      "source_text": "5 скибок хліба",
+      "classification": "structured",
+      "expected": {
+        "id": "ukrainian-genitive-plural-slices",
+        "name": "хліба",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "5"
+          },
+          "unit": "count.slice"
+        },
+        "source_text": "5 скибок хліба"
+      },
+      "must_not_infer": [
+        "item-count"
+      ]
+    },
+    {
+      "id": "russian-bottle",
+      "source_locale": "ru",
+      "source_text": "1 бутылка вина",
+      "classification": "structured",
+      "expected": {
+        "id": "russian-bottle",
+        "name": "вина",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "container.bottle"
+        },
+        "source_text": "1 бутылка вина"
+      },
+      "must_not_infer": [
+        "item-count"
+      ]
+    },
+    {
+      "id": "greek-bottle",
+      "source_locale": "el",
+      "source_text": "1 μπουκάλι κρασί",
+      "classification": "structured",
+      "expected": {
+        "id": "greek-bottle",
+        "name": "κρασί",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "container.bottle"
+        },
+        "source_text": "1 μπουκάλι κρασί"
+      },
+      "must_not_infer": [
+        "item-count"
+      ]
+    },
+    {
+      "id": "hebrew-jar",
+      "source_locale": "he",
+      "source_text": "1 צנצנת דבש",
+      "classification": "structured",
+      "expected": {
+        "id": "hebrew-jar",
+        "name": "דבש",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "1"
+          },
+          "unit": "container.jar"
+        },
+        "source_text": "1 צנצנת דבש"
+      },
+      "must_not_infer": [
+        "item-count"
+      ]
+    },
+    {
+      "id": "indonesian-drops",
+      "source_locale": "id",
+      "source_text": "3 tetes pewarna",
+      "classification": "structured",
+      "expected": {
+        "id": "indonesian-drops",
+        "name": "pewarna",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "3"
+          },
+          "unit": "count.drop"
+        },
+        "source_text": "3 tetes pewarna"
+      },
+      "must_not_infer": [
+        "item-count"
+      ]
+    },
+    {
+      "id": "vietnamese-slices",
+      "source_locale": "vi",
+      "source_text": "3 lát gừng",
+      "classification": "structured",
+      "expected": {
+        "id": "vietnamese-slices",
+        "name": "gừng",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "3"
+          },
+          "unit": "count.slice"
+        },
+        "source_text": "3 lát gừng"
+      },
+      "must_not_infer": [
+        "item-count"
       ]
     }
   ]

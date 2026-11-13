@@ -199,6 +199,16 @@ sets are case-insensitive. A locale such as `he-IL` or `ar-SA` leaves two
 candidates, so the quantity stays opaque or unresolved without stronger
 evidence.
 
+Greek `φλιτζάνι`, `φλιτζάνι τσαγιού`, `φλ. τσαγιού`, and `κούπα`, including
+their plurals, name both `volume.cup.gr` (200 mL) and
+`volume.cup.metric.culinary` (250 mL).
+[Gastronomos, in Alfavita](https://www.alfavita.gr/koinonia/414904_pos-metatrepoyme-ta-grammaria-se-koypes-i-koytalies)
+gives the tea cup of Greek recipes as 200 mL;
+[Argiro's measuring guide](https://www.argiro.gr/en/mathe-apo-tin-argiro/measuring-your-helper-for-converting-ingredients-and-ratios/)
+uses 250 mL. The Greek cup is its own identity, as the Japanese and Korean cups
+are, because a shared magnitude does not establish a shared unit. Greek
+`ποτήρι`, a drinking glass, stays opaque.
+
 Turkish `su bardağı` stays opaque. Sana gives the water glass as 200 mL; the
 Japanese and Korean cups have that magnitude but denote other conventions.
 Turkish `tatlı kaşığı` and `tk` also stay opaque: the registry has no dessert

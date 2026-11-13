@@ -138,9 +138,10 @@ These sets name documented measuring conventions:
   measure `合`, which selects `volume.go.jp`;
 - the counter words Chinese, Japanese, Korean, and Thai write after a number,
   which select `count.item` or the count they name; and
-- Portuguese tea-cup words for the 240 mL culinary cup, and Hebrew and Arabic
-  cup words for both the 240 mL and 250 mL culinary cups. The latter remain
-  ambiguous without stronger evidence. See
+- Portuguese tea-cup words for the 240 mL culinary cup, Hebrew and Arabic cup
+  words for both the 240 mL and 250 mL culinary cups, and Greek cup words for
+  both the 200 mL Greek cup `volume.cup.gr` and the 250 mL culinary cup. The
+  latter remain ambiguous without stronger evidence. See
   [cup words and sources](../docs/quantity-and-units.md#cup-words-in-other-languages).
 
 A form without a defensible registered identity has no alias, so a quantity
@@ -225,11 +226,34 @@ in the ingredient-line corpus:
 | Japanese `合`                        | `volume.go.jp`, not the 200 mL cup. Rice recipes and rice cookers measure in it.                                           | [Gō](../docs/quantity-and-units.md#gō)                                                  | `japanese-go-is-not-the-cup`                                                                                                                                      |
 | Thai `ขีด`                           | `mass.hectogram`, a tenth of a kilogram.                                                                                   | Trueplookpanya, Thai weights                                                            | `thai-khit-is-a-hundred-grams`                                                                                                                                    |
 
-No source certifies every alias in every language. The Czech, Indonesian,
-Russian, Thai, Ukrainian, and Vietnamese sets rest on the CLDR release for
-physical units and on the English sets for counts and containers. Arabic,
-Hebrew, and Romanian use the same basis alongside the cited cup and spoon
-sources.
+No source certifies every alias in every language. Physical unit forms rest on
+the pinned CLDR release. Count and container words rest on each language's
+standard dictionary:
+
+| Language   | Dictionary                                                                                |
+| ---------- | ----------------------------------------------------------------------------------------- |
+| Czech      | [Internetová jazyková příručka](https://prirucka.ujc.cas.cz/), Czech Academy of Sciences  |
+| Danish     | [Den Danske Ordbog](https://ordnet.dk/ddo)                                                |
+| Finnish    | [Kielitoimiston sanakirja](https://www.kielitoimistonsanakirja.fi/)                       |
+| Greek      | [Λεξικό της κοινής νεοελληνικής](https://www.greek-language.gr/)                          |
+| Hebrew     | [Academy of the Hebrew Language](https://hebrew-academy.org.il/)                          |
+| Hungarian  | [Helyesírási tanácsadó portál](https://helyesiras.mta.hu/), Hungarian Academy of Sciences |
+| Indonesian | [Kamus Besar Bahasa Indonesia](https://kbbi.kemendikdasmen.go.id/)                        |
+| Norwegian  | [Bokmålsordboka](https://ordbokene.no/)                                                   |
+| Polish     | [Słownik języka polskiego PWN](https://sjp.pwn.pl/)                                       |
+| Romanian   | [Dicționarul explicativ al limbii române](https://dexonline.ro/)                          |
+| Russian    | [Толковый словарь Ожегова](https://gramota.ru/)                                           |
+| Swedish    | [Svenska Akademiens ordböcker](https://svenska.se/)                                       |
+| Turkish    | [Güncel Türkçe Sözlük](https://sozluk.gov.tr/), Turkish Language Association              |
+| Ukrainian  | [Словник української мови](https://sum.in.ua/), National Academy of Sciences              |
+| Vietnamese | [Từ điển tiếng Việt](https://vietlex.com/), Vietlex                                       |
+
+Arabic, Thai, Japanese, Korean, and Chinese count words rest on the English sets
+and the cited counter-word sources. A word with a second common sense in recipes
+has no alias: Danish and Norwegian `glas` (a jar or a drinking glass), Hungarian
+`üveg` (a bottle or a jar), Russian and Ukrainian `банка` as a jar (it is
+registered as a can), and the Greek singular `φέτα`, which also names the
+cheese.
 
 ## Registry validation
 

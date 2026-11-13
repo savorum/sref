@@ -2136,7 +2136,16 @@
         },
         {
           "language": "el",
-          "forms": ["κουταλάκι του γλυκού", "κουταλάκια του γλυκού", "κ.γ"],
+          "forms": [
+            "κουταλάκι του γλυκού",
+            "κουταλάκια του γλυκού",
+            "κ.γ",
+            "κουταλάκι",
+            "κουταλάκια",
+            "κουταλάκι γλυκού",
+            "κουταλάκια γλυκού",
+            "κουτ. γλυκού"
+          ],
           "case_sensitive": false
         },
         {
@@ -2376,7 +2385,16 @@
         },
         {
           "language": "el",
-          "forms": ["κουταλιά της σούπας", "κουταλιές της σούπας", "κ.σ", "κουτ. σούπας"],
+          "forms": [
+            "κουταλιά της σούπας",
+            "κουταλιές της σούπας",
+            "κ.σ",
+            "κουτ. σούπας",
+            "κουταλιά",
+            "κουταλιές",
+            "κουταλιά σούπας",
+            "κουταλιές σούπας"
+          ],
           "case_sensitive": false
         },
         {
@@ -2500,6 +2518,20 @@
           "language": "ar",
           "forms": ["كوب", "أكواب"],
           "case_sensitive": false
+        },
+        {
+          "language": "el",
+          "forms": [
+            "φλιτζάνι",
+            "φλιτζάνια",
+            "φλιτζάνι τσαγιού",
+            "φλιτζάνια τσαγιού",
+            "φλ",
+            "φλ. τσαγιού",
+            "κούπα",
+            "κούπες"
+          ],
+          "case_sensitive": false
         }
       ],
       "notes": "The 250 mL cup of ordinary metric culinary practice. volume.cup.au is the separately sourced Australian identity of the same magnitude, and volume.cup.us.legal is the 240 mL cup that UCUM encodes as [cup_m].",
@@ -2507,7 +2539,8 @@
         "https://www.foodstandards.gov.au/business/labelling/nutrition-panel-calculator/npc-user-guide",
         "https://www.foodstandards.gov.au/sites/default/files/2026-07/Calculations%20in%20the%20NPC.pdf",
         "https://heninthekitchen.com/wp-content/uploads/2022/03/%D7%9E%D7%AA%D7%9B%D7%95%D7%A0%D7%99%D7%9D-%D7%9C%D7%9E%D7%A9%D7%9C%D7%95%D7%97-%D7%9E%D7%A0%D7%95%D7%AA.pdf",
-        "https://monasaboni.com/%D9%83%D8%A7%D8%AA%D9%88-%D8%A7%D9%84%D9%86%D8%B3%D9%83%D8%A7%D9%81%D9%8A%D9%87-%D9%88-%D8%A7%D9%84%D8%AC%D9%88%D8%B2/"
+        "https://monasaboni.com/%D9%83%D8%A7%D8%AA%D9%88-%D8%A7%D9%84%D9%86%D8%B3%D9%83%D8%A7%D9%81%D9%8A%D9%87-%D9%88-%D8%A7%D9%84%D8%AC%D9%88%D8%B2/",
+        "https://www.argiro.gr/en/mathe-apo-tin-argiro/measuring-your-helper-for-converting-ingredients-and-ratios/"
       ]
     },
     {
@@ -3141,7 +3174,51 @@
       "aliases": [
         {
           "language": "ko",
-          "forms": ["컵"],
+          "forms": ["컵", "계량컵"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "volume.cup.gr",
+      "kind": "physical",
+      "dimension": "volume",
+      "definition": {
+        "kind": "linear",
+        "base_unit": "volume.milliliter",
+        "multiplier": "200",
+        "exact": true
+      },
+      "regions": [
+        "GR"
+      ],
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "Greek cup",
+          "plural": "Greek cups",
+          "symbols": [
+            "cup"
+          ]
+        }
+      },
+      "notes": "The 200 mL tea cup that Greek recipes measure with. Other Greek recipes mean a 250 mL cup by the same words.",
+      "references": [
+        "https://www.alfavita.gr/koinonia/414904_pos-metatrepoyme-ta-grammaria-se-koypes-i-koytalies"
+      ],
+      "aliases": [
+        {
+          "language": "el",
+          "forms": [
+            "φλιτζάνι",
+            "φλιτζάνια",
+            "φλιτζάνι τσαγιού",
+            "φλιτζάνια τσαγιού",
+            "φλ",
+            "φλ. τσαγιού",
+            "κούπα",
+            "κούπες"
+          ],
           "case_sensitive": false
         }
       ]
@@ -4218,7 +4295,7 @@
         },
         {
           "language": "da",
-          "forms": ["stk", "styk", "stykker"],
+          "forms": ["stk", "styk", "stykker", "stykke"],
           "case_sensitive": false
         },
         {
@@ -5115,7 +5192,7 @@
         },
         {
           "language": "uk",
-          "forms": ["щіпка", "щіпки", "щіпок"],
+          "forms": ["щіпка", "щіпки", "щіпок", "дрібка", "дрібки", "дрібок"],
           "case_sensitive": false
         },
         {
@@ -5293,7 +5370,7 @@
         },
         {
           "language": "id",
-          "forms": ["genggam", "segenggam"],
+          "forms": ["genggam", "segenggam", "kepal", "sekepal"],
           "case_sensitive": false
         },
         {
@@ -5358,6 +5435,26 @@
           "language": "cs",
           "forms": ["kousek", "kousky", "kousků"],
           "case_sensitive": false
+        },
+        {
+          "language": "fi",
+          "forms": ["pala", "palaa"],
+          "case_sensitive": false
+        },
+        {
+          "language": "uk",
+          "forms": ["шматок", "шматки", "шматків"],
+          "case_sensitive": false
+        },
+        {
+          "language": "el",
+          "forms": ["κομμάτι", "κομμάτια"],
+          "case_sensitive": false
+        },
+        {
+          "language": "he",
+          "forms": ["חתיכה", "חתיכות"],
+          "case_sensitive": false
         }
       ]
     },
@@ -5405,6 +5502,86 @@
         {
           "language": "pt",
           "forms": ["fatia", "fatias"],
+          "case_sensitive": false
+        },
+        {
+          "language": "ar",
+          "forms": ["شريحة", "شرائح"],
+          "case_sensitive": false
+        },
+        {
+          "language": "da",
+          "forms": ["skive", "skiver"],
+          "case_sensitive": false
+        },
+        {
+          "language": "nb",
+          "forms": ["skive", "skiver"],
+          "case_sensitive": false
+        },
+        {
+          "language": "sv",
+          "forms": ["skiva", "skivor"],
+          "case_sensitive": false
+        },
+        {
+          "language": "fi",
+          "forms": ["viipale", "viipaletta", "siivu", "siivua"],
+          "case_sensitive": false
+        },
+        {
+          "language": "cs",
+          "forms": ["plátek", "plátky", "plátků"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pl",
+          "forms": ["plaster", "plastry", "plastrów", "plasterek", "plasterki", "plasterków"],
+          "case_sensitive": false
+        },
+        {
+          "language": "hu",
+          "forms": ["szelet"],
+          "case_sensitive": false
+        },
+        {
+          "language": "ro",
+          "forms": ["felie", "felii"],
+          "case_sensitive": false
+        },
+        {
+          "language": "tr",
+          "forms": ["dilim"],
+          "case_sensitive": false
+        },
+        {
+          "language": "uk",
+          "forms": ["скибка", "скибки", "скибок", "скибочка", "скибочки", "скибочок"],
+          "case_sensitive": false
+        },
+        {
+          "language": "ru",
+          "forms": ["ломтик", "ломтика", "ломтиков"],
+          "case_sensitive": false
+        },
+        {
+          "language": "el",
+          "forms": ["φέτες"],
+          "case_sensitive": false
+        },
+        {
+          "language": "he",
+          "forms": ["פרוסה", "פרוסות"],
+          "case_sensitive": false
+        },
+        {
+          "language": "id",
+          "forms": ["iris"],
+          "case_sensitive": false
+        },
+        {
+          "language": "vi",
+          "forms": ["lát"],
           "case_sensitive": false
         }
       ]
@@ -5497,6 +5674,51 @@
           "language": "th",
           "forms": ["ต้น"],
           "case_sensitive": false
+        },
+        {
+          "language": "da",
+          "forms": ["stilk", "stilke"],
+          "case_sensitive": false
+        },
+        {
+          "language": "nb",
+          "forms": ["stilk", "stilker"],
+          "case_sensitive": false
+        },
+        {
+          "language": "fi",
+          "forms": ["varsi", "vartta"],
+          "case_sensitive": false
+        },
+        {
+          "language": "cs",
+          "forms": ["řapík", "řapíky", "řapíků"],
+          "case_sensitive": false
+        },
+        {
+          "language": "ro",
+          "forms": ["tulpină", "tulpini"],
+          "case_sensitive": false
+        },
+        {
+          "language": "tr",
+          "forms": ["sap"],
+          "case_sensitive": false
+        },
+        {
+          "language": "uk",
+          "forms": ["стебло", "стебла", "стебел"],
+          "case_sensitive": false
+        },
+        {
+          "language": "el",
+          "forms": ["κοτσάνι", "κοτσάνια"],
+          "case_sensitive": false
+        },
+        {
+          "language": "he",
+          "forms": ["גבעול", "גבעולים"],
+          "case_sensitive": false
         }
       ]
     },
@@ -5569,6 +5791,56 @@
         {
           "language": "th",
           "forms": ["หัว"],
+          "case_sensitive": false
+        },
+        {
+          "language": "da",
+          "forms": ["hoved", "hoveder"],
+          "case_sensitive": false
+        },
+        {
+          "language": "nb",
+          "forms": ["hode", "hoder"],
+          "case_sensitive": false
+        },
+        {
+          "language": "fi",
+          "forms": ["kerä", "kerää"],
+          "case_sensitive": false
+        },
+        {
+          "language": "cs",
+          "forms": ["hlávka", "hlávky", "hlávek", "palice", "palic"],
+          "case_sensitive": false
+        },
+        {
+          "language": "hu",
+          "forms": ["fej"],
+          "case_sensitive": false
+        },
+        {
+          "language": "ro",
+          "forms": ["căpățână", "căpățâni"],
+          "case_sensitive": false
+        },
+        {
+          "language": "tr",
+          "forms": ["baş"],
+          "case_sensitive": false
+        },
+        {
+          "language": "uk",
+          "forms": ["головка", "головки", "головок"],
+          "case_sensitive": false
+        },
+        {
+          "language": "el",
+          "forms": ["κεφάλι", "κεφάλια"],
+          "case_sensitive": false
+        },
+        {
+          "language": "he",
+          "forms": ["ראש", "ראשי"],
           "case_sensitive": false
         }
       ]
@@ -5709,6 +5981,56 @@
           "language": "ru",
           "forms": ["полоска", "полоски"],
           "case_sensitive": false
+        },
+        {
+          "language": "da",
+          "forms": ["strimmel", "strimler"],
+          "case_sensitive": false
+        },
+        {
+          "language": "nb",
+          "forms": ["strimmel", "strimler"],
+          "case_sensitive": false
+        },
+        {
+          "language": "fi",
+          "forms": ["suikale", "suikaletta"],
+          "case_sensitive": false
+        },
+        {
+          "language": "cs",
+          "forms": ["proužek", "proužky", "proužků"],
+          "case_sensitive": false
+        },
+        {
+          "language": "hu",
+          "forms": ["csík"],
+          "case_sensitive": false
+        },
+        {
+          "language": "ro",
+          "forms": ["fâșie", "fâșii"],
+          "case_sensitive": false
+        },
+        {
+          "language": "tr",
+          "forms": ["şerit"],
+          "case_sensitive": false
+        },
+        {
+          "language": "uk",
+          "forms": ["смужка", "смужки", "смужок"],
+          "case_sensitive": false
+        },
+        {
+          "language": "el",
+          "forms": ["λωρίδα", "λωρίδες"],
+          "case_sensitive": false
+        },
+        {
+          "language": "he",
+          "forms": ["רצועה", "רצועות"],
+          "case_sensitive": false
         }
       ]
     },
@@ -5762,6 +6084,66 @@
           "language": "pl",
           "forms": ["filet", "filety"],
           "case_sensitive": false
+        },
+        {
+          "language": "da",
+          "forms": ["filet", "fileter"],
+          "case_sensitive": false
+        },
+        {
+          "language": "nb",
+          "forms": ["filet", "fileter"],
+          "case_sensitive": false
+        },
+        {
+          "language": "fi",
+          "forms": ["filee", "fileetä"],
+          "case_sensitive": false
+        },
+        {
+          "language": "hu",
+          "forms": ["filé"],
+          "case_sensitive": false
+        },
+        {
+          "language": "ro",
+          "forms": ["file"],
+          "case_sensitive": false
+        },
+        {
+          "language": "tr",
+          "forms": ["fileto"],
+          "case_sensitive": false
+        },
+        {
+          "language": "uk",
+          "forms": ["філе"],
+          "case_sensitive": false
+        },
+        {
+          "language": "ru",
+          "forms": ["филе"],
+          "case_sensitive": false
+        },
+        {
+          "language": "el",
+          "forms": ["φιλέτο", "φιλέτα"],
+          "case_sensitive": false
+        },
+        {
+          "language": "he",
+          "forms": ["פילה"],
+          "case_sensitive": false
+        },
+        {
+          "language": "id",
+          "forms": ["fillet", "filet"],
+          "case_sensitive": false
+        },
+        {
+          "language": "vi",
+          "forms": ["phi lê"],
+          "case_sensitive": false
         }
       ]
     },
@@ -5809,6 +6191,61 @@
         {
           "language": "ru",
           "forms": ["кубик", "кубика", "кубиков"],
+          "case_sensitive": false
+        },
+        {
+          "language": "da",
+          "forms": ["terning", "terninger"],
+          "case_sensitive": false
+        },
+        {
+          "language": "nb",
+          "forms": ["terning", "terninger"],
+          "case_sensitive": false
+        },
+        {
+          "language": "sv",
+          "forms": ["tärning", "tärningar"],
+          "case_sensitive": false
+        },
+        {
+          "language": "fi",
+          "forms": ["kuutio", "kuutiota"],
+          "case_sensitive": false
+        },
+        {
+          "language": "cs",
+          "forms": ["kostka", "kostky", "kostek"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pl",
+          "forms": ["kostka", "kostki", "kostek"],
+          "case_sensitive": false
+        },
+        {
+          "language": "hu",
+          "forms": ["kocka"],
+          "case_sensitive": false
+        },
+        {
+          "language": "ro",
+          "forms": ["cub", "cuburi"],
+          "case_sensitive": false
+        },
+        {
+          "language": "uk",
+          "forms": ["кубик", "кубики", "кубиків"],
+          "case_sensitive": false
+        },
+        {
+          "language": "el",
+          "forms": ["κύβος", "κύβοι"],
+          "case_sensitive": false
+        },
+        {
+          "language": "he",
+          "forms": ["קובייה", "קוביות"],
           "case_sensitive": false
         }
       ]
@@ -5886,6 +6323,61 @@
           "language": "ru",
           "forms": ["початок", "початка"],
           "case_sensitive": false
+        },
+        {
+          "language": "da",
+          "forms": ["kolbe", "kolber"],
+          "case_sensitive": false
+        },
+        {
+          "language": "nb",
+          "forms": ["kolbe", "kolber"],
+          "case_sensitive": false
+        },
+        {
+          "language": "sv",
+          "forms": ["kolv", "kolvar"],
+          "case_sensitive": false
+        },
+        {
+          "language": "fi",
+          "forms": ["tähkä", "tähkää"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pl",
+          "forms": ["kolba", "kolby", "kolb"],
+          "case_sensitive": false
+        },
+        {
+          "language": "hu",
+          "forms": ["cső"],
+          "case_sensitive": false
+        },
+        {
+          "language": "ro",
+          "forms": ["știulete", "știuleți"],
+          "case_sensitive": false
+        },
+        {
+          "language": "tr",
+          "forms": ["koçan"],
+          "case_sensitive": false
+        },
+        {
+          "language": "uk",
+          "forms": ["качан", "качани", "качанів"],
+          "case_sensitive": false
+        },
+        {
+          "language": "he",
+          "forms": ["קלח", "קלחים"],
+          "case_sensitive": false
+        },
+        {
+          "language": "id",
+          "forms": ["tongkol"],
+          "case_sensitive": false
         }
       ]
     },
@@ -5933,6 +6425,11 @@
         {
           "language": "ru",
           "forms": ["буханка", "буханки"],
+          "case_sensitive": false
+        },
+        {
+          "language": "cs",
+          "forms": ["bochník", "bochníky", "bochníků"],
           "case_sensitive": false
         }
       ]
@@ -6019,6 +6516,81 @@
         {
           "language": "nl",
           "forms": ["druppel", "druppels"],
+          "case_sensitive": false
+        },
+        {
+          "language": "da",
+          "forms": ["dråbe", "dråber"],
+          "case_sensitive": false
+        },
+        {
+          "language": "nb",
+          "forms": ["dråpe", "dråper"],
+          "case_sensitive": false
+        },
+        {
+          "language": "sv",
+          "forms": ["droppe", "droppar"],
+          "case_sensitive": false
+        },
+        {
+          "language": "fi",
+          "forms": ["tippa", "tippaa", "pisara", "pisaraa"],
+          "case_sensitive": false
+        },
+        {
+          "language": "cs",
+          "forms": ["kapka", "kapky", "kapek"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pl",
+          "forms": ["kropla", "krople", "kropli"],
+          "case_sensitive": false
+        },
+        {
+          "language": "hu",
+          "forms": ["csepp"],
+          "case_sensitive": false
+        },
+        {
+          "language": "ro",
+          "forms": ["picătură", "picături"],
+          "case_sensitive": false
+        },
+        {
+          "language": "tr",
+          "forms": ["damla"],
+          "case_sensitive": false
+        },
+        {
+          "language": "uk",
+          "forms": ["крапля", "краплі", "крапель"],
+          "case_sensitive": false
+        },
+        {
+          "language": "ru",
+          "forms": ["капля", "капли", "капель"],
+          "case_sensitive": false
+        },
+        {
+          "language": "el",
+          "forms": ["σταγόνα", "σταγόνες"],
+          "case_sensitive": false
+        },
+        {
+          "language": "he",
+          "forms": ["טיפה", "טיפות"],
+          "case_sensitive": false
+        },
+        {
+          "language": "id",
+          "forms": ["tetes"],
+          "case_sensitive": false
+        },
+        {
+          "language": "vi",
+          "forms": ["giọt"],
           "case_sensitive": false
         }
       ]
@@ -6506,6 +7078,51 @@
           "language": "pt",
           "forms": ["frasco", "frascos", "pote", "potes"],
           "case_sensitive": false
+        },
+        {
+          "language": "sv",
+          "forms": ["glasburk", "glasburkar"],
+          "case_sensitive": false
+        },
+        {
+          "language": "cs",
+          "forms": ["sklenice", "sklenic"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pl",
+          "forms": ["słoik", "słoiki", "słoików"],
+          "case_sensitive": false
+        },
+        {
+          "language": "ro",
+          "forms": ["borcan", "borcane"],
+          "case_sensitive": false
+        },
+        {
+          "language": "tr",
+          "forms": ["kavanoz"],
+          "case_sensitive": false
+        },
+        {
+          "language": "el",
+          "forms": ["βάζο", "βάζα"],
+          "case_sensitive": false
+        },
+        {
+          "language": "he",
+          "forms": ["צנצנת", "צנצנות"],
+          "case_sensitive": false
+        },
+        {
+          "language": "id",
+          "forms": ["toples", "stoples"],
+          "case_sensitive": false
+        },
+        {
+          "language": "vi",
+          "forms": ["hũ", "lọ"],
+          "case_sensitive": false
         }
       ]
     },
@@ -6553,6 +7170,81 @@
         {
           "language": "pt",
           "forms": ["garrafa", "garrafas"],
+          "case_sensitive": false
+        },
+        {
+          "language": "zh",
+          "forms": ["瓶"],
+          "case_sensitive": false
+        },
+        {
+          "language": "da",
+          "forms": ["flaske", "flasker"],
+          "case_sensitive": false
+        },
+        {
+          "language": "nb",
+          "forms": ["flaske", "flasker"],
+          "case_sensitive": false
+        },
+        {
+          "language": "sv",
+          "forms": ["flaska", "flaskor"],
+          "case_sensitive": false
+        },
+        {
+          "language": "fi",
+          "forms": ["pullo", "pulloa"],
+          "case_sensitive": false
+        },
+        {
+          "language": "cs",
+          "forms": ["láhev", "láhve", "lahve", "lahví"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pl",
+          "forms": ["butelka", "butelki", "butelek"],
+          "case_sensitive": false
+        },
+        {
+          "language": "ro",
+          "forms": ["sticlă", "sticle"],
+          "case_sensitive": false
+        },
+        {
+          "language": "tr",
+          "forms": ["şişe"],
+          "case_sensitive": false
+        },
+        {
+          "language": "uk",
+          "forms": ["пляшка", "пляшки", "пляшок"],
+          "case_sensitive": false
+        },
+        {
+          "language": "ru",
+          "forms": ["бутылка", "бутылки", "бутылок"],
+          "case_sensitive": false
+        },
+        {
+          "language": "el",
+          "forms": ["μπουκάλι", "μπουκάλια"],
+          "case_sensitive": false
+        },
+        {
+          "language": "he",
+          "forms": ["בקבוק", "בקבוקים"],
+          "case_sensitive": false
+        },
+        {
+          "language": "id",
+          "forms": ["botol"],
+          "case_sensitive": false
+        },
+        {
+          "language": "vi",
+          "forms": ["chai"],
           "case_sensitive": false
         }
       ]
@@ -6602,6 +7294,41 @@
           "language": "pl",
           "forms": ["torba", "torby"],
           "case_sensitive": false
+        },
+        {
+          "language": "da",
+          "forms": ["pose", "poser"],
+          "case_sensitive": false
+        },
+        {
+          "language": "nb",
+          "forms": ["pose", "poser"],
+          "case_sensitive": false
+        },
+        {
+          "language": "sv",
+          "forms": ["påse", "påsar"],
+          "case_sensitive": false
+        },
+        {
+          "language": "fi",
+          "forms": ["pussi", "pussia"],
+          "case_sensitive": false
+        },
+        {
+          "language": "hu",
+          "forms": ["zacskó"],
+          "case_sensitive": false
+        },
+        {
+          "language": "ro",
+          "forms": ["pungă", "pungi"],
+          "case_sensitive": false
+        },
+        {
+          "language": "el",
+          "forms": ["σακούλα", "σακούλες"],
+          "case_sensitive": false
         }
       ]
     },
@@ -6648,6 +7375,31 @@
         },
         {
           "language": "ru",
+          "forms": ["коробка", "коробки", "коробок"],
+          "case_sensitive": false
+        },
+        {
+          "language": "da",
+          "forms": ["æske", "æsker"],
+          "case_sensitive": false
+        },
+        {
+          "language": "nb",
+          "forms": ["eske", "esker"],
+          "case_sensitive": false
+        },
+        {
+          "language": "sv",
+          "forms": ["ask", "askar"],
+          "case_sensitive": false
+        },
+        {
+          "language": "cs",
+          "forms": ["krabička", "krabičky", "krabiček"],
+          "case_sensitive": false
+        },
+        {
+          "language": "uk",
           "forms": ["коробка", "коробки", "коробок"],
           "case_sensitive": false
         }
