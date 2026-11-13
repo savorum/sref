@@ -50,7 +50,7 @@ def promote(version: str, *, sign: bool) -> None:
 
     subprocess.run(["git", "add", str(manifest_path.relative_to(ROOT))], cwd=ROOT, check=True)
     subprocess.run(
-        ["git", "commit", "-m", f"Publish SREF {version}"],
+        ["git", "commit", "-s", "-m", f"Publish SREF {version}"],
         cwd=ROOT, check=True,
     )
     tag = ["git", "tag", "-a" if not sign else "-s", f"v{version}", "-m", f"SREF {version}"]

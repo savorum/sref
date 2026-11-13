@@ -4804,6 +4804,27 @@
       ]
     },
     {
+      "id": "egg-yolks-with-a-note",
+      "source_locale": "en-AU",
+      "source_text": "2 egg yolks, Note 2",
+      "classification": "structured",
+      "expected": {
+        "id": "egg-yolks-with-a-note",
+        "name": "egg yolks",
+        "quantity": {
+          "kind": "simple",
+          "amount": {
+            "value": "2"
+          }
+        },
+        "note": "Note 2",
+        "source_text": "2 egg yolks, Note 2"
+      },
+      "must_not_infer": [
+        "whole-eggs"
+      ]
+    },
+    {
       "id": "spelled-count",
       "source_locale": "en-US",
       "source_text": "two onions, chopped",
