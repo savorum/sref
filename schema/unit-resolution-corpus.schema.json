@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "urn:sref:schema:unit-resolution-corpus:0.2.0",
-  "title": "SREF unit resolution conformance corpus 0.2.0",
+  "$id": "urn:sref:schema:unit-resolution-corpus:0.3.0",
+  "title": "SREF unit resolution conformance corpus 0.3.0",
   "type": "object",
   "required": [
     "unit_registry",

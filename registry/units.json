@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "units": [
     {
       "id": "mass.gram",
@@ -27,7 +27,7 @@
         },
         {
           "language": "de",
-          "forms": ["g", "gramm", "gr", "gr."],
+          "forms": ["g", "gramm", "gr"],
           "case_sensitive": false
         },
         {
@@ -37,22 +37,22 @@
         },
         {
           "language": "es",
-          "forms": ["g", "gramo", "gramos", "gr", "gr."],
+          "forms": ["g", "gramo", "gramos", "gr"],
           "case_sensitive": false
         },
         {
           "language": "it",
-          "forms": ["g", "grammo", "grammi", "gr", "gr."],
+          "forms": ["g", "grammo", "grammi", "gr"],
           "case_sensitive": false
         },
         {
           "language": "pt",
-          "forms": ["g", "grama", "gramas", "gr", "gr."],
+          "forms": ["g", "grama", "gramas", "gr"],
           "case_sensitive": false
         },
         {
           "language": "nl",
-          "forms": ["g", "gram", "gr", "gr."],
+          "forms": ["g", "gram", "gr"],
           "case_sensitive": false
         },
         {
@@ -92,7 +92,7 @@
         },
         {
           "language": "ro",
-          "forms": ["g", "gram", "grame", "gr", "gr."],
+          "forms": ["g", "gram", "grame", "gr"],
           "case_sensitive": false
         },
         {
@@ -102,22 +102,22 @@
         },
         {
           "language": "ru",
-          "forms": ["g", "грамм", "грамма", "граммов", "г", "г.", "гр", "гр."],
+          "forms": ["g", "грамм", "грамма", "граммов", "г", "гр"],
           "case_sensitive": false
         },
         {
           "language": "uk",
-          "forms": ["g", "грам", "грами", "грамів", "г", "г.", "гр", "гр.", "грама"],
+          "forms": ["g", "грам", "грами", "грамів", "г", "гр", "грама"],
           "case_sensitive": false
         },
         {
           "language": "el",
-          "forms": ["g", "γραμμάριο", "γραμμάρια", "γρ", "γρ."],
+          "forms": ["g", "γραμμάριο", "γραμμάρια", "γρ"],
           "case_sensitive": false
         },
         {
           "language": "ar",
-          "forms": ["g", "غرام", "جرام", "غم", "جم", "غ", "غ."],
+          "forms": ["g", "غرام", "جرام", "غم", "جم", "غ"],
           "case_sensitive": false
         },
         {
@@ -127,7 +127,7 @@
         },
         {
           "language": "th",
-          "forms": ["g", "กรัม", "ก."],
+          "forms": ["g", "กรัม", "ก"],
           "case_sensitive": false
         },
         {
@@ -159,6 +159,118 @@
       "references": [
         "https://ucum.org/ucum",
         "https://www.bipm.org/en/measurement-units/si-prefixes"
+      ]
+    },
+    {
+      "id": "mass.decagram",
+      "kind": "physical",
+      "dimension": "mass",
+      "definition": {
+        "kind": "linear",
+        "base_unit": "mass.gram",
+        "multiplier": "10",
+        "exact": true
+      },
+      "ucum": "dag",
+      "regions": [
+        "AT",
+        "CZ",
+        "HU",
+        "PL"
+      ],
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "decagram",
+          "plural": "decagrams",
+          "symbols": [
+            "dag"
+          ]
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["dag", "decagram", "decagrams", "dekagram", "dekagrams"],
+          "case_sensitive": false
+        },
+        {
+          "language": "de",
+          "forms": ["dag", "dkg", "dekagramm", "deka"],
+          "case_sensitive": false
+        },
+        {
+          "language": "cs",
+          "forms": ["dkg", "dag", "dekagram", "dekagramy", "dekagramů", "deka"],
+          "case_sensitive": false
+        },
+        {
+          "language": "hu",
+          "forms": ["dkg", "dag", "dekagramm", "deka"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pl",
+          "forms": ["dag", "dkg", "dekagram", "dekagramy", "dekagramów"],
+          "case_sensitive": false
+        }
+      ],
+      "notes": "Ten grams. Recipes in Austria, Czechia, Hungary, and Poland weigh ingredients in it, often written with the older symbol dkg or the short form deka.",
+      "references": [
+        "https://www.bipm.org/en/measurement-units/si-prefixes",
+        "https://www.ichkoche.at/print/artikel-2730",
+        "https://cs.wikipedia.org/wiki/Dekagram",
+        "https://hu.wikipedia.org/wiki/Dekagramm",
+        "https://zpe.gov.pl/a/2-masa-i-jej-jednostki/DGbZSGfbO"
+      ]
+    },
+    {
+      "id": "mass.hectogram",
+      "kind": "physical",
+      "dimension": "mass",
+      "definition": {
+        "kind": "linear",
+        "base_unit": "mass.gram",
+        "multiplier": "100",
+        "exact": true
+      },
+      "ucum": "hg",
+      "regions": [
+        "IT",
+        "TH"
+      ],
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "hectogram",
+          "plural": "hectograms",
+          "symbols": [
+            "hg"
+          ]
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["hg", "hectogram", "hectograms"],
+          "case_sensitive": false
+        },
+        {
+          "language": "it",
+          "forms": ["hg", "etto", "etti", "ettogrammo", "ettogrammi"],
+          "case_sensitive": false
+        },
+        {
+          "language": "th",
+          "forms": ["ขีด"],
+          "case_sensitive": false
+        }
+      ],
+      "notes": "One hundred grams. Italian shoppers and recipes weigh in etti, and Thai recipes in ขีด, each a tenth of a kilogram.",
+      "references": [
+        "https://www.bipm.org/en/measurement-units/si-prefixes",
+        "https://www.larousse.com/it/dizionari/italiano-inglese/etto/15035",
+        "https://www.trueplookpanya.com/learning/detail/16014-027799"
       ]
     },
     {
@@ -265,17 +377,17 @@
         },
         {
           "language": "ru",
-          "forms": ["kg", "килограмм", "килограмма", "килограммов", "кг", "кг."],
+          "forms": ["kg", "килограмм", "килограмма", "килограммов", "кг"],
           "case_sensitive": false
         },
         {
           "language": "uk",
-          "forms": ["kg", "кілограм", "кілограми", "кілограмів", "кг", "кг.", "кілограма"],
+          "forms": ["kg", "кілограм", "кілограми", "кілограмів", "кг", "кілограма"],
           "case_sensitive": false
         },
         {
           "language": "el",
-          "forms": ["kg", "κιλό", "κιλά", "κιλ.", "χιλιόγραμμο", "χιλιόγραμμα"],
+          "forms": ["kg", "κιλό", "κιλά", "κιλ", "χιλιόγραμμο", "χιλιόγραμμα"],
           "case_sensitive": false
         },
         {
@@ -290,7 +402,7 @@
         },
         {
           "language": "th",
-          "forms": ["kg", "กิโลกรัม", "กิโล", "กก."],
+          "forms": ["kg", "กิโลกรัม", "กิโล", "กก"],
           "case_sensitive": false
         },
         {
@@ -839,7 +951,7 @@
         },
         {
           "language": "ru",
-          "forms": ["ml", "миллилитр", "миллилитра", "миллилитров", "мл", "мл."],
+          "forms": ["ml", "миллилитр", "миллилитра", "миллилитров", "мл"],
           "case_sensitive": false
         },
         {
@@ -849,7 +961,7 @@
         },
         {
           "language": "uk",
-          "forms": ["ml", "мілілітр", "мілілітри", "мілілітрів", "мл", "мл.", "мілілітра"],
+          "forms": ["ml", "мілілітр", "мілілітри", "мілілітрів", "мл", "мілілітра"],
           "case_sensitive": false
         },
         {
@@ -889,7 +1001,7 @@
         },
         {
           "language": "th",
-          "forms": ["ml", "มิลลิลิตร", "มล."],
+          "forms": ["ml", "มิลลิลิตร", "มล"],
           "case_sensitive": false
         },
         {
@@ -1137,7 +1249,7 @@
         },
         {
           "language": "ru",
-          "forms": ["литр", "литра", "литров", "л", "л."],
+          "forms": ["литр", "литра", "литров", "л"],
           "case_sensitive": false
         },
         {
@@ -1147,7 +1259,7 @@
         },
         {
           "language": "uk",
-          "forms": ["літр", "літри", "літрів", "л", "л.", "літра"],
+          "forms": ["літр", "літри", "літрів", "л", "літра"],
           "case_sensitive": false
         },
         {
@@ -1157,7 +1269,7 @@
         },
         {
           "language": "el",
-          "forms": ["λίτρο", "λίτρα", "λτ", "λτ."],
+          "forms": ["λίτρο", "λίτρα", "λτ"],
           "case_sensitive": false
         },
         {
@@ -1187,7 +1299,7 @@
         },
         {
           "language": "th",
-          "forms": ["ลิตร", "ล."],
+          "forms": ["ลิตร", "ล"],
           "case_sensitive": false
         },
         {
@@ -1435,7 +1547,7 @@
         },
         {
           "language": "ru",
-          "forms": ["dl", "децилитр", "децилитра", "дл", "дл."],
+          "forms": ["dl", "децилитр", "децилитра", "дл"],
           "case_sensitive": false
         },
         {
@@ -1909,7 +2021,7 @@
         },
         {
           "language": "de",
-          "forms": ["tl", "tl.", "teelöffel", "teel."],
+          "forms": ["tl", "teelöffel", "teel"],
           "case_sensitive": false
         },
         {
@@ -1921,8 +2033,8 @@
             "cuillerées à café",
             "cuil. à café",
             "c. à café",
-            "c. à c.",
-            "c.à.c.",
+            "c. à c",
+            "c.à.c",
             "càc",
             "cuillère à thé",
             "cuillères à thé",
@@ -1936,10 +2048,8 @@
             "cucharadita",
             "cucharaditas",
             "cdita",
-            "cdita.",
             "cditas",
             "cdta",
-            "cdta.",
             "cdtas",
             "cucharada cafetera",
             "cucharadas cafeteras"
@@ -1958,7 +2068,7 @@
         },
         {
           "language": "nl",
-          "forms": ["theelepel", "theelepels", "tl", "tl.", "theel."],
+          "forms": ["theelepel", "theelepels", "tl", "theel"],
           "case_sensitive": false
         },
         {
@@ -1968,17 +2078,17 @@
         },
         {
           "language": "da",
-          "forms": ["tsk", "tsk.", "teske", "teskefuld", "teskefulde", "tskf", "tskf."],
+          "forms": ["tsk", "teske", "teskefuld", "teskefulde", "tskf"],
           "case_sensitive": false
         },
         {
           "language": "nb",
-          "forms": ["ts", "ts.", "teskje", "teskjeer", "teskjer"],
+          "forms": ["ts", "teskje", "teskjeer", "teskjer"],
           "case_sensitive": false
         },
         {
           "language": "fi",
-          "forms": ["tl", "tl.", "teelusikka", "teelusikkaa", "teelusikat"],
+          "forms": ["tl", "teelusikka", "teelusikkaa", "teelusikat"],
           "case_sensitive": false
         },
         {
@@ -1993,32 +2103,45 @@
         },
         {
           "language": "hu",
-          "forms": ["teáskanál", "tk", "tk."],
+          "forms": ["teáskanál", "tk"],
           "case_sensitive": false
         },
         {
           "language": "ro",
-          "forms": ["linguriță", "lingurițe", "lgț", "lgț."],
+          "forms": ["linguriță", "lingurițe", "lgț", "lingurita", "lingurite"],
           "case_sensitive": false
         },
         {
           "language": "ru",
-          "forms": ["чайная ложка", "чайные ложки", "чайных ложек", "ч. л.", "ч.л.", "ч. ложка", "ч. ложки"],
+          "forms": [
+            "чайная ложка",
+            "чайные ложки",
+            "чайных ложек",
+            "ч. л",
+            "ч.л",
+            "ч. ложка",
+            "ч. ложки",
+            "чайн.л",
+            "чайн. л",
+            "чайн. ложка",
+            "чайн. ложки",
+            "чайной ложки"
+          ],
           "case_sensitive": false
         },
         {
           "language": "uk",
-          "forms": ["чайна ложка", "чайні ложки", "чайних ложок", "ч. л.", "ч.л."],
+          "forms": ["чайна ложка", "чайні ложки", "чайних ложок", "ч. л", "ч.л", "чайної ложки"],
           "case_sensitive": false
         },
         {
           "language": "el",
-          "forms": ["κουταλάκι του γλυκού", "κουταλάκια του γλυκού", "κ.γ.", "κ.γ"],
+          "forms": ["κουταλάκι του γλυκού", "κουταλάκια του γλυκού", "κ.γ"],
           "case_sensitive": false
         },
         {
           "language": "ar",
-          "forms": ["ملعقة صغيرة", "ملاعق صغيرة", "ملعقة شاي", "ملاعق شاي"],
+          "forms": ["ملعقة صغيرة", "ملاعق صغيرة", "ملعقة شاي", "ملاعق شاي", "معلقة صغيرة", "معالق صغيرة"],
           "case_sensitive": false
         },
         {
@@ -2028,7 +2151,7 @@
         },
         {
           "language": "th",
-          "forms": ["ช้อนชา", "ชช.", "ช.ช."],
+          "forms": ["ช้อนชา", "ชช", "ช.ช"],
           "case_sensitive": false
         },
         {
@@ -2038,7 +2161,7 @@
         },
         {
           "language": "id",
-          "forms": ["sendok teh", "sdt", "sdt."],
+          "forms": ["sendok teh", "sdt"],
           "case_sensitive": false
         },
         {
@@ -2055,9 +2178,19 @@
           "language": "zh",
           "forms": ["茶匙", "小匙", "小勺"],
           "case_sensitive": false
+        },
+        {
+          "language": "tr",
+          "forms": ["çay kaşığı", "çk", "ç.k"],
+          "case_sensitive": false
+        },
+        {
+          "language": "ko",
+          "forms": ["t"],
+          "case_sensitive": true
         }
       ],
-      "notes": "The 5 mL metric measuring spoon, not an ordinary household utensil. Bare English teaspoon forms are not aliases; metric teaspoon and metric teaspoons are. Another language's teaspoon words select it under a source locale of that language where its recipes conventionally use the 5 mL measuring spoon. A word with competing conventions, such as Portuguese cc and Turkish çay kaşığı, has no alias. A source that states a different measure, such as an equivalent in millilitres, takes precedence. Distinct from volume.teaspoon.us.legal, the same magnitude as an exact United States labeling measure, and volume.teaspoon.au.",
+      "notes": "The 5 mL metric measuring spoon, not an ordinary household utensil. Bare English teaspoon forms are not aliases; metric teaspoon and metric teaspoons are. Another language's teaspoon words select it under a source locale of that language where its recipes conventionally use the 5 mL measuring spoon. Portuguese cc has no alias because its abbreviations name different measures. A source that states a different measure, such as an equivalent in millilitres, takes precedence. Distinct from volume.teaspoon.us.legal, the same magnitude as an exact United States labeling measure, and volume.teaspoon.au.",
       "references": [
         "https://www.canada.ca/en/health-canada/services/food-guide/eating-support/kitchen/cooking-skills/measure-ingredients-pro.html",
         "https://foodcomposition.co.nz/downloads/concise-14-edition.pdf",
@@ -2073,7 +2206,11 @@
         "https://www.receitasnestle.com.br/artigos/medidas-para-os-ingredientes-na-cozinha",
         "https://mojewypieki.com/info/przelicznik-kulinarny",
         "https://restaurant.eatsmart.gov.hk/b5/content.aspx?content_id=1162",
-        "https://ordnet.dk/ddo/ordbog/teskefuld"
+        "https://ordnet.dk/ddo/ordbog/teskefuld",
+        "https://www.sana.com.tr/faydali-bilgiler/olcu-birimleri",
+        "https://media3.bsh-group.com/Documents/26107073_8001330512_SEIH6_G_SV_TR.pdf",
+        "https://www.editura-art.ro/info/blogitem/supercartea-de-bucate-pentru-minichefi-parfeuri-cu-iaurt-si-fructe-de-padure",
+        "https://gourmandelle.com/ro/flan-de-ciocolata-budinca/"
       ]
     },
     {
@@ -2096,7 +2233,7 @@
           ]
         }
       },
-      "notes": "The 15 mL metric measuring spoon, not an ordinary household utensil. metric tablespoon and metric tablespoons select it; bare English tablespoon forms do not, because Australian sources use 20 mL (volume.tablespoon.au). Another language's tablespoon words select it under a source locale of that language where its recipes conventionally use the 15 mL measuring spoon. Turkish yemek kaşığı has no alias because Turkish sources give both 10 mL and 15 mL. A labeling convention with a different household tablespoon, such as Brazil's 10 mL, is not this identity. A source that states a different measure, such as an equivalent in millilitres, takes precedence. Distinct from volume.tablespoon.us.legal, the same magnitude as an exact United States labeling measure.",
+      "notes": "The 15 mL metric measuring spoon, not an ordinary household utensil. metric tablespoon and metric tablespoons select it; bare English tablespoon forms do not, because Australian sources use 20 mL (volume.tablespoon.au). Another language's tablespoon words select it under a source locale of that language where its recipes conventionally use the 15 mL measuring spoon. A labeling convention with a different household tablespoon, such as Brazil's 10 mL, is not this identity. A source that states a different measure, such as an equivalent in millilitres, takes precedence. Distinct from volume.tablespoon.us.legal, the same magnitude as an exact United States labeling measure.",
       "references": [
         "https://www.canada.ca/en/health-canada/services/food-guide/eating-support/kitchen/cooking-skills/measure-ingredients-pro.html",
         "https://foodcomposition.co.nz/downloads/concise-14-edition.pdf",
@@ -2110,7 +2247,11 @@
         "https://www.receitasnestle.com.br/artigos/medidas-para-os-ingredientes-na-cozinha",
         "https://mojewypieki.com/info/przelicznik-kulinarny",
         "https://restaurant.eatsmart.gov.hk/b5/content.aspx?content_id=1162",
-        "https://ordnet.dk/ddo/ordbog/11049274"
+        "https://ordnet.dk/ddo/ordbog/11049274",
+        "https://www.sana.com.tr/faydali-bilgiler/olcu-birimleri",
+        "https://media3.bsh-group.com/Documents/26107073_8001330512_SEIH6_G_SV_TR.pdf",
+        "https://www.editura-art.ro/info/blogitem/supercartea-de-bucate-pentru-minichefi-parfeuri-cu-iaurt-si-fructe-de-padure",
+        "https://gourmandelle.com/ro/flan-de-ciocolata-budinca/"
       ],
       "aliases": [
         {
@@ -2120,7 +2261,7 @@
         },
         {
           "language": "de",
-          "forms": ["el", "el.", "esslöffel", "essl."],
+          "forms": ["el", "esslöffel", "essl"],
           "case_sensitive": false
         },
         {
@@ -2132,8 +2273,8 @@
             "cuillerées à soupe",
             "cuil. à soupe",
             "c. à soupe",
-            "c. à s.",
-            "c.à.s.",
+            "c. à s",
+            "c.à.s",
             "càs",
             "cuillère à table",
             "cuillères à table",
@@ -2143,16 +2284,7 @@
         },
         {
           "language": "es",
-          "forms": [
-            "cucharada",
-            "cucharadas",
-            "cda",
-            "cda.",
-            "cdas",
-            "cdas.",
-            "cucharada sopera",
-            "cucharadas soperas"
-          ],
+          "forms": ["cucharada", "cucharadas", "cda", "cdas", "cucharada sopera", "cucharadas soperas"],
           "case_sensitive": false
         },
         {
@@ -2175,7 +2307,7 @@
         },
         {
           "language": "nl",
-          "forms": ["eetlepel", "eetlepels", "el", "el.", "eetl."],
+          "forms": ["eetlepel", "eetlepels", "el", "eetl"],
           "case_sensitive": false
         },
         {
@@ -2185,22 +2317,22 @@
         },
         {
           "language": "da",
-          "forms": ["spsk", "spsk.", "spiseske", "spiseskefuld", "spiseskefulde", "spskf", "spskf."],
+          "forms": ["spsk", "spiseske", "spiseskefuld", "spiseskefulde", "spskf"],
           "case_sensitive": false
         },
         {
           "language": "nb",
-          "forms": ["ss", "ss.", "spiseskje", "spiseskjeer", "spiseskjer"],
+          "forms": ["ss", "spiseskje", "spiseskjeer", "spiseskjer"],
           "case_sensitive": false
         },
         {
           "language": "fi",
-          "forms": ["rkl", "rkl.", "ruokalusikka", "ruokalusikkaa", "ruokalusikat"],
+          "forms": ["rkl", "ruokalusikka", "ruokalusikkaa", "ruokalusikat"],
           "case_sensitive": false
         },
         {
           "language": "pl",
-          "forms": ["łyżka", "łyżki", "łyżek", "łyż."],
+          "forms": ["łyżka", "łyżki", "łyżek", "łyż"],
           "case_sensitive": false
         },
         {
@@ -2210,12 +2342,12 @@
         },
         {
           "language": "hu",
-          "forms": ["evőkanál", "ek", "ek."],
+          "forms": ["evőkanál", "ek"],
           "case_sensitive": false
         },
         {
           "language": "ro",
-          "forms": ["lingură", "linguri", "lg", "lg."],
+          "forms": ["lingură", "linguri", "lg", "lingura"],
           "case_sensitive": false
         },
         {
@@ -2224,27 +2356,32 @@
             "столовая ложка",
             "столовые ложки",
             "столовых ложек",
-            "ст. л.",
-            "ст.л.",
+            "ст. л",
+            "ст.л",
             "ст. ложка",
             "ст. ложки",
-            "ст. ложек"
+            "ст. ложек",
+            "стол.л",
+            "стол. л",
+            "стол. ложка",
+            "стол. ложки",
+            "столовой ложки"
           ],
           "case_sensitive": false
         },
         {
           "language": "uk",
-          "forms": ["столова ложка", "столові ложки", "столових ложок", "ст. л.", "ст.л."],
+          "forms": ["столова ложка", "столові ложки", "столових ложок", "ст. л", "ст.л", "столової ложки"],
           "case_sensitive": false
         },
         {
           "language": "el",
-          "forms": ["κουταλιά της σούπας", "κουταλιές της σούπας", "κ.σ.", "κ.σ", "κουτ. σούπας"],
+          "forms": ["κουταλιά της σούπας", "κουταλιές της σούπας", "κ.σ", "κουτ. σούπας"],
           "case_sensitive": false
         },
         {
           "language": "ar",
-          "forms": ["ملعقة كبيرة", "ملاعق كبيرة", "ملعقة طعام", "ملاعق طعام"],
+          "forms": ["ملعقة كبيرة", "ملاعق كبيرة", "ملعقة طعام", "ملاعق طعام", "معلقة كبيرة", "معالق كبيرة"],
           "case_sensitive": false
         },
         {
@@ -2254,7 +2391,7 @@
         },
         {
           "language": "th",
-          "forms": ["ช้อนโต๊ะ", "ชต.", "ช.ต."],
+          "forms": ["ช้อนโต๊ะ", "ชต", "ช.ต", "ช้อนโต้ะ"],
           "case_sensitive": false
         },
         {
@@ -2264,7 +2401,7 @@
         },
         {
           "language": "id",
-          "forms": ["sendok makan", "sdm", "sdm."],
+          "forms": ["sendok makan", "sdm"],
           "case_sensitive": false
         },
         {
@@ -2281,6 +2418,16 @@
           "language": "zh",
           "forms": ["汤匙", "湯匙", "大匙", "大勺", "大汤匙", "大湯匙"],
           "case_sensitive": false
+        },
+        {
+          "language": "tr",
+          "forms": ["yemek kaşığı", "yk", "y.k"],
+          "case_sensitive": false
+        },
+        {
+          "language": "ko",
+          "forms": ["T"],
+          "case_sensitive": true
         }
       ]
     },
@@ -2343,12 +2490,24 @@
           "language": "en",
           "forms": ["metric cup", "metric cups", "250 mL cup", "250 mL cups"],
           "case_sensitive": false
+        },
+        {
+          "language": "he",
+          "forms": ["כוס", "כוסות"],
+          "case_sensitive": false
+        },
+        {
+          "language": "ar",
+          "forms": ["كوب", "أكواب"],
+          "case_sensitive": false
         }
       ],
       "notes": "The 250 mL cup of ordinary metric culinary practice. volume.cup.au is the separately sourced Australian identity of the same magnitude, and volume.cup.us.legal is the 240 mL cup that UCUM encodes as [cup_m].",
       "references": [
         "https://www.foodstandards.gov.au/business/labelling/nutrition-panel-calculator/npc-user-guide",
-        "https://www.foodstandards.gov.au/sites/default/files/2026-07/Calculations%20in%20the%20NPC.pdf"
+        "https://www.foodstandards.gov.au/sites/default/files/2026-07/Calculations%20in%20the%20NPC.pdf",
+        "https://heninthekitchen.com/wp-content/uploads/2022/03/%D7%9E%D7%AA%D7%9B%D7%95%D7%A0%D7%99%D7%9D-%D7%9C%D7%9E%D7%A9%D7%9C%D7%95%D7%97-%D7%9E%D7%A0%D7%95%D7%AA.pdf",
+        "https://monasaboni.com/%D9%83%D8%A7%D8%AA%D9%88-%D8%A7%D9%84%D9%86%D8%B3%D9%83%D8%A7%D9%81%D9%8A%D9%87-%D9%88-%D8%A7%D9%84%D8%AC%D9%88%D8%B2/"
       ]
     },
     {
@@ -2412,7 +2571,7 @@
       "aliases": [
         {
           "language": "en-US",
-          "forms": ["cup", "cups", "c", "c.", "US cup", "US cups", "American cup", "American cups"],
+          "forms": ["cup", "cups", "c", "US cup", "US cups", "American cup", "American cups"],
           "case_sensitive": false
         }
       ],
@@ -2450,7 +2609,6 @@
           "language": "en-US",
           "forms": [
             "tbsp",
-            "tbsp.",
             "tablespoon",
             "tablespoons",
             "US tbsp",
@@ -2501,7 +2659,6 @@
           "language": "en-US",
           "forms": [
             "tsp",
-            "tsp.",
             "teaspoon",
             "teaspoons",
             "US tsp",
@@ -2550,7 +2707,7 @@
       "aliases": [
         {
           "language": "en-US",
-          "forms": ["fl oz", "fl. oz.", "fluid ounce", "fluid ounces", "US fl oz", "US fluid ounce", "US fluid ounces"],
+          "forms": ["fl oz", "fl. oz", "fluid ounce", "fluid ounces", "US fl oz", "US fluid ounce", "US fluid ounces"],
           "case_sensitive": false
         }
       ],
@@ -2586,7 +2743,7 @@
       "aliases": [
         {
           "language": "en-US",
-          "forms": ["pint", "pints", "pt", "pt.", "US pint", "US pints", "US liquid pint", "US liquid pints"],
+          "forms": ["pint", "pints", "pt", "US pint", "US pints", "US liquid pint", "US liquid pints"],
           "case_sensitive": false
         }
       ],
@@ -2623,7 +2780,7 @@
       "aliases": [
         {
           "language": "en-US",
-          "forms": ["quart", "quarts", "qt", "qt.", "US quart", "US quarts", "US liquid quart", "US liquid quarts"],
+          "forms": ["quart", "quarts", "qt", "US quart", "US quarts", "US liquid quart", "US liquid quarts"],
           "case_sensitive": false
         }
       ],
@@ -2660,16 +2817,7 @@
       "aliases": [
         {
           "language": "en-US",
-          "forms": [
-            "gallon",
-            "gallons",
-            "gal",
-            "gal.",
-            "US gallon",
-            "US gallons",
-            "US liquid gallon",
-            "US liquid gallons"
-          ],
+          "forms": ["gallon", "gallons", "gal", "US gallon", "US gallons", "US liquid gallon", "US liquid gallons"],
           "case_sensitive": false
         }
       ],
@@ -2706,11 +2854,38 @@
           "language": "en-US",
           "forms": ["240 mL cup", "240 mL cups", "US 240 mL cup", "US 240 mL cups"],
           "case_sensitive": false
+        },
+        {
+          "language": "he",
+          "forms": ["כוס", "כוסות"],
+          "case_sensitive": false
+        },
+        {
+          "language": "ar",
+          "forms": ["كوب", "أكواب"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pt",
+          "forms": [
+            "xícara",
+            "xícaras",
+            "xícara de chá",
+            "xícaras de chá",
+            "xícara chá",
+            "xícaras chá",
+            "xícara (chá)",
+            "xícaras (chá)"
+          ],
+          "case_sensitive": false
         }
       ],
-      "notes": "Approximate kitchen equivalence, not the identity asserted by an unqualified US cup. Use only when the source explicitly defines the 240 mL convention.",
+      "notes": "Approximate kitchen equivalence, not the identity asserted by an unqualified US cup. The Portuguese tea-cup aliases name this culinary convention. Hebrew and Arabic cup aliases also name volume.cup.metric.culinary and require stronger source evidence to resolve.",
       "references": [
-        "https://www.nist.gov/pml/owm/metric-si/metric-kitchen/metric-kitchen-cooking-measurement-equivalencies"
+        "https://www.nist.gov/pml/owm/metric-si/metric-kitchen/metric-kitchen-cooking-measurement-equivalencies",
+        "https://www.krutit.co.il/?p=143",
+        "https://mmc.med.sa/storage/media/image/YVvzfIJk3vyHCpZP4yM24EhzZu136RXBbuTZjo0V.pdf",
+        "https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/1085401/1/ARROZ-COM-QUE-ed03-2017.pdf"
       ]
     },
     {
@@ -2814,7 +2989,7 @@
         },
         {
           "language": "en-AU",
-          "forms": ["cup", "cups", "c", "c."],
+          "forms": ["cup", "cups", "c"],
           "case_sensitive": false
         }
       ],
@@ -2856,7 +3031,7 @@
         },
         {
           "language": "en-AU",
-          "forms": ["tbsp", "tbsp.", "tablespoon", "tablespoons"],
+          "forms": ["tbsp", "tablespoon", "tablespoons"],
           "case_sensitive": false
         }
       ],
@@ -2899,6 +3074,41 @@
           "forms": ["カップ", "計量カップ"],
           "case_sensitive": false
         }
+      ]
+    },
+    {
+      "id": "volume.go.jp",
+      "kind": "physical",
+      "dimension": "volume",
+      "definition": {
+        "kind": "linear",
+        "base_unit": "volume.milliliter",
+        "multiplier": "240100/1331",
+        "exact": true
+      },
+      "regions": [
+        "JP"
+      ],
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "gō",
+          "plural": "gō",
+          "symbols": [
+            "合"
+          ]
+        }
+      },
+      "aliases": [
+        {
+          "language": "ja",
+          "forms": ["合"],
+          "case_sensitive": false
+        }
+      ],
+      "notes": "The traditional Japanese measure of a tenth of a shō, 2401/13310 litre, about 180.39 mL. Rice is measured in it, and a rice cooker's cup rounds it to 180 mL.",
+      "references": [
+        "https://www.nippon.com/ja/japan-data/h01488/"
       ]
     },
     {
@@ -2967,7 +3177,7 @@
         },
         {
           "language": "en-AU",
-          "forms": ["tsp", "tsp.", "teaspoon", "teaspoons"],
+          "forms": ["tsp", "teaspoon", "teaspoons"],
           "case_sensitive": false
         }
       ],
@@ -3006,7 +3216,7 @@
           "language": "en-GB",
           "forms": [
             "fl oz",
-            "fl. oz.",
+            "fl. oz",
             "fluid ounce",
             "fluid ounces",
             "imperial fl oz",
@@ -3049,7 +3259,7 @@
       "aliases": [
         {
           "language": "en-GB",
-          "forms": ["pint", "pints", "pt", "pt.", "imperial pint", "imperial pints"],
+          "forms": ["pint", "pints", "pt", "imperial pint", "imperial pints"],
           "case_sensitive": false
         }
       ],
@@ -3085,7 +3295,7 @@
       "aliases": [
         {
           "language": "en-GB",
-          "forms": ["quart", "quarts", "qt", "qt.", "imperial quart", "imperial quarts"],
+          "forms": ["quart", "quarts", "qt", "imperial quart", "imperial quarts"],
           "case_sensitive": false
         }
       ],
@@ -3121,7 +3331,7 @@
       "aliases": [
         {
           "language": "en-GB",
-          "forms": ["gallon", "gallons", "gal", "gal.", "imperial gallon", "imperial gallons"],
+          "forms": ["gallon", "gallons", "gal", "imperial gallon", "imperial gallons"],
           "case_sensitive": false
         }
       ],
@@ -3241,7 +3451,7 @@
         },
         {
           "language": "el",
-          "forms": ["mm", "χιλιοστό", "χιλιοστά", "χιλ."],
+          "forms": ["mm", "χιλιοστό", "χιλιοστά", "χιλ"],
           "case_sensitive": false
         },
         {
@@ -3256,7 +3466,7 @@
         },
         {
           "language": "th",
-          "forms": ["mm", "มิลลิเมตร", "มม."],
+          "forms": ["mm", "มิลลิเมตร", "มม"],
           "case_sensitive": false
         },
         {
@@ -3404,7 +3614,7 @@
         },
         {
           "language": "el",
-          "forms": ["cm", "εκατοστό", "εκατοστά", "εκ."],
+          "forms": ["cm", "εκατοστό", "εκατοστά", "εκ"],
           "case_sensitive": false
         },
         {
@@ -3419,7 +3629,7 @@
         },
         {
           "language": "th",
-          "forms": ["cm", "เซนติเมตร", "ซม."],
+          "forms": ["cm", "เซนติเมตร", "ซม"],
           "case_sensitive": false
         },
         {
@@ -3481,7 +3691,7 @@
       "aliases": [
         {
           "language": "en",
-          "forms": ["in", "in.", "inch", "inches"],
+          "forms": ["in", "inch", "inches"],
           "case_sensitive": false
         },
         {
@@ -3973,7 +4183,7 @@
         },
         {
           "language": "de",
-          "forms": ["stück", "stücke", "stk", "stk."],
+          "forms": ["stück", "stücke", "stk"],
           "case_sensitive": false
         },
         {
@@ -3983,7 +4193,7 @@
         },
         {
           "language": "es",
-          "forms": ["pieza", "piezas", "unidad", "unidades", "ud.", "uds."],
+          "forms": ["pieza", "piezas", "unidad", "unidades", "ud", "uds"],
           "case_sensitive": false
         },
         {
@@ -3993,12 +4203,12 @@
         },
         {
           "language": "pt",
-          "forms": ["peça", "peças", "unidade", "unidades", "un.", "und."],
+          "forms": ["peça", "peças", "unidade", "unidades", "un", "und"],
           "case_sensitive": false
         },
         {
           "language": "nl",
-          "forms": ["stuk", "stuks", "st."],
+          "forms": ["stuk", "stuks", "st"],
           "case_sensitive": false
         },
         {
@@ -4008,22 +4218,22 @@
         },
         {
           "language": "da",
-          "forms": ["stk", "stk.", "styk", "stykker"],
+          "forms": ["stk", "styk", "stykker"],
           "case_sensitive": false
         },
         {
           "language": "nb",
-          "forms": ["stk", "stk.", "stykke", "stykker"],
+          "forms": ["stk", "stykke", "stykker"],
           "case_sensitive": false
         },
         {
           "language": "fi",
-          "forms": ["kpl", "kpl.", "kappale", "kappaletta"],
+          "forms": ["kpl", "kappale", "kappaletta"],
           "case_sensitive": false
         },
         {
           "language": "pl",
-          "forms": ["sztuka", "sztuki", "sztuk", "szt.", "szt"],
+          "forms": ["sztuka", "sztuki", "sztuk", "szt"],
           "case_sensitive": false
         },
         {
@@ -4033,12 +4243,12 @@
         },
         {
           "language": "hu",
-          "forms": ["darab", "db", "db."],
+          "forms": ["darab", "db"],
           "case_sensitive": false
         },
         {
           "language": "ro",
-          "forms": ["bucată", "bucăți", "buc", "buc."],
+          "forms": ["bucată", "bucăți", "buc"],
           "case_sensitive": false
         },
         {
@@ -4048,17 +4258,17 @@
         },
         {
           "language": "ru",
-          "forms": ["штука", "штуки", "штук", "шт", "шт."],
+          "forms": ["штука", "штуки", "штук", "шт"],
           "case_sensitive": false
         },
         {
           "language": "uk",
-          "forms": ["штука", "штуки", "штук", "шт", "шт."],
+          "forms": ["штука", "штуки", "штук", "шт"],
           "case_sensitive": false
         },
         {
           "language": "el",
-          "forms": ["τεμάχιο", "τεμάχια", "τεμ.", "τεμ"],
+          "forms": ["τεμάχιο", "τεμάχια", "τεμ"],
           "case_sensitive": false
         },
         {
@@ -4073,12 +4283,12 @@
         },
         {
           "language": "th",
-          "forms": ["ชิ้น", "อัน", "ลูก", "ใบ"],
+          "forms": ["ชิ้น", "อัน", "ลูก", "ใบ", "เม็ด", "ตัว"],
           "case_sensitive": false
         },
         {
           "language": "vi",
-          "forms": ["cái", "miếng", "quả", "trái"],
+          "forms": ["cái", "miếng", "quả", "trái", "con"],
           "case_sensitive": false
         },
         {
@@ -4088,7 +4298,7 @@
         },
         {
           "language": "ja",
-          "forms": ["個", "本", "枚", "片", "切れ", "玉", "丁", "尾", "株", "こ"],
+          "forms": ["個", "本", "枚", "片", "切れ", "玉", "丁", "尾", "株", "こ", "房", "コ"],
           "case_sensitive": false
         },
         {
@@ -4098,7 +4308,7 @@
         },
         {
           "language": "zh",
-          "forms": ["个", "個", "只", "隻", "块", "塊", "片", "条", "條", "根", "颗", "顆"],
+          "forms": ["个", "個", "只", "隻", "块", "塊", "片", "条", "條", "根", "颗", "顆", "支", "棵", "粒", "朵"],
           "case_sensitive": false
         }
       ]
@@ -4462,12 +4672,12 @@
         },
         {
           "language": "ru",
-          "forms": ["зубчик", "зубчика", "зубчиков", "зубчики"],
+          "forms": ["зубчик", "зубчика", "зубчиков", "зубчики", "зубч", "зубок", "зуб"],
           "case_sensitive": false
         },
         {
           "language": "uk",
-          "forms": ["зубчик", "зубчики", "зубчиків"],
+          "forms": ["зубчик", "зубчики", "зубчиків", "зубч", "зубок", "зубки", "зубків", "зуб"],
           "case_sensitive": false
         },
         {
@@ -4998,7 +5208,7 @@
         },
         {
           "language": "nl",
-          "forms": ["handvol"],
+          "forms": ["handvol", "handje", "handjes"],
           "case_sensitive": false
         },
         {
@@ -5094,6 +5304,833 @@
         {
           "language": "ko",
           "forms": ["줌", "움큼"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "count.piece",
+      "kind": "count",
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "piece",
+          "plural": "pieces"
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["piece", "pieces", "pc", "pcs"],
+          "case_sensitive": false
+        },
+        {
+          "language": "fr",
+          "forms": ["morceau", "morceaux"],
+          "case_sensitive": false
+        },
+        {
+          "language": "es",
+          "forms": ["trozo", "trozos"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pt",
+          "forms": ["pedaço", "pedaços"],
+          "case_sensitive": false
+        },
+        {
+          "language": "sv",
+          "forms": ["bit", "bitar"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pl",
+          "forms": ["kawałek", "kawałki", "kawałków"],
+          "case_sensitive": false
+        },
+        {
+          "language": "ru",
+          "forms": ["кусок", "куска", "кусков", "кусочек", "кусочка"],
+          "case_sensitive": false
+        },
+        {
+          "language": "cs",
+          "forms": ["kousek", "kousky", "kousků"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "count.slice",
+      "kind": "count",
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "slice",
+          "plural": "slices"
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["slice", "slices", "rasher", "rashers"],
+          "case_sensitive": false
+        },
+        {
+          "language": "de",
+          "forms": ["scheibe", "scheiben"],
+          "case_sensitive": false
+        },
+        {
+          "language": "fr",
+          "forms": ["tranche", "tranches"],
+          "case_sensitive": false
+        },
+        {
+          "language": "es",
+          "forms": ["rebanada", "rebanadas", "loncha", "lonchas"],
+          "case_sensitive": false
+        },
+        {
+          "language": "it",
+          "forms": ["fetta", "fette"],
+          "case_sensitive": false
+        },
+        {
+          "language": "nl",
+          "forms": ["plak", "plakken", "plakje", "plakjes"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pt",
+          "forms": ["fatia", "fatias"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "count.stick",
+      "kind": "count",
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "stick",
+          "plural": "sticks"
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["stick", "sticks"],
+          "case_sensitive": false
+        },
+        {
+          "language": "fr",
+          "forms": ["bâton", "bâtons"],
+          "case_sensitive": false
+        },
+        {
+          "language": "es",
+          "forms": ["barra", "barras"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "count.stalk",
+      "kind": "count",
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "stalk",
+          "plural": "stalks"
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["stalk", "stalks"],
+          "case_sensitive": false
+        },
+        {
+          "language": "de",
+          "forms": ["stange", "stangen"],
+          "case_sensitive": false
+        },
+        {
+          "language": "es",
+          "forms": ["tallo", "tallos"],
+          "case_sensitive": false
+        },
+        {
+          "language": "it",
+          "forms": ["gambo", "gambi"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pt",
+          "forms": ["talo", "talos"],
+          "case_sensitive": false
+        },
+        {
+          "language": "nl",
+          "forms": ["stengel", "stengels"],
+          "case_sensitive": false
+        },
+        {
+          "language": "sv",
+          "forms": ["stjälk", "stjälkar"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pl",
+          "forms": ["łodyga", "łodygi"],
+          "case_sensitive": false
+        },
+        {
+          "language": "ru",
+          "forms": ["стебель", "стебля", "стеблей"],
+          "case_sensitive": false
+        },
+        {
+          "language": "th",
+          "forms": ["ต้น"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "count.head",
+      "kind": "count",
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "head",
+          "plural": "heads"
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["head", "heads"],
+          "case_sensitive": false
+        },
+        {
+          "language": "de",
+          "forms": ["kopf", "köpfe"],
+          "case_sensitive": false
+        },
+        {
+          "language": "fr",
+          "forms": ["tête", "têtes"],
+          "case_sensitive": false
+        },
+        {
+          "language": "es",
+          "forms": ["cabeza", "cabezas"],
+          "case_sensitive": false
+        },
+        {
+          "language": "it",
+          "forms": ["testa", "teste", "cespo", "cespi"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pt",
+          "forms": ["cabeça", "cabeças"],
+          "case_sensitive": false
+        },
+        {
+          "language": "nl",
+          "forms": ["krop", "kroppen"],
+          "case_sensitive": false
+        },
+        {
+          "language": "sv",
+          "forms": ["huvud", "huvuden"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pl",
+          "forms": ["główka", "główki"],
+          "case_sensitive": false
+        },
+        {
+          "language": "ru",
+          "forms": ["кочан", "кочана", "головка", "головки"],
+          "case_sensitive": false
+        },
+        {
+          "language": "zh",
+          "forms": ["头", "頭"],
+          "case_sensitive": false
+        },
+        {
+          "language": "th",
+          "forms": ["หัว"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "count.sheet",
+      "kind": "count",
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "sheet",
+          "plural": "sheets"
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["sheet", "sheets"],
+          "case_sensitive": false
+        },
+        {
+          "language": "de",
+          "forms": ["blatt", "blätter"],
+          "case_sensitive": false
+        },
+        {
+          "language": "es",
+          "forms": ["lámina", "láminas"],
+          "case_sensitive": false
+        },
+        {
+          "language": "it",
+          "forms": ["foglio", "fogli"],
+          "case_sensitive": false
+        },
+        {
+          "language": "nl",
+          "forms": ["vel", "vellen"],
+          "case_sensitive": false
+        },
+        {
+          "language": "sv",
+          "forms": ["ark"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "count.leaf",
+      "kind": "count",
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "leaf",
+          "plural": "leaves"
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["leaf", "leaves"],
+          "case_sensitive": false
+        },
+        {
+          "language": "es",
+          "forms": ["hoja", "hojas"],
+          "case_sensitive": false
+        },
+        {
+          "language": "it",
+          "forms": ["foglia", "foglie"],
+          "case_sensitive": false
+        },
+        {
+          "language": "nl",
+          "forms": ["blaadje", "blaadjes"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "count.strip",
+      "kind": "count",
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "strip",
+          "plural": "strips"
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["strip", "strips"],
+          "case_sensitive": false
+        },
+        {
+          "language": "de",
+          "forms": ["streifen"],
+          "case_sensitive": false
+        },
+        {
+          "language": "fr",
+          "forms": ["lanière", "lanières"],
+          "case_sensitive": false
+        },
+        {
+          "language": "es",
+          "forms": ["tira", "tiras"],
+          "case_sensitive": false
+        },
+        {
+          "language": "it",
+          "forms": ["striscia", "strisce"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pt",
+          "forms": ["tira", "tiras"],
+          "case_sensitive": false
+        },
+        {
+          "language": "nl",
+          "forms": ["reep", "repen"],
+          "case_sensitive": false
+        },
+        {
+          "language": "sv",
+          "forms": ["remsa", "remsor"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pl",
+          "forms": ["pasek", "paski"],
+          "case_sensitive": false
+        },
+        {
+          "language": "ru",
+          "forms": ["полоска", "полоски"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "count.fillet",
+      "kind": "count",
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "fillet",
+          "plural": "fillets"
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["fillet", "fillets", "filet", "filets"],
+          "case_sensitive": false
+        },
+        {
+          "language": "de",
+          "forms": ["filet", "filets"],
+          "case_sensitive": false
+        },
+        {
+          "language": "es",
+          "forms": ["filete", "filetes"],
+          "case_sensitive": false
+        },
+        {
+          "language": "it",
+          "forms": ["filetto", "filetti"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pt",
+          "forms": ["filé", "filés", "filete", "filetes"],
+          "case_sensitive": false
+        },
+        {
+          "language": "nl",
+          "forms": ["filet", "filets"],
+          "case_sensitive": false
+        },
+        {
+          "language": "sv",
+          "forms": ["filé", "filéer"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pl",
+          "forms": ["filet", "filety"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "count.cube",
+      "kind": "count",
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "cube",
+          "plural": "cubes"
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["cube", "cubes"],
+          "case_sensitive": false
+        },
+        {
+          "language": "de",
+          "forms": ["würfel"],
+          "case_sensitive": false
+        },
+        {
+          "language": "fr",
+          "forms": ["cube", "cubes"],
+          "case_sensitive": false
+        },
+        {
+          "language": "es",
+          "forms": ["cubo", "cubos", "cubito", "cubitos"],
+          "case_sensitive": false
+        },
+        {
+          "language": "it",
+          "forms": ["cubetto", "cubetti", "dado", "dadi"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pt",
+          "forms": ["cubo", "cubos"],
+          "case_sensitive": false
+        },
+        {
+          "language": "ru",
+          "forms": ["кубик", "кубика", "кубиков"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "count.knob",
+      "kind": "count",
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "knob",
+          "plural": "knobs"
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["knob", "knobs"],
+          "case_sensitive": false
+        },
+        {
+          "language": "id",
+          "forms": ["ruas"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "count.ear",
+      "kind": "count",
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "ear",
+          "plural": "ears"
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["ear", "ears"],
+          "case_sensitive": false
+        },
+        {
+          "language": "de",
+          "forms": ["kolben"],
+          "case_sensitive": false
+        },
+        {
+          "language": "fr",
+          "forms": ["épi", "épis"],
+          "case_sensitive": false
+        },
+        {
+          "language": "es",
+          "forms": ["mazorca", "mazorcas"],
+          "case_sensitive": false
+        },
+        {
+          "language": "it",
+          "forms": ["pannocchia", "pannocchie"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pt",
+          "forms": ["espiga", "espigas"],
+          "case_sensitive": false
+        },
+        {
+          "language": "nl",
+          "forms": ["kolf", "kolven"],
+          "case_sensitive": false
+        },
+        {
+          "language": "ru",
+          "forms": ["початок", "початка"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "count.loaf",
+      "kind": "count",
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "loaf",
+          "plural": "loaves"
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["loaf", "loaves"],
+          "case_sensitive": false
+        },
+        {
+          "language": "de",
+          "forms": ["laib", "laibe"],
+          "case_sensitive": false
+        },
+        {
+          "language": "es",
+          "forms": ["hogaza", "hogazas"],
+          "case_sensitive": false
+        },
+        {
+          "language": "it",
+          "forms": ["pagnotta", "pagnotte"],
+          "case_sensitive": false
+        },
+        {
+          "language": "sv",
+          "forms": ["limpa", "limpor"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pl",
+          "forms": ["bochenek", "bochenki"],
+          "case_sensitive": false
+        },
+        {
+          "language": "ru",
+          "forms": ["буханка", "буханки"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "count.dash",
+      "kind": "count",
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "dash",
+          "plural": "dashes"
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["dash", "dashes"],
+          "case_sensitive": false
+        },
+        {
+          "language": "de",
+          "forms": ["spritzer"],
+          "case_sensitive": false
+        },
+        {
+          "language": "fr",
+          "forms": ["trait", "traits"],
+          "case_sensitive": false
+        },
+        {
+          "language": "it",
+          "forms": ["spruzzo", "spruzzi"],
+          "case_sensitive": false
+        },
+        {
+          "language": "nl",
+          "forms": ["scheutje", "scheutjes"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "count.drop",
+      "kind": "count",
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "drop",
+          "plural": "drops"
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["drop", "drops"],
+          "case_sensitive": false
+        },
+        {
+          "language": "de",
+          "forms": ["tropfen"],
+          "case_sensitive": false
+        },
+        {
+          "language": "fr",
+          "forms": ["goutte", "gouttes"],
+          "case_sensitive": false
+        },
+        {
+          "language": "es",
+          "forms": ["gota", "gotas"],
+          "case_sensitive": false
+        },
+        {
+          "language": "it",
+          "forms": ["goccia", "gocce"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pt",
+          "forms": ["gota", "gotas"],
+          "case_sensitive": false
+        },
+        {
+          "language": "nl",
+          "forms": ["druppel", "druppels"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "count.splash",
+      "kind": "count",
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "splash",
+          "plural": "splashes"
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["splash", "splashes"],
+          "case_sensitive": false
+        },
+        {
+          "language": "de",
+          "forms": ["schuss"],
+          "case_sensitive": false
+        },
+        {
+          "language": "es",
+          "forms": ["chorrito", "chorritos", "chorro", "chorros"],
+          "case_sensitive": false
+        },
+        {
+          "language": "it",
+          "forms": ["goccio", "gocci"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pt",
+          "forms": ["fio", "fios"],
+          "case_sensitive": false
+        },
+        {
+          "language": "nl",
+          "forms": ["scheut", "scheuten"],
+          "case_sensitive": false
+        },
+        {
+          "language": "sv",
+          "forms": ["skvätt", "skvättar"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "count.square",
+      "kind": "count",
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "square",
+          "plural": "squares"
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["square", "squares"],
+          "case_sensitive": false
+        },
+        {
+          "language": "fr",
+          "forms": ["carré", "carrés"],
+          "case_sensitive": false
+        },
+        {
+          "language": "it",
+          "forms": ["quadratino", "quadratini"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "count.wheel",
+      "kind": "count",
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "wheel",
+          "plural": "wheels"
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["wheel", "wheels"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "count.rack",
+      "kind": "count",
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "rack",
+          "plural": "racks"
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["rack", "racks"],
           "case_sensitive": false
         }
       ]
@@ -5282,12 +6319,12 @@
       "aliases": [
         {
           "language": "en",
-          "forms": ["packet", "packets", "package", "packages"],
+          "forms": ["packet", "packets", "package", "packages", "pkg", "pkgs", "pkt", "pkts", "sachet", "sachets"],
           "case_sensitive": false
         },
         {
           "language": "de",
-          "forms": ["päckchen", "packung", "packungen", "pck.", "pkg."],
+          "forms": ["päckchen", "packung", "packungen", "pck", "pkg"],
           "case_sensitive": false
         },
         {
@@ -5425,6 +6462,323 @@
         {
           "language": "zh",
           "forms": ["包", "袋"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "container.jar",
+      "kind": "container",
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "jar",
+          "plural": "jars"
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["jar", "jars"],
+          "case_sensitive": false
+        },
+        {
+          "language": "fr",
+          "forms": ["bocal", "bocaux"],
+          "case_sensitive": false
+        },
+        {
+          "language": "es",
+          "forms": ["frasco", "frascos", "tarro", "tarros", "bote", "botes"],
+          "case_sensitive": false
+        },
+        {
+          "language": "it",
+          "forms": ["barattolo", "barattoli", "vasetto", "vasetti"],
+          "case_sensitive": false
+        },
+        {
+          "language": "nl",
+          "forms": ["pot", "potten", "potje", "potjes"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pt",
+          "forms": ["frasco", "frascos", "pote", "potes"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "container.bottle",
+      "kind": "container",
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "bottle",
+          "plural": "bottles"
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["bottle", "bottles"],
+          "case_sensitive": false
+        },
+        {
+          "language": "de",
+          "forms": ["flasche", "flaschen"],
+          "case_sensitive": false
+        },
+        {
+          "language": "fr",
+          "forms": ["bouteille", "bouteilles"],
+          "case_sensitive": false
+        },
+        {
+          "language": "es",
+          "forms": ["botella", "botellas"],
+          "case_sensitive": false
+        },
+        {
+          "language": "it",
+          "forms": ["bottiglia", "bottiglie"],
+          "case_sensitive": false
+        },
+        {
+          "language": "nl",
+          "forms": ["fles", "flessen"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pt",
+          "forms": ["garrafa", "garrafas"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "container.bag",
+      "kind": "container",
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "bag",
+          "plural": "bags"
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["bag", "bags"],
+          "case_sensitive": false
+        },
+        {
+          "language": "de",
+          "forms": ["beutel", "tüte", "tüten"],
+          "case_sensitive": false
+        },
+        {
+          "language": "es",
+          "forms": ["bolsa", "bolsas"],
+          "case_sensitive": false
+        },
+        {
+          "language": "it",
+          "forms": ["sacchetto", "sacchetti"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pt",
+          "forms": ["saco", "sacos"],
+          "case_sensitive": false
+        },
+        {
+          "language": "nl",
+          "forms": ["zak", "zakken"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pl",
+          "forms": ["torba", "torby"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "container.box",
+      "kind": "container",
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "box",
+          "plural": "boxes"
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["box", "boxes"],
+          "case_sensitive": false
+        },
+        {
+          "language": "de",
+          "forms": ["schachtel", "schachteln"],
+          "case_sensitive": false
+        },
+        {
+          "language": "es",
+          "forms": ["caja", "cajas"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pt",
+          "forms": ["caixa", "caixas"],
+          "case_sensitive": false
+        },
+        {
+          "language": "nl",
+          "forms": ["doos", "dozen"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pl",
+          "forms": ["pudełko", "pudełka"],
+          "case_sensitive": false
+        },
+        {
+          "language": "ru",
+          "forms": ["коробка", "коробки", "коробок"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "container.carton",
+      "kind": "container",
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "carton",
+          "plural": "cartons"
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["carton", "cartons"],
+          "case_sensitive": false
+        },
+        {
+          "language": "fr",
+          "forms": ["brique", "briques"],
+          "case_sensitive": false
+        },
+        {
+          "language": "es",
+          "forms": ["brik", "briks"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "container.tub",
+      "kind": "container",
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "tub",
+          "plural": "tubs"
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["tub", "tubs"],
+          "case_sensitive": false
+        },
+        {
+          "language": "fr",
+          "forms": ["barquette", "barquettes"],
+          "case_sensitive": false
+        },
+        {
+          "language": "es",
+          "forms": ["tarrina", "tarrinas"],
+          "case_sensitive": false
+        },
+        {
+          "language": "it",
+          "forms": ["vaschetta", "vaschette"],
+          "case_sensitive": false
+        },
+        {
+          "language": "nl",
+          "forms": ["bakje", "bakjes"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "container.envelope",
+      "kind": "container",
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "envelope",
+          "plural": "envelopes"
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["envelope", "envelopes"],
+          "case_sensitive": false
+        },
+        {
+          "language": "pt",
+          "forms": ["envelope", "envelopes"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "container.pot",
+      "kind": "container",
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "pot",
+          "plural": "pots"
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["pot", "pots"],
+          "case_sensitive": false
+        },
+        {
+          "language": "fr",
+          "forms": ["pot", "pots"],
+          "case_sensitive": false
+        }
+      ]
+    },
+    {
+      "id": "container.punnet",
+      "kind": "container",
+      "status": "active",
+      "labels": {
+        "en": {
+          "name": "punnet",
+          "plural": "punnets"
+        }
+      },
+      "aliases": [
+        {
+          "language": "en",
+          "forms": ["punnet", "punnets"],
           "case_sensitive": false
         }
       ]

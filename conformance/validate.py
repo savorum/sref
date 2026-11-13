@@ -41,8 +41,8 @@ MAX_JSON_NUMBER_CHARACTERS = 1024
 MAX_BUNDLE_BYTES = 512 * 1024 * 1024
 # Reference-reader policy, not a bundle-format validity constraint.
 MAX_BUNDLE_MEMBERS = 10_000
-SUPPORTED_RECIPE_VERSION = (0, 4, 0)
-SUPPORTED_REGISTRY_VERSION = (0, 2, 0)
+SUPPORTED_RECIPE_VERSION = (0, 5, 0)
+SUPPORTED_REGISTRY_VERSION = (0, 3, 0)
 
 # This recognizes regular and private-use BCP 47 forms. Grandfathered tags are
 # handled by the explicit registry below.
@@ -178,6 +178,7 @@ EXPECTED_ERROR_MARKERS: dict[str, tuple[str, ...]] = {
         "expected exactly one physical base unit, found 2",
     ),
     "duplicate-normalized-unit-alias": ("duplicate normalized alias",),
+    "unit-alias-trailing-full-stop": ("ends in a full stop",),
     "active-unit-replacement": ("should not be valid under", "replacement"),
     "missing-unit-replacement": ("replacement does not exist",),
     "active-unit-without-alias": ("active unit has no parsing aliases",),
@@ -1265,10 +1266,14 @@ def registry_semantic_errors(unit_registry: dict[str, Any]) -> list[str]:
             )
             forms = alias_set["forms"]
             for form in forms:
-                if unicodedata.normalize("NFC", form) != form or form != form.strip():
+                if (
+                    unicodedata.normalize("NFC", form) != form
+                    or form != form.strip()
+                    or form.endswith(".")
+                ):
                     errors.append(
                         f"{unit_id}.aliases[{alias_index}]: alias {form!r} is not "
-                        "NFC or has surrounding whitespace"
+                        "NFC, has surrounding whitespace, or ends in a full stop"
                     )
             comparison_forms = [
                 match_key(form, alias_set["case_sensitive"]) for form in forms
@@ -1354,11 +1359,14 @@ def match_key(value: str, case_sensitive: bool) -> str:
     """The text alias comparison sees.
 
     Both sides are put in canonical composition (NFC), so a composed and a
-    decomposed spelling of one form match. A case-insensitive set additionally
-    compares under Unicode case folding. Compatibility mappings, accent
-    stripping, and script conversion are never applied.
+    decomposed spelling of one form match. A trailing full stop ends an
+    abbreviation and is dropped. A case-insensitive set additionally compares
+    under Unicode case folding. Compatibility mappings, accent stripping, and
+    script conversion are never applied.
     """
     composed = unicodedata.normalize("NFC", value)
+    if len(composed) > 1:
+        composed = composed.removesuffix(".")
     return composed if case_sensitive else composed.casefold()
 
 

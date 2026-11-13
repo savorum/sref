@@ -23,9 +23,9 @@ winning exact level outranks generic-language aliases, and unmatched regions
 verify that lookup does not search sibling locales.
 
 For ordinary `en-US` text, unqualified `cup`, `tablespoon`, and `teaspoon`
-aliases identify the exact US customary units. A parser MUST select the rounded
-240 mL, 15 mL, or 5 mL culinary identity only when the source explicitly defines
-that convention.
+aliases identify the exact US customary units. For these English forms, a parser
+MUST select the rounded 240 mL, 15 mL, or 5 mL culinary identity only when the
+source explicitly defines that convention.
 
 The three are equally region-bound, so none of them resolves from a source that
 states only a language. A bare `tsp` under `en`, under `en-CA`, or under no
@@ -41,18 +41,28 @@ quantity. Japanese writes a unit before its number (`大さじ2`), and Japanese,
 Korean, Chinese, and Thai list the ingredient before its quantity
 (`小麦粉 200g`). Decimal digits of any script are numbers, and a connective that
 only joins a measure to what it measures (`de`, `d'`, `di`) belongs to neither.
-A measure whose size differs between countries has no alias, so its quantity
-stays opaque, and a source locale in one language does not reach the aliases of
-another. The same holds for a spoon word whose capacity differs between
-publishers, and for a cup the line describes as a paper cup or a rice-cooker
-cup. A spoon followed by a stated equivalent that differs from the registry's
-size by more than a tenth stays opaque. A broad word with no alias is read in
-the sense its ingredient selects: `gousse d'ail` is a clove, and
-`gousse de vanille` and `boîte de chocolats` are counts of the ingredient. A
-measure word that contains the number one (`ひとつまみ`, `sejumput`) is an
-amount of one. A counting classifier (`枚`, `切れ`, `片`) is read as a count of
-the ingredient, and the classifier stays in the source text. Forms are matched
-in canonical composition and no other normalization.
+A measure with multiple registered candidates stays opaque without stronger
+source evidence, as do measures with no registered identity and cups described
+as paper cups or rice-cooker cups. A source locale in one language does not
+reach the aliases of another. The
+[cup and spoon conventions](quantity-and-units.md#spoon-words-in-other-languages)
+govern the language-level forms. A spoon followed by a stated equivalent that
+differs from the registry's size by more than a tenth stays opaque. A broad word
+with no alias is read in the sense its ingredient selects: `gousse d'ail` is a
+clove, and `gousse de vanille` and `boîte de chocolats` are counts of the
+ingredient. A measure word that contains the number one (`ひとつまみ`,
+`sejumput`) is an amount of one, as is an article before a unit (`eine Prise`,
+`un pizzico`), and a number written as a word (`two`, `dwie`) is that amount. A
+word qualifying the measure, before or after it (`heaped`, `gehäufter`,
+`colmada`, `с горкой`), is the note. A count word with an alias, such as
+`sticks`, `drops`, or `bottle`, is a count or container unit, and a container's
+stated measure is its package size; a count word without one, such as `ribs`,
+counts the ingredient and stays in the note. A word that states an amount
+without a number (`a few`, `quelques`, `少々`) makes the quantity opaque, with
+the ingredient read after or before it. A counting classifier (`枚`, `切れ`,
+`片`) is read as a count of the ingredient, and the classifier stays in the
+source text. Forms are matched in canonical composition and no other
+normalization.
 
 `classification` has these meanings:
 

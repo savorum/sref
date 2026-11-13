@@ -1,10 +1,10 @@
 {
-  "unit_registry": "0.2.0",
+  "unit_registry": "0.3.0",
   "profiles": [
     {
       "id": "us-customary-spoons",
       "label": "US customary",
-      "unit_registry": "0.2.0",
+      "unit_registry": "0.3.0",
       "units": {
         "volume.cup": "volume.cup.us.customary",
         "volume.tablespoon": "volume.tablespoon.us.customary",
@@ -14,7 +14,7 @@
     {
       "id": "au-spoons",
       "label": "Australian",
-      "unit_registry": "0.2.0",
+      "unit_registry": "0.3.0",
       "units": {
         "volume.cup": "volume.cup.au",
         "volume.tablespoon": "volume.tablespoon.au",
@@ -24,7 +24,7 @@
     {
       "id": "metric-culinary-volume",
       "label": "Metric culinary cup and teaspoon only (partial: no tablespoon)",
-      "unit_registry": "0.2.0",
+      "unit_registry": "0.3.0",
       "units": {
         "volume.cup": "volume.cup.metric.culinary",
         "volume.teaspoon": "volume.teaspoon.metric.culinary"
@@ -33,7 +33,7 @@
     {
       "id": "metric-culinary-full",
       "label": "Metric culinary cup, tablespoon, and teaspoon",
-      "unit_registry": "0.2.0",
+      "unit_registry": "0.3.0",
       "units": {
         "volume.cup": "volume.cup.metric.culinary",
         "volume.tablespoon": "volume.tablespoon.metric.culinary",
@@ -43,7 +43,7 @@
     {
       "id": "us-customary-spoons-only",
       "label": "US customary spoons, no cup",
-      "unit_registry": "0.2.0",
+      "unit_registry": "0.3.0",
       "units": {
         "volume.tablespoon": "volume.tablespoon.us.customary",
         "volume.teaspoon": "volume.teaspoon.us.customary"
@@ -2640,6 +2640,74 @@
           "mass": "mass.gram",
           "volume": "volume.liter",
           "other": "container.packet"
+        }
+      }
+    },
+    {
+      "id": "count-and-container-words-en",
+      "description": "An en source resolves count and container words, including packet abbreviations, through its own alias set.",
+      "source_locale": "en-GB",
+      "source_text": "2 sticks; 3 slices; 1 jar; 2 pkt",
+      "occurrences": [
+        {
+          "id": "stick",
+          "ingredient": "first",
+          "form": "sticks",
+          "family": "count.stick"
+        },
+        {
+          "id": "slice",
+          "ingredient": "second",
+          "form": "slices",
+          "family": "count.slice"
+        },
+        {
+          "id": "jar",
+          "ingredient": "third",
+          "form": "jar",
+          "family": "container.jar"
+        },
+        {
+          "id": "packet",
+          "ingredient": "fourth",
+          "form": "pkt",
+          "family": "container.packet"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "stick": "count.stick",
+          "slice": "count.slice",
+          "jar": "container.jar",
+          "packet": "container.packet"
+        }
+      }
+    },
+    {
+      "id": "abbreviation-full-stop-en-us",
+      "description": "A full stop ending an abbreviation is not part of the form, so 'tbsp.' and 'oz.' resolve as 'tbsp' and 'oz'.",
+      "source_locale": "en-US",
+      "source_text": "2 tbsp.; 4 oz.",
+      "occurrences": [
+        {
+          "id": "spoon",
+          "ingredient": "first",
+          "form": "tbsp.",
+          "family": "volume.tablespoon"
+        },
+        {
+          "id": "mass",
+          "ingredient": "second",
+          "form": "oz.",
+          "family": "mass.ounce"
+        }
+      ],
+      "expected": {
+        "outcome": "resolved",
+        "units": {
+          "spoon": "volume.tablespoon.us.customary",
+          "mass": "mass.ounce.avoirdupois"
         }
       }
     }

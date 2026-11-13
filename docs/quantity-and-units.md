@@ -136,15 +136,30 @@ language-scoped aliases like any other: they apply only when the source locale
 selects that language, and a source locale of another language does not reach
 them.
 
-A spoon word whose capacity differs between publishers has no alias, and a line
-that uses it stays opaque. Portuguese `cc` is a 5 mL tea measure in one
-publisher's legend, a 2.5 mL coffee measure in another, and a cubic centimetre
-elsewhere. Turkish sources give the tea spoon as 2.5 mL or 5 mL and the
-tablespoon as 10 mL or 15 mL. A source that states its own measure identifies it
-by that statement, and the original text is kept: a spoon followed by an
+Portuguese `cc` has no alias: it is a 5 mL tea measure in one publisher's
+legend, a 2.5 mL coffee measure in another, and a cubic centimetre elsewhere.
+Turkish `çay kaşığı`, `çk`, and `ç.k.` name the 5 mL measuring teaspoon;
+`yemek kaşığı`, `yk`, and `y.k.` name the 15 mL measuring tablespoon.
+[Sana's kitchen guide](https://www.sana.com.tr/faydali-bilgiler/olcu-birimleri)
+documents those volumes, and a
+[manufacturer's cookbook](https://media3.bsh-group.com/Documents/26107073_8001330512_SEIH6_G_SV_TR.pdf)
+uses the abbreviations and gives water measures of 5 g and 15 g (p. 9).
+Household spoons vary: [Lezzet](https://www.lezzet.com.tr/p/mutfak-olculeri)
+also gives a 2.5 mL tea spoon. A source that states its own measure identifies
+it by that statement, and the original text is kept: a spoon followed by an
 equivalent in millilitres that differs from the registry's size by more than a
 tenth stays unresolved. A resolution decision made for the ingredient is not
 overridden.
+
+Romanian `lingura`, `lingurita`, and `lingurite` are explicitly registered
+spellings without diacritics.
+[Gourmandelle recipes](https://gourmandelle.com/ro/flan-de-ciocolata-budinca/)
+use the singular forms. They name the same measuring spoons as `lingură`,
+`linguriță`, and `lingurițe`.
+[Editura ART's cookbook guide](https://www.editura-art.ro/info/blogitem/supercartea-de-bucate-pentru-minichefi-parfeuri-cu-iaurt-si-fructe-de-padure)
+gives the teaspoon as 5 mL and three teaspoons as one 15 mL tablespoon. Matching
+does not strip diacritics from other forms. Romanian `cana` has no registered
+cup identity and stays opaque.
 
 Explicit source wording and documented conventions outrank a locale-derived
 candidate. An alias identifies a word; it does not interpret a line. A parser
@@ -161,15 +176,62 @@ convention identifies its measure by that declaration. The
 [registry README](../registry/README.md#sources-and-alias-policy) records the
 sources.
 
+### Cup words in other languages
+
+Portuguese `xícara`, `xícara de chá`, `xícara chá`, and `xícara (chá)`,
+including their plurals, name the 240 mL culinary cup `volume.cup.us.culinary`.
+[Embrapa's recipe book, p. 108](https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/1085401/1/ARROZ-COM-QUE-ed03-2017.pdf)
+documents this cooking measure. It does not select the exact US labeling cup or
+Brazil's 200 mL labeling cup. An explicit source equivalence takes precedence,
+including a recipe that states a 100 mL cup. The book's 50 mL `xícara (café)`
+has no registered identity; coffee-cup wording stays opaque.
+
+Hebrew `כוס` and `כוסות` and Arabic `كوب` and `أكواب` name both
+`volume.cup.us.culinary` (240 mL) and `volume.cup.metric.culinary` (250 mL).
+[Krutit's conversion table](https://www.krutit.co.il/?p=143) uses 240 mL;
+[Hen in the Kitchen's recipes](https://heninthekitchen.com/wp-content/uploads/2022/03/%D7%9E%D7%AA%D7%9B%D7%95%D7%A0%D7%99%D7%9D-%D7%9C%D7%9E%D7%A9%D7%9C%D7%95%D7%97-%D7%9E%D7%A0%D7%95%D7%AA.pdf)
+use 250 mL.
+[Makkah Medical Center's food measures, p. 3](https://mmc.med.sa/storage/media/image/YVvzfIJk3vyHCpZP4yM24EhzZu136RXBbuTZjo0V.pdf)
+use 240 mL;
+[Mona Saboni's recipe](https://monasaboni.com/%D9%83%D8%A7%D8%AA%D9%88-%D8%A7%D9%84%D9%86%D8%B3%D9%83%D8%A7%D9%81%D9%8A%D9%87-%D9%88-%D8%A7%D9%84%D8%AC%D9%88%D8%B2/)
+defines its cup as 250 mL in the author's answer. These language-level alias
+sets are case-insensitive. A locale such as `he-IL` or `ar-SA` leaves two
+candidates, so the quantity stays opaque or unresolved without stronger
+evidence.
+
+Turkish `su bardağı` stays opaque. Sana gives the water glass as 200 mL; the
+Japanese and Korean cups have that magnitude but denote other conventions.
+Turkish `tatlı kaşığı` and `tk` also stay opaque: the registry has no dessert
+spoon identity. A shared magnitude alone does not establish a shared unit.
+
+### Decagram and hectogram
+
+`mass.decagram` is exactly 10 g. Recipes in Austria, Czechia, Hungary, and
+Poland weigh ingredients in it. Besides the SI symbol `dag`, the German, Czech,
+Hungarian, and Polish alias sets register the older symbol `dkg`, and the
+German, Czech, and Hungarian sets register the short form `deka`.
+
+`mass.hectogram` is exactly 100 g. Italian recipes write it as `etto`, and Thai
+recipes as `ขีด`, a tenth of a kilogram.
+
+### Gō
+
+`volume.go.jp` is the Japanese `合`, a tenth of a shō, exactly 2401/13310 litre
+or about 180.39 mL. Rice is measured in it. A rice cooker's cup is the same
+measure rounded to 180 mL, so a recipe that states `1合` means this unit and not
+the 200 mL `volume.cup.jp`.
+
 ## Matching a written form
 
 An implementation compares a written unit form with registered forms as follows:
 
 1. Both are put in Unicode NFC, so a composed and a decomposed spelling of one
    form match.
-2. A case-sensitive alias set compares the composed forms exactly. Any other set
-   compares under Unicode case folding.
-3. No other transformation is applied. Compatibility normalization (NFKC or
+2. One full stop (U+002E) at the end of either form is removed. It ends an
+   abbreviation and is not part of the form, so `tbsp.` matches `tbsp`.
+3. A case-sensitive alias set compares the forms exactly. Any other set compares
+   under Unicode case folding.
+4. No other transformation is applied. Compatibility normalization (NFKC or
    NFKD), accent stripping, script conversion, and lookalike mapping are not
    part of matching, so a fullwidth `ｍｌ`, the single character `℃`, or a
    Cyrillic `м` written beside a Latin `c` matches only a form registered that
@@ -181,7 +243,7 @@ SI or UCUM parsing.
 
 An importer MAY apply its own documented preprocessing to a line before
 matching. It MUST keep the original text as `source_text`. Registered forms are
-NFC and carry no surrounding whitespace.
+NFC, carry no surrounding whitespace, and do not end in a full stop.
 
 The same rule governs the larger liquid measures. `fl oz`, `pint`, `quart`, and
 `gallon` resolve to the United States family under `en-US` and to the imperial

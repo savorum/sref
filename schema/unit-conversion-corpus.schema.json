@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "urn:sref:schema:unit-conversion-corpus:0.2.0",
-  "title": "SREF unit conversion conformance corpus 0.2.0",
+  "$id": "urn:sref:schema:unit-conversion-corpus:0.3.0",
+  "title": "SREF unit conversion conformance corpus 0.3.0",
   "type": "object",
   "required": ["unit_registry", "cases"],
   "properties": {

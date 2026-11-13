@@ -123,7 +123,7 @@ to its primary language, so `pt` serves `pt-BR` and `pt-PT`, and `zh` serves
 both Chinese scripts. Lookup never crosses languages: a German source does not
 acquire an English alias, and an English source does not acquire a German one.
 
-These sets name only the measures a language fixes:
+These sets name documented measuring conventions:
 
 - metric masses, volumes, and lengths, as words and symbols;
 - the international symbols `oz` and `lb`, and the inch and ounce words that
@@ -132,16 +132,22 @@ These sets name only the measures a language fixes:
   which select the 5 mL `volume.teaspoon.metric.culinary` and the 15 mL
   `volume.tablespoon.metric.culinary`;
 - the counts and containers the English sets name, where the word names that
-  count or container and not something broader; and
+  count or container and not something broader;
 - the national measuring cups `volume.cup.jp` and `volume.cup.kr`, each 200 mL,
-  which the Japanese `カップ` and the Korean `컵` select.
+  which the Japanese `カップ` and the Korean `컵` select, and the Japanese rice
+  measure `合`, which selects `volume.go.jp`;
+- the counter words Chinese, Japanese, Korean, and Thai write after a number,
+  which select `count.item` or the count they name; and
+- Portuguese tea-cup words for the 240 mL culinary cup, and Hebrew and Arabic
+  cup words for both the 240 mL and 250 mL culinary cups. The latter remain
+  ambiguous without stronger evidence. See
+  [cup words and sources](../docs/quantity-and-units.md#cup-words-in-other-languages).
 
-A form that names different quantities in different countries has no alias, so a
-quantity written with it stays opaque. That covers the cup and mug words of
-every other language, the pound and ounce words that name a different mass in
-another country (`Pfund`, `livre`, `libra`, the Dutch and Indonesian `ons`), and
-dessert-spoon words. It also covers spoon words whose capacity differs between
-publishers (Portuguese `cc`, Turkish `çay kaşığı` and `yemek kaşığı`), and a
+A form without a defensible registered identity has no alias, so a quantity
+written with it stays opaque. That covers the remaining cup and mug words, the
+pound and ounce words that name a different mass in another country (`Pfund`,
+`livre`, `libra`, the Dutch and Indonesian `ons`), and dessert-spoon words. It
+also covers Portuguese `cc`, whose abbreviations name different measures, and a
 bare word whose competing meanings remain plausible in a food context: French
 `gousse`, Swedish `klyfta`, Italian `spicchio` and `scatola`, Korean `쪽`,
 Chinese `瓣`, French `boîte`, and Finnish `mm`.
@@ -194,31 +200,36 @@ The metric spoon references name the convention each source documents: German
 (Dr. Oetker), Danish (Den Danske Ordbog), Norwegian (MatPrat), Swedish (Arla),
 Finnish (Martat), Canadian French (Health Canada), Brazilian Portuguese
 (Receitas Nestlé), Polish (Moje Wypieki, a blog's own stated convention),
-Japanese (Osaka City), Korean (Rural Development Administration), and Hong Kong
-Traditional Chinese (Department of Health). Each documents its own page or
+Romanian (Editura ART), Japanese (Osaka City), Korean (Rural Development
+Administration), and Hong Kong Traditional Chinese (Department of Health), and
+Turkish (Sana and a manufacturer's cookbook). Each documents its own page or
 language, and a publisher's other pages may use another convention.
 
 These decisions are not obvious from the aliases, and each has a regression case
 in the ingredient-line corpus:
 
-| Form                                 | Decision                                                                                                                   | Source                                                                         | Cases                                                                                                                                                             |
-| ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Portuguese `cc`                      | No alias. One publisher's legend gives `Cc` as 5 mL and `cc` as 2.5 mL, and `cc` is also the cubic centimetre.             | Veganizadores recipe page, "Ingredients" and "Medidas"; Infopédia, C.C.        | `portuguese-cc-has-no-single-size`, `portuguese-cc-legend-case-is-kept`                                                                                           |
-| Turkish `çay kaşığı`, `yemek kaşığı` | No alias. One page gives the tea spoon as 2.5 mL and the tablespoon as 10 mL in its legend and 15 mL in its section.       | Lezzet, Mutfak ölçüleri                                                        | `turkish-tea-spoon-has-no-single-size`, `turkish-tablespoon-has-no-single-size`                                                                                   |
-| Dutch `theelepel`, `eetlepel`        | Kept as the measuring spoons. A household tableware table gives 2 mL and 12 mL, so a stated equivalent outranks the alias. | Voedingscentrum, cooking help                                                  | `dutch-stated-equivalent-outranks-the-spoon-word`                                                                                                                 |
-| Italian and Hungarian tablespoon     | Kept. Two cookbooks state about 10 mL for their own text, so a stated equivalent outranks the alias.                       | Miele cookbooks, Italian p. 10 and Hungarian p. 15                             | `italian-stated-equivalent-outranks-the-spoon-word`, `hungarian-stated-equivalent-outranks-the-spoon-word`                                                        |
-| Portuguese `colher de sopa`          | 15 mL culinary. Nutrition labeling specifies a 10 mL tablespoon and a 200 mL cup, which is a different convention.         | ANVISA IN 75/2020, Annex VII                                                   | `portuguese-culinary-tablespoon-is-not-the-label-measure`                                                                                                         |
-| Finnish `mm`                         | No alias. It abbreviates `maustemitta`, a 1 mL spice measure. Length words and `cm` stay lengths.                          | Martat, Ruoka-aineiden mitat ja painot                                         | `finnish-mm-may-be-the-spice-measure`, `finnish-centimetre-stays-a-length`                                                                                        |
-| French `gousse`                      | No alias. The ingredient selects the sense.                                                                                | Académie française, gousse and ail                                             | `french-garlic-clove-with-its-ingredient`, `french-vanilla-pod-is-not-a-clove`                                                                                    |
-| Swedish `klyfta`                     | No alias. A wedge or a segment of fruit.                                                                                   | Svenska Akademiens ordböcker, klyfta                                           | `swedish-garlic-clove-with-its-ingredient`, `swedish-fruit-segment-is-not-a-clove`                                                                                |
-| Italian `spicchio`, `scatola`        | No alias. A fruit wedge; a box of any material.                                                                            | Treccani, spicchio and scatola                                                 | `italian-garlic-clove-with-its-ingredient`, `italian-fruit-segment-is-not-a-clove`, `italian-canned-tomatoes-are-a-can`, `italian-box-of-chocolates-is-not-a-can` |
-| Korean `쪽`, Chinese `瓣`            | No alias. A divided piece of any food; a garlic or fruit segment.                                                          | National Institute of Korean Language; Taiwan Ministry of Education dictionary | `korean-garlic-clove-with-its-ingredient`, `chinese-garlic-clove-with-its-ingredient`                                                                             |
-| French `boîte`                       | Only `boîte de conserve` is an alias.                                                                                      | Larousse, boîte                                                                | `french-box-is-not-a-can`, `french-preserve-tin-is-a-can`                                                                                                         |
+| Form                                 | Decision                                                                                                                   | Source                                                                                  | Cases                                                                                                                                                             |
+| ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Portuguese `cc`                      | No alias. One publisher's legend gives `Cc` as 5 mL and `cc` as 2.5 mL, and `cc` is also the cubic centimetre.             | Veganizadores recipe page, "Ingredients" and "Medidas"; Infopédia, C.C.                 | `portuguese-cc-has-no-single-size`, `portuguese-cc-legend-case-is-kept`                                                                                           |
+| Turkish `çay kaşığı`, `yemek kaşığı` | 5 mL and 15 mL measuring spoons. Stated equivalents outrank the aliases.                                                   | [Spoon words and sources](../docs/quantity-and-units.md#spoon-words-in-other-languages) | `turkish-measuring-teaspoon`, `turkish-measuring-tablespoon`, `turkish-stated-teaspoon-equivalent`, `turkish-stated-tablespoon-equivalent`                        |
+| Dutch `theelepel`, `eetlepel`        | Kept as the measuring spoons. A household tableware table gives 2 mL and 12 mL, so a stated equivalent outranks the alias. | Voedingscentrum, cooking help                                                           | `dutch-stated-equivalent-outranks-the-spoon-word`                                                                                                                 |
+| Italian and Hungarian tablespoon     | Kept. Two cookbooks state about 10 mL for their own text, so a stated equivalent outranks the alias.                       | Miele cookbooks, Italian p. 10 and Hungarian p. 15                                      | `italian-stated-equivalent-outranks-the-spoon-word`, `hungarian-stated-equivalent-outranks-the-spoon-word`                                                        |
+| Portuguese `colher de sopa`          | 15 mL culinary. Nutrition labeling specifies a 10 mL tablespoon and a 200 mL cup, which is a different convention.         | ANVISA IN 75/2020, Annex VII                                                            | `portuguese-culinary-tablespoon-is-not-the-label-measure`                                                                                                         |
+| Finnish `mm`                         | No alias. It abbreviates `maustemitta`, a 1 mL spice measure. Length words and `cm` stay lengths.                          | Martat, Ruoka-aineiden mitat ja painot                                                  | `finnish-mm-may-be-the-spice-measure`, `finnish-centimetre-stays-a-length`                                                                                        |
+| French `gousse`                      | No alias. The ingredient selects the sense.                                                                                | Académie française, gousse and ail                                                      | `french-garlic-clove-with-its-ingredient`, `french-vanilla-pod-is-not-a-clove`                                                                                    |
+| Swedish `klyfta`                     | No alias. A wedge or a segment of fruit.                                                                                   | Svenska Akademiens ordböcker, klyfta                                                    | `swedish-garlic-clove-with-its-ingredient`, `swedish-fruit-segment-is-not-a-clove`                                                                                |
+| Italian `spicchio`, `scatola`        | No alias. A fruit wedge; a box of any material.                                                                            | Treccani, spicchio and scatola                                                          | `italian-garlic-clove-with-its-ingredient`, `italian-fruit-segment-is-not-a-clove`, `italian-canned-tomatoes-are-a-can`, `italian-box-of-chocolates-is-not-a-can` |
+| Korean `쪽`, Chinese `瓣`            | No alias. A divided piece of any food; a garlic or fruit segment.                                                          | National Institute of Korean Language; Taiwan Ministry of Education dictionary          | `korean-garlic-clove-with-its-ingredient`, `chinese-garlic-clove-with-its-ingredient`                                                                             |
+| French `boîte`                       | Only `boîte de conserve` is an alias.                                                                                      | Larousse, boîte                                                                         | `french-box-is-not-a-can`, `french-preserve-tin-is-a-can`                                                                                                         |
+| Korean `T`, `t`                      | Case-sensitive aliases for the 15 mL and 5 mL measuring spoons, as Korean recipes write `1T` and `1t`.                     | LG Electronics recipe guide, 1큰술(1T) = 15 mL                                          | `korean-capital-t-is-the-tablespoon`, `korean-small-t-is-the-teaspoon`                                                                                            |
+| Japanese `合`                        | `volume.go.jp`, not the 200 mL cup. Rice recipes and rice cookers measure in it.                                           | [Gō](../docs/quantity-and-units.md#gō)                                                  | `japanese-go-is-not-the-cup`                                                                                                                                      |
+| Thai `ขีด`                           | `mass.hectogram`, a tenth of a kilogram.                                                                                   | Trueplookpanya, Thai weights                                                            | `thai-khit-is-a-hundred-grams`                                                                                                                                    |
 
-No source certifies every alias in every language. The Arabic, Czech, Hebrew,
-Indonesian, Romanian, Russian, Thai, Ukrainian, and Vietnamese sets rest on the
-CLDR release for physical units and on the English sets for counts and
-containers.
+No source certifies every alias in every language. The Czech, Indonesian,
+Russian, Thai, Ukrainian, and Vietnamese sets rest on the CLDR release for
+physical units and on the English sets for counts and containers. Arabic,
+Hebrew, and Romanian use the same basis alongside the cited cup and spoon
+sources.
 
 ## Registry validation
 

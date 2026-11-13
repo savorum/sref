@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "urn:sref:schema:recipe:0.4.0",
-  "title": "SREF recipe 0.4.0",
+  "$id": "urn:sref:schema:recipe:0.5.0",
+  "title": "SREF recipe 0.5.0",
   "$comment": "Objects are open so an older reader can validate the subset it understands from a newer compatible document. That is not permission to author unknown non-extension members under the exactly declared version: specification section 13 scopes the allowance to reading a newer version, and section 23 makes the declared-version member vocabulary a semantic requirement this schema cannot express, because additionalProperties cannot depend on a sibling value.",
   "type": "object",
   "required": [

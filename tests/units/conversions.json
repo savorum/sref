@@ -1,5 +1,5 @@
 {
-  "unit_registry": "0.2.0",
+  "unit_registry": "0.3.0",
   "cases": [
     {
       "id": "kilograms-to-grams",
@@ -7,6 +7,20 @@
       "target_unit": "mass.gram",
       "input": {"value": "3/2"},
       "expected": {"amount": {"value": "1500"}, "approximate": false}
+    },
+    {
+      "id": "decagrams-to-grams",
+      "source_unit": "mass.decagram",
+      "target_unit": "mass.gram",
+      "input": {"value": "25"},
+      "expected": {"amount": {"value": "250"}, "approximate": false}
+    },
+    {
+      "id": "go-to-milliliters",
+      "source_unit": "volume.go.jp",
+      "target_unit": "volume.milliliter",
+      "input": {"value": "1"},
+      "expected": {"amount": {"value": "240100/1331"}, "approximate": false}
     },
     {
       "id": "ounces-to-grams",

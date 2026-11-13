@@ -1,7 +1,7 @@
 {
   "sref": {
-    "version": "0.4.0",
-    "unit_registry": "0.2.0"
+    "version": "0.5.0",
+    "unit_registry": "0.3.0"
   },
   "id": "authored-choices",
   "title": "Authored ingredient choices",

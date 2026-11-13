@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "urn:sref:schema:conformance-manifest:0.4.0",
-  "title": "SREF conformance manifest 0.4.0",
+  "$id": "urn:sref:schema:conformance-manifest:0.5.0",
+  "title": "SREF conformance manifest 0.5.0",
   "type": "object",
   "required": [
     "sref_version",
@@ -10,10 +10,10 @@
   ],
   "properties": {
     "sref_version": {
-      "const": "0.4.0"
+      "const": "0.5.0"
     },
     "unit_registry_version": {
-      "const": "0.2.0"
+      "const": "0.3.0"
     },
     "cases": {
       "type": "array",
