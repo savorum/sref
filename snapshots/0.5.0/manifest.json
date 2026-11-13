@@ -3,7 +3,7 @@
   "version": 1,
   "sref_version": "0.5.0",
   "unit_registry_version": "0.3.0",
-  "state": "candidate",
+  "state": "released",
   "files": {
     "registry/units.json": "3ab4ae9d4310a6522a667a90d62fc5942013e11fce4687729f65c1d04eab0506",
     "schema/bundle-manifest.schema.json": "f4ee0dc257f6b2ba6eaabceee62aed9c41c9251e55007ae0efe78410b5edb0b7",
